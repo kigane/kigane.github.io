@@ -1,18 +1,493 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Hello VuePress</title>
+    <title>Hello Vuepress | My Documentations</title>
     <meta name="generator" content="VuePress 1.8.2">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
     <meta name="description" content="Just playing around">
     
-    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.75014655.js" as="script"><link rel="preload" href="/assets/js/2.dd2cffb3.js" as="script"><link rel="preload" href="/assets/js/9.b0dd333b.js" as="script"><link rel="prefetch" href="/assets/js/3.2ef83492.js"><link rel="prefetch" href="/assets/js/4.c95661b8.js"><link rel="prefetch" href="/assets/js/5.488f60b9.js"><link rel="prefetch" href="/assets/js/6.4a3e3227.js"><link rel="prefetch" href="/assets/js/7.19770a8a.js"><link rel="prefetch" href="/assets/js/8.810a3294.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+    <link rel="preload" href="/assets/css/0.styles.b27f4404.css" as="style"><link rel="preload" href="/assets/js/app.2f2ed67c.js" as="script"><link rel="preload" href="/assets/js/2.f48cadb2.js" as="script"><link rel="preload" href="/assets/js/14.caae0880.js" as="script"><link rel="prefetch" href="/assets/js/10.30a1994a.js"><link rel="prefetch" href="/assets/js/11.eeec8d64.js"><link rel="prefetch" href="/assets/js/12.29fe9fc1.js"><link rel="prefetch" href="/assets/js/13.be23dd50.js"><link rel="prefetch" href="/assets/js/15.225e21d9.js"><link rel="prefetch" href="/assets/js/3.f19f8194.js"><link rel="prefetch" href="/assets/js/4.d1b6e8ed.js"><link rel="prefetch" href="/assets/js/5.7d8c4629.js"><link rel="prefetch" href="/assets/js/6.3a2a2487.js"><link rel="prefetch" href="/assets/js/7.76bfc62c.js"><link rel="prefetch" href="/assets/js/8.a2dc6f5b.js"><link rel="prefetch" href="/assets/js/9.721e9c1c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b27f4404.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Hello VuePress</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.75014655.js" defer></script><script src="/assets/js/2.dd2cffb3.js" defer></script><script src="/assets/js/9.b0dd333b.js" defer></script>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/ChernoLogo.png" alt="My Documentations" class="logo"> <span class="site-name can-hide">My Documentations</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/cg/" class="nav-link">
+  ComputerGraphics
+</a></div> <a href="https://github.com/kigane/MyBlogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/cg/" class="nav-link">
+  ComputerGraphics
+</a></div> <a href="https://github.com/kigane/MyBlogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/guide/" aria-current="page" class="active sidebar-link">Hello Vuepress</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/#math" class="sidebar-link">math</a></li><li class="sidebar-sub-header"><a href="/guide/#git-hub-tables" class="sidebar-link">git hub tables</a></li><li class="sidebar-sub-header"><a href="/guide/#container" class="sidebar-link">container</a></li><li class="sidebar-sub-header"><a href="/guide/#语法高亮" class="sidebar-link">语法高亮</a></li><li class="sidebar-sub-header"><a href="/guide/#部署" class="sidebar-link">部署</a></li><li class="sidebar-sub-header"><a href="/guide/#全局computed" class="sidebar-link">全局Computed</a></li></ul></li><li><a href="/guide/configuration.html" class="sidebar-link">VuePress 默认主题设置</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p></p><div class="table-of-contents"><ul><li><a href="#math">math</a></li><li><a href="#git-hub-tables">git hub tables</a></li><li><a href="#container">container</a></li><li><a href="#语法高亮">语法高亮</a></li><li><a href="#部署">部署</a></li><li><a href="#全局computed">全局Computed</a></li></ul></div><p></p> <h2 id="math"><a href="#math" class="header-anchor">#</a> math</h2> <p>安装 markdown-it-katex 插件</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">yarn</span> <span class="token function">add</span> markdown-it-katex -D
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>再设置</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// .vuepress/config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  markdown<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 开启代码块行号</span>
+    lineNumbers<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 选择目录层级</span>
+    toc<span class="token operator">:</span> <span class="token punctuation">{</span> includeLevel<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 加载插件</span>
+    <span class="token function-variable function">extendMarkdown</span><span class="token operator">:</span> <span class="token parameter">md</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// use more markdown-it plugins!</span>
+      md<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'markdown-it-katex'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 要使 markdown-it-katex 插件生效，还需要设置在每个 html 的 &lt;head&gt; 部分，加上一些依赖的引用。</span>
+  head<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'link'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      rel<span class="token operator">:</span> <span class="token string">'stylesheet'</span><span class="token punctuation">,</span>
+      href<span class="token operator">:</span> <span class="token string">'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'link'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      rel<span class="token operator">:</span> <span class="token string">&quot;stylesheet&quot;</span><span class="token punctuation">,</span>
+      href<span class="token operator">:</span> <span class="token string">&quot;https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>效果如下：<br> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>=</mo><msubsup><mi>n</mi><mn>1</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\frac 1n = n^2_1</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="strut" style="height:0.845108em;"></span><span class="strut bottom" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.394em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:0.24810799999999997em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></p> <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtable><mtr><mtd><mrow><mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mrow><mi>cos</mi><mi>ϕ</mi></mrow></mtd><mtd><mrow><mi>sin</mi><mi>ϕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mi>sin</mi><mi>ϕ</mi></mrow></mtd><mtd><mrow><mi>cos</mi><mi>ϕ</mi></mrow></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mrow><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub></mrow></mtd><mtd><mrow><mn>0</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn></mrow></mtd><mtd><mrow><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub></mrow></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mrow><mi>cos</mi><mi>ϕ</mi></mrow></mtd><mtd><mrow><mo>−</mo><mi>sin</mi><mi>ϕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>sin</mi><mi>ϕ</mi></mrow></mtd><mtd><mrow><mi>cos</mi><mi>ϕ</mi></mrow></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>=</mo></mrow><mrow><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mrow><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><msup><mi>cos</mi><mrow><mn>2</mn></mrow></msup><mi>ϕ</mi><mo>+</mo><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub><msup><mi>sin</mi><mrow><mn>2</mn></mrow></msup><mi>ϕ</mi></mrow></mtd><mtd><mrow><mrow><mo fence="true">(</mo><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><mo fence="true">)</mo></mrow><mi>cos</mi><mi>ϕ</mi><mi>sin</mi><mi>ϕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><mrow><mo fence="true">(</mo><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><mo fence="true">)</mo></mrow><mi>cos</mi><mi>ϕ</mi><mi>sin</mi><mi>ϕ</mi></mrow></mtd><mtd><mrow><msub><mi>λ</mi><mrow><mn>2</mn></mrow></msub><msup><mi>cos</mi><mrow><mn>2</mn></mrow></msup><mi>ϕ</mi><mo>+</mo><msub><mi>λ</mi><mrow><mn>1</mn></mrow></msub><msup><mi>sin</mi><mrow><mn>2</mn></mrow></msup><mi>ϕ</mi></mrow></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow></mrow></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">\begin{array}{r}
+{\left[\begin{array}{rr}
+\cos \phi &amp; \sin \phi \\
+-\sin \phi &amp; \cos \phi
+\end{array}\right]\left[\begin{array}{cc}
+\lambda_{1} &amp; 0 \\
+0 &amp; \lambda_{2}
+\end{array}\right]\left[\begin{array}{cc}
+\cos \phi &amp; -\sin \phi \\
+\sin \phi &amp; \cos \phi
+\end{array}\right]=}
+{\left[\begin{array}{ll}
+\lambda_{1} \cos ^{2} \phi+\lambda_{2} \sin ^{2} \phi &amp; \left(\lambda_{2}-\lambda_{1}\right) \cos \phi \sin \phi \\
+\left(\lambda_{2}-\lambda_{1}\right) \cos \phi \sin \phi &amp; \lambda_{2} \cos ^{2} \phi+\lambda_{1} \sin ^{2} \phi
+\end{array}\right]}
+\end{array}</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="strut" style="height:1.4741080000000002em;"></span><span class="strut bottom" style="height:2.4482160000000004em;vertical-align:-0.9741080000000002em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-r"><span class="vlist"><span style="top:-2.220446049250313e-16em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="minner displaystyle textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-r"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mop">cos</span><span class="mord mathit">ϕ</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord">−</span><span class="mop">sin</span><span class="mord mathit">ϕ</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-r"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mop">sin</span><span class="mord mathit">ϕ</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mop">cos</span><span class="mord mathit">ϕ</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">]</span></span></span><span class="minner displaystyle textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathrm">0</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathrm">0</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">]</span></span></span><span class="minner displaystyle textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mop">cos</span><span class="mord mathit">ϕ</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mop">sin</span><span class="mord mathit">ϕ</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord">−</span><span class="mop">sin</span><span class="mord mathit">ϕ</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mop">cos</span><span class="mord mathit">ϕ</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">]</span></span></span><span class="mrel">=</span></span><span class="mord displaystyle textstyle uncramped"><span class="minner displaystyle textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist"><span style="top:-0.6100000000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mop"><span class="mop">cos</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">ϕ</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mop"><span class="mop">sin</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">ϕ</span></span></span><span style="top:0.6141080000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="minner displaystyle textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">−</span><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span><span class="mop">cos</span><span class="mord mathit">ϕ</span><span class="mop">sin</span><span class="mord mathit">ϕ</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist"><span style="top:-0.6100000000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="minner displaystyle textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">−</span><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span><span class="mop">cos</span><span class="mord mathit">ϕ</span><span class="mop">sin</span><span class="mord mathit">ϕ</span></span></span><span style="top:0.6141080000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mop"><span class="mop">cos</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">ϕ</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">λ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mop"><span class="mop">sin</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">ϕ</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></span></p> <h2 id="git-hub-tables"><a href="#git-hub-tables" class="header-anchor">#</a> git hub tables</h2> <table><thead><tr><th>Tables</th> <th style="text-align:center;">Are</th> <th style="text-align:right;">Cool</th></tr></thead> <tbody><tr><td>col 3 is</td> <td style="text-align:center;">right-aligned</td> <td style="text-align:right;">$1600</td></tr> <tr><td>col 2 is</td> <td style="text-align:center;">centered</td> <td style="text-align:right;">$12</td></tr> <tr><td>zebra stripes</td> <td style="text-align:center;">are neat</td> <td style="text-align:right;">$1</td></tr></tbody></table> <h2 id="container"><a href="#container" class="header-anchor">#</a> container</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>this is tips</p></div> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>this is warning</p></div> <div class="custom-block danger"><p class="custom-block-title">STOP</p> <p>this is danger warning</p></div> <details class="custom-block details"><summary>custom title</summary> <p>more details here</p></details> <h2 id="语法高亮"><a href="#语法高亮" class="header-anchor">#</a> 语法高亮</h2> <p>代码块内某些行高亮。{}里面行号之间不能有空格。</p> <div class="language-glsl line-numbers-mode"><div class="highlight-lines"><br><div class="highlighted"> </div><br><br><br><div class="highlighted"> </div><br><br></div><pre class="language-glsl"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span>
+<span class="token punctuation">(</span><span class="token keyword">layout</span> location <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> a_Pos
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    gl_Position <span class="token operator">=</span> a_Pos<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="部署"><a href="#部署" class="header-anchor">#</a> 部署</h2> <p>按文档来，没成功。git push -f xxxxx master 会在github库中新建一个master分支，而且有时候推送失败，原因不明。<br>
+因为我安装了 wsl2，执行bash命令会进入Ubantu18.04，也导致shell脚本出错。<br>
+最终，解决方法如下：</p> <p>在package.json中添加npm命令，用于执行shell脚本。</p> <div class="language-js line-numbers-mode"><div class="highlight-lines"><br><br><br><div class="highlighted"> </div><br><br></div><pre class="language-js"><code><span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;docs:dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress dev docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;docs:build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress build docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;docs:deploy&quot;</span><span class="token operator">:</span> <span class="token string">&quot;deploy.sh&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>手动clone GithubPage关联库 https://github.com/username/username.github.io.git 到本地，并放在目录project/docs/.vuepress/下。(和生成的dist目录同级)</p> <p>deploy.sh内容为</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token shebang important">#!/usr/bin/env sh</span>
+
+<span class="token comment"># abort on errors</span>
+<span class="token builtin class-name">set</span> -e
+
+<span class="token comment"># build</span>
+<span class="token function">npm</span> run docs:build
+
+<span class="token comment"># navigate into the build output directory</span>
+<span class="token builtin class-name">cd</span> docs/.vuepress/dist
+
+<span class="token comment"># 将一个目录下的一些文件移动到另一个目录下</span>
+<span class="token function">cp</span> -R * <span class="token punctuation">..</span>/username.github.io
+
+<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>/username.github.io
+
+<span class="token function">git</span> <span class="token function">add</span> -A
+<span class="token function">git</span> commit -m <span class="token string">'deploy'</span>
+<span class="token function">git</span> push
+
+<span class="token builtin class-name">cd</span> -
+
+<span class="token comment"># 执行完不立即退出shell，便于查看错误信息。</span>
+<span class="token builtin class-name">read</span> -n <span class="token number">1</span> -p <span class="token string">'Press any key to continue...'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>deploy.sh 实际上完成了三件事</p> <ol><li>执行 npm run docs:build 生成要发布的内容</li> <li>将 dist 文件夹中的所有文件都复制到 username.githbu.io 文件夹中</li> <li>在 username.githbu.io 文件夹中(GithubPage关联的库)，提交修改并推送到远程库</li></ol> <h2 id="全局computed"><a href="#全局computed" class="header-anchor">#</a> 全局Computed</h2> <p>因为 ketex 公式分隔符是 'dollar', 和 vue 提供的全局变量前缀冲突了。所以一页只能有一个全局变量保持正常。<br>
+site = {
+  &quot;title&quot;: &quot;My Documentations&quot;,
+  &quot;description&quot;: &quot;Just playing around&quot;,
+  &quot;base&quot;: &quot;/&quot;,
+  &quot;headTags&quot;: [
+    [
+      &quot;link&quot;,
+      {
+        &quot;rel&quot;: &quot;stylesheet&quot;,
+        &quot;href&quot;: &quot;https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css&quot;
+      }
+    ],
+    [
+      &quot;link&quot;,
+      {
+        &quot;rel&quot;: &quot;stylesheet&quot;,
+        &quot;href&quot;: &quot;https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css&quot;
+      }
+    ],
+    [
+      &quot;script&quot;,
+      {
+        &quot;src&quot;: &quot;https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js&quot;
+      }
+    ],
+    [
+      &quot;script&quot;,
+      {
+        &quot;src&quot;: &quot;https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js&quot;
+      }
+    ],
+    [
+      &quot;script&quot;,
+      {
+        &quot;src&quot;: &quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js&quot;
+      }
+    ],
+    [
+      &quot;script&quot;,
+      {
+        &quot;src&quot;: &quot;https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js&quot;
+      }
+    ]
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;title&quot;: &quot;VuePress 设置&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;VuePress 设置&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 2
+      },
+      &quot;regularPath&quot;: &quot;/blog/&quot;,
+      &quot;relativePath&quot;: &quot;blog/README.md&quot;,
+      &quot;key&quot;: &quot;v-ed06b8a8&quot;,
+      &quot;path&quot;: &quot;/blog/&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;frontmatter&quot;,
+          &quot;slug&quot;: &quot;frontmatter&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;navbar&quot;,
+          &quot;slug&quot;: &quot;navbar&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;sidebar&quot;,
+          &quot;slug&quot;: &quot;sidebar&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;内嵌链接&quot;,
+          &quot;slug&quot;: &quot;内嵌链接&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;展开所有子链接&quot;,
+          &quot;slug&quot;: &quot;展开所有子链接&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;导航栏分组&quot;,
+          &quot;slug&quot;: &quot;导航栏分组&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;多重侧边栏&quot;,
+          &quot;slug&quot;: &quot;多重侧边栏&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;code groups&quot;,
+          &quot;slug&quot;: &quot;code-groups&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;Test&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;Test&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 1
+      },
+      &quot;regularPath&quot;: &quot;/blog/test.html&quot;,
+      &quot;relativePath&quot;: &quot;blog/test.md&quot;,
+      &quot;key&quot;: &quot;v-dade2d02&quot;,
+      &quot;path&quot;: &quot;/blog/test.html&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;Test&quot;,
+          &quot;slug&quot;: &quot;test&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;计算机图形学&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;计算机图形学&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 1
+      },
+      &quot;regularPath&quot;: &quot;/cg/&quot;,
+      &quot;relativePath&quot;: &quot;cg/README.md&quot;,
+      &quot;key&quot;: &quot;v-f8b5c728&quot;,
+      &quot;path&quot;: &quot;/cg/&quot;
+    },
+    {
+      &quot;title&quot;: &quot;纹理&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;纹理&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 1
+      },
+      &quot;regularPath&quot;: &quot;/cg/ch11.html&quot;,
+      &quot;relativePath&quot;: &quot;cg/ch11.md&quot;,
+      &quot;key&quot;: &quot;v-f8fa69c2&quot;,
+      &quot;path&quot;: &quot;/cg/ch11.html&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;纹理&quot;,
+          &quot;slug&quot;: &quot;纹理&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;房贷骚啊&quot;,
+          &quot;slug&quot;: &quot;房贷骚啊&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;表面着色&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;表面着色&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 1
+      },
+      &quot;regularPath&quot;: &quot;/cg/ch10.html&quot;,
+      &quot;relativePath&quot;: &quot;cg/ch10.md&quot;,
+      &quot;key&quot;: &quot;v-3124147f&quot;,
+      &quot;path&quot;: &quot;/cg/ch10.html&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;漫反射着色&quot;,
+          &quot;slug&quot;: &quot;漫反射着色&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;Phong 着色&quot;,
+          &quot;slug&quot;: &quot;phong-着色&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;artistic 着色&quot;,
+          &quot;slug&quot;: &quot;artistic-着色&quot;
+        }
+      ]
+    },
+    {
+      &quot;frontmatter&quot;: {},
+      &quot;regularPath&quot;: &quot;/config.html&quot;,
+      &quot;relativePath&quot;: &quot;config.md&quot;,
+      &quot;key&quot;: &quot;v-0eb1014c&quot;,
+      &quot;path&quot;: &quot;/config.html&quot;
+    },
+    {
+      &quot;title&quot;: &quot;Hello Vuepress&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;Hello Vuepress&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;
+      },
+      &quot;regularPath&quot;: &quot;/guide/&quot;,
+      &quot;relativePath&quot;: &quot;guide/README.md&quot;,
+      &quot;key&quot;: &quot;v-3d116448&quot;,
+      &quot;path&quot;: &quot;/guide/&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;math&quot;,
+          &quot;slug&quot;: &quot;math&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;git hub tables&quot;,
+          &quot;slug&quot;: &quot;git-hub-tables&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;container&quot;,
+          &quot;slug&quot;: &quot;container&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;语法高亮&quot;,
+          &quot;slug&quot;: &quot;语法高亮&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;部署&quot;,
+          &quot;slug&quot;: &quot;部署&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;全局Computed&quot;,
+          &quot;slug&quot;: &quot;全局computed&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;VuePress 默认主题设置&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;VuePress 默认主题设置&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 2
+      },
+      &quot;regularPath&quot;: &quot;/guide/configuration.html&quot;,
+      &quot;relativePath&quot;: &quot;guide/configuration.md&quot;,
+      &quot;key&quot;: &quot;v-d2596176&quot;,
+      &quot;path&quot;: &quot;/guide/configuration.html&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;frontmatter&quot;,
+          &quot;slug&quot;: &quot;frontmatter&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;navbar&quot;,
+          &quot;slug&quot;: &quot;navbar&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;sidebar&quot;,
+          &quot;slug&quot;: &quot;sidebar&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;内嵌链接&quot;,
+          &quot;slug&quot;: &quot;内嵌链接&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;展开所有子链接&quot;,
+          &quot;slug&quot;: &quot;展开所有子链接&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;导航栏分组&quot;,
+          &quot;slug&quot;: &quot;导航栏分组&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;多重侧边栏&quot;,
+          &quot;slug&quot;: &quot;多重侧边栏&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;code groups&quot;,
+          &quot;slug&quot;: &quot;code-groups&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;Home&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;home&quot;: true,
+        &quot;heroImage&quot;: &quot;/assets/img/game-controller.png&quot;,
+        &quot;heroText&quot;: &quot;Hero Title&quot;,
+        &quot;tagline&quot;: &quot;Hero subtitle&quot;,
+        &quot;actionText&quot;: &quot;Get Started →&quot;,
+        &quot;actionLink&quot;: &quot;/guide/&quot;,
+        &quot;features&quot;: [
+          {
+            &quot;title&quot;: &quot;Simplicity First&quot;,
+            &quot;details&quot;: &quot;Minimal setup with markdown-centered project structure helps you focus on writing.&quot;
+          },
+          {
+            &quot;title&quot;: &quot;Vue-Powered&quot;,
+            &quot;details&quot;: &quot;Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.&quot;
+          },
+          {
+            &quot;title&quot;: &quot;Performant&quot;,
+            &quot;details&quot;: &quot;VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.&quot;
+          }
+        ],
+        &quot;footer&quot;: &quot;MIT Licensed | Copyright © 2018-present Evan You&quot;
+      },
+      &quot;regularPath&quot;: &quot;/&quot;,
+      &quot;relativePath&quot;: &quot;README.md&quot;,
+      &quot;key&quot;: &quot;v-7b91dfc9&quot;,
+      &quot;path&quot;: &quot;/&quot;
+    }
+  ],
+  &quot;themeConfig&quot;: {
+    &quot;logo&quot;: &quot;/assets/img/ChernoLogo.png&quot;,
+    &quot;repo&quot;: &quot;https://github.com/kigane/MyBlogs&quot;,
+    &quot;nav&quot;: [
+      {
+        &quot;text&quot;: &quot;Home&quot;,
+        &quot;link&quot;: &quot;/&quot;,
+        &quot;type&quot;: &quot;link&quot;,
+        &quot;items&quot;: []
+      },
+      {
+        &quot;text&quot;: &quot;Guide&quot;,
+        &quot;link&quot;: &quot;/guide/&quot;,
+        &quot;type&quot;: &quot;link&quot;,
+        &quot;items&quot;: []
+      },
+      {
+        &quot;text&quot;: &quot;Blog&quot;,
+        &quot;link&quot;: &quot;/blog/&quot;,
+        &quot;type&quot;: &quot;link&quot;,
+        &quot;items&quot;: []
+      },
+      {
+        &quot;text&quot;: &quot;ComputerGraphics&quot;,
+        &quot;link&quot;: &quot;/cg/&quot;,
+        &quot;type&quot;: &quot;link&quot;,
+        &quot;items&quot;: []
+      }
+    ],
+    &quot;sidebar&quot;: {
+      &quot;/blog/&quot;: [
+        &quot;&quot;,
+        &quot;test&quot;
+      ],
+      &quot;/cg/&quot;: [
+        &quot;&quot;,
+        &quot;ch10&quot;,
+        &quot;ch11&quot;
+      ],
+      &quot;/guide/&quot;: [
+        &quot;&quot;,
+        &quot;configuration&quot;
+      ],
+      &quot;/&quot;: [
+        &quot;&quot;
+      ]
+    }
+  }
+}</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/guide/configuration.html">
+        VuePress 默认主题设置
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2f2ed67c.js" defer></script><script src="/assets/js/2.f48cadb2.js" defer></script><script src="/assets/js/14.caae0880.js" defer></script>
   </body>
 </html>
