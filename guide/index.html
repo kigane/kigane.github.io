@@ -13,8 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
     <meta name="description" content="Just playing around">
     
-    <link rel="preload" href="/assets/css/0.styles.b27f4404.css" as="style"><link rel="preload" href="/assets/js/app.2f2ed67c.js" as="script"><link rel="preload" href="/assets/js/2.f48cadb2.js" as="script"><link rel="preload" href="/assets/js/14.caae0880.js" as="script"><link rel="prefetch" href="/assets/js/10.30a1994a.js"><link rel="prefetch" href="/assets/js/11.eeec8d64.js"><link rel="prefetch" href="/assets/js/12.29fe9fc1.js"><link rel="prefetch" href="/assets/js/13.be23dd50.js"><link rel="prefetch" href="/assets/js/15.225e21d9.js"><link rel="prefetch" href="/assets/js/3.f19f8194.js"><link rel="prefetch" href="/assets/js/4.d1b6e8ed.js"><link rel="prefetch" href="/assets/js/5.7d8c4629.js"><link rel="prefetch" href="/assets/js/6.3a2a2487.js"><link rel="prefetch" href="/assets/js/7.76bfc62c.js"><link rel="prefetch" href="/assets/js/8.a2dc6f5b.js"><link rel="prefetch" href="/assets/js/9.721e9c1c.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.b27f4404.css">
+    <link rel="preload" href="/assets/css/0.styles.d782fb57.css" as="style"><link rel="preload" href="/assets/js/app.ba04eba8.js" as="script"><link rel="preload" href="/assets/js/2.f48cadb2.js" as="script"><link rel="preload" href="/assets/js/15.2fea1e77.js" as="script"><link rel="prefetch" href="/assets/js/10.2b3260ac.js"><link rel="prefetch" href="/assets/js/11.56aa0cc0.js"><link rel="prefetch" href="/assets/js/12.cbb8e9b9.js"><link rel="prefetch" href="/assets/js/13.4dfe4a88.js"><link rel="prefetch" href="/assets/js/14.8050d04b.js"><link rel="prefetch" href="/assets/js/16.9751e2fc.js"><link rel="prefetch" href="/assets/js/3.ea92f0a3.js"><link rel="prefetch" href="/assets/js/4.27fdc279.js"><link rel="prefetch" href="/assets/js/5.7d8c4629.js"><link rel="prefetch" href="/assets/js/6.3a2a2487.js"><link rel="prefetch" href="/assets/js/7.705f55e4.js"><link rel="prefetch" href="/assets/js/8.20d0c527.js"><link rel="prefetch" href="/assets/js/9.ba293b48.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d782fb57.css">
   </head>
   <body>
     <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/ChernoLogo.png" alt="My Documentations" class="logo"> <span class="site-name can-hide">My Documentations</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
@@ -116,7 +116,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 
 <span class="token comment"># 执行完不立即退出shell，便于查看错误信息。</span>
 <span class="token builtin class-name">read</span> -n <span class="token number">1</span> -p <span class="token string">'Press any key to continue...'</span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>deploy.sh 实际上完成了三件事</p> <ol><li>执行 npm run docs:build 生成要发布的内容</li> <li>将 dist 文件夹中的所有文件都复制到 username.githbu.io 文件夹中</li> <li>在 username.githbu.io 文件夹中(GithubPage关联的库)，提交修改并推送到远程库</li></ol> <h2 id="全局computed"><a href="#全局computed" class="header-anchor">#</a> 全局Computed</h2> <p>因为 ketex 公式分隔符是 'dollar', 和 vue 提供的全局变量前缀冲突了。所以一页只能有一个全局变量保持正常。<br>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>deploy.sh 实际上完成了三件事</p> <ol><li>执行 npm run docs:build 生成要发布的内容。(重复生成时 dist 文件夹会先被清空，再生成新文件。)</li> <li>将 dist 文件夹中的所有文件都复制到 username.githbu.io 文件夹中</li> <li>在 username.githbu.io 文件夹中(GithubPage关联的库)，提交修改并推送到远程库</li></ol> <h2 id="全局computed"><a href="#全局computed" class="header-anchor">#</a> 全局Computed</h2> <p>因为 ketex 公式分隔符是 'dollar', 和 vue 提供的全局变量前缀冲突了。所以一页只能有一个全局变量保持正常。<br>
 site = {
   &quot;title&quot;: &quot;My Documentations&quot;,
   &quot;description&quot;: &quot;Just playing around&quot;,
@@ -163,6 +163,36 @@ site = {
   ],
   &quot;pages&quot;: [
     {
+      &quot;title&quot;: &quot;Home&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;home&quot;: true,
+        &quot;heroImage&quot;: &quot;/assets/img/game-controller.png&quot;,
+        &quot;heroText&quot;: &quot;Hero Title&quot;,
+        &quot;tagline&quot;: &quot;Hero subtitle&quot;,
+        &quot;actionText&quot;: &quot;Get Started →&quot;,
+        &quot;actionLink&quot;: &quot;/guide/&quot;,
+        &quot;features&quot;: [
+          {
+            &quot;title&quot;: &quot;Simplicity First&quot;,
+            &quot;details&quot;: &quot;Minimal setup with markdown-centered project structure helps you focus on writing.&quot;
+          },
+          {
+            &quot;title&quot;: &quot;Vue-Powered&quot;,
+            &quot;details&quot;: &quot;Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.&quot;
+          },
+          {
+            &quot;title&quot;: &quot;Performant&quot;,
+            &quot;details&quot;: &quot;VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.&quot;
+          }
+        ],
+        &quot;footer&quot;: &quot;MIT Licensed | Copyright © 2018-present Evan You&quot;
+      },
+      &quot;regularPath&quot;: &quot;/&quot;,
+      &quot;relativePath&quot;: &quot;README.md&quot;,
+      &quot;key&quot;: &quot;v-7b91dfc9&quot;,
+      &quot;path&quot;: &quot;/&quot;
+    },
+    {
       &quot;title&quot;: &quot;VuePress 设置&quot;,
       &quot;frontmatter&quot;: {
         &quot;title&quot;: &quot;VuePress 设置&quot;,
@@ -173,6 +203,312 @@ site = {
       &quot;relativePath&quot;: &quot;blog/README.md&quot;,
       &quot;key&quot;: &quot;v-ed06b8a8&quot;,
       &quot;path&quot;: &quot;/blog/&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;frontmatter&quot;,
+          &quot;slug&quot;: &quot;frontmatter&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;navbar&quot;,
+          &quot;slug&quot;: &quot;navbar&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;sidebar&quot;,
+          &quot;slug&quot;: &quot;sidebar&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;内嵌链接&quot;,
+          &quot;slug&quot;: &quot;内嵌链接&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;展开所有子链接&quot;,
+          &quot;slug&quot;: &quot;展开所有子链接&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;导航栏分组&quot;,
+          &quot;slug&quot;: &quot;导航栏分组&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;多重侧边栏&quot;,
+          &quot;slug&quot;: &quot;多重侧边栏&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;code groups&quot;,
+          &quot;slug&quot;: &quot;code-groups&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;表面着色&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;表面着色&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 1
+      },
+      &quot;regularPath&quot;: &quot;/cg/ch10.html&quot;,
+      &quot;relativePath&quot;: &quot;cg/ch10.md&quot;,
+      &quot;key&quot;: &quot;v-3124147f&quot;,
+      &quot;path&quot;: &quot;/cg/ch10.html&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;漫反射着色&quot;,
+          &quot;slug&quot;: &quot;漫反射着色&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;Phong 着色&quot;,
+          &quot;slug&quot;: &quot;phong-着色&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;artistic 着色&quot;,
+          &quot;slug&quot;: &quot;artistic-着色&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;Hello Vuepress&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;Hello Vuepress&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;
+      },
+      &quot;regularPath&quot;: &quot;/guide/&quot;,
+      &quot;relativePath&quot;: &quot;guide/README.md&quot;,
+      &quot;key&quot;: &quot;v-3d116448&quot;,
+      &quot;path&quot;: &quot;/guide/&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;math&quot;,
+          &quot;slug&quot;: &quot;math&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;git hub tables&quot;,
+          &quot;slug&quot;: &quot;git-hub-tables&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;container&quot;,
+          &quot;slug&quot;: &quot;container&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;语法高亮&quot;,
+          &quot;slug&quot;: &quot;语法高亮&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;部署&quot;,
+          &quot;slug&quot;: &quot;部署&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;全局Computed&quot;,
+          &quot;slug&quot;: &quot;全局computed&quot;
+        }
+      ]
+    },
+    {
+      &quot;frontmatter&quot;: {},
+      &quot;regularPath&quot;: &quot;/config.html&quot;,
+      &quot;relativePath&quot;: &quot;config.md&quot;,
+      &quot;key&quot;: &quot;v-0eb1014c&quot;,
+      &quot;path&quot;: &quot;/config.html&quot;
+    },
+    {
+      &quot;title&quot;: &quot;纹理&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;纹理&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 1
+      },
+      &quot;regularPath&quot;: &quot;/cg/ch11.html&quot;,
+      &quot;relativePath&quot;: &quot;cg/ch11.md&quot;,
+      &quot;key&quot;: &quot;v-f8fa69c2&quot;,
+      &quot;path&quot;: &quot;/cg/ch11.html&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;纹理&quot;,
+          &quot;slug&quot;: &quot;纹理&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;房贷骚啊&quot;,
+          &quot;slug&quot;: &quot;房贷骚啊&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;第八章 图形管线(The Graphics Pipeline)&quot;,
+      &quot;frontmatter&quot;: {},
+      &quot;regularPath&quot;: &quot;/cg/ch8.html&quot;,
+      &quot;relativePath&quot;: &quot;cg/ch8.md&quot;,
+      &quot;key&quot;: &quot;v-61964b3b&quot;,
+      &quot;path&quot;: &quot;/cg/ch8.html&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;画线(Line Drawing)&quot;,
+          &quot;slug&quot;: &quot;画线-line-drawing&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;光栅化三角形(Triangle Rasterization)&quot;,
+          &quot;slug&quot;: &quot;光栅化三角形-triangle-rasterization&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;裁剪(clipping)&quot;,
+          &quot;slug&quot;: &quot;裁剪-clipping&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;在变换之前裁剪(方法一)&quot;,
+          &quot;slug&quot;: &quot;在变换之前裁剪-方法一&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;齐次坐标中的裁剪(方法二)&quot;,
+          &quot;slug&quot;: &quot;齐次坐标中的裁剪-方法二&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;用平面裁剪&quot;,
+          &quot;slug&quot;: &quot;用平面裁剪&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;简单的2D绘制&quot;,
+          &quot;slug&quot;: &quot;简单的2d绘制&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;最小的3D管线&quot;,
+          &quot;slug&quot;: &quot;最小的3d管线&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;z-Buffer&quot;,
+          &quot;slug&quot;: &quot;z-buffer&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;逐顶点着色(Per-vertex Shading，也称Gouraud Shading)&quot;,
+          &quot;slug&quot;: &quot;逐顶点着色-per-vertex-shading-也称gouraud-shading&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;逐像素着色(Per-fragment Shading)&quot;,
+          &quot;slug&quot;: &quot;逐像素着色-per-fragment-shading&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;纹理映射(Texture Mapping)&quot;,
+          &quot;slug&quot;: &quot;纹理映射-texture-mapping&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;着色频率&quot;,
+          &quot;slug&quot;: &quot;着色频率&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;视体剔除&quot;,
+          &quot;slug&quot;: &quot;视体剔除&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;背面剔除&quot;,
+          &quot;slug&quot;: &quot;背面剔除&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;计算机图形学&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;计算机图形学&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 1
+      },
+      &quot;regularPath&quot;: &quot;/cg/&quot;,
+      &quot;relativePath&quot;: &quot;cg/README.md&quot;,
+      &quot;key&quot;: &quot;v-f8b5c728&quot;,
+      &quot;path&quot;: &quot;/cg/&quot;,
+      &quot;headers&quot;: [
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;图形领域(Graphics Areas)&quot;,
+          &quot;slug&quot;: &quot;图形领域-graphics-areas&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;主要应用&quot;,
+          &quot;slug&quot;: &quot;主要应用&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;API&quot;,
+          &quot;slug&quot;: &quot;api&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;图形管线(Graphics pipeline)&quot;,
+          &quot;slug&quot;: &quot;图形管线-graphics-pipeline&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;浮点数问题&quot;,
+          &quot;slug&quot;: &quot;浮点数问题&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;效率&quot;,
+          &quot;slug&quot;: &quot;效率&quot;
+        },
+        {
+          &quot;level&quot;: 2,
+          &quot;title&quot;: &quot;设计和编写图形程序&quot;,
+          &quot;slug&quot;: &quot;设计和编写图形程序&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;类设计&quot;,
+          &quot;slug&quot;: &quot;类设计&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;Float vs. Double&quot;,
+          &quot;slug&quot;: &quot;float-vs-double&quot;
+        },
+        {
+          &quot;level&quot;: 3,
+          &quot;title&quot;: &quot;Debug&quot;,
+          &quot;slug&quot;: &quot;debug&quot;
+        }
+      ]
+    },
+    {
+      &quot;title&quot;: &quot;VuePress 默认主题设置&quot;,
+      &quot;frontmatter&quot;: {
+        &quot;title&quot;: &quot;VuePress 默认主题设置&quot;,
+        &quot;lang&quot;: &quot;zh-CN&quot;,
+        &quot;sidebarDepth&quot;: 2
+      },
+      &quot;regularPath&quot;: &quot;/guide/configuration.html&quot;,
+      &quot;relativePath&quot;: &quot;guide/configuration.md&quot;,
+      &quot;key&quot;: &quot;v-d2596176&quot;,
+      &quot;path&quot;: &quot;/guide/configuration.html&quot;,
       &quot;headers&quot;: [
         {
           &quot;level&quot;: 2,
@@ -234,205 +570,6 @@ site = {
           &quot;slug&quot;: &quot;test&quot;
         }
       ]
-    },
-    {
-      &quot;title&quot;: &quot;计算机图形学&quot;,
-      &quot;frontmatter&quot;: {
-        &quot;title&quot;: &quot;计算机图形学&quot;,
-        &quot;lang&quot;: &quot;zh-CN&quot;,
-        &quot;sidebarDepth&quot;: 1
-      },
-      &quot;regularPath&quot;: &quot;/cg/&quot;,
-      &quot;relativePath&quot;: &quot;cg/README.md&quot;,
-      &quot;key&quot;: &quot;v-f8b5c728&quot;,
-      &quot;path&quot;: &quot;/cg/&quot;
-    },
-    {
-      &quot;title&quot;: &quot;纹理&quot;,
-      &quot;frontmatter&quot;: {
-        &quot;title&quot;: &quot;纹理&quot;,
-        &quot;lang&quot;: &quot;zh-CN&quot;,
-        &quot;sidebarDepth&quot;: 1
-      },
-      &quot;regularPath&quot;: &quot;/cg/ch11.html&quot;,
-      &quot;relativePath&quot;: &quot;cg/ch11.md&quot;,
-      &quot;key&quot;: &quot;v-f8fa69c2&quot;,
-      &quot;path&quot;: &quot;/cg/ch11.html&quot;,
-      &quot;headers&quot;: [
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;纹理&quot;,
-          &quot;slug&quot;: &quot;纹理&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;房贷骚啊&quot;,
-          &quot;slug&quot;: &quot;房贷骚啊&quot;
-        }
-      ]
-    },
-    {
-      &quot;title&quot;: &quot;表面着色&quot;,
-      &quot;frontmatter&quot;: {
-        &quot;title&quot;: &quot;表面着色&quot;,
-        &quot;lang&quot;: &quot;zh-CN&quot;,
-        &quot;sidebarDepth&quot;: 1
-      },
-      &quot;regularPath&quot;: &quot;/cg/ch10.html&quot;,
-      &quot;relativePath&quot;: &quot;cg/ch10.md&quot;,
-      &quot;key&quot;: &quot;v-3124147f&quot;,
-      &quot;path&quot;: &quot;/cg/ch10.html&quot;,
-      &quot;headers&quot;: [
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;漫反射着色&quot;,
-          &quot;slug&quot;: &quot;漫反射着色&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;Phong 着色&quot;,
-          &quot;slug&quot;: &quot;phong-着色&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;artistic 着色&quot;,
-          &quot;slug&quot;: &quot;artistic-着色&quot;
-        }
-      ]
-    },
-    {
-      &quot;frontmatter&quot;: {},
-      &quot;regularPath&quot;: &quot;/config.html&quot;,
-      &quot;relativePath&quot;: &quot;config.md&quot;,
-      &quot;key&quot;: &quot;v-0eb1014c&quot;,
-      &quot;path&quot;: &quot;/config.html&quot;
-    },
-    {
-      &quot;title&quot;: &quot;Hello Vuepress&quot;,
-      &quot;frontmatter&quot;: {
-        &quot;title&quot;: &quot;Hello Vuepress&quot;,
-        &quot;lang&quot;: &quot;zh-CN&quot;
-      },
-      &quot;regularPath&quot;: &quot;/guide/&quot;,
-      &quot;relativePath&quot;: &quot;guide/README.md&quot;,
-      &quot;key&quot;: &quot;v-3d116448&quot;,
-      &quot;path&quot;: &quot;/guide/&quot;,
-      &quot;headers&quot;: [
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;math&quot;,
-          &quot;slug&quot;: &quot;math&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;git hub tables&quot;,
-          &quot;slug&quot;: &quot;git-hub-tables&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;container&quot;,
-          &quot;slug&quot;: &quot;container&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;语法高亮&quot;,
-          &quot;slug&quot;: &quot;语法高亮&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;部署&quot;,
-          &quot;slug&quot;: &quot;部署&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;全局Computed&quot;,
-          &quot;slug&quot;: &quot;全局computed&quot;
-        }
-      ]
-    },
-    {
-      &quot;title&quot;: &quot;VuePress 默认主题设置&quot;,
-      &quot;frontmatter&quot;: {
-        &quot;title&quot;: &quot;VuePress 默认主题设置&quot;,
-        &quot;lang&quot;: &quot;zh-CN&quot;,
-        &quot;sidebarDepth&quot;: 2
-      },
-      &quot;regularPath&quot;: &quot;/guide/configuration.html&quot;,
-      &quot;relativePath&quot;: &quot;guide/configuration.md&quot;,
-      &quot;key&quot;: &quot;v-d2596176&quot;,
-      &quot;path&quot;: &quot;/guide/configuration.html&quot;,
-      &quot;headers&quot;: [
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;frontmatter&quot;,
-          &quot;slug&quot;: &quot;frontmatter&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;navbar&quot;,
-          &quot;slug&quot;: &quot;navbar&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;sidebar&quot;,
-          &quot;slug&quot;: &quot;sidebar&quot;
-        },
-        {
-          &quot;level&quot;: 3,
-          &quot;title&quot;: &quot;内嵌链接&quot;,
-          &quot;slug&quot;: &quot;内嵌链接&quot;
-        },
-        {
-          &quot;level&quot;: 3,
-          &quot;title&quot;: &quot;展开所有子链接&quot;,
-          &quot;slug&quot;: &quot;展开所有子链接&quot;
-        },
-        {
-          &quot;level&quot;: 3,
-          &quot;title&quot;: &quot;导航栏分组&quot;,
-          &quot;slug&quot;: &quot;导航栏分组&quot;
-        },
-        {
-          &quot;level&quot;: 3,
-          &quot;title&quot;: &quot;多重侧边栏&quot;,
-          &quot;slug&quot;: &quot;多重侧边栏&quot;
-        },
-        {
-          &quot;level&quot;: 2,
-          &quot;title&quot;: &quot;code groups&quot;,
-          &quot;slug&quot;: &quot;code-groups&quot;
-        }
-      ]
-    },
-    {
-      &quot;title&quot;: &quot;Home&quot;,
-      &quot;frontmatter&quot;: {
-        &quot;home&quot;: true,
-        &quot;heroImage&quot;: &quot;/assets/img/game-controller.png&quot;,
-        &quot;heroText&quot;: &quot;Hero Title&quot;,
-        &quot;tagline&quot;: &quot;Hero subtitle&quot;,
-        &quot;actionText&quot;: &quot;Get Started →&quot;,
-        &quot;actionLink&quot;: &quot;/guide/&quot;,
-        &quot;features&quot;: [
-          {
-            &quot;title&quot;: &quot;Simplicity First&quot;,
-            &quot;details&quot;: &quot;Minimal setup with markdown-centered project structure helps you focus on writing.&quot;
-          },
-          {
-            &quot;title&quot;: &quot;Vue-Powered&quot;,
-            &quot;details&quot;: &quot;Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.&quot;
-          },
-          {
-            &quot;title&quot;: &quot;Performant&quot;,
-            &quot;details&quot;: &quot;VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.&quot;
-          }
-        ],
-        &quot;footer&quot;: &quot;MIT Licensed | Copyright © 2018-present Evan You&quot;
-      },
-      &quot;regularPath&quot;: &quot;/&quot;,
-      &quot;relativePath&quot;: &quot;README.md&quot;,
-      &quot;key&quot;: &quot;v-7b91dfc9&quot;,
-      &quot;path&quot;: &quot;/&quot;
     }
   ],
   &quot;themeConfig&quot;: {
@@ -471,6 +608,7 @@ site = {
       ],
       &quot;/cg/&quot;: [
         &quot;&quot;,
+        &quot;ch8&quot;,
         &quot;ch10&quot;,
         &quot;ch11&quot;
       ],
@@ -488,6 +626,6 @@ site = {
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.2f2ed67c.js" defer></script><script src="/assets/js/2.f48cadb2.js" defer></script><script src="/assets/js/14.caae0880.js" defer></script>
+    <script src="/assets/js/app.ba04eba8.js" defer></script><script src="/assets/js/2.f48cadb2.js" defer></script><script src="/assets/js/15.2fea1e77.js" defer></script>
   </body>
 </html>
