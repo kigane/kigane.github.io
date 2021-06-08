@@ -1,2 +1,0 @@
-# kigane.github.io
-Blog
