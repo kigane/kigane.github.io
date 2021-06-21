@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>随机数 | My Documentations</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.b27f4404.css" as="style"><link rel="preload" href="/assets/js/app.f6ce4901.js" as="script"><link rel="preload" href="/assets/js/2.f48cadb2.js" as="script"><link rel="preload" href="/assets/js/19.2523d903.js" as="script"><link rel="prefetch" href="/assets/js/10.3a13d91f.js"><link rel="prefetch" href="/assets/js/11.6dfc7746.js"><link rel="prefetch" href="/assets/js/12.e362ecf7.js"><link rel="prefetch" href="/assets/js/13.3c9b997b.js"><link rel="prefetch" href="/assets/js/14.23a1db9c.js"><link rel="prefetch" href="/assets/js/15.8b3a561f.js"><link rel="prefetch" href="/assets/js/16.2ac120e5.js"><link rel="prefetch" href="/assets/js/17.f345ec1b.js"><link rel="prefetch" href="/assets/js/18.1048dfd6.js"><link rel="prefetch" href="/assets/js/20.b286de47.js"><link rel="prefetch" href="/assets/js/21.23cc0f55.js"><link rel="prefetch" href="/assets/js/22.c82709a4.js"><link rel="prefetch" href="/assets/js/23.581733e2.js"><link rel="prefetch" href="/assets/js/24.0a11e006.js"><link rel="prefetch" href="/assets/js/25.a18b9b80.js"><link rel="prefetch" href="/assets/js/26.c9b8b24f.js"><link rel="prefetch" href="/assets/js/27.e7d03654.js"><link rel="prefetch" href="/assets/js/28.62112090.js"><link rel="prefetch" href="/assets/js/29.8b2b87e8.js"><link rel="prefetch" href="/assets/js/3.c394873f.js"><link rel="prefetch" href="/assets/js/30.d9c7c7b9.js"><link rel="prefetch" href="/assets/js/31.8563e8bf.js"><link rel="prefetch" href="/assets/js/32.82fbaf29.js"><link rel="prefetch" href="/assets/js/33.fbd08eaa.js"><link rel="prefetch" href="/assets/js/34.752ff075.js"><link rel="prefetch" href="/assets/js/35.555c100b.js"><link rel="prefetch" href="/assets/js/36.caa5aa97.js"><link rel="prefetch" href="/assets/js/37.73268eb3.js"><link rel="prefetch" href="/assets/js/38.5a055bbe.js"><link rel="prefetch" href="/assets/js/39.72d746d1.js"><link rel="prefetch" href="/assets/js/4.d1b6e8ed.js"><link rel="prefetch" href="/assets/js/40.817e0f8e.js"><link rel="prefetch" href="/assets/js/41.e27a11fe.js"><link rel="prefetch" href="/assets/js/5.7d8c4629.js"><link rel="prefetch" href="/assets/js/6.3a2a2487.js"><link rel="prefetch" href="/assets/js/7.705f55e4.js"><link rel="prefetch" href="/assets/js/8.5ceedde8.js"><link rel="prefetch" href="/assets/js/9.721e9c1c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b27f4404.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/ChernoLogo.png" alt="My Documentations" class="logo"> <span class="site-name can-hide">My Documentations</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Note" class="dropdown-title"><span class="title">Note</span> <span class="arrow down"></span></button> <button type="button" aria-label="Note" class="mobile-dropdown-title"><span class="title">Note</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cg/" class="nav-link">
+  Computer Graphics
+</a></li><li class="dropdown-item"><!----> <a href="/note/gea/" class="nav-link">
+  Game Engine Architecture
+</a></li><li class="dropdown-item"><!----> <a href="/note/cpp/" class="nav-link router-link-active">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/note/opengl/" class="nav-link">
+  OpenGL
+</a></li><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/hazel/" class="nav-link">
+  Hazel
+</a></div> <a href="https://github.com/kigane/MyBlogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Note" class="dropdown-title"><span class="title">Note</span> <span class="arrow down"></span></button> <button type="button" aria-label="Note" class="mobile-dropdown-title"><span class="title">Note</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cg/" class="nav-link">
+  Computer Graphics
+</a></li><li class="dropdown-item"><!----> <a href="/note/gea/" class="nav-link">
+  Game Engine Architecture
+</a></li><li class="dropdown-item"><!----> <a href="/note/cpp/" class="nav-link router-link-active">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/note/opengl/" class="nav-link">
+  OpenGL
+</a></li><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/hazel/" class="nav-link">
+  Hazel
+</a></div> <a href="https://github.com/kigane/MyBlogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/note/cpp/" aria-current="page" class="sidebar-link">C++ 小知识</a></li><li><a href="/note/cpp/cpp-random.html" aria-current="page" class="active sidebar-link">随机数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note/cpp/cpp-random.html#线性同余法" class="sidebar-link">线性同余法</a></li><li class="sidebar-sub-header"><a href="/note/cpp/cpp-random.html#c-标准库中的随机数生成" class="sidebar-link">C 标准库中的随机数生成</a></li><li class="sidebar-sub-header"><a href="/note/cpp/cpp-random.html#一个好的伪随机数生成器-prng-的标准" class="sidebar-link">一个好的伪随机数生成器(PRNG)的标准</a></li><li class="sidebar-sub-header"><a href="/note/cpp/cpp-random.html#更好的随机数生成器" class="sidebar-link">更好的随机数生成器</a></li><li class="sidebar-sub-header"><a href="/note/cpp/cpp-random.html#effolkronium-s-random-library" class="sidebar-link">Effolkronium’s random library.</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="线性同余法"><a href="#线性同余法" class="header-anchor">#</a> 线性同余法</h2> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">PRNG</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// pseudo-random number generator</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> seed<span class="token punctuation">{</span><span class="token number">5323</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    seed <span class="token operator">=</span> <span class="token number">8253729</span> <span class="token operator">*</span> seed <span class="token operator">+</span> <span class="token number">2396403</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> seed <span class="token operator">%</span> <span class="token number">32768</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>原理大致如上。这样简单的随机数不够&quot;好&quot;。</p> <h2 id="c-标准库中的随机数生成"><a href="#c-标准库中的随机数生成" class="header-anchor">#</a> C 标准库中的随机数生成</h2> <p>原理就是线性同余法，不同编译器实现略有不同，且大多有缺陷。仅供学习使用。</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstdlib&gt;</span> <span class="token comment">// for std::rand() and std::srand()</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ctime&gt;</span> <span class="token comment">// for std::time()</span></span>
+
+<span class="token keyword">void</span> <span class="token function">PrintNumbersWithRand</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    std<span class="token operator">::</span><span class="token function">srand</span><span class="token punctuation">(</span><span class="token keyword">static_cast</span><span class="token operator">&lt;</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 因为某些编译器中rand算法的缺陷，导致第一个随机数大概率相同，所以这里先调用一次去掉第一个</span>
+    std<span class="token operator">::</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 打印 100 个随机数</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span> count <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> <span class="token operator">++</span>count<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">'\t'</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h2 id="一个好的伪随机数生成器-prng-的标准"><a href="#一个好的伪随机数生成器-prng-的标准" class="header-anchor">#</a> 一个好的伪随机数生成器(PRNG)的标准</h2> <ul><li>应该以大致相同的概率生成每个数字(生成六个数字5,6,7,8,9的概率大致相等)，即数字分布均匀性。</li> <li>生成序列中的下一个数字应该是不可预测。(num = num + 1)</li> <li>生成的数字序列应该有良好的空间分布(生成0-9之间的随机数，不能只生成5,6,7,8,9，生成的数落在大，中，小范围内的概率也应大致相当)，即空间分布均匀性。</li> <li>所有的PRNG都有周期性。通常，周期越大越好。</li></ul> <h2 id="更好的随机数生成器"><a href="#更好的随机数生成器" class="header-anchor">#</a> 更好的随机数生成器</h2> <p>使用梅森旋转演算法(Mersenne Twister)。在C++11中引入。</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;random&gt;</span> <span class="token comment">// for std::mt19937</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ctime&gt;</span> <span class="token comment">// for std::time</span></span>
+ 
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// 初始化 mersenne twister，将时间作为 seed。</span>
+	std<span class="token operator">::</span>mt19937 mersenne<span class="token punctuation">{</span> <span class="token keyword">static_cast</span><span class="token operator">&lt;</span>std<span class="token operator">::</span>mt19937<span class="token operator">::</span>result_type<span class="token operator">&gt;</span><span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ 
+	<span class="token comment">// 生成 1-6 之间随机整数的PRNG</span>
+	std<span class="token operator">::</span>uniform_int_distribution die<span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// C++17</span>
+	<span class="token comment">// std::uniform_int_distribution&lt;&gt; die{ 1, 6 }; // C++11</span>
+ 
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">{</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> count <span class="token operator">&lt;=</span> <span class="token number">48</span><span class="token punctuation">;</span> <span class="token operator">++</span>count<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token function">die</span><span class="token punctuation">(</span>mersenne<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">'\t'</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">%</span> <span class="token number">6</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+			std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="effolkronium-s-random-library"><a href="#effolkronium-s-random-library" class="header-anchor">#</a> Effolkronium’s random library.</h2> <p>一个随机数库(纯头文件)。提供了便于使用的API。</p> <div class="language-cpp line-numbers-mode"><pre class="language-cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;random.hpp&quot;</span></span>
+ 
+<span class="token comment">// get base random alias which is auto seeded and has static API and internal state</span>
+<span class="token keyword">using</span> Random <span class="token operator">=</span> effolkronium<span class="token operator">::</span>random_static<span class="token punctuation">;</span>
+ 
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token class-name">Random</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+	std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token class-name">Random</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+    <span class="token comment">// decltype(val) is long double</span>
+	<span class="token keyword">auto</span> val <span class="token operator">=</span> <span class="token class-name">Random</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1.l</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.l</span><span class="token punctuation">)</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/note/cpp/" class="prev router-link-active">
+        C++ 小知识
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f6ce4901.js" defer></script><script src="/assets/js/2.f48cadb2.js" defer></script><script src="/assets/js/19.2523d903.js" defer></script>
+  </body>
+</html>
