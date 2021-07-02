@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>C语言 | My Documentations</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.b27f4404.css" as="style"><link rel="preload" href="/assets/js/app.8f545648.js" as="script"><link rel="preload" href="/assets/js/2.f48cadb2.js" as="script"><link rel="preload" href="/assets/js/19.89df9199.js" as="script"><link rel="prefetch" href="/assets/js/10.182bdabd.js"><link rel="prefetch" href="/assets/js/11.0a855c6c.js"><link rel="prefetch" href="/assets/js/12.4f3f648f.js"><link rel="prefetch" href="/assets/js/13.c5728dd0.js"><link rel="prefetch" href="/assets/js/14.23a1db9c.js"><link rel="prefetch" href="/assets/js/15.3862d34c.js"><link rel="prefetch" href="/assets/js/16.80603a85.js"><link rel="prefetch" href="/assets/js/17.f345ec1b.js"><link rel="prefetch" href="/assets/js/18.9147adfe.js"><link rel="prefetch" href="/assets/js/20.855a1c26.js"><link rel="prefetch" href="/assets/js/21.ba0249ad.js"><link rel="prefetch" href="/assets/js/22.0b5e6295.js"><link rel="prefetch" href="/assets/js/23.98fe590c.js"><link rel="prefetch" href="/assets/js/24.06b5926d.js"><link rel="prefetch" href="/assets/js/25.fdcffd10.js"><link rel="prefetch" href="/assets/js/26.b904848b.js"><link rel="prefetch" href="/assets/js/27.ccef4b8b.js"><link rel="prefetch" href="/assets/js/28.a764ba66.js"><link rel="prefetch" href="/assets/js/29.5eb16ce6.js"><link rel="prefetch" href="/assets/js/3.0b8b26d0.js"><link rel="prefetch" href="/assets/js/30.a1c5bd2d.js"><link rel="prefetch" href="/assets/js/31.457daa63.js"><link rel="prefetch" href="/assets/js/32.597236ef.js"><link rel="prefetch" href="/assets/js/33.ca355b6b.js"><link rel="prefetch" href="/assets/js/34.30de6fa6.js"><link rel="prefetch" href="/assets/js/35.b523b073.js"><link rel="prefetch" href="/assets/js/36.1b105fa0.js"><link rel="prefetch" href="/assets/js/37.e08ef180.js"><link rel="prefetch" href="/assets/js/38.83780453.js"><link rel="prefetch" href="/assets/js/39.d999ad12.js"><link rel="prefetch" href="/assets/js/4.d1b6e8ed.js"><link rel="prefetch" href="/assets/js/40.34d1125e.js"><link rel="prefetch" href="/assets/js/41.6d2fd334.js"><link rel="prefetch" href="/assets/js/42.72110b15.js"><link rel="prefetch" href="/assets/js/43.43712eb3.js"><link rel="prefetch" href="/assets/js/44.035bbaed.js"><link rel="prefetch" href="/assets/js/45.27ca2c78.js"><link rel="prefetch" href="/assets/js/46.f8f34cfe.js"><link rel="prefetch" href="/assets/js/47.3b0ab0d4.js"><link rel="prefetch" href="/assets/js/48.68041b37.js"><link rel="prefetch" href="/assets/js/49.ede29cac.js"><link rel="prefetch" href="/assets/js/5.7d8c4629.js"><link rel="prefetch" href="/assets/js/50.e803f75c.js"><link rel="prefetch" href="/assets/js/51.78313b78.js"><link rel="prefetch" href="/assets/js/52.b766c1f5.js"><link rel="prefetch" href="/assets/js/6.3a2a2487.js"><link rel="prefetch" href="/assets/js/7.705f55e4.js"><link rel="prefetch" href="/assets/js/8.315a2b35.js"><link rel="prefetch" href="/assets/js/9.ea72da00.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b27f4404.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/ChernoLogo.png" alt="My Documentations" class="logo"> <span class="site-name can-hide">My Documentations</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Note" class="dropdown-title"><span class="title">Note</span> <span class="arrow down"></span></button> <button type="button" aria-label="Note" class="mobile-dropdown-title"><span class="title">Note</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cg/" class="nav-link">
+  Computer Graphics
+</a></li><li class="dropdown-item"><!----> <a href="/note/gea/" class="nav-link">
+  Game Engine Architecture
+</a></li><li class="dropdown-item"><!----> <a href="/note/cpp/" class="nav-link router-link-active">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/note/cs/" class="nav-link">
+  Computer Science
+</a></li><li class="dropdown-item"><!----> <a href="/note/opengl/" class="nav-link">
+  OpenGL
+</a></li><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/hazel/" class="nav-link">
+  Hazel
+</a></div> <a href="https://github.com/kigane/MyBlogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Note" class="dropdown-title"><span class="title">Note</span> <span class="arrow down"></span></button> <button type="button" aria-label="Note" class="mobile-dropdown-title"><span class="title">Note</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cg/" class="nav-link">
+  Computer Graphics
+</a></li><li class="dropdown-item"><!----> <a href="/note/gea/" class="nav-link">
+  Game Engine Architecture
+</a></li><li class="dropdown-item"><!----> <a href="/note/cpp/" class="nav-link router-link-active">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/note/cs/" class="nav-link">
+  Computer Science
+</a></li><li class="dropdown-item"><!----> <a href="/note/opengl/" class="nav-link">
+  OpenGL
+</a></li><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/hazel/" class="nav-link">
+  Hazel
+</a></div> <a href="https://github.com/kigane/MyBlogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/note/cpp/" aria-current="page" class="sidebar-link">C++ 小知识</a></li><li><a href="/note/cpp/c.html" aria-current="page" class="active sidebar-link">C语言</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note/cpp/c.html#union和匿名结构" class="sidebar-link">Union和匿名结构</a></li><li class="sidebar-sub-header"><a href="/note/cpp/c.html#getopt-int-argc-char-const-argv-const-char-optstring" class="sidebar-link">getopt(int argc, char const argv[], const char optstring)</a></li><li class="sidebar-sub-header"><a href="/note/cpp/c.html#readline" class="sidebar-link">readline</a></li><li class="sidebar-sub-header"><a href="/note/cpp/c.html#str系列" class="sidebar-link">str系列</a></li><li class="sidebar-sub-header"><a href="/note/cpp/c.html#scanf系列-printf系列" class="sidebar-link">scanf系列&amp;printf系列</a></li></ul></li><li><a href="/note/cpp/cpp-random.html" class="sidebar-link">随机数</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="union和匿名结构"><a href="#union和匿名结构" class="header-anchor">#</a> Union和匿名结构</h2> <p>Union: 定义类似struct，但内存分配方式不一样。struct会为所有成员分配内存空间，union是所有成员共用一个内存空间，大小以最大的成员为准。
+匿名：通常嵌套于union或strcut中，可以用外层类型的变量名直接访问匿名的结构成员。union中的匿名比较有用，因为可以将一系列成员包裹起来以获取更大的内存空间。</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdint.h&gt;</span></span>
+
+<span class="token keyword">typedef</span> <span class="token keyword">union</span>  
+<span class="token punctuation">{</span>
+    <span class="token keyword">union</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name">uint32_t</span> _32<span class="token punctuation">;</span>
+        <span class="token class-name">uint16_t</span> _16<span class="token punctuation">;</span>
+        <span class="token class-name">uint8_t</span> _8<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> gpr<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 32B</span>
+
+    <span class="token keyword">struct</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name">uint32_t</span> eax<span class="token punctuation">,</span> ecx<span class="token punctuation">,</span> edx<span class="token punctuation">,</span> ebx<span class="token punctuation">,</span> esp<span class="token punctuation">,</span> ebp<span class="token punctuation">,</span> esi<span class="token punctuation">,</span> edi<span class="token punctuation">;</span>
+        <span class="token class-name">uint64_t</span> pc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// 40B</span>
+<span class="token punctuation">}</span> CPU<span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token keyword">const</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    CPU cpu<span class="token punctuation">;</span>
+    cpu<span class="token punctuation">.</span>gpr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>_32 <span class="token operator">=</span> <span class="token number">666</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;CPU size: %d\n&quot;</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>CPU<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 40</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;cpu.eax: %d\n&quot;</span><span class="token punctuation">,</span> cpu<span class="token punctuation">.</span>eax<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// 666</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h2 id="getopt-int-argc-char-const-argv-const-char-optstring"><a href="#getopt-int-argc-char-const-argv-const-char-optstring" class="header-anchor">#</a> getopt(int argc, char* const argv[], const char* optstring)</h2> <p>选项处理过程</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token keyword">int</span> optind<span class="token punctuation">;</span> <span class="token comment">// argv中下一个要处理的元素的索引(初始为 1)</span>
+<span class="token keyword">int</span> opterr<span class="token punctuation">;</span> <span class="token comment">// 是否输出错误信息</span>
+<span class="token keyword">int</span> optopt<span class="token punctuation">;</span> <span class="token comment">// 导致错误的选项字符</span>
+<span class="token keyword">char</span><span class="token operator">*</span> optarg<span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">option</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">;</span> <span class="token comment">// 长选项(--option)的名称</span>
+    <span class="token keyword">int</span> has_arg<span class="token punctuation">;</span> <span class="token comment">// 0:无参数 1:有参数 2:参数可选</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>flag<span class="token punctuation">;</span> <span class="token comment">// flag为NULL：getopt_long()返回val。否则getopt_long()返回0，flag指向的变量值为val(如果该option用户设置了的话)</span>
+    <span class="token keyword">int</span> val<span class="token punctuation">;</span> <span class="token comment">// 返回值或放入flag</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// 结构体数组的最后一个元素必须设为0</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>如果getopt()找到下一个选项字符，就返回那个字符，更新optind和一个static变量nextchar</p> <p>optstring包含了所有合法的选项，如果字符后面跟着一个<code>:</code>，说明需要参数，两个说明是可选参数。<br>
+如果选项中包含文本(-oarg, o 是选项，arg是文本)，则文本会保存在optarg中其他情况下，optarg设为0.
+GNU扩展,optstring中的<code>W:</code>表示将<code>-W foo</code>看作<code>--foo</code>看待。</p> <p>默认情况下,getopt()按输入顺序排列argv的内容。所以，所有的非选项参数放在最后。
+optstring的首字符决定使用的模式</p> <ul><li><code>+</code> 遇到任何一个非选项参数就终止选项处理</li> <li><code>-</code> 强制将所有非选项参数看作选项的参数
+<code>--</code> 在任何模式下都可以强行终止选项处理过程。</li></ul> <p>Errors</p> <ul><li>处理的选项不再optstring中</li> <li>设置为有参数的选项没有检测到参数
+处理</li> <li>默认输出错误信息，将导致错误的选项字符放在optopt中，函数返回 ?</li> <li>如果调用者将opterr设为0，则不会输出错误信息，函数仍返回 ?</li> <li>如果optstring的第一个字符(不包括描述模式的<code>+,-</code>)为<code>:</code>。函数同样不输出错误信息，并且在设为有参数的选项没有参数时返回值变为<code>:</code>，从而可以区别出这种情况。</li></ul> <p>getopt()返回值</p> <ul><li>如果所有的命令行选项都处理完了，则返回 -1.</li> <li>如果遇到没在optstring中指定的字符，返回 ?</li> <li>如果遇到选项丢失参数的情况，看optstring中的第一个字符，如果是<code>:</code> 则返回 <code>:</code>，否则返回 ?</li></ul> <p><code>int getopt_long(int argc, char* const argv[], const char* optstring, const struct option* longopts, int* longindex)</code></p> <p>getopt_long(),getopt_long_only()</p> <ul><li>当识别到短选项时，也返回值</li> <li>长选项，见flag注释。</li> <li>Error和-1和getopt()一样</li> <li>识别到模糊匹配和冗余参数会返回 ?</li> <li>longindex为longopts的索引，如果不为NULL的话</li></ul> <h2 id="readline"><a href="#readline" class="header-anchor">#</a> readline</h2> <p><code>char* readline(const char* prompt)</code><br>
+GNU的命令行编辑接口。readline会从终端读入一行并返回，其参数prompt为命令行开头的提示符(例如gdb中的&quot;(gdb)&quot;)。其返回值不包括换行符，仅保留输入的文本。另外返回值使用malloc分配内存的，调用者需要手动free。</p> <h2 id="str系列"><a href="#str系列" class="header-anchor">#</a> str系列</h2> <p>strtok</p> <ul><li><code>char *strtok(char *str, const char *delim)</code>： 使用了static buffer，不是线程安全的。</li> <li><code>char *strtok_r(char *str, const char *delim, char **saveptr)</code>: 多线程安全</li> <li>这个函数用于将字符串分解为一系列非空token(子串)。第一次调用strtok时str是需要被分解的字符串，之后处理相同字符串时str必须为NULL。delim参数为用于分解的分隔符，可以指定多个字符为同一级分隔符。</li> <li>strtok内部有一个指针，该指针决定了每个token的起点。第一次调用时指向str的第一个字符，第二次调用时指向第一个分割符后第一个不是分割符的字符，如果找不到这样的字符，strtok返回NULL。</li> <li>每个token的终点为分隔符(会被替换为'\0')或null('\0')。</li> <li>strtok的返回值要么是非空字符串，要么是NULL。(例如,'aaa;bbb'分隔符为';',顺序调用strtok的返回值为 'aaa', 'bbb', NULL)</li></ul> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token keyword">const</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>str1<span class="token punctuation">,</span> <span class="token operator">*</span>str2<span class="token punctuation">,</span> <span class="token operator">*</span>token<span class="token punctuation">,</span> <span class="token operator">*</span>subtoken<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>savaptr1<span class="token punctuation">,</span> <span class="token operator">*</span>saveptr2<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> j<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">&quot;Usage: %s string delim subdelim\n&quot;</span><span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span>EXIT_FAILURE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> str1 <span class="token operator">=</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">,</span> str1 <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        token <span class="token operator">=</span> <span class="token function">strtok_r</span><span class="token punctuation">(</span>str1<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>savaptr1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;saveptr1 %d %s\n&quot;</span><span class="token punctuation">,</span> j<span class="token punctuation">,</span> savaptr1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 剩余未处理的部分</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>token <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d: %s\n&quot;</span><span class="token punctuation">,</span> j<span class="token punctuation">,</span> token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>str2 <span class="token operator">=</span> token<span class="token punctuation">;</span> <span class="token punctuation">;</span> str2 <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            subtoken <span class="token operator">=</span> <span class="token function">strtok_r</span><span class="token punctuation">(</span>str2<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>saveptr2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>subtoken <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot; --&gt; %s\n&quot;</span><span class="token punctuation">,</span> subtoken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">exit</span><span class="token punctuation">(</span>EXIT_SUCCESS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><p><code>size_t strlen(const char *s)</code>:返回字符串的长度，即string中有多少byte。不包含'\0'。
+<code>size_t strnlen(const char *s, size_t max)</code>:返回字符串的长度，但不会超过最大值。
+<code>int strcmp(const char *s1, const char *s2)</code>: 比较两个字符串是否相等。逐字符比较，如果第一个不相等的字符s1 &lt; s2，则返回负值，反之返回正值。都相等则返回0。
+<code>int strncmp(const char *s1, const char *s2, size_t n)</code>:比较两个字符串是否相等，但只比前n个。
+<code>int strcoll(const char *s1, const char *s2)</code>:比较两个字符串是否相等，基于程序当前的locale设置解释的字符串,locale的值为环境变量LC_COLLATE。
+<code>char *strcpy(char *dest,const char *src)</code>: 复制字符串，包含最后的'\0'。dest需要足够大。返回dest指针。
+<code>char *strncpy(char *dest,const char *src, size_t n)</code>:将src的前n个字符复制到dest。注意如果前n个字符中没有'\0'，则dest也不会添加，导致dest没有正常的终止符。如果n&gt;strlen(src)+1，剩下的字符会用'\n'补全。
+<code>char *strcat(char *dest, const char *src)</code>: 将src(不包括'\0')连接到dest后，dest的'\0'会被覆盖，且会在整个字符串后添加一个'\0'。dest要足够大。
+<code>char *strncat(char *dest, const char *src, size_t n)</code>:类似strcat。但最多使用src中的n个字符。另外，src可以没有'\0'。</p> <h2 id="scanf系列-printf系列"><a href="#scanf系列-printf系列" class="header-anchor">#</a> scanf系列&amp;printf系列</h2> <p><code>int scanf(const char *format, ...)</code><br> <code>int fscanf(FILE *stream, const char *format, ...)</code><br> <code>int sscanf(const char *str, const char *format, ...)</code></p> <p><code>int vscanf(const char *format, va_list ap)</code> <code>int vfscanf(FILE *stream, const char *format, va_list ap)</code> <code>int vsscanf(const char *str, const char *format, va_list ap)</code></p> <p>format可能包含转换规约(%m.nf)，转换的结果被储存在format后的指针中，指针的类型要可format中的转换规约一致。如果format中的%数量多于指针参数的数量，则结果未定义。反之，则多余的指针参数会被忽略。</p> <ul><li>scanf从stdin读取输入。</li> <li>fscanf从指定的文件流stream中读取输入。</li> <li>sscanf从字符串str中读取输入。</li> <li>加v的读取变量参数列表(a variable arguemnt list)</li></ul> <p>返回值</p> <ul><li>成功：返回匹配的转换数</li> <li>失败：EOF</li></ul> <h3 id="转换规约"><a href="#转换规约" class="header-anchor">#</a> 转换规约</h3> <p>格式：<code>%#.#char</code> 其中第一个#为maximum field width。即最多匹配|输出的字符数。.#表示保留的小数点位数。char为转换说明符。</p> <p>输入</p> <ul><li>%: 匹配%。</li> <li>d: 匹配有符号十进制整数，对应的指针类型必须为int*。</li> <li>i: 匹配有符号整数，对应的指针类型必须为int*。用于scanf，如果输入的整数以0x开头，则以16进制读，以0开头，则以8进制读，否则以十进制读。</li> <li>o: 匹配无符号八进制整数。对应的指针类型必须为unsigned int*。</li> <li>u: 匹配无符号十进制整数。对应的指针类型必须为unsigned int*。</li> <li>x|X: 匹配无符号十六进制整数。对应的指针类型必须为unsigned int*。</li> <li>f | e | E | g | a: 匹配浮点数。对应的指针类型必须为float*。</li> <li>s: 匹配一连串字符，到空白符或字符数组满了(要留一个位置给自动加上的'\0')为止。对应的指针类型必须为char数组。</li> <li>c: 匹配一个字符，不会加上'\0'。对应的指针类型必须为char*。</li> <li>[char set]: 匹配指定字符集中的字符。对应的指针类型必须为char*。特殊字符<code>]</code>，要匹配它，必须将它放在<code>[</code>后，要排除它，则需放在<code>^</code>后。 <code>-</code>必须放在字符集的开头或结尾。</li> <li>p: 匹配指针。对应的指针类型必须为void**。</li> <li>n: 没看懂</li></ul> <p>指针类型修改符</p> <ul><li><p>h: 针对diouxXn,将指针类型改为short int 或 unsigned short int。</p></li> <li><p>hh: signed char, unsigned char</p></li> <li><p>j: intmax_t,uintmax_t</p></li> <li><p>t: ptrdiff_t</p></li> <li><p>z: size_t</p></li> <li><p>l: signed long int, unsigned long int; 针对f,则指针类型变为double; 针对c,s，相关的指针类型被认为是wide charater?</p></li> <li><p>L: signed long long int, unsigned long long int; long long double</p></li> <li><p>m: %ms, %#mc 为输入字符串分配一块内存，指针类型改为char**。</p></li></ul> <p>输出
+// FLag characters</p> <ul><li>#: #o值以八进制显示。#x，十六进制，有0x。#[aAeEfFgG]，总是会显示小数点。</li> <li>0: 不足的位在左边用0补足。如果指定了浮点数的精度，则被忽略。</li> <li>-: 在maximum field width的左边界对齐。</li> <li>' ': 空格。有符号正数最前面放一个空格。</li> <li>+: 有符号正数前面加+。</li></ul> <p>// Sing Unix Specification</p> <ul><li><p>': 十进制数以千为单位加逗号。</p></li> <li><p>I: idu, 使用本地对应的字符输出。</p></li> <li><p>d,i:十进制有符号</p></li> <li><p>o,u,x,X</p></li> <li><p>e,E: [-]d.ddde[+-]dd</p></li> <li><p>f,F: 常见小数形式</p></li> <li><p>g,G: 看情况转换为f,e,F,G中的一种</p></li> <li><p>a,A: 十六进制的小数形式0xh.hhhp[+-]</p></li> <li><p>c</p></li> <li><p>s</p></li> <li><p>p</p></li> <li><p>n</p></li> <li><p>%</p></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/note/cpp/" class="prev router-link-active">
+        C++ 小知识
+      </a></span> <span class="next"><a href="/note/cpp/cpp-random.html">
+        随机数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8f545648.js" defer></script><script src="/assets/js/2.f48cadb2.js" defer></script><script src="/assets/js/19.89df9199.js" defer></script>
+  </body>
+</html>
