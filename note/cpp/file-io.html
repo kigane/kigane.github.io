@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>C/C++ 文件 IO | My Documentations</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.b27f4404.css" as="style"><link rel="preload" href="/assets/js/app.ebdd7216.js" as="script"><link rel="preload" href="/assets/js/2.f48cadb2.js" as="script"><link rel="preload" href="/assets/js/19.69c2dab7.js" as="script"><link rel="prefetch" href="/assets/js/10.53cde7a9.js"><link rel="prefetch" href="/assets/js/11.f623d497.js"><link rel="prefetch" href="/assets/js/12.8e8512b9.js"><link rel="prefetch" href="/assets/js/13.42e6bb09.js"><link rel="prefetch" href="/assets/js/14.2cc5c62e.js"><link rel="prefetch" href="/assets/js/15.8fd8b16a.js"><link rel="prefetch" href="/assets/js/16.275f3a5b.js"><link rel="prefetch" href="/assets/js/17.73223cde.js"><link rel="prefetch" href="/assets/js/18.ab20de8e.js"><link rel="prefetch" href="/assets/js/20.8ef1446a.js"><link rel="prefetch" href="/assets/js/21.de978305.js"><link rel="prefetch" href="/assets/js/22.1b3b76bd.js"><link rel="prefetch" href="/assets/js/23.16b23281.js"><link rel="prefetch" href="/assets/js/24.f8213530.js"><link rel="prefetch" href="/assets/js/25.2a70b083.js"><link rel="prefetch" href="/assets/js/26.a31d3153.js"><link rel="prefetch" href="/assets/js/27.13cef54c.js"><link rel="prefetch" href="/assets/js/28.414c523f.js"><link rel="prefetch" href="/assets/js/29.22b1157a.js"><link rel="prefetch" href="/assets/js/3.f82e4ec7.js"><link rel="prefetch" href="/assets/js/30.435188ea.js"><link rel="prefetch" href="/assets/js/31.57b9d028.js"><link rel="prefetch" href="/assets/js/32.84497166.js"><link rel="prefetch" href="/assets/js/33.6102bcb5.js"><link rel="prefetch" href="/assets/js/34.4d2a62b5.js"><link rel="prefetch" href="/assets/js/35.78fb1d25.js"><link rel="prefetch" href="/assets/js/36.eea99416.js"><link rel="prefetch" href="/assets/js/37.ec5d01e3.js"><link rel="prefetch" href="/assets/js/38.a4d04114.js"><link rel="prefetch" href="/assets/js/39.1a0c266b.js"><link rel="prefetch" href="/assets/js/4.d1b6e8ed.js"><link rel="prefetch" href="/assets/js/40.07444e3b.js"><link rel="prefetch" href="/assets/js/41.76e921dd.js"><link rel="prefetch" href="/assets/js/42.3b2cf128.js"><link rel="prefetch" href="/assets/js/43.24de1fd7.js"><link rel="prefetch" href="/assets/js/44.1db9d67f.js"><link rel="prefetch" href="/assets/js/45.a05c4248.js"><link rel="prefetch" href="/assets/js/46.6bd8578f.js"><link rel="prefetch" href="/assets/js/47.49e818f3.js"><link rel="prefetch" href="/assets/js/48.29abdba1.js"><link rel="prefetch" href="/assets/js/49.2e8f7396.js"><link rel="prefetch" href="/assets/js/5.7d8c4629.js"><link rel="prefetch" href="/assets/js/50.ca7f27cb.js"><link rel="prefetch" href="/assets/js/6.3a2a2487.js"><link rel="prefetch" href="/assets/js/7.59c4f4c1.js"><link rel="prefetch" href="/assets/js/8.52bdec09.js"><link rel="prefetch" href="/assets/js/9.76c798b3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b27f4404.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/ChernoLogo.png" alt="My Documentations" class="logo"> <span class="site-name can-hide">My Documentations</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Note" class="dropdown-title"><span class="title">Note</span> <span class="arrow down"></span></button> <button type="button" aria-label="Note" class="mobile-dropdown-title"><span class="title">Note</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/note/cs/" class="nav-link">
+  Computer Science
+</a></li><li class="dropdown-item"><!----> <a href="/note/cpp/" class="nav-link router-link-active">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/note/opengl/" class="nav-link">
+  OpenGL
+</a></li><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/hazel/" class="nav-link">
+  Hazel
+</a></div> <a href="https://github.com/kigane/MyBlogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Note" class="dropdown-title"><span class="title">Note</span> <span class="arrow down"></span></button> <button type="button" aria-label="Note" class="mobile-dropdown-title"><span class="title">Note</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/algorithm/" class="nav-link">
+  Algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/note/cs/" class="nav-link">
+  Computer Science
+</a></li><li class="dropdown-item"><!----> <a href="/note/cpp/" class="nav-link router-link-active">
+  C/C++
+</a></li><li class="dropdown-item"><!----> <a href="/note/opengl/" class="nav-link">
+  OpenGL
+</a></li><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/hazel/" class="nav-link">
+  Hazel
+</a></div> <a href="https://github.com/kigane/MyBlogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/note/cpp/" aria-current="page" class="sidebar-link">C++ 小知识</a></li><li><a href="/note/cpp/c.html" class="sidebar-link">C语言</a></li><li><a href="/note/cpp/cpp-random.html" class="sidebar-link">随机数</a></li><li><a href="/note/cpp/file-io.html" aria-current="page" class="active sidebar-link">C/C++ 文件 IO</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note/cpp/file-io.html#c" class="sidebar-link">C</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note/cpp/file-io.html#读写" class="sidebar-link">读写</a></li><li class="sidebar-sub-header"><a href="/note/cpp/file-io.html#临时文件" class="sidebar-link">临时文件</a></li><li class="sidebar-sub-header"><a href="/note/cpp/file-io.html#文件缓冲" class="sidebar-link">文件缓冲</a></li><li class="sidebar-sub-header"><a href="/note/cpp/file-io.html#其他文件操作" class="sidebar-link">其他文件操作</a></li></ul></li></ul></li><li><a href="/note/cpp/macro.html" class="sidebar-link">宏</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="c"><a href="#c" class="header-anchor">#</a> C</h2> <h3 id="读写"><a href="#读写" class="header-anchor">#</a> 读写</h3> <p>C提供两种访问文件的途径：二进制模式和文本模式。二进制模式中打开的文件一个字节都不会变，而文本模式中打开的文件中的行末尾和文件末尾会被映射为C模式(行尾:\n, 文件末尾: EOF)。</p> <p>模式串</p> <ul><li>r 读</li> <li>w 写。如果文件不存在，会创建新文件。如果文件存在，会先删除文件内容。</li> <li>a 写，添加。如果文件不存在，会创建新文件。</li> <li><code>+</code> 后缀，表示以更新模式打开，可读可写。但有一些规则
+<ul><li>从读模式转换到写模式前，需要先调用一个文件定位函数，或遇到EOF</li> <li>从写模式转换到读模式前，必须先调用fflush函数</li></ul></li> <li>b 后缀，表示以二进制模式打开</li> <li>x 后缀，C11</li></ul> <p>stdio.h头文件中包含stdin,stdout,stderr三个标准流文件的文件指针。</p> <ul><li>FILE *fopen(const char *filename, const char *mode);</li> <li>int fclose(FILE *stream);</li> <li>FILE *freopen(const char *filename, const char *mode, FILE *stream); // 将stream流重定向到文件。常用：freopen(&quot;foo&quot;, &quot;w&quot;, stdout);</li></ul> <hr> <ul><li>int putc(int c, FILE *stream); // 向stream写入一个字符c，用int而非char是因为EOF是一个负的整数常量。</li> <li>int fputc(int c, FILE *stream); // 功能同putc。但putc是宏，fputc是函数。通常putc更快。</li> <li>int putchar(int c); // 将一个字符放入stdout</li> <li>int fputs(const char *s, FILE *stream); // 向stream写入一行字符c。不会自动加换行符</li> <li>int puts(const char *s); // 将一行字符放入stdout。会自动加换行符。</li></ul> <hr> <ul><li>int getc(FILE *stream); // 从stream读入一个字符。宏</li> <li>int fgetc(FILE *stream); // 从stream读入一个字符。函数</li> <li>int getchar(void) // 从stdin读入一个字符</li> <li>int ungetc(int c, FILE *stream); // 将一个字符放回stream。只有第一次调用保证会成功。</li> <li>char *fgets(char *s, int n, FILE *stream); // 从stream读入一行字符c。最多读取n-1个。不会丢弃换行符，但可能没读到。</li> <li>char *gets(char *s); // 从stdin读入一行字符。自动丢弃换行符。
+注意：以上get函数在遇到问题时行为一样。遇到文件末尾，返回EOF，并设置流的文件末尾指示器。遇到读错误，返回EOF，并设置流的错误指示器。可用<code>int feof(FILE *fp),int ferror(FILE *fp)</code>函数区分这两种情况。</li></ul> <hr> <p>主要用于二进制流</p> <ul><li>size_t fwrite(const void *ptr, size_t size, size_t elnum, FILE *stream); // 把内存中的数组复制给流。ptr为数组地址，size为数组元素的大小(B)，elnum为数组元素数量。stream为写入的流。返回实际写入的<strong>元素</strong>数量</li> <li>size_t fread(void *ptr, size_t size, size_t elnum, FILE *stream); // 读入。返回值为实际读入的元素数量，应等于elnum</li> <li>不一定非得是数组，结构体也行。</li> <li>示例1: fwrite(arr, sizeof(a[0]), sizeof(a)/sizeof(a[0]), fp); // 写数组</li> <li>示例2: fwrite(&amp;s, sizeof(s), 1, fp); // 写结构体</li></ul> <hr> <p>文件定位(适合二进制流)</p> <ul><li><p>int fseek(FILE *stream, long int offset, int whence);</p> <ul><li>whence SEEK_SET, SEEK_CUR, SEEK_END 代表新位置的计算起点。</li> <li>offset 可以为负。和whence共同确定pos。</li> <li>移动到文件开头 fseek(fp, 0L, SEEK_SET)</li> <li>移动到文件末尾 fseek(fp, 0L, SEEK_END)</li> <li>往回移动10个字节 fseek(fp, -10L, SEEK_CUR)</li></ul></li> <li><p>long int ftell(FILE *stream); // 返回当前pos。错误时，返回-1L，错误码在errno中。0表示文件起始，其他整数表示当前pos所在的字节数。</p></li> <li><p>void rewind(FILE *stream); // 把pos设为0，且会清除fp的错误指示器。 类似fseek(fp, 0L, SEEK_SET)</p></li> <li><p>int fgetpos(FILE *stream, fpos_t *pos); // 用于超大文件。fpos_t是一个结构，可储存超过long int可表示的数的位置。</p></li> <li><p>int fsetpos(FILE *stream, const fpos_t *pos);</p></li></ul> <h3 id="临时文件"><a href="#临时文件" class="header-anchor">#</a> 临时文件</h3> <ul><li>FILE *tmpfile(void); // &quot;wb+&quot;</li> <li>char *tmpnam(char *s); // 写入内容后才生成
+<ul><li>参数为NULL时，会自动生成一个文件名，将文件名存储在静态变量中，并返回其指针。</li> <li>否则，会把文件名复制到程序员提供的字符数组中。L_tmpnam宏为临时文件名的字符数组长度。</li></ul></li></ul> <h3 id="文件缓冲"><a href="#文件缓冲" class="header-anchor">#</a> 文件缓冲</h3> <ul><li>int fflush(FILE *stream); // 强制刷新</li> <li>void setbuf(FILE *stream, char *buf); // 等价于(void) setvbuf(stream, NULL, _IONBF, 0) 或 (void) setvbuf(stream, buf, _IOFBF, BUFSIZ)</li> <li>int setvbuf(FILE *stream, char *buf, int mode, size_t size);
+<ul><li>缓冲mode有三种
+<ul><li>_IOFBF 满缓冲 缓冲区满时刷新。默认设置</li> <li>_IOLBF 行缓冲 没读/写一行就刷新</li> <li>_IONBF 无缓冲 没有缓冲区</li></ul></li> <li>buf 是缓冲区。为NULL时，setvbuf会创建一个size大小的缓冲区。</li> <li>size 是缓冲区的大小(Byte)</li></ul></li></ul> <p>通常，缓冲是后台发生的，向文件写数据时，数据先放入缓冲区。当缓冲区满或关闭文件时，缓冲区会自动flush(即将数据写入磁盘)。</p> <h3 id="其他文件操作"><a href="#其他文件操作" class="header-anchor">#</a> 其他文件操作</h3> <ul><li>int remove(const char *filename);</li> <li>int rename(const char *old, const char *new);</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/note/cpp/cpp-random.html" class="prev">
+        随机数
+      </a></span> <span class="next"><a href="/note/cpp/macro.html">
+        宏
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ebdd7216.js" defer></script><script src="/assets/js/2.f48cadb2.js" defer></script><script src="/assets/js/19.69c2dab7.js" defer></script>
+  </body>
+</html>
