@@ -6,7 +6,7 @@
   <author>
     <name>Leonhardt</name>
   </author>
-  <updated>2021-10-30T06:35:55.288Z</updated>
+  <updated>2021-10-30T10:14:27.611Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://kigane.github.io/atom.xml"/>
   <link rel="alternate" href="https://kigane.github.io/"/>
@@ -26,7 +26,7 @@
     <title type="html">Deep learning in computer vision: A critical review of emerging techniques and application scenarios</title>
     <id>https://kigane.github.io/blog/DL-review-in-CV/</id>
     <link href="https://kigane.github.io/blog/DL-review-in-CV/"/>
-    <updated>2021-10-30T06:36:40.439Z</updated>
+    <updated>2021-10-30T10:14:59.066Z</updated>
     <content type="html"><![CDATA[<h1 id="deep-learning-in-computer-vision-a-critical-review-of-emerging-techniques-and-application-scenarios"> Deep learning in computer vision: A critical review of emerging techniques and application scenarios</h1>
 <p><a href="https://www.sciencedirect.com/science/article/pii/S2666827021000670" target="_blank" rel="noopener noreferrer">原文</a></p>
 <h2 id="abstract"> abstract</h2>
@@ -644,42 +644,6 @@ setup<span>(</span>name<span>=</span><span>'MySheet'</span><span>,</span>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">安装记录</title>
-    <id>https://kigane.github.io/blog/install/</id>
-    <link href="https://kigane.github.io/blog/install/"/>
-    <updated>2021-10-30T06:36:40.447Z</updated>
-    <content type="html"><![CDATA[<h2 id="anaconda"> anaconda</h2>
-<h3 id="常用命令"> 常用命令</h3>
-<ul>
-<li>conda list: 查看安装了哪些包。</li>
-<li>conda env list: 查看当前存在哪些虚拟环境</li>
-<li>conda create -n your_env_name python=X.X: 创建python版本为X.X、名字为your_env_name的虚拟环境。your_env_name文件可以在Anaconda安装目录envs文件夹下找到。</li>
-<li>activate your_env_name: Windows下激活虚拟环境</li>
-<li>deactivate 退出</li>
-<li>Linux下，激活，退出都在开头加一个source</li>
-<li>conda remove -n your_env_name --all: 移除虚拟环境</li>
-<li>conda install package_name: 在当前环境中安装包</li>
-<li>conda install -n your_env_name package_name: 在指定环境中安装包</li>
-<li>update, remove语法和install相同</li>
-<li>conda search pname: 模糊搜索package</li>
-<li>conda search --full-name pname: 全名查找</li>
-<li>conda env export &gt; environment.yml: 导出环境配置</li>
-<li>conda env create -f environment.yml: 导入环境配置</li>
-</ul>
-<h2 id="pytorch"> pytorch</h2>
-<p>https://pytorch.org/get-started/locally/#windows-anaconda</p>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <category term="install"/>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-20T00:00:00.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
     <title type="html">katex 常用写法</title>
     <id>https://kigane.github.io/blog/katex-cheatsheet/</id>
     <link href="https://kigane.github.io/blog/katex-cheatsheet/"/>
@@ -720,6 +684,60 @@ setup<span>(</span>name<span>=</span><span>'MySheet'</span><span>,</span>
       <name>Leonhardt</name>
     </contributor>
     <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">安装记录</title>
+    <id>https://kigane.github.io/blog/install/</id>
+    <link href="https://kigane.github.io/blog/install/"/>
+    <updated>2021-10-30T10:14:59.097Z</updated>
+    <content type="html"><![CDATA[<h2 id="anaconda"> anaconda</h2>
+<h3 id="常用命令"> 常用命令</h3>
+<ul>
+<li>conda list: 查看安装了哪些包。</li>
+<li>conda env list: 查看当前存在哪些虚拟环境</li>
+<li>conda create -n your_env_name python=X.X: 创建python版本为X.X、名字为your_env_name的虚拟环境。your_env_name文件可以在Anaconda安装目录envs文件夹下找到。</li>
+<li>activate your_env_name: Windows下激活虚拟环境</li>
+<li>deactivate 退出</li>
+<li>Linux下，激活，退出都在开头加一个source</li>
+<li>conda remove -n your_env_name --all: 移除虚拟环境</li>
+<li>conda install package_name: 在当前环境中安装包</li>
+<li>conda install -n your_env_name package_name: 在指定环境中安装包</li>
+<li>update, remove语法和install相同</li>
+<li>conda search pname: 模糊搜索package</li>
+<li>conda search --full-name pname: 全名查找</li>
+<li>conda env export &gt; environment.yml: 导出环境配置</li>
+<li>conda env create -f environment.yml: 导入环境配置</li>
+</ul>
+<h2 id="pytorch"> pytorch</h2>
+<p>https://pytorch.org/get-started/locally/#windows-anaconda</p>
+]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <category term="install"/>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-20T00:00:00.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">名词解释</title>
+    <id>https://kigane.github.io/blog/terminology/</id>
+    <link href="https://kigane.github.io/blog/terminology/"/>
+    <updated>2021-10-30T10:14:59.097Z</updated>
+    <content type="html"><![CDATA[<h2 id="dl"> DL</h2>
+<h2 id="dip"> DIP</h2>
+]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <category term="thesis"/>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-09T00:00:00.000Z</published>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
@@ -937,24 +955,6 @@ npx create-vuepress-site [optionalDirectoryName]
       <name>Leonhardt</name>
     </contributor>
     <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">名词解释</title>
-    <id>https://kigane.github.io/blog/terminology/</id>
-    <link href="https://kigane.github.io/blog/terminology/"/>
-    <updated>2021-10-30T06:36:40.594Z</updated>
-    <content type="html"><![CDATA[<h2 id="dl"> DL</h2>
-<h2 id="dip"> DIP</h2>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <category term="thesis"/>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-09T00:00:00.000Z</published>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
@@ -1650,6 +1650,41 @@ site = {{$site}}</p>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
+    <title type="html">Project home</title>
+    <id>https://kigane.github.io/home/</id>
+    <link href="https://kigane.github.io/home/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<p>This is an example of a normal homepage. You can place your main content here.</p>
+<p>To use this layout, you need to set <code>home: true</code> in the page front matter.</p>
+<p>For related descriptions of configuration items, please see <a href="https://vuepress-theme-hope.github.io/guide/layout/home/" target="_blank" rel="noopener noreferrer">Project HomePage Layout Config</a>.</p>
+]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">Intro Page</title>
+    <id>https://kigane.github.io/intro/</id>
+    <link href="https://kigane.github.io/intro/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="intro-page"> Intro Page</h1>
+<p>Place your introducation and profile here.</p>
+]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
     <title type="html">Hazel</title>
     <id>https://kigane.github.io/hazel/</id>
     <link href="https://kigane.github.io/hazel/"/>
@@ -1719,41 +1754,6 @@ site = {{$site}}</p>
 <li>OnEvent() 在反向传播事件</li>
 </ul>
 <h2 id="inputsystem"> InputSystem</h2>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">Intro Page</title>
-    <id>https://kigane.github.io/intro/</id>
-    <link href="https://kigane.github.io/intro/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="intro-page"> Intro Page</h1>
-<p>Place your introducation and profile here.</p>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">Project home</title>
-    <id>https://kigane.github.io/home/</id>
-    <link href="https://kigane.github.io/home/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<p>This is an example of a normal homepage. You can place your main content here.</p>
-<p>To use this layout, you need to set <code>home: true</code> in the page front matter.</p>
-<p>For related descriptions of configuration items, please see <a href="https://vuepress-theme-hope.github.io/guide/layout/home/" target="_blank" rel="noopener noreferrer">Project HomePage Layout Config</a>.</p>
 ]]></content>
     <author>
       <name>Leonhardt</name>
@@ -2039,99 +2039,6 @@ Sekiro
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><p>PS: float在通过<code>...</code>传递时，会被提升为double。如果用float接收，程序会abort。</p>
 ]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">随机数</title>
-    <id>https://kigane.github.io/note/cpp/cpp-random/</id>
-    <link href="https://kigane.github.io/note/cpp/cpp-random/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="线性同余法"> 线性同余法</h2>
-<div><pre><code><span>unsigned</span> <span>int</span> <span>PRNG</span><span>(</span><span>)</span> <span>// pseudo-random number generator</span>
-<span>{</span>
-    <span>static</span> <span>unsigned</span> <span>int</span> seed<span>{</span><span>5323</span><span>}</span><span>;</span>
-    seed <span>=</span> <span>8253729</span> <span>*</span> seed <span>+</span> <span>2396403</span><span>;</span>
-    <span>return</span> seed <span>%</span> <span>32768</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>原理大致如上。这样简单的随机数不够&quot;好&quot;。</p>
-<h2 id="c-标准库中的随机数生成"> C 标准库中的随机数生成</h2>
-<p>原理就是线性同余法，不同编译器实现略有不同，且大多有缺陷。仅供学习使用。</p>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;cstdlib></span> <span>// for std::rand() and std::srand()</span></span>
-<span><span>#</span><span>include</span> <span>&lt;ctime></span> <span>// for std::time()</span></span>
-
-<span>void</span> <span>PrintNumbersWithRand</span><span>(</span><span>)</span>
-<span>{</span>
-    std<span>::</span><span>srand</span><span>(</span><span><span>static_cast</span><span><span>&lt;</span><span>unsigned</span> <span>int</span><span>></span></span></span><span>(</span>std<span>::</span><span>time</span><span>(</span><span>nullptr</span><span>)</span><span>)</span><span>)</span><span>;</span>
-    <span>// 因为某些编译器中rand算法的缺陷，导致第一个随机数大概率相同，所以这里先调用一次去掉第一个</span>
-    std<span>::</span><span>rand</span><span>(</span><span>)</span><span>;</span>
-
-    <span>// 打印 100 个随机数</span>
-    <span>for</span> <span>(</span><span>int</span> count<span>{</span><span>1</span><span>}</span><span>;</span> count <span>&lt;=</span> <span>100</span><span>;</span> <span>++</span>count<span>)</span>
-    <span>{</span>
-        std<span>::</span>cout <span>&lt;&lt;</span> std<span>::</span><span>rand</span><span>(</span><span>)</span> <span>&lt;&lt;</span> <span>'\t'</span><span>;</span>
-
-        <span>if</span> <span>(</span>count <span>%</span> <span>5</span> <span>==</span> <span>0</span><span>)</span>
-            std<span>::</span>cout <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="一个好的伪随机数生成器-prng-的标准"> 一个好的伪随机数生成器(PRNG)的标准</h2>
-<ul>
-<li>应该以大致相同的概率生成每个数字(生成六个数字5,6,7,8,9的概率大致相等)，即数字分布均匀性。</li>
-<li>生成序列中的下一个数字应该是不可预测。(num = num + 1)</li>
-<li>生成的数字序列应该有良好的空间分布(生成0-9之间的随机数，不能只生成5,6,7,8,9，生成的数落在大，中，小范围内的概率也应大致相当)，即空间分布均匀性。</li>
-<li>所有的PRNG都有周期性。通常，周期越大越好。</li>
-</ul>
-<h2 id="更好的随机数生成器"> 更好的随机数生成器</h2>
-<p>使用梅森旋转演算法(Mersenne Twister)。在C++11中引入。</p>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
-<span><span>#</span><span>include</span> <span>&lt;random></span> <span>// for std::mt19937</span></span>
-<span><span>#</span><span>include</span> <span>&lt;ctime></span> <span>// for std::time</span></span>
- 
-<span>int</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-	<span>// 初始化 mersenne twister，将时间作为 seed。</span>
-	std<span>::</span>mt19937 mersenne<span>{</span> <span><span>static_cast</span><span><span>&lt;</span>std<span>::</span>mt19937<span>::</span>result_type<span>></span></span></span><span>(</span>std<span>::</span><span>time</span><span>(</span><span>nullptr</span><span>)</span><span>)</span> <span>}</span><span>;</span>
- 
-	<span>// 生成 1-6 之间随机整数的PRNG</span>
-	std<span>::</span>uniform_int_distribution die<span>{</span> <span>1</span><span>,</span> <span>6</span> <span>}</span><span>;</span> <span>// C++17</span>
-	<span>// std::uniform_int_distribution&lt;> die{ 1, 6 }; // C++11</span>
- 
-	<span>for</span> <span>(</span><span>int</span> count<span>{</span> <span>1</span> <span>}</span><span>;</span> count <span>&lt;=</span> <span>48</span><span>;</span> <span>++</span>count<span>)</span>
-	<span>{</span>
-		std<span>::</span>cout <span>&lt;&lt;</span> <span>die</span><span>(</span>mersenne<span>)</span> <span>&lt;&lt;</span> <span>'\t'</span><span>;</span>
-
-		<span>if</span> <span>(</span>count <span>%</span> <span>6</span> <span>==</span> <span>0</span><span>)</span>
-			std<span>::</span>cout <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
-	<span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><h2 id="effolkronium-s-random-library"> Effolkronium’s random library.</h2>
-<p>一个随机数库(纯头文件)。提供了便于使用的API。</p>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
-<span><span>#</span><span>include</span> <span>"random.hpp"</span></span>
- 
-<span>// get base random alias which is auto seeded and has static API and internal state</span>
-<span>using</span> Random <span>=</span> effolkronium<span>::</span>random_static<span>;</span>
- 
-<span>int</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-	std<span>::</span>cout <span>&lt;&lt;</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1</span><span>,</span> <span>6</span><span>)</span> <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
-	std<span>::</span>cout <span>&lt;&lt;</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1</span><span>,</span> <span>10</span><span>)</span> <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
-    <span>// decltype(val) is long double</span>
-	<span>auto</span> val <span>=</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1.l</span><span>,</span> <span>-</span><span>1.l</span><span>)</span>
-	<span>return</span> <span>0</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -2520,6 +2427,99 @@ FILE <span>*</span><span>popen</span><span>(</span><span>const</span> <span>char
 <li>popen() type=w时，向返回的流中写相当于向command的标准输入写。type=r时，从流中读，相当于从command的标准输出中读。</li>
 </ul>
 ]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">随机数</title>
+    <id>https://kigane.github.io/note/cpp/cpp-random/</id>
+    <link href="https://kigane.github.io/note/cpp/cpp-random/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="线性同余法"> 线性同余法</h2>
+<div><pre><code><span>unsigned</span> <span>int</span> <span>PRNG</span><span>(</span><span>)</span> <span>// pseudo-random number generator</span>
+<span>{</span>
+    <span>static</span> <span>unsigned</span> <span>int</span> seed<span>{</span><span>5323</span><span>}</span><span>;</span>
+    seed <span>=</span> <span>8253729</span> <span>*</span> seed <span>+</span> <span>2396403</span><span>;</span>
+    <span>return</span> seed <span>%</span> <span>32768</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>原理大致如上。这样简单的随机数不够&quot;好&quot;。</p>
+<h2 id="c-标准库中的随机数生成"> C 标准库中的随机数生成</h2>
+<p>原理就是线性同余法，不同编译器实现略有不同，且大多有缺陷。仅供学习使用。</p>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;cstdlib></span> <span>// for std::rand() and std::srand()</span></span>
+<span><span>#</span><span>include</span> <span>&lt;ctime></span> <span>// for std::time()</span></span>
+
+<span>void</span> <span>PrintNumbersWithRand</span><span>(</span><span>)</span>
+<span>{</span>
+    std<span>::</span><span>srand</span><span>(</span><span><span>static_cast</span><span><span>&lt;</span><span>unsigned</span> <span>int</span><span>></span></span></span><span>(</span>std<span>::</span><span>time</span><span>(</span><span>nullptr</span><span>)</span><span>)</span><span>)</span><span>;</span>
+    <span>// 因为某些编译器中rand算法的缺陷，导致第一个随机数大概率相同，所以这里先调用一次去掉第一个</span>
+    std<span>::</span><span>rand</span><span>(</span><span>)</span><span>;</span>
+
+    <span>// 打印 100 个随机数</span>
+    <span>for</span> <span>(</span><span>int</span> count<span>{</span><span>1</span><span>}</span><span>;</span> count <span>&lt;=</span> <span>100</span><span>;</span> <span>++</span>count<span>)</span>
+    <span>{</span>
+        std<span>::</span>cout <span>&lt;&lt;</span> std<span>::</span><span>rand</span><span>(</span><span>)</span> <span>&lt;&lt;</span> <span>'\t'</span><span>;</span>
+
+        <span>if</span> <span>(</span>count <span>%</span> <span>5</span> <span>==</span> <span>0</span><span>)</span>
+            std<span>::</span>cout <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="一个好的伪随机数生成器-prng-的标准"> 一个好的伪随机数生成器(PRNG)的标准</h2>
+<ul>
+<li>应该以大致相同的概率生成每个数字(生成六个数字5,6,7,8,9的概率大致相等)，即数字分布均匀性。</li>
+<li>生成序列中的下一个数字应该是不可预测。(num = num + 1)</li>
+<li>生成的数字序列应该有良好的空间分布(生成0-9之间的随机数，不能只生成5,6,7,8,9，生成的数落在大，中，小范围内的概率也应大致相当)，即空间分布均匀性。</li>
+<li>所有的PRNG都有周期性。通常，周期越大越好。</li>
+</ul>
+<h2 id="更好的随机数生成器"> 更好的随机数生成器</h2>
+<p>使用梅森旋转演算法(Mersenne Twister)。在C++11中引入。</p>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
+<span><span>#</span><span>include</span> <span>&lt;random></span> <span>// for std::mt19937</span></span>
+<span><span>#</span><span>include</span> <span>&lt;ctime></span> <span>// for std::time</span></span>
+ 
+<span>int</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+	<span>// 初始化 mersenne twister，将时间作为 seed。</span>
+	std<span>::</span>mt19937 mersenne<span>{</span> <span><span>static_cast</span><span><span>&lt;</span>std<span>::</span>mt19937<span>::</span>result_type<span>></span></span></span><span>(</span>std<span>::</span><span>time</span><span>(</span><span>nullptr</span><span>)</span><span>)</span> <span>}</span><span>;</span>
+ 
+	<span>// 生成 1-6 之间随机整数的PRNG</span>
+	std<span>::</span>uniform_int_distribution die<span>{</span> <span>1</span><span>,</span> <span>6</span> <span>}</span><span>;</span> <span>// C++17</span>
+	<span>// std::uniform_int_distribution&lt;> die{ 1, 6 }; // C++11</span>
+ 
+	<span>for</span> <span>(</span><span>int</span> count<span>{</span> <span>1</span> <span>}</span><span>;</span> count <span>&lt;=</span> <span>48</span><span>;</span> <span>++</span>count<span>)</span>
+	<span>{</span>
+		std<span>::</span>cout <span>&lt;&lt;</span> <span>die</span><span>(</span>mersenne<span>)</span> <span>&lt;&lt;</span> <span>'\t'</span><span>;</span>
+
+		<span>if</span> <span>(</span>count <span>%</span> <span>6</span> <span>==</span> <span>0</span><span>)</span>
+			std<span>::</span>cout <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
+	<span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><h2 id="effolkronium-s-random-library"> Effolkronium’s random library.</h2>
+<p>一个随机数库(纯头文件)。提供了便于使用的API。</p>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
+<span><span>#</span><span>include</span> <span>"random.hpp"</span></span>
+ 
+<span>// get base random alias which is auto seeded and has static API and internal state</span>
+<span>using</span> Random <span>=</span> effolkronium<span>::</span>random_static<span>;</span>
+ 
+<span>int</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+	std<span>::</span>cout <span>&lt;&lt;</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1</span><span>,</span> <span>6</span><span>)</span> <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
+	std<span>::</span>cout <span>&lt;&lt;</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1</span><span>,</span> <span>10</span><span>)</span> <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
+    <span>// decltype(val) is long double</span>
+	<span>auto</span> val <span>=</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1.l</span><span>,</span> <span>-</span><span>1.l</span><span>)</span>
+	<span>return</span> <span>0</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -3345,20 +3345,6 @@ sigjmp_buf buf<span>;</span>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">计算机概述</title>
-    <id>https://kigane.github.io/note/cs/</id>
-    <link href="https://kigane.github.io/note/cs/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
     <title type="html">编译器相关</title>
     <id>https://kigane.github.io/note/cs/compiler/</id>
     <link href="https://kigane.github.io/note/cs/compiler/"/>
@@ -3391,6 +3377,524 @@ sigjmp_buf buf<span>;</span>
 <ul>
 <li>objdump -d main.o</li>
 </ul>
+]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">gdb</title>
+    <id>https://kigane.github.io/note/cs/gdb-cheatsheet/</id>
+    <link href="https://kigane.github.io/note/cs/gdb-cheatsheet/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="gdb-cheatsheet"> gdb cheatsheet</h2>
+<p><a href="https://sourceware.org/gdb/onlinedocs/gdb/index.html#SEC_Contents" target="_blank" rel="noopener noreferrer">gdb 文档</a></p>
+<ul>
+<li>-g: 生成debugging symbols，使得调试更高效。-ggdb，包含gdb规定的符号。</li>
+</ul>
+<p>gdb [--args] program [args]进入debug模式</p>
+<ul>
+<li>set args &lt;args&gt;</li>
+<li>run: 执行程序</li>
+<li>kill: 关闭执行的程序</li>
+<li>help</li>
+</ul>
+<p>检查栈</p>
+<ul>
+<li>backtrace/where | bt: 查看调用栈</li>
+<li>backtrace/where full: 查看调用栈，也打印栈帧中的变量</li>
+<li>frame frame#: 查看指定帧(backtrace列出的信息开头的数字)</li>
+</ul>
+<p>变量和内存</p>
+<ul>
+<li>x/nfu addr: examine addr。查看指定地址的值
+<ul>
+<li>n: 要打印的unit数量</li>
+<li>f: format</li>
+<li>u: unit (b:Byte 1B, h:Half-word 2B, w:Word 4B, g:Giant word 8B)</li>
+</ul>
+</li>
+<li>p &lt;what&gt;: 查看变量的值</li>
+<li>p arr[n]@m: 查看数组arr从n开始数，共m个元素</li>
+<li>print/format &lt;what&gt;: 查看变量的值</li>
+<li>display/format &lt;what&gt;: 在每个step指令后打印变量的值</li>
+<li>undisplay display#: 不再监视</li>
+<li>enable/disable display#</li>
+<li>&lt;what&gt;
+<ul>
+<li>expressions</li>
+<li>filename::variable_name</li>
+<li>function::variable_name</li>
+<li>{type}address : 在address处的内容，解释为C的type类型。</li>
+<li><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.85396em;vertical-align:-0.19444em;"></span><span>re</span><span style="margin-right:0.03588em;">g</span><span>i</span><span>s</span><span>t</span><span style="margin-right:0.02778em;">er</span><span style="margin-right:0.2777777777777778em;"></span><span>:</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:0.68333em;vertical-align:0em;"></span><span>有名字的寄存器，如</span></span></span></span>esp--栈指针，<span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span>e</span><span>b</span><span>p</span><span style="margin-right:0.2222222222222222em;"></span><span>−</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:0.76666em;vertical-align:-0.08333em;"></span><span>−</span><span>帧基址，</span></span></span></span>eip--指令指针</li>
+</ul>
+</li>
+<li>format
+<ul>
+<li>a: 指针</li>
+<li>c: 读为int，打印为char</li>
+<li>d: 有符号int</li>
+<li>f: 浮点数</li>
+<li>o: 八进制int</li>
+<li>s: Try to treat as C string</li>
+<li>t: 二进制int</li>
+<li>u: 无符号int</li>
+<li>x: 十六进制int</li>
+</ul>
+</li>
+</ul>
+<p>查看源码</p>
+<ul>
+<li>list line_number: 查看101行附件10行</li>
+<li>list from,to: 查看从from到to行</li>
+<li>list -: 查看前10行</li>
+<li>list &lt;where&gt;</li>
+</ul>
+<p>断点</p>
+<ul>
+<li>break where: 在指定位置设置一个断点(会输出断点所在具体位置，注意到断点有序号，Breakpoint 1 at 0x29fa0: file main.cc, line 52.)</li>
+<li>where
+<ul>
+<li>function_name</li>
+<li>line_number: 当前文件的某行</li>
+<li>file:line_number</li>
+</ul>
+</li>
+<li>delete breakpoint#: 删除指定断点</li>
+<li>enable breakpoint</li>
+<li>disable breakpoint</li>
+<li>clear: 删除所有断点</li>
+<li>condition 1 var==666: 仅当变量var的值为666时，才触发断点1。</li>
+<li>break/watch &lt;where&gt; if &lt;condition&gt;</li>
+<li>watch where // breakpoint 和 watchpoint 共用编号。</li>
+<li>watchpoint 有两种实现方式，具体取决于你的系统。软件实现方式为在每一步执行后都测试一次expr的值，会很慢。硬件方式更快。</li>
+<li>watch [-l|-location] expr [thread thread-id] [mask maskvalue]  为expr设置一个监视点。如果expr的值改变了，则停止执行。
+<ul>
+<li>thread thread-id 指定某个线程，只有该线程修改expr的值时才停止执行。(仅限硬件实现)</li>
+<li>-l 告诉gdb，如果expr的结果是个地址，则查看该地址的内容。如果结果不是地址，则输出一个错误。</li>
+<li>mask maskvalue 默认开启-l。maskvalue用于同时查看多数地址。 watch foo mask 0xffffff00？</li>
+</ul>
+</li>
+<li>rwatch expr 在expr被程序读取时break</li>
+<li>awatch expr 在expr被读取或被修改时都break</li>
+<li>delete/enable/disable watchpoint#</li>
+</ul>
+<p>步进</p>
+<ul>
+<li>gdb的一个有用的特性：如果直接按回车，会重复执行上一个命令</li>
+<li>step: 到下一行。如果有函数会进入函数</li>
+<li>next: 到下一行。不会进入函数</li>
+<li>finish: 将当前函数执行完</li>
+<li>continue | cont: 继续正常执行</li>
+<li>quit: 退出</li>
+</ul>
+<p>反向执行</p>
+<ul>
+<li>record 反向执行的前置条件</li>
+<li>reverse-step</li>
+<li>reverse-next</li>
+<li>reverse-continue</li>
+<li>reverse-finish 回到函数执行前</li>
+<li>set exec-direction reverse 所有next,step...全变为逆向操作</li>
+<li>set exec-direction forward 恢复正常</li>
+</ul>
+<p>信息</p>
+<ul>
+<li>info args: 当前栈帧的函数参数</li>
+<li>info breakpoints/watchpoints</li>
+<li>info locals: 当前栈帧的本地变量</li>
+<li>info sharedlibrary: 列出已加载的动态库</li>
+<li>info signals: 列出所有信号和他们当前是如何处理的</li>
+<li>info threads</li>
+<li>show directories: 列出GDB搜索涉及到的源文件</li>
+<li>show listsize</li>
+<li>whatis variable_name: 输出变量的类型</li>
+</ul>
+<h2 id="gdb-tui"> gdb-tui</h2>
+<p>标志</p>
+<ul>
+<li>
+<p><code>&gt;</code> 当前执行的行</p>
+</li>
+<li>
+<p>断点表示 [b|B][+|-]</p>
+<ul>
+<li><code>b</code> 表示还没到的断点</li>
+<li><code>B</code> 表示至少到过一次的断点</li>
+<li><code>+</code> 表示 enabled</li>
+<li><code>-</code> 表示 disabled</li>
+</ul>
+</li>
+<li>
+<p>C-x a/A/C-a: 进入或离开TUI模式</p>
+</li>
+<li>
+<p>C-x 1: 保留一个窗口</p>
+</li>
+<li>
+<p>C-x 2: 保留两个窗口</p>
+</li>
+<li>
+<p>C-x o: 切换当前活动的窗口</p>
+</li>
+<li>
+<p>C-x s: 切换到TUI的单键模式</p>
+</li>
+<li>
+<p>PgUp,PgDn,上下左右可用于操作活动窗口。</p>
+</li>
+<li>
+<p>当焦点不在cmd窗口时，C-p相当于Up,C-b相当于Left,C-f相当于Right,C-n相当于Down</p>
+</li>
+<li>
+<p>C-l: 刷新窗口</p>
+</li>
+</ul>
+<p>单键模式</p>
+<ul>
+<li>s: step</li>
+<li>i: step Into</li>
+<li>n: next</li>
+<li>o: step Over</li>
+<li>r: run</li>
+<li>c: continue</li>
+<li>f: finish</li>
+<li>d: down 在frame stack中向下一层</li>
+<li>u: up 在frame stack中向上一层</li>
+<li>q: 退出单键模式</li>
+<li>v: info local</li>
+<li>w: where</li>
+</ul>
+<p>TUI命令</p>
+<ul>
+<li>
+<p>tui enable: 进入上次使用的tui窗口模式，或默认窗口模式。</p>
+</li>
+<li>
+<p>tui disable</p>
+</li>
+<li>
+<p>tui new-layout name window weight [window weight ...]: 新建一个名为name的TUI窗口布局。</p>
+<ul>
+<li>可以使用layout name使用该布局</li>
+<li>window 有四种 src,asm,regs,cmd</li>
+<li>weight 是权重，用于确定每个窗口占屏幕的比例。status的权重应总是设为0</li>
+<li>默认是从上到下分割。加-horizontal可改为从左到右分割。</li>
+<li>示例1：(gdb) tui new-layout example src 1 regs 1 status 0 cmd 1</li>
+<li>示例2：(gdb) tui new-layout example {-horizontal src 1 asm 1} 2 status 0 cmd 1</li>
+<li>9.2版本还没有实装</li>
+</ul>
+</li>
+<li>
+<p>layout name：使用内置布局或新建的布局</p>
+<ul>
+<li>prev: 前一个</li>
+<li>next: 后一个</li>
+<li>src: 显示源码和命令窗口</li>
+<li>asm：显示汇编和命令窗口</li>
+<li>split：显示源码，汇编和命令窗口</li>
+<li>regs：显示寄存器窗口。如果在src模式则上为寄存器，中为源码。如果在split和asm模式，则上为寄存器，中为汇编。</li>
+</ul>
+</li>
+<li>
+<p>focus name: 改变当前活动窗口。</p>
+</li>
+<li>
+<p>refresh: 刷新窗口</p>
+</li>
+<li>
+<p>winheight name +count： 改变窗口大小</p>
+</li>
+<li>
+<p>winheight name -count： 改变窗口大小</p>
+</li>
+<li>
+<p>tui reg group：显示不同的寄存器分组</p>
+<ul>
+<li>general: 通用寄存器</li>
+<li>float: 浮点数寄存器</li>
+<li>system: 系统寄存器</li>
+<li>vector: 向量寄存器</li>
+<li>all</li>
+</ul>
+</li>
+<li>
+<p>set tui compact-source [on|off]：设置源码的行号和代码间的距离。on-仅一个空格，off-一个tab。</p>
+</li>
+</ul>
+<h2 id="小技巧"> 小技巧</h2>
+<ul>
+<li>对一个大数组，p arr[n]@m，查看数组arr从n开始数，共m个元素</li>
+<li>gdb 命令输出在src模式下可见部分太小了。可以使用
+<ul>
+<li>set trace-commands on</li>
+<li>set logging on</li>
+<li>cd where/gdb/is/running</li>
+<li>tail -f -n 30 gdb.txt</li>
+<li>less +F gdb.txt 可以代替tail。 ctrl+c，退出等待输入模式，进入普通less模式，shift+f进入。</li>
+<li>进入TUI模式后，日志会停止，这是个gdb bug。先set logging off，再set logging on即可正常显示。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">git</title>
+    <id>https://kigane.github.io/note/cs/git/</id>
+    <link href="https://kigane.github.io/note/cs/git/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="资源"> 资源</h2>
+<p><a href="https://learngitbranching.js.org/?locale=zh_CN" target="_blank" rel="noopener noreferrer">交互式Git入门网站 强烈推荐!!!</a><br>
+<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener noreferrer">Pro Git 中文版</a><br>
+<a href="https://ohshitgit.com/" target="_blank" rel="noopener noreferrer">Oh Shit, Git!?! 简短的介绍了如何从Git错误中恢复</a></p>
+<p><a href="https://eagain.net/articles/git-for-computer-scientists/" target="_blank" rel="noopener noreferrer">Git 的数据模型</a><br>
+<a href="https://jwiegley.github.io/git-from-the-bottom-up/1-Repository/1-directory-content-tracking.html" target="_blank" rel="noopener noreferrer">Git from the Bottom Up</a></p>
+<h2 id="git-的数据模型"> Git 的数据模型</h2>
+<h3 id="快照"> 快照</h3>
+<p>在Git的术语里，文件被称作Blob对象，也就是一组数据。目录则被称之为“树”，它将名字与 Blob 对象或树对象进行映射（使得目录中可以包含其他目录）。快照则是被追踪的最顶层的树。</p>
+<div><pre><code>&amp;lt;root&gt; (tree)
+|
++- foo (tree)
+|  |
+|  + bar.txt (blob, contents = &quot;hello world&quot;)
+|
++- baz.txt (blob, contents = &quot;git is wonderful&quot;)
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><p>这个顶层的树包含了两个元素，一个名为 “foo” 的树，以及一个 blob 对象 “baz.txt”。</p>
+<h3 id="历史记录"> 历史记录</h3>
+<p>在 Git 中，历史记录是一个由快照组成的有向无环图。这代表 Git 中的每个快照都有一系列的“父辈”，也就是其之前的一系列快照。注意，快照具有多个“父辈”而非一个，因为某个快照可能由多个父辈而来。例如，经过合并后的两条分支。</p>
+<p>在 Git 中，这些快照被称为“提交”。</p>
+<h3 id="数据模型的伪码表示"> 数据模型的伪码表示</h3>
+<div><pre><code><span>//</span> 文件就是一组数据
+<span>type</span> blob <span>=</span> array<span>&lt;</span>byte<span>></span>
+
+<span>//</span> 一个包含文件和目录的目录
+<span>type</span> tree <span>=</span> <span>map</span><span>&lt;</span>string<span>,</span> tree <span>|</span> blob<span>></span>
+
+<span>//</span> 每个提交都包含一个父辈，元数据和顶层树
+<span>type</span> commit <span>=</span> struct <span>{</span>
+    parent<span>:</span> array<span>&lt;</span>commit<span>></span>
+    author<span>:</span> string
+    message<span>:</span> string
+    snapshot<span>:</span> tree
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="对象和内存寻址"> 对象和内存寻址</h3>
+<div><pre><code><span>//</span> git中的对象类型
+<span>type</span> <span>object</span> <span>=</span> blob <span>|</span> tree <span>|</span> commit
+
+objects <span>=</span> <span>map</span><span>&lt;</span>string<span>,</span> <span>object</span><span>></span>
+
+<span>//</span> Git 在储存数据时，所有的对象都会基于它们的 SHA<span>-</span><span>1</span> 哈希 进行寻址
+<span>def</span> <span>store</span><span>(</span><span>object</span><span>)</span><span>:</span>
+    <span>id</span> <span>=</span> sha1<span>(</span><span>object</span><span>)</span>
+    objects<span>[</span><span>id</span><span>]</span> <span>=</span> <span>object</span>
+
+<span>def</span> <span>load</span><span>(</span><span>id</span><span>)</span><span>:</span>
+    <span>return</span> objects<span>[</span><span>id</span><span>]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h3 id="引用"> 引用</h3>
+<p>现在，所有的快照都可以通过它们的 SHA-1 哈希值来标记了。但这也太不方便了，谁也记不住一串 40 位的十六进制字符。(Git对哈希的处理很智能。你只需要提供能够唯一标识提交记录的前几个字符即可。但还是很不方便)</p>
+<p>针对这一问题，Git 的解决方法是给这些哈希值赋予人类可读的名字，也就是引用（references）。<strong>引用是指向提交的指针</strong>。与对象不同的是，它是可变的（引用可以被更新，指向新的提交）。例如，master 引用通常会指向主分支的最新一次提交。</p>
+<div><pre><code>references <span>=</span> <span>map</span><span>&lt;</span>string<span>,</span> string<span>></span>
+
+<span>def</span> <span>update_reference</span><span>(</span>name<span>,</span> <span>id</span><span>)</span><span>:</span>
+    references<span>[</span>name<span>]</span> <span>=</span> <span>id</span>
+
+<span>def</span> <span>read_reference</span><span>(</span>name<span>)</span><span>:</span>
+    <span>return</span> references<span>[</span>name<span>]</span>
+
+<span>def</span> <span>load_reference</span><span>(</span>name_or_id<span>)</span><span>:</span>
+    <span>if</span> name_or_id <span>in</span> references<span>:</span>
+        <span>return</span> load<span>(</span>references<span>[</span>name_or_id<span>]</span><span>)</span>
+    <span>else</span><span>:</span>
+        <span>return</span> load<span>(</span>name_or_id<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>通常情况下，我们会想要知道“我们当前所在位置”，并将其标记下来。这样当我们创建新的快照的时候，我们就可以知道它的相对位置（如何设置它的“父辈”）。在 Git 中，我们当前的位置有一个特殊的索引，它就是 “HEAD”。</p>
+<p>如果想看 HEAD 指向，可以通过 cat .git/HEAD 查看， 如果 HEAD 指向的是一个引用，还可以用 git symbolic-ref HEAD 查看它的指向。</p>
+<h3 id="仓库"> 仓库</h3>
+<p>Git仓库就是对象(文件，目录，提交)和引用(分支，HEAD, hash, tag)。</p>
+<p>在硬盘上，Git仅存储对象和引用：因为其数据模型仅包含这些东西。所有的 git 命令都对应着对提交树的操作，例如增加对象，增加或删除引用。</p>
+<h2 id="相对引用"> 相对引用</h2>
+<ul>
+<li>使用 ref^ 向上移动1个提交记录(ref^^,2个)</li>
+<li>使用 ref~&lt;num&gt; 向上移动多个提交记录，如 ~3(1也可以省略)</li>
+<li>应用：移动分支，使用-f选项让分支指向另一个提交。例如:<code>git branch -f main HEAD~3</code></li>
+<li>^&lt;num&gt;: 如果父节点不止一个，ref<sup>就指向产生该节点(在这里merge的)的父节点，ref</sup>2就指向另一个节点</li>
+<li>链式移动: <code>git checkout ~^2~3</code></li>
+</ul>
+<h2 id="暂存区"> 暂存区</h2>
+<p>Git 中还包括一个和数据模型完全不相关的概念，但它确是创建提交的接口的一部分。允许您指定下次快照中要包括那些改动。</p>
+<p>使用场景：您开发了两个独立的特性，然后希望创建两个独立的提交，其中第一个提交仅包含第一个特性，而第二个提交仅包含第二个特性。</p>
+<h2 id="tag"> tag</h2>
+<p><strong>永远指向某个提交记录的标识</strong>。通常软件发布新的大版本，或者是修正一些重要的Bug或是增加了某些新特性这种重要的修改可以添加一个tag。</p>
+<p>tag可以(在某种程度上 —— 因为标签可以被删除后重新在另外一个位置创建同名的标签)永久地将某个特定的提交命名为里程碑，然后就可以像分支一样引用了。</p>
+<p>更难得的是，它们并不会随着新的提交而移动。你也不能检出到某个标签上面进行修改提交，它就像是提交树上的一个锚点，标识了某个特定的位置。</p>
+<div><pre><code><span>git</span> tag tagName refspec <span># 在refspec提交上建立一个标签tagName</span>
+<span>git</span> tag tagName <span># 在HEAD指向的提交上建立一个标签</span>
+<span>git</span> describe refspec <span># 结果格式为tagName_distance_ghash，tagName是离refspec最近的tag的名称，distance是refspec离tag的距离，hash是refspec hash值的前几位。</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="cheatsheet"> cheatsheet</h2>
+<p>Git中“refspec” 是一个自造的词，意思是Git能识别的位置(比如分支foo或者HEAD~1)。如果需要refspec参数缺省为HEAD。</p>
+<p>基础</p>
+<ul>
+<li>git help &lt;command&gt;: 获取 git 命令的帮助信息</li>
+<li>git init: 创建一个新的 git 仓库，其数据会存放在一个名为 .git 的目录下</li>
+<li>git status: 显示当前的仓库状态</li>
+<li>git add &lt;filename&gt;: 添加文件到暂存区</li>
+<li>git commit: 创建一个新的提交</li>
+<li>git commit --allow-empty: 创建一个新的提交，允许没有修改</li>
+<li>git log: 显示历史日志</li>
+<li>git log --author who: 显示who提交的历史日志</li>
+<li>git log --all --graph --decorate: 可视化历史记录（有向无环图）</li>
+<li>git diff &lt;filename&gt;: 显示与暂存区文件的差异</li>
+<li>git diff &lt;revision&gt; &lt;filename&gt;: 显示某个文件两个版本之间的差异</li>
+<li>git checkout &lt;revision&gt;: 更新 HEAD 和目前的分支</li>
+</ul>
+<p>分支和合并</p>
+<ul>
+<li>git branch: 显示分支</li>
+<li>git branch &lt;name&gt;: 创建分支</li>
+<li>git checkout -b &lt;name&gt;: 创建分支并切换到该分支</li>
+<li>git merge refspec: 合并到当前分支</li>
+<li>git mergetool: 使用工具来处理合并冲突</li>
+<li>git rebase: 将一系列补丁变基（rebase）为新的基线</li>
+</ul>
+<p>远端操作</p>
+<ul>
+<li>git remote: 列出远端</li>
+<li>git remote add &lt;name&gt; &lt;url&gt;: 添加一个远端</li>
+<li>git push &lt;remote&gt; &lt;local branch&gt;:&lt;remote branch&gt;: 将对象传送至远端并更新远端引用</li>
+<li>git branch --set-upstream-to=&lt;remote&gt;/&lt;remote branch&gt;: 创建本地和远端分支的关联关系</li>
+<li>git fetch: 从远端获取对象/索引</li>
+<li>git pull: 相当于 git fetch; git merge</li>
+<li>git clone: 从远端下载仓库</li>
+</ul>
+<p>撤销</p>
+<ul>
+<li>git commit --amend: 编辑提交的内容或信息。在提交树中HEAD所指节点的父节点下生成一个新的commit节点，并指向新的commit节点，原节点的子节点不会保留。所以最好只对叶节点使用 --amend.</li>
+<li>git reset HEAD~1: 撤销最近一次commit，在reset后所做的变更还在，但是处于未加入暂存区状态。适合在本地修改。</li>
+<li>git revert refspec: 会commit一次，将最近一次commit的修改撤销。适合多人协作时，撤销已push的修改。</li>
+<li>git checkout -- &lt;file&gt;: 丢弃修改</li>
+</ul>
+<p>Git 高级操作</p>
+<ul>
+<li>git config: Git 是一个 高度可定制的 工具</li>
+<li>git clone --depth=1: 浅克隆（shallow clone），不包括完整的版本历史信息</li>
+<li>git add -p: 交互式暂存</li>
+<li>git rebase to [from]: from不写默认为HEAD所指节点。将从from节点和to节点的最近公共父节点(不包括该父节点)到from结点本身的所有节点按顺序复制到to节点下，HEAD将指向被复制的from节点，另外from节点(路径上的其他节点的引用不会动)上的引用(分支，tag等)也会指向新的from节点。用于将from分支上的工作转移到to分支上。PS：如果from为to的祖先节点，则rebase只是将from的引用移动到to上。</li>
+<li>git rebase -i ref~n: 交互式变基(经典左闭右开/下闭上开)</li>
+<li>git cherry-pick refspec1 refspec2 ...:可以将提交树上任何其他地方的提交记录取过来追加到HEAD上（不能是HEAD上游的提交）</li>
+<li>git blame: 查看最后修改某行的人</li>
+<li>git stash: 暂时移除工作目录下的修改内容</li>
+<li>git bisect: 通过二分查找搜索历史记录</li>
+<li>git describe refspec: 结果格式为tagName_distance_ghash，tagName是离refspec最近的tag的名称，distance是refspec离tag的距离，hash是refspec hash值的前几位。</li>
+<li>.gitignore: 指定 故意不追踪的文件</li>
+</ul>
+<h3 id="git-stash"> git stash</h3>
+<p><code>git stash</code>命令会暂时缓存任何你未提交的修改，包括暂存区的和未暂存的(没有通过<code>git add</code>命令添加到暂存区的，包括新add的增删文件，修改add过的文件)，不包括未追踪的文件。stash就相当于将之前的修改都隐藏了起来，之后的操作不会受到之前修改的限制。
+注意：stash只保留在本地库中，不会被推送到远程库。</p>
+<div><pre><code><span># 做一些修改1</span>
+<span>git</span> stash
+<span># 再做一些修改2</span>
+<span>git</span> stash
+<span># 再再做一些修改3，并提交 假设三次修改的是不同的文件</span>
+<span># some changes</span>
+<span>git</span> commit
+<span># 不想要修改2了</span>
+<span>git</span> stash pop
+<span># 继续从修改1开始</span>
+<span>git</span> stash apply
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>注意：git stash apply会将修改应用到所有分支。比如，在test分支修改了一个文件，stash以后再apply回来，这样master分支中也会有一个未提交的修改。</p>
+<h2 id="远程仓库"> 远程仓库</h2>
+<h3 id="git-clone"> git clone</h3>
+<p>git clone somerepo后，本地就有了somerepo的完整提交树，并且多了origin/master,origin/dev....等多了origin/前缀的远程分支(另有origin/HEAD-&gt;origin/main说明远程分支的HEAD指向哪里)。</p>
+<p>远程分支反映了远程仓库(在你上次和它通信时)的状态。</p>
+<p>远程分支有一个特别的属性，在你检出时自动进入分离HEAD状态(不是HEAD指向的分支上有*，而是HEAD独立显示出来)。Git这么做是因为不能直接在这些分支上进行操作, 你必须在本地完成你的工作, （更新了远程分支之后）再用远程分享你的工作成果。</p>
+<h3 id="git-fetch"> git fetch</h3>
+<p>完成了仅有的但是很重要的两步:</p>
+<ol>
+<li>从远程仓库下载本地仓库中缺失的提交记录</li>
+<li>更新远程分支指针(如 o/main)</li>
+</ol>
+<p>实际上将本地仓库中的远程分支更新成了远程仓库相应分支最新的状态。但并不会改变你本地仓库的状态。它不会更新你的 main 分支，也不会修改你磁盘上的文件。</p>
+<p>要实际更新，需要使用git merge将远程和本地分支合并。(git cherry-pick, git rebase也可以)</p>
+<h3 id="git-pull"> git pull</h3>
+<p>实际等同于 git fetch + git merge。
+用法参考<code>git push</code>/<code>git fetch</code></p>
+<h3 id="git-push"> git push</h3>
+<p><code>git push remoteRepo place</code> (remoteRepo 通常为 origin)<br>
+<code>git push remoteRepo &lt;source&gt;:&lt;remote branch&gt;</code>  (source是refspec，如果remote branch是远程仓库中的分支名(没有origin/前缀)且不存在会自动创建新的)
+<code>git push remoteRepo :foo</code> (会删除远程的foo分支)
+将本地提交同步到远程，并将本地仓库的远程分支也更新好。</p>
+<p>PS：git fetch 语法类似，只是方向相反罢了。</p>
+<h3 id="最常见团队合作工作流"> 最常见团队合作工作流</h3>
+<p>从某个commit之后，你和同事分别修改各自的代码，现在你的同事已经将他的代码同步到远程库了，你的代码该如何提交。(假设没有冲突)。</p>
+<p>方案一：git fetch; git rebase origin/main; git push
+方案二: git fetch; git merge origin/main; git push
+方案一简化版：git pull --rebase; git push
+方案二简化版: git pull; git push</p>
+<h3 id="远程服务器拒绝-remote-rejected"> 远程服务器拒绝!(Remote Rejected)</h3>
+<p>如果你是在一个大的合作团队中工作, 很可能是main被锁定了, 需要一些Pull Request流程来合并修改。如果你直接提交(commit)到本地main, 然后试图推送(push)修改, 你将会收到这样类似的信息:</p>
+<blockquote>
+<p>! [远程服务器拒绝] main -&gt; main (TF402455: 不允许推送(push)这个分支; 你必须使用pull request来更新这个分支.)</p>
+</blockquote>
+<p>远程服务器拒绝直接推送(push)提交到main, 因为策略配置要求 pull requests 来提交更新.</p>
+<p>你应该按照流程,新建一个分支, 推送(push)这个分支并申请pull request,但是你忘记并直接提交给了main.现在你卡住并且无法推送你的更新.</p>
+<p>解决办法
+新建一个分支feature, 推送到远程服务器. 然后reset你的main分支和远程服务器保持一致, 否则下次你pull并且他人的提交和你冲突的时候就会有问题.</p>
+<div><pre><code><span>git</span> reset --hard o/main <span># 重置索引和工作树。 自o/main以来的工作树中跟踪文件的任何更改都被丢弃。</span>
+<span>git</span> checkout -b feature rawmainSHA <span># reset不会删除已有的commit。所以仍能checkout到你修改过commit，同时新建分支。</span>
+<span>git</span> push origin feature <span># 将你的修改(现在在feature中)同步到远端的feature分支</span>
+
+<span># 我认为更好的方法</span>
+<span>git</span> branch feature
+<span>git</span> push origin feature
+<span>git</span> reset --hard origin/main
+<span>git</span> checkout feature
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><p>然后再申请pull request。</p>
+<h3 id="合并特性分支"> 合并特性分支</h3>
+<p>有些开发人员只在 main 上做 push、pull —— 这样的话 main 总是最新的，始终与远程分支 (o/main) 保持一致。</p>
+<p>这个工作流，分两个步骤：</p>
+<ol>
+<li>将特性分支集成到 main 上</li>
+<li>推送并更新远程分支 git pull --rebase; git push</li>
+</ol>
+<h3 id="rebase-和-merge"> rebase 和 merge</h3>
+<p>在开发社区里，有许多关于 merge 与 rebase 的讨论。以下是关于 rebase 的优缺点：</p>
+<ul>
+<li>优点: Rebase 使你的提交树变得很干净, 所有的提交都在一条线上</li>
+<li>缺点: Rebase 修改了提交树的历史。比如, 提交 C1 可以被 rebase 到 C3 之后。这看起来 C1 中的工作是在 C3 之后进行的，但实际上是在 C3 之前。</li>
+</ul>
+<p>一些开发人员喜欢保留提交历史，因此更偏爱 merge。而其他人可能更喜欢干净的提交树，于是偏爱 rebase。</p>
+<h3 id="远程跟踪"> 远程跟踪</h3>
+<p>直接了当地讲，main 和 o/main 的关联关系就是由分支的“remote tracking”属性决定的。main 被设定为跟踪 o/main —— 这意味着为 main 分支指定了推送的目的地以及拉取后合并的目标。</p>
+<p>当你克隆时, Git 会为远程仓库中的每个分支在本地仓库中创建一个远程分支（比如 o/main）。然后再创建一个跟踪远程仓库中活动分支的本地分支，默认情况下这个本地分支会被命名为 main。
+这也解释了为什么会在克隆的时候会看到下面的输出：</p>
+<blockquote>
+<p>local branch &quot;main&quot; set to track remote branch &quot;o/main&quot;</p>
+</blockquote>
+<p>自己指定本地分支和远程分支的映射</p>
+<ol>
+<li>git checkout -b notmain origin/main</li>
+<li>git branch -u origin/main foo # foo不写就默认使用当前分支</li>
+</ol>
+<p>之后commit,push这个notmain分支到远程库，实际就会更新远程库的main分支。</p>
 ]]></content>
     <author>
       <name>Leonhardt</name>
@@ -3933,514 +4437,10 @@ execve 函数在当前进程中加载并运行包含在可执行目标文件 a.o
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">gdb</title>
-    <id>https://kigane.github.io/note/cs/gdb-cheatsheet/</id>
-    <link href="https://kigane.github.io/note/cs/gdb-cheatsheet/"/>
+    <title type="html">计算机概述</title>
+    <id>https://kigane.github.io/note/cs/</id>
+    <link href="https://kigane.github.io/note/cs/"/>
     <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="gdb-cheatsheet"> gdb cheatsheet</h2>
-<p><a href="https://sourceware.org/gdb/onlinedocs/gdb/index.html#SEC_Contents" target="_blank" rel="noopener noreferrer">gdb 文档</a></p>
-<ul>
-<li>-g: 生成debugging symbols，使得调试更高效。-ggdb，包含gdb规定的符号。</li>
-</ul>
-<p>gdb [--args] program [args]进入debug模式</p>
-<ul>
-<li>set args &lt;args&gt;</li>
-<li>run: 执行程序</li>
-<li>kill: 关闭执行的程序</li>
-<li>help</li>
-</ul>
-<p>检查栈</p>
-<ul>
-<li>backtrace/where | bt: 查看调用栈</li>
-<li>backtrace/where full: 查看调用栈，也打印栈帧中的变量</li>
-<li>frame frame#: 查看指定帧(backtrace列出的信息开头的数字)</li>
-</ul>
-<p>变量和内存</p>
-<ul>
-<li>x/nfu addr: examine addr。查看指定地址的值
-<ul>
-<li>n: 要打印的unit数量</li>
-<li>f: format</li>
-<li>u: unit (b:Byte 1B, h:Half-word 2B, w:Word 4B, g:Giant word 8B)</li>
-</ul>
-</li>
-<li>p &lt;what&gt;: 查看变量的值</li>
-<li>p arr[n]@m: 查看数组arr从n开始数，共m个元素</li>
-<li>print/format &lt;what&gt;: 查看变量的值</li>
-<li>display/format &lt;what&gt;: 在每个step指令后打印变量的值</li>
-<li>undisplay display#: 不再监视</li>
-<li>enable/disable display#</li>
-<li>&lt;what&gt;
-<ul>
-<li>expressions</li>
-<li>filename::variable_name</li>
-<li>function::variable_name</li>
-<li>{type}address : 在address处的内容，解释为C的type类型。</li>
-<li><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.85396em;vertical-align:-0.19444em;"></span><span>re</span><span style="margin-right:0.03588em;">g</span><span>i</span><span>s</span><span>t</span><span style="margin-right:0.02778em;">er</span><span style="margin-right:0.2777777777777778em;"></span><span>:</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:0.68333em;vertical-align:0em;"></span><span>有名字的寄存器，如</span></span></span></span>esp--栈指针，<span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span>e</span><span>b</span><span>p</span><span style="margin-right:0.2222222222222222em;"></span><span>−</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:0.76666em;vertical-align:-0.08333em;"></span><span>−</span><span>帧基址，</span></span></span></span>eip--指令指针</li>
-</ul>
-</li>
-<li>format
-<ul>
-<li>a: 指针</li>
-<li>c: 读为int，打印为char</li>
-<li>d: 有符号int</li>
-<li>f: 浮点数</li>
-<li>o: 八进制int</li>
-<li>s: Try to treat as C string</li>
-<li>t: 二进制int</li>
-<li>u: 无符号int</li>
-<li>x: 十六进制int</li>
-</ul>
-</li>
-</ul>
-<p>查看源码</p>
-<ul>
-<li>list line_number: 查看101行附件10行</li>
-<li>list from,to: 查看从from到to行</li>
-<li>list -: 查看前10行</li>
-<li>list &lt;where&gt;</li>
-</ul>
-<p>断点</p>
-<ul>
-<li>break where: 在指定位置设置一个断点(会输出断点所在具体位置，注意到断点有序号，Breakpoint 1 at 0x29fa0: file main.cc, line 52.)</li>
-<li>where
-<ul>
-<li>function_name</li>
-<li>line_number: 当前文件的某行</li>
-<li>file:line_number</li>
-</ul>
-</li>
-<li>delete breakpoint#: 删除指定断点</li>
-<li>enable breakpoint</li>
-<li>disable breakpoint</li>
-<li>clear: 删除所有断点</li>
-<li>condition 1 var==666: 仅当变量var的值为666时，才触发断点1。</li>
-<li>break/watch &lt;where&gt; if &lt;condition&gt;</li>
-<li>watch where // breakpoint 和 watchpoint 共用编号。</li>
-<li>watchpoint 有两种实现方式，具体取决于你的系统。软件实现方式为在每一步执行后都测试一次expr的值，会很慢。硬件方式更快。</li>
-<li>watch [-l|-location] expr [thread thread-id] [mask maskvalue]  为expr设置一个监视点。如果expr的值改变了，则停止执行。
-<ul>
-<li>thread thread-id 指定某个线程，只有该线程修改expr的值时才停止执行。(仅限硬件实现)</li>
-<li>-l 告诉gdb，如果expr的结果是个地址，则查看该地址的内容。如果结果不是地址，则输出一个错误。</li>
-<li>mask maskvalue 默认开启-l。maskvalue用于同时查看多数地址。 watch foo mask 0xffffff00？</li>
-</ul>
-</li>
-<li>rwatch expr 在expr被程序读取时break</li>
-<li>awatch expr 在expr被读取或被修改时都break</li>
-<li>delete/enable/disable watchpoint#</li>
-</ul>
-<p>步进</p>
-<ul>
-<li>gdb的一个有用的特性：如果直接按回车，会重复执行上一个命令</li>
-<li>step: 到下一行。如果有函数会进入函数</li>
-<li>next: 到下一行。不会进入函数</li>
-<li>finish: 将当前函数执行完</li>
-<li>continue | cont: 继续正常执行</li>
-<li>quit: 退出</li>
-</ul>
-<p>反向执行</p>
-<ul>
-<li>record 反向执行的前置条件</li>
-<li>reverse-step</li>
-<li>reverse-next</li>
-<li>reverse-continue</li>
-<li>reverse-finish 回到函数执行前</li>
-<li>set exec-direction reverse 所有next,step...全变为逆向操作</li>
-<li>set exec-direction forward 恢复正常</li>
-</ul>
-<p>信息</p>
-<ul>
-<li>info args: 当前栈帧的函数参数</li>
-<li>info breakpoints/watchpoints</li>
-<li>info locals: 当前栈帧的本地变量</li>
-<li>info sharedlibrary: 列出已加载的动态库</li>
-<li>info signals: 列出所有信号和他们当前是如何处理的</li>
-<li>info threads</li>
-<li>show directories: 列出GDB搜索涉及到的源文件</li>
-<li>show listsize</li>
-<li>whatis variable_name: 输出变量的类型</li>
-</ul>
-<h2 id="gdb-tui"> gdb-tui</h2>
-<p>标志</p>
-<ul>
-<li>
-<p><code>&gt;</code> 当前执行的行</p>
-</li>
-<li>
-<p>断点表示 [b|B][+|-]</p>
-<ul>
-<li><code>b</code> 表示还没到的断点</li>
-<li><code>B</code> 表示至少到过一次的断点</li>
-<li><code>+</code> 表示 enabled</li>
-<li><code>-</code> 表示 disabled</li>
-</ul>
-</li>
-<li>
-<p>C-x a/A/C-a: 进入或离开TUI模式</p>
-</li>
-<li>
-<p>C-x 1: 保留一个窗口</p>
-</li>
-<li>
-<p>C-x 2: 保留两个窗口</p>
-</li>
-<li>
-<p>C-x o: 切换当前活动的窗口</p>
-</li>
-<li>
-<p>C-x s: 切换到TUI的单键模式</p>
-</li>
-<li>
-<p>PgUp,PgDn,上下左右可用于操作活动窗口。</p>
-</li>
-<li>
-<p>当焦点不在cmd窗口时，C-p相当于Up,C-b相当于Left,C-f相当于Right,C-n相当于Down</p>
-</li>
-<li>
-<p>C-l: 刷新窗口</p>
-</li>
-</ul>
-<p>单键模式</p>
-<ul>
-<li>s: step</li>
-<li>i: step Into</li>
-<li>n: next</li>
-<li>o: step Over</li>
-<li>r: run</li>
-<li>c: continue</li>
-<li>f: finish</li>
-<li>d: down 在frame stack中向下一层</li>
-<li>u: up 在frame stack中向上一层</li>
-<li>q: 退出单键模式</li>
-<li>v: info local</li>
-<li>w: where</li>
-</ul>
-<p>TUI命令</p>
-<ul>
-<li>
-<p>tui enable: 进入上次使用的tui窗口模式，或默认窗口模式。</p>
-</li>
-<li>
-<p>tui disable</p>
-</li>
-<li>
-<p>tui new-layout name window weight [window weight ...]: 新建一个名为name的TUI窗口布局。</p>
-<ul>
-<li>可以使用layout name使用该布局</li>
-<li>window 有四种 src,asm,regs,cmd</li>
-<li>weight 是权重，用于确定每个窗口占屏幕的比例。status的权重应总是设为0</li>
-<li>默认是从上到下分割。加-horizontal可改为从左到右分割。</li>
-<li>示例1：(gdb) tui new-layout example src 1 regs 1 status 0 cmd 1</li>
-<li>示例2：(gdb) tui new-layout example {-horizontal src 1 asm 1} 2 status 0 cmd 1</li>
-<li>9.2版本还没有实装</li>
-</ul>
-</li>
-<li>
-<p>layout name：使用内置布局或新建的布局</p>
-<ul>
-<li>prev: 前一个</li>
-<li>next: 后一个</li>
-<li>src: 显示源码和命令窗口</li>
-<li>asm：显示汇编和命令窗口</li>
-<li>split：显示源码，汇编和命令窗口</li>
-<li>regs：显示寄存器窗口。如果在src模式则上为寄存器，中为源码。如果在split和asm模式，则上为寄存器，中为汇编。</li>
-</ul>
-</li>
-<li>
-<p>focus name: 改变当前活动窗口。</p>
-</li>
-<li>
-<p>refresh: 刷新窗口</p>
-</li>
-<li>
-<p>winheight name +count： 改变窗口大小</p>
-</li>
-<li>
-<p>winheight name -count： 改变窗口大小</p>
-</li>
-<li>
-<p>tui reg group：显示不同的寄存器分组</p>
-<ul>
-<li>general: 通用寄存器</li>
-<li>float: 浮点数寄存器</li>
-<li>system: 系统寄存器</li>
-<li>vector: 向量寄存器</li>
-<li>all</li>
-</ul>
-</li>
-<li>
-<p>set tui compact-source [on|off]：设置源码的行号和代码间的距离。on-仅一个空格，off-一个tab。</p>
-</li>
-</ul>
-<h2 id="小技巧"> 小技巧</h2>
-<ul>
-<li>对一个大数组，p arr[n]@m，查看数组arr从n开始数，共m个元素</li>
-<li>gdb 命令输出在src模式下可见部分太小了。可以使用
-<ul>
-<li>set trace-commands on</li>
-<li>set logging on</li>
-<li>cd where/gdb/is/running</li>
-<li>tail -f -n 30 gdb.txt</li>
-<li>less +F gdb.txt 可以代替tail。 ctrl+c，退出等待输入模式，进入普通less模式，shift+f进入。</li>
-<li>进入TUI模式后，日志会停止，这是个gdb bug。先set logging off，再set logging on即可正常显示。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">git</title>
-    <id>https://kigane.github.io/note/cs/git/</id>
-    <link href="https://kigane.github.io/note/cs/git/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="资源"> 资源</h2>
-<p><a href="https://learngitbranching.js.org/?locale=zh_CN" target="_blank" rel="noopener noreferrer">交互式Git入门网站 强烈推荐!!!</a><br>
-<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener noreferrer">Pro Git 中文版</a><br>
-<a href="https://ohshitgit.com/" target="_blank" rel="noopener noreferrer">Oh Shit, Git!?! 简短的介绍了如何从Git错误中恢复</a></p>
-<p><a href="https://eagain.net/articles/git-for-computer-scientists/" target="_blank" rel="noopener noreferrer">Git 的数据模型</a><br>
-<a href="https://jwiegley.github.io/git-from-the-bottom-up/1-Repository/1-directory-content-tracking.html" target="_blank" rel="noopener noreferrer">Git from the Bottom Up</a></p>
-<h2 id="git-的数据模型"> Git 的数据模型</h2>
-<h3 id="快照"> 快照</h3>
-<p>在Git的术语里，文件被称作Blob对象，也就是一组数据。目录则被称之为“树”，它将名字与 Blob 对象或树对象进行映射（使得目录中可以包含其他目录）。快照则是被追踪的最顶层的树。</p>
-<div><pre><code>&amp;lt;root&gt; (tree)
-|
-+- foo (tree)
-|  |
-|  + bar.txt (blob, contents = &quot;hello world&quot;)
-|
-+- baz.txt (blob, contents = &quot;git is wonderful&quot;)
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><p>这个顶层的树包含了两个元素，一个名为 “foo” 的树，以及一个 blob 对象 “baz.txt”。</p>
-<h3 id="历史记录"> 历史记录</h3>
-<p>在 Git 中，历史记录是一个由快照组成的有向无环图。这代表 Git 中的每个快照都有一系列的“父辈”，也就是其之前的一系列快照。注意，快照具有多个“父辈”而非一个，因为某个快照可能由多个父辈而来。例如，经过合并后的两条分支。</p>
-<p>在 Git 中，这些快照被称为“提交”。</p>
-<h3 id="数据模型的伪码表示"> 数据模型的伪码表示</h3>
-<div><pre><code><span>//</span> 文件就是一组数据
-<span>type</span> blob <span>=</span> array<span>&lt;</span>byte<span>></span>
-
-<span>//</span> 一个包含文件和目录的目录
-<span>type</span> tree <span>=</span> <span>map</span><span>&lt;</span>string<span>,</span> tree <span>|</span> blob<span>></span>
-
-<span>//</span> 每个提交都包含一个父辈，元数据和顶层树
-<span>type</span> commit <span>=</span> struct <span>{</span>
-    parent<span>:</span> array<span>&lt;</span>commit<span>></span>
-    author<span>:</span> string
-    message<span>:</span> string
-    snapshot<span>:</span> tree
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="对象和内存寻址"> 对象和内存寻址</h3>
-<div><pre><code><span>//</span> git中的对象类型
-<span>type</span> <span>object</span> <span>=</span> blob <span>|</span> tree <span>|</span> commit
-
-objects <span>=</span> <span>map</span><span>&lt;</span>string<span>,</span> <span>object</span><span>></span>
-
-<span>//</span> Git 在储存数据时，所有的对象都会基于它们的 SHA<span>-</span><span>1</span> 哈希 进行寻址
-<span>def</span> <span>store</span><span>(</span><span>object</span><span>)</span><span>:</span>
-    <span>id</span> <span>=</span> sha1<span>(</span><span>object</span><span>)</span>
-    objects<span>[</span><span>id</span><span>]</span> <span>=</span> <span>object</span>
-
-<span>def</span> <span>load</span><span>(</span><span>id</span><span>)</span><span>:</span>
-    <span>return</span> objects<span>[</span><span>id</span><span>]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h3 id="引用"> 引用</h3>
-<p>现在，所有的快照都可以通过它们的 SHA-1 哈希值来标记了。但这也太不方便了，谁也记不住一串 40 位的十六进制字符。(Git对哈希的处理很智能。你只需要提供能够唯一标识提交记录的前几个字符即可。但还是很不方便)</p>
-<p>针对这一问题，Git 的解决方法是给这些哈希值赋予人类可读的名字，也就是引用（references）。<strong>引用是指向提交的指针</strong>。与对象不同的是，它是可变的（引用可以被更新，指向新的提交）。例如，master 引用通常会指向主分支的最新一次提交。</p>
-<div><pre><code>references <span>=</span> <span>map</span><span>&lt;</span>string<span>,</span> string<span>></span>
-
-<span>def</span> <span>update_reference</span><span>(</span>name<span>,</span> <span>id</span><span>)</span><span>:</span>
-    references<span>[</span>name<span>]</span> <span>=</span> <span>id</span>
-
-<span>def</span> <span>read_reference</span><span>(</span>name<span>)</span><span>:</span>
-    <span>return</span> references<span>[</span>name<span>]</span>
-
-<span>def</span> <span>load_reference</span><span>(</span>name_or_id<span>)</span><span>:</span>
-    <span>if</span> name_or_id <span>in</span> references<span>:</span>
-        <span>return</span> load<span>(</span>references<span>[</span>name_or_id<span>]</span><span>)</span>
-    <span>else</span><span>:</span>
-        <span>return</span> load<span>(</span>name_or_id<span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>通常情况下，我们会想要知道“我们当前所在位置”，并将其标记下来。这样当我们创建新的快照的时候，我们就可以知道它的相对位置（如何设置它的“父辈”）。在 Git 中，我们当前的位置有一个特殊的索引，它就是 “HEAD”。</p>
-<p>如果想看 HEAD 指向，可以通过 cat .git/HEAD 查看， 如果 HEAD 指向的是一个引用，还可以用 git symbolic-ref HEAD 查看它的指向。</p>
-<h3 id="仓库"> 仓库</h3>
-<p>Git仓库就是对象(文件，目录，提交)和引用(分支，HEAD, hash, tag)。</p>
-<p>在硬盘上，Git仅存储对象和引用：因为其数据模型仅包含这些东西。所有的 git 命令都对应着对提交树的操作，例如增加对象，增加或删除引用。</p>
-<h2 id="相对引用"> 相对引用</h2>
-<ul>
-<li>使用 ref^ 向上移动1个提交记录(ref^^,2个)</li>
-<li>使用 ref~&lt;num&gt; 向上移动多个提交记录，如 ~3(1也可以省略)</li>
-<li>应用：移动分支，使用-f选项让分支指向另一个提交。例如:<code>git branch -f main HEAD~3</code></li>
-<li>^&lt;num&gt;: 如果父节点不止一个，ref<sup>就指向产生该节点(在这里merge的)的父节点，ref</sup>2就指向另一个节点</li>
-<li>链式移动: <code>git checkout ~^2~3</code></li>
-</ul>
-<h2 id="暂存区"> 暂存区</h2>
-<p>Git 中还包括一个和数据模型完全不相关的概念，但它确是创建提交的接口的一部分。允许您指定下次快照中要包括那些改动。</p>
-<p>使用场景：您开发了两个独立的特性，然后希望创建两个独立的提交，其中第一个提交仅包含第一个特性，而第二个提交仅包含第二个特性。</p>
-<h2 id="tag"> tag</h2>
-<p><strong>永远指向某个提交记录的标识</strong>。通常软件发布新的大版本，或者是修正一些重要的Bug或是增加了某些新特性这种重要的修改可以添加一个tag。</p>
-<p>tag可以(在某种程度上 —— 因为标签可以被删除后重新在另外一个位置创建同名的标签)永久地将某个特定的提交命名为里程碑，然后就可以像分支一样引用了。</p>
-<p>更难得的是，它们并不会随着新的提交而移动。你也不能检出到某个标签上面进行修改提交，它就像是提交树上的一个锚点，标识了某个特定的位置。</p>
-<div><pre><code><span>git</span> tag tagName refspec <span># 在refspec提交上建立一个标签tagName</span>
-<span>git</span> tag tagName <span># 在HEAD指向的提交上建立一个标签</span>
-<span>git</span> describe refspec <span># 结果格式为tagName_distance_ghash，tagName是离refspec最近的tag的名称，distance是refspec离tag的距离，hash是refspec hash值的前几位。</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="cheatsheet"> cheatsheet</h2>
-<p>Git中“refspec” 是一个自造的词，意思是Git能识别的位置(比如分支foo或者HEAD~1)。如果需要refspec参数缺省为HEAD。</p>
-<p>基础</p>
-<ul>
-<li>git help &lt;command&gt;: 获取 git 命令的帮助信息</li>
-<li>git init: 创建一个新的 git 仓库，其数据会存放在一个名为 .git 的目录下</li>
-<li>git status: 显示当前的仓库状态</li>
-<li>git add &lt;filename&gt;: 添加文件到暂存区</li>
-<li>git commit: 创建一个新的提交</li>
-<li>git commit --allow-empty: 创建一个新的提交，允许没有修改</li>
-<li>git log: 显示历史日志</li>
-<li>git log --author who: 显示who提交的历史日志</li>
-<li>git log --all --graph --decorate: 可视化历史记录（有向无环图）</li>
-<li>git diff &lt;filename&gt;: 显示与暂存区文件的差异</li>
-<li>git diff &lt;revision&gt; &lt;filename&gt;: 显示某个文件两个版本之间的差异</li>
-<li>git checkout &lt;revision&gt;: 更新 HEAD 和目前的分支</li>
-</ul>
-<p>分支和合并</p>
-<ul>
-<li>git branch: 显示分支</li>
-<li>git branch &lt;name&gt;: 创建分支</li>
-<li>git checkout -b &lt;name&gt;: 创建分支并切换到该分支</li>
-<li>git merge refspec: 合并到当前分支</li>
-<li>git mergetool: 使用工具来处理合并冲突</li>
-<li>git rebase: 将一系列补丁变基（rebase）为新的基线</li>
-</ul>
-<p>远端操作</p>
-<ul>
-<li>git remote: 列出远端</li>
-<li>git remote add &lt;name&gt; &lt;url&gt;: 添加一个远端</li>
-<li>git push &lt;remote&gt; &lt;local branch&gt;:&lt;remote branch&gt;: 将对象传送至远端并更新远端引用</li>
-<li>git branch --set-upstream-to=&lt;remote&gt;/&lt;remote branch&gt;: 创建本地和远端分支的关联关系</li>
-<li>git fetch: 从远端获取对象/索引</li>
-<li>git pull: 相当于 git fetch; git merge</li>
-<li>git clone: 从远端下载仓库</li>
-</ul>
-<p>撤销</p>
-<ul>
-<li>git commit --amend: 编辑提交的内容或信息。在提交树中HEAD所指节点的父节点下生成一个新的commit节点，并指向新的commit节点，原节点的子节点不会保留。所以最好只对叶节点使用 --amend.</li>
-<li>git reset HEAD~1: 撤销最近一次commit，在reset后所做的变更还在，但是处于未加入暂存区状态。适合在本地修改。</li>
-<li>git revert refspec: 会commit一次，将最近一次commit的修改撤销。适合多人协作时，撤销已push的修改。</li>
-<li>git checkout -- &lt;file&gt;: 丢弃修改</li>
-</ul>
-<p>Git 高级操作</p>
-<ul>
-<li>git config: Git 是一个 高度可定制的 工具</li>
-<li>git clone --depth=1: 浅克隆（shallow clone），不包括完整的版本历史信息</li>
-<li>git add -p: 交互式暂存</li>
-<li>git rebase to [from]: from不写默认为HEAD所指节点。将从from节点和to节点的最近公共父节点(不包括该父节点)到from结点本身的所有节点按顺序复制到to节点下，HEAD将指向被复制的from节点，另外from节点(路径上的其他节点的引用不会动)上的引用(分支，tag等)也会指向新的from节点。用于将from分支上的工作转移到to分支上。PS：如果from为to的祖先节点，则rebase只是将from的引用移动到to上。</li>
-<li>git rebase -i ref~n: 交互式变基(经典左闭右开/下闭上开)</li>
-<li>git cherry-pick refspec1 refspec2 ...:可以将提交树上任何其他地方的提交记录取过来追加到HEAD上（不能是HEAD上游的提交）</li>
-<li>git blame: 查看最后修改某行的人</li>
-<li>git stash: 暂时移除工作目录下的修改内容</li>
-<li>git bisect: 通过二分查找搜索历史记录</li>
-<li>git describe refspec: 结果格式为tagName_distance_ghash，tagName是离refspec最近的tag的名称，distance是refspec离tag的距离，hash是refspec hash值的前几位。</li>
-<li>.gitignore: 指定 故意不追踪的文件</li>
-</ul>
-<h3 id="git-stash"> git stash</h3>
-<p><code>git stash</code>命令会暂时缓存任何你未提交的修改，包括暂存区的和未暂存的(没有通过<code>git add</code>命令添加到暂存区的，包括新add的增删文件，修改add过的文件)，不包括未追踪的文件。stash就相当于将之前的修改都隐藏了起来，之后的操作不会受到之前修改的限制。
-注意：stash只保留在本地库中，不会被推送到远程库。</p>
-<div><pre><code><span># 做一些修改1</span>
-<span>git</span> stash
-<span># 再做一些修改2</span>
-<span>git</span> stash
-<span># 再再做一些修改3，并提交 假设三次修改的是不同的文件</span>
-<span># some changes</span>
-<span>git</span> commit
-<span># 不想要修改2了</span>
-<span>git</span> stash pop
-<span># 继续从修改1开始</span>
-<span>git</span> stash apply
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>注意：git stash apply会将修改应用到所有分支。比如，在test分支修改了一个文件，stash以后再apply回来，这样master分支中也会有一个未提交的修改。</p>
-<h2 id="远程仓库"> 远程仓库</h2>
-<h3 id="git-clone"> git clone</h3>
-<p>git clone somerepo后，本地就有了somerepo的完整提交树，并且多了origin/master,origin/dev....等多了origin/前缀的远程分支(另有origin/HEAD-&gt;origin/main说明远程分支的HEAD指向哪里)。</p>
-<p>远程分支反映了远程仓库(在你上次和它通信时)的状态。</p>
-<p>远程分支有一个特别的属性，在你检出时自动进入分离HEAD状态(不是HEAD指向的分支上有*，而是HEAD独立显示出来)。Git这么做是因为不能直接在这些分支上进行操作, 你必须在本地完成你的工作, （更新了远程分支之后）再用远程分享你的工作成果。</p>
-<h3 id="git-fetch"> git fetch</h3>
-<p>完成了仅有的但是很重要的两步:</p>
-<ol>
-<li>从远程仓库下载本地仓库中缺失的提交记录</li>
-<li>更新远程分支指针(如 o/main)</li>
-</ol>
-<p>实际上将本地仓库中的远程分支更新成了远程仓库相应分支最新的状态。但并不会改变你本地仓库的状态。它不会更新你的 main 分支，也不会修改你磁盘上的文件。</p>
-<p>要实际更新，需要使用git merge将远程和本地分支合并。(git cherry-pick, git rebase也可以)</p>
-<h3 id="git-pull"> git pull</h3>
-<p>实际等同于 git fetch + git merge。
-用法参考<code>git push</code>/<code>git fetch</code></p>
-<h3 id="git-push"> git push</h3>
-<p><code>git push remoteRepo place</code> (remoteRepo 通常为 origin)<br>
-<code>git push remoteRepo &lt;source&gt;:&lt;remote branch&gt;</code>  (source是refspec，如果remote branch是远程仓库中的分支名(没有origin/前缀)且不存在会自动创建新的)
-<code>git push remoteRepo :foo</code> (会删除远程的foo分支)
-将本地提交同步到远程，并将本地仓库的远程分支也更新好。</p>
-<p>PS：git fetch 语法类似，只是方向相反罢了。</p>
-<h3 id="最常见团队合作工作流"> 最常见团队合作工作流</h3>
-<p>从某个commit之后，你和同事分别修改各自的代码，现在你的同事已经将他的代码同步到远程库了，你的代码该如何提交。(假设没有冲突)。</p>
-<p>方案一：git fetch; git rebase origin/main; git push
-方案二: git fetch; git merge origin/main; git push
-方案一简化版：git pull --rebase; git push
-方案二简化版: git pull; git push</p>
-<h3 id="远程服务器拒绝-remote-rejected"> 远程服务器拒绝!(Remote Rejected)</h3>
-<p>如果你是在一个大的合作团队中工作, 很可能是main被锁定了, 需要一些Pull Request流程来合并修改。如果你直接提交(commit)到本地main, 然后试图推送(push)修改, 你将会收到这样类似的信息:</p>
-<blockquote>
-<p>! [远程服务器拒绝] main -&gt; main (TF402455: 不允许推送(push)这个分支; 你必须使用pull request来更新这个分支.)</p>
-</blockquote>
-<p>远程服务器拒绝直接推送(push)提交到main, 因为策略配置要求 pull requests 来提交更新.</p>
-<p>你应该按照流程,新建一个分支, 推送(push)这个分支并申请pull request,但是你忘记并直接提交给了main.现在你卡住并且无法推送你的更新.</p>
-<p>解决办法
-新建一个分支feature, 推送到远程服务器. 然后reset你的main分支和远程服务器保持一致, 否则下次你pull并且他人的提交和你冲突的时候就会有问题.</p>
-<div><pre><code><span>git</span> reset --hard o/main <span># 重置索引和工作树。 自o/main以来的工作树中跟踪文件的任何更改都被丢弃。</span>
-<span>git</span> checkout -b feature rawmainSHA <span># reset不会删除已有的commit。所以仍能checkout到你修改过commit，同时新建分支。</span>
-<span>git</span> push origin feature <span># 将你的修改(现在在feature中)同步到远端的feature分支</span>
-
-<span># 我认为更好的方法</span>
-<span>git</span> branch feature
-<span>git</span> push origin feature
-<span>git</span> reset --hard origin/main
-<span>git</span> checkout feature
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><p>然后再申请pull request。</p>
-<h3 id="合并特性分支"> 合并特性分支</h3>
-<p>有些开发人员只在 main 上做 push、pull —— 这样的话 main 总是最新的，始终与远程分支 (o/main) 保持一致。</p>
-<p>这个工作流，分两个步骤：</p>
-<ol>
-<li>将特性分支集成到 main 上</li>
-<li>推送并更新远程分支 git pull --rebase; git push</li>
-</ol>
-<h3 id="rebase-和-merge"> rebase 和 merge</h3>
-<p>在开发社区里，有许多关于 merge 与 rebase 的讨论。以下是关于 rebase 的优缺点：</p>
-<ul>
-<li>优点: Rebase 使你的提交树变得很干净, 所有的提交都在一条线上</li>
-<li>缺点: Rebase 修改了提交树的历史。比如, 提交 C1 可以被 rebase 到 C3 之后。这看起来 C1 中的工作是在 C3 之后进行的，但实际上是在 C3 之前。</li>
-</ul>
-<p>一些开发人员喜欢保留提交历史，因此更偏爱 merge。而其他人可能更喜欢干净的提交树，于是偏爱 rebase。</p>
-<h3 id="远程跟踪"> 远程跟踪</h3>
-<p>直接了当地讲，main 和 o/main 的关联关系就是由分支的“remote tracking”属性决定的。main 被设定为跟踪 o/main —— 这意味着为 main 分支指定了推送的目的地以及拉取后合并的目标。</p>
-<p>当你克隆时, Git 会为远程仓库中的每个分支在本地仓库中创建一个远程分支（比如 o/main）。然后再创建一个跟踪远程仓库中活动分支的本地分支，默认情况下这个本地分支会被命名为 main。
-这也解释了为什么会在克隆的时候会看到下面的输出：</p>
-<blockquote>
-<p>local branch &quot;main&quot; set to track remote branch &quot;o/main&quot;</p>
-</blockquote>
-<p>自己指定本地分支和远程分支的映射</p>
-<ol>
-<li>git checkout -b notmain origin/main</li>
-<li>git branch -u origin/main foo # foo不写就默认使用当前分支</li>
-</ol>
-<p>之后commit,push这个notmain分支到远程库，实际就会更新远程库的main分支。</p>
-]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -4601,6 +4601,20 @@ addr = R[base_reg] + R[index_reg] * scale_factor + displacement<br>
 <li>进行算术或逻辑运算（PC+”1”，计算地址，运算）</li>
 </ul>
 ]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">riscv</title>
+    <id>https://kigane.github.io/note/cs/isa-riscv/</id>
+    <link href="https://kigane.github.io/note/cs/isa-riscv/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -5428,20 +5442,6 @@ x86通过ModR/M字节来指示内存操作数</p>
 </table>
 <p>AT&amp;T and Intel syntax use the opposite order for source and destination operands. Intel add eax, 4 is addl $4, %eax. The source, dest convention is maintained for compatibility with previous Unix assemblers. Note that instructions with more than one source operand, such as the enter instruction, do not have reversed order.</p>
 ]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">riscv</title>
-    <id>https://kigane.github.io/note/cs/isa-riscv/</id>
-    <link href="https://kigane.github.io/note/cs/isa-riscv/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -7553,7 +7553,7 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
     <title type="html">数字图像处理</title>
     <id>https://kigane.github.io/note/dip/</id>
     <link href="https://kigane.github.io/note/dip/"/>
-    <updated>2021-10-30T06:36:40.901Z</updated>
+    <updated>2021-10-30T10:14:59.503Z</updated>
     <content type="html"><![CDATA[<h2 id="绪论"> 绪论</h2>
 <h3 id="数字图像"> 数字图像</h3>
 <ul>
