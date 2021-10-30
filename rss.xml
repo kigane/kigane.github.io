@@ -6,292 +6,84 @@
     <link>https://kigane.github.io/</link>
     <description>想，都是问题。做，才是答案。</description>
     <language>en-US</language>
-    <pubDate>Sun, 03 Oct 2021 02:09:23 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Oct 2021 02:09:23 GMT</lastBuildDate>
+    <pubDate>Sat, 30 Oct 2021 06:35:55 GMT</pubDate>
+    <lastBuildDate>Sat, 30 Oct 2021 06:35:55 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright by Leonhardt</copyright>
+    <category>thesis</category>
+    <category>install</category>
     <category>使用指南</category>
+    <category>guide</category>
+    <category>DIP</category>
     <item>
-      <title>我的博客</title>
-      <link>https://kigane.github.io/blog/</link>
-      <guid>https://kigane.github.io/blog/</guid>
-      <source url="https://kigane.github.io/rss.xml">我的博客</source>
-      <content:encoded><![CDATA[<h2 id="名言警句"> 名言警句</h2>
-<blockquote>
-<p>不积跬步无以至千里</p>
-</blockquote>
-<blockquote>
-<p>Keep It Simple, Stupid.</p>
-</blockquote>
-<blockquote>
-<p>快速推进，逐步优化</p>
-</blockquote>
-<blockquote>
-<p>Make it work. Make it right. Make it fast.</p>
-</blockquote>
-<blockquote>
-<p>前途很远，也很暗。
-然而不要怕，不怕的人的面前才有路。</p>
-</blockquote>
-<blockquote>
-<p>I want to create a collection of games during my career, so that when I am on my deathbed I can look back and see that I created all these wonderful things that brought people joy.</p>
-</blockquote>
-<blockquote>
-<p>Less interests, more interest.</p>
-</blockquote>
-<blockquote>
-<p>想，都是问题。做，才是答案。</p>
-</blockquote>
-<blockquote>
-<p>形而上者谓之道，形而下者谓之器，能舍器而直接近道者，几稀！</p>
-</blockquote>
-<blockquote>
-<p>比较的关键不在于相似特征的多少，而在于特征是不是揭示了事物的本质</p>
-</blockquote>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>VuePress 默认主题设置</title>
-      <link>https://kigane.github.io/guide/configuration/</link>
-      <guid>https://kigane.github.io/guide/configuration/</guid>
-      <source url="https://kigane.github.io/rss.xml">VuePress 默认主题设置</source>
-      <content:encoded><![CDATA[<h2 id="frontmatter"> frontmatter</h2>
-<p>必须在每个 .md 文件开头，通常以 yaml 格式表示。</p>
-<div><pre><code><span>---</span>
-<span>title</span><span>:</span> hello vuepress
-<span>lang</span><span>:</span> zh<span>-</span>CN
-
-<span>sidebarDepth</span><span>:</span> <span>2</span> 
-<span>navbar</span><span>:</span> <span>false</span> 
-<span>sidebar</span><span>:</span> <span>false</span>
-<span>search</span><span>:</span> <span>false</span>
-<span>tags</span><span>:</span>
-  <span>-</span> configuration
-  <span>-</span> theme
-  <span>-</span> indexing
-<span>prev</span><span>:</span> ./some<span>-</span>other<span>-</span>page
-<span>next</span><span>:</span> <span>false</span>
-<span>pageClass</span><span>:</span> custom<span>-</span>page<span>-</span>class
-<span>layout</span><span>:</span> SpecialLayout
-<span>---</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><ul>
-<li>title 会自动作为 sidebar 的一级链接标题(优先级低于在 config.js 中配置)。</li>
-<li>sidebarDepth 见下文内嵌链接</li>
-<li>navbar 用于在本页面关闭导航栏</li>
-<li>sidebar 用于在本页面关闭侧边栏</li>
-<li>search 用于在本页面关闭搜索框</li>
-<li>tag 用于搜索(内置的搜索只搜索文章的 h2, h3 和 frontmatter 中设置的 tags)</li>
-<li>prev 文章底部，上一篇文章的链接</li>
-<li>next 文章底部，下一篇文章的链接</li>
-<li>pageClass 为这一页自定义一个 class，用于在 .vuepress/styles/index.styl 添加自定义 css</li>
-<li>layout 通常每个 .md 文件内容都是在容器 <code>&lt;div class=&quot;page&quot;&gt;</code> 中渲染的，包含侧边栏，上一篇，下一篇链接等。使用这个选项，可以设置使用特定的 vue 组件渲染该 .md 文件。(.vuepress/components/SpecialLayout.vue)</li>
-</ul>
-<h2 id="navbar"> navbar</h2>
-<p>外部链接自动获得两个属性 target=&quot;_blank&quot; &amp; rel=&quot;noopener noreferrer&quot;。你也可以自定义。</p>
-<ul>
-<li>text 是显示的标题</li>
-<li>ariaLabel 不知道有什么用</li>
-<li>link 当然就是链接啦</li>
-<li>items 用于套娃，最多两层(第一层有下拉菜单，第二层之间有分割线)。</li>
-</ul>
-<div><div><br><br><br><br><br><br><div>&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre><code>themeConfig<span>:</span> <span>{</span>
-    logo<span>:</span> <span>'/assets/img/ChernoLogo.png'</span><span>,</span> <span>// 左上角的图标</span>
-    <span>// 导航栏</span>
-    nav<span>:</span> <span>[</span>
-      <span>{</span> text<span>:</span> <span>'Home'</span><span>,</span> link<span>:</span> <span>'/'</span> <span>}</span><span>,</span>
-      <span>{</span> text<span>:</span> <span>'Guide'</span><span>,</span> link<span>:</span> <span>'/guide/'</span> <span>}</span><span>,</span>
-      <span>{</span> text<span>:</span> <span>'External'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>,</span> target<span>:</span><span>'_self'</span><span>,</span> rel<span>:</span><span>false</span> <span>}</span><span>,</span>
-      <span>{</span>
-        text<span>:</span> <span>'Languages'</span><span>,</span>
-        ariaLabel<span>:</span> <span>'Language Menu'</span><span>,</span>
-        items<span>:</span> <span>[</span> <span>// 还可以继续套娃</span>
-          <span>{</span>
-            text<span>:</span> <span>'Chinese'</span><span>,</span>
-            ariaLabel<span>:</span> <span>'Chinese Menu'</span><span>,</span> <span>// 没啥用啊，这属性</span>
-            items<span>:</span> <span>[</span>
-              <span>{</span> text<span>:</span> <span>'ah'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>}</span><span>,</span>
-              <span>{</span> text<span>:</span> <span>'nj'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>}</span><span>,</span>
-            <span>]</span>
-          <span>}</span><span>,</span>
-          <span>{</span>
-            text<span>:</span> <span>'English'</span><span>,</span>
-            ariaLabel<span>:</span> <span>'English Menu'</span><span>,</span> <span>// 没啥用啊，这属性</span>
-            items<span>:</span> <span>[</span>
-              <span>{</span> text<span>:</span> <span>'sf'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>}</span><span>,</span>
-              <span>{</span> text<span>:</span> <span>'ny'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>}</span><span>,</span>
-            <span>]</span>
-          <span>}</span><span>,</span>
-        <span>]</span>
-      <span>}</span>
-    <span>]</span><span>,</span>
-
-</code></pre><div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br></div></div><h2 id="sidebar"> sidebar</h2>
-<div><pre><code><span>// .vuepress/config.js</span>
-module<span>.</span>exports <span>=</span> <span>{</span>
-  themeConfig<span>:</span> <span>{</span>
-    sidebar<span>:</span> <span>[</span>
-      <span>'/'</span><span>,</span>
-      <span>'/page-a'</span><span>,</span>
-      <span>[</span><span>'/page-b'</span><span>,</span> <span>'显示指定链接标题'</span><span>]</span>
-    <span>]</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><p>指定路径时，可以忽略.md后缀，以'path/'结尾的路径，对应的内容为 path/README.md。如果需要显示指定标题，则如例子中的第三行。</p>
-<h3 id="内嵌链接"> 内嵌链接</h3>
-<p>默认抓取 Markdown 文档的所有二级标题作为当前链接的子链接。对应的设置为 themeConfig.sidebarDepth = 1。</p>
-<p>sidebarDepth = 0 表示没有子链接。
-sidebarDepth = 2 会抓取h2,h3作为子链接。最大层次就是2。效果见本文。</p>
-<p>这个设置除了在配置中改，也可以在 .md 的 frontmatter 部分改。</p>
-<div><pre><code><span>---</span>
-<span>sidebarDepth</span><span>:</span> <span>0</span>
-<span>---</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="展开所有子链接"> 展开所有子链接</h3>
-<div><pre><code><span>// .vuepress/config.js</span>
-module<span>.</span>exports <span>=</span> <span>{</span>
-  themeConfig<span>:</span> <span>{</span>
-    displayAllHeaders<span>:</span> <span>true</span> <span>// Default: false</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h3 id="导航栏分组"> 导航栏分组</h3>
-<p>顾名思义</p>
-<div><pre><code>sidebar<span>:</span> <span>[</span>
-      <span>{</span>
-        title<span>:</span> <span>'Group1'</span><span>,</span> <span>// 必须要有分组名</span>
-        collapsable<span>:</span> <span>false</span><span>,</span> <span>// 默认是折叠，设为 true 表示直接展开</span>
-        children<span>:</span> <span>[</span><span>'/blog/'</span><span>,</span> <span>'/blog/test'</span><span>]</span> <span>// 有多个分组成员</span>
-      <span>}</span><span>,</span>
-      <span>{</span> <span>// 只有一个分组成员</span>
-        title<span>:</span> <span>'Group2'</span><span>,</span>
-        path<span>:</span> <span>'/guide/'</span><span>,</span>
-      <span>}</span><span>,</span>
-      <span>'/'</span><span>,</span>
-    <span>]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h3 id="多重侧边栏"> 多重侧边栏</h3>
-<p>不同的分区可以对应不同的侧边导航栏。<br>
-<strong>fallback 必须放在最后！</strong><br>
-auto 的意思是这一个 md 自动生成一个它独占的侧边栏。</p>
-<div><div><br><br><br><br><br><br><br><br><br><br><br><br><br><div>&nbsp;</div><br><br><br><br><br><br><br><br><br></div><pre><code>sidebar<span>:</span> <span>{</span>
-      <span>'/foo/'</span><span>:</span> <span>[</span>
-        <span>''</span><span>,</span>     <span>/* /foo/ */</span>
-        <span>'one'</span><span>,</span>  <span>/* /foo/one.html */</span>
-        <span>'two'</span>   <span>/* /foo/two.html */</span>
-      <span>]</span><span>,</span>
-
-      <span>'/bar/'</span><span>:</span> <span>[</span>
-        <span>''</span><span>,</span>      <span>/* /bar/ */</span>
-        <span>'three'</span><span>,</span> <span>/* /bar/three.html */</span>
-        <span>'four'</span>   <span>/* /bar/four.html */</span>
-      <span>]</span><span>,</span>
-
-      <span>'/baz/'</span><span>:</span> <span>'auto'</span><span>,</span> <span>/* automatically generate single-page sidebars */</span>
-
-      <span>// fallback</span>
-      <span>'/'</span><span>:</span> <span>[</span>
-        <span>''</span><span>,</span>        <span>/* / */</span>
-        <span>'contact'</span><span>,</span> <span>/* /contact.html */</span>
-        <span>'about'</span>    <span>/* /about.html */</span>
-      <span>]</span>
-    <span>}</span>
-</code></pre><div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="code-groups"> code groups</h2>
-<p>CodeGroupItem之间需要空一行</p>
-<div><pre><code><span><span><span>&lt;</span>CodeGroup</span><span>></span></span>
-<span><span><span>&lt;</span>CodeGroupItem</span> <span>title</span><span><span>=</span><span>"</span>YARN<span>"</span></span><span>></span></span>
-\`\`\`bash
-yarn create vuepress-site [optionalDirectoryName]
-\`\`\`
-<span><span><span>&lt;/</span>CodeGroupItem</span><span>></span></span>
-
-<span><span><span>&lt;</span>CodeGroupItem</span> <span>title</span><span><span>=</span><span>"</span>NPM<span>"</span></span><span>></span></span>
-\`\`\`bash
-npx create-vuepress-site [optionalDirectoryName]
-\`\`\`
-<span><span><span>&lt;/</span>CodeGroupItem</span><span>></span></span>
-<span><span><span>&lt;/</span>CodeGroup</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>效果如下</p>
-<CodeGroup>
-<CodeGroupItem title="YARN">
-<div><pre><code><span>yarn</span> create vuepress-site <span>[</span>optionalDirectoryName<span>]</span>
-</code></pre>
-<div><span>1</span><br></div></div></CodeGroupItem>
-<CodeGroupItem title="NPM">
-<div><pre><code>npx create-vuepress-site <span>[</span>optionalDirectoryName<span>]</span>
-</code></pre>
-<div><span>1</span><br></div></div></CodeGroupItem>
-</CodeGroup>]]></content:encoded>
-    </item>
-    <item>
-      <title>katex 常用写法</title>
-      <link>https://kigane.github.io/blog/katex-cheatsheet/</link>
-      <guid>https://kigane.github.io/blog/katex-cheatsheet/</guid>
-      <source url="https://kigane.github.io/rss.xml">katex 常用写法</source>
-      <content:encoded><![CDATA[<h2 id="常用符号"> 常用符号</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">写法</th>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">写法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span>ϕ</span></span></span></span></td>
-<td style="text-align:center">\phi</td>
-<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.68333em;vertical-align:0em;"></span><span>Φ</span></span></span></span></td>
-<td style="text-align:center">\Phi</td>
-</tr>
-<tr>
-<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.43056em;vertical-align:0em;"></span><span style="margin-right:0.03588em;">ω</span></span></span></span></td>
-<td style="text-align:center">\omega</td>
-<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.68333em;vertical-align:0em;"></span><span>Ω</span></span></span></span></td>
-<td style="text-align:center">\Omega</td>
-</tr>
-</tbody>
-</table>
-<h2 id="环境"> 环境</h2>
-<p><img src="/assets/img/katex-environments.png" alt="环境" /></p>
-<p>多行公式在vuepress中无效，使用aligned环境替代。</p>
-]]></content:encoded>
-      <enclosure url="https://kigane.github.io/assets/img/katex-environments.png" type="image/png"/>
-    </item>
-    <item>
-      <title>python</title>
-      <link>https://kigane.github.io/blog/python/</link>
-      <guid>https://kigane.github.io/blog/python/</guid>
-      <source url="https://kigane.github.io/rss.xml">python</source>
-      <content:encoded><![CDATA[<h2 id="import"> import</h2>
-<h3 id="module"> module</h3>
-<ul>
-<li>dir(): 无参数，查看全局命名空间的变量</li>
-<li>dir(module): 查看指定模块的变量</li>
-<li>一个.py文件可看作一个模块
-<ul>
-<li>import module (as alias) 引入module，可使用module命名空间及其内的变量</li>
-<li>from module import var 将var从module中导入全局命名空间</li>
-</ul>
+      <title>Deep learning in computer vision: A critical review of emerging techniques and application scenarios</title>
+      <link>https://kigane.github.io/blog/DL-review-in-CV/</link>
+      <guid>https://kigane.github.io/blog/DL-review-in-CV/</guid>
+      <source url="https://kigane.github.io/rss.xml">Deep learning in computer vision: A critical review of emerging techniques and application scenarios</source>
+      <category>thesis</category>
+      <pubDate>Thu, 07 Oct 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="deep-learning-in-computer-vision-a-critical-review-of-emerging-techniques-and-application-scenarios"> Deep learning in computer vision: A critical review of emerging techniques and application scenarios</h1>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S2666827021000670" target="_blank" rel="noopener noreferrer">原文</a></p>
+<h2 id="abstract"> abstract</h2>
+<p>八大新兴技术，四大应用场景。</p>
+<p>深度学习在过去十年中发展迅速，就算法与架构而言，可分为十个主要类别：</p>
+<ol>
+<li>Convolutional Neural Networks (CNNs)</li>
+<li>Long Short-Term Memory Networks (LSTMs)</li>
+<li>Recurrent Neural Networks (RNNs)</li>
+<li>Generative Adversarial Networks (GANs)</li>
+<li>Radial Basis Function Networks (RBFNs)</li>
+<li>Multilayer Perceptrons (MLPs)</li>
+<li>Self-Organizing Maps (SOMs)</li>
+<li>Deep Belief Networks (DBNs)</li>
+<li>Restricted Boltzmann Machines (RBMs)</li>
+<li>Autoencoders</li>
+</ol>
+<p>对比RBM, Autoencoders, Sparse Coding和CNN后，最终得出的结论，在CV领域，CNN是最合适的架构<sup></sup>。</p>
+<h2 id="八大技术"> 八大技术</h2>
+<h3 id="alexnet"> AlexNet</h3>
+<p>由Krizhevsky<sup></sup>等(2012)提出的AlexNet的架构为：5层卷积层(convolutional layer)，后跟3层连接层(connected layer)。每个卷积层的输出都会使用ReLU作为激活函数。AlexNet的原始模型用两块GPU训练。一个就称为AlexNet, 另一个称为CaffeNet，主要的区别在于使用pooling的位置不同，CaffeNet是在前两个卷积层的局部响应标准化之前，而AlexNet正相反。</p>
+<h3 id="vggnet"> VGGNet</h3>
+<p>由Simonyan and Zisserman (2015)<sup></sup> 提出的VGGNet，通过使用小的卷积filter(3×3)添加更多卷积层来增加网络的深度，同时其他参数是固定的。在现有配置能达到的前提下，将网络深度增加到16层和19层时，效果最好，因此特定架构被称为VGG-16和VGG-19。VGGNet优于同期其他方法的原因是，VGGNet的参数空间特别大，其最终模型有超过5亿个参数，作为对比，AlexNet只有两亿个参数。</p>
+<h3 id="googlenet-inception"> GoogLeNet &amp; Inception</h3>
+<p>Lin等人介绍了Network-in-Network(NIN)，它由一堆 mlpconv 层组成，用一般非线性函数逼近器(general non-linear function approximator)代替卷积filter。NIN的另一个特点是它使用global average pooling来代替全连接层。它平均每个feature map，并将结果直接导入softmax层。在某些数据集中，NIN可以使用很少的参数达到和之前差不多甚至更好的识别准确率。</p>
+<p>Szegedy et al. (2015)提出了一种新的CNN架构，如图所示。<br>
+<img src="/assets/thesis/Inception.png" alt="pic" /><br>
+其目标是在保持计算量恒定的同时，增加网络的宽度和深度。GoogLeNet这个22层的模型，多次使用了Inception层。GoogLeNet主要利用了NIN的两个idea：1x1的卷积和global average pooling。<br>
+后来，Szegedy发现，卷积核越大，计算代价就越大，且是超乎寻常的大。因此，使用两个3x3的卷积核代替5x5(7x7)的卷积核。<br>
+在v3版本，又使用了Batch Normalization。<br>
+受ResNet启发，他们将Inception架构与残差连接相结合，创造了一个名为Inception-ResNet的新架构。<br>
+最终，Chollet (2017)提出Xception架构。</p>
+<h3 id="resnet"> ResNet</h3>
+<p>学习考虑输入的残差函数比学习没有用到输入的参数更高效。残差神经网络使用多个参数层来学习输入输出之间的残差表示，而非像普通CNN那样直接学习输入输出之间的映射。</p>
+<h3 id="densenet"> DenseNet</h3>
+<p>将所有layer直接相连，每一个layer的输入来自其前面的所有layer。</p>
+<h3 id="mobilenet"> MobileNet</h3>
+<h3 id="efficientnet"> EfficientNet</h3>
+<p>保持网络深度，宽度，resolution的均衡会使模型的表现更好。</p>
+<h3 id="regnet"> RegNet</h3>
+<p>一个网络设计范式，结合了手工设计和NAS(network architecture search)的优点。</p>
+<hr>
+<section>
+<ol>
+<li id="footnote1"><p>Guo, Y., Liu, Y., Oerlemans, A., Lao, S., Wu, S., &amp; Lew, M. S. (2016). Deep learning for visual understanding: A review. Neurocomputing, 187, 27–48. http://dx.doi.org/10.1016/j.neucom.2015.09.116. </p>
 </li>
-</ul>
-<h3 id="package"> package</h3>
-<ul>
-<li>一个目录，包含目录和子模块。</li>
-<li>创建一个package需要在目录下创建一个<code>__init__.py</code></li>
-<li>需要在<code>__init__.py</code>中引入子模块，否则import package时空有命名空间，而无内容</li>
-</ul>
+<li id="footnote2"><p>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). Imagenet classification with deep convolutional neural networks. In Proceedings of the 25th international conference on neural information processing systems (nips), Vol. 1, USA (pp. 1097-1105). </p>
+</li>
+<li id="footnote3"><p>Simonyan, K., &amp; Zisserman, A. (2015). Very deep convolutional networks for largescale image  recognition. In Proceedings of the 3rd international conference on learning representations (iclr2015), USA. </p>
+</li>
+</ol>
+</section>
 ]]></content:encoded>
+      <enclosure url="https://kigane.github.io/assets/thesis/Inception.png" type="image/png"/>
     </item>
     <item>
       <title>游戏引擎总览</title>
       <link>https://kigane.github.io/blog/game-engine-overview/</link>
       <guid>https://kigane.github.io/blog/game-engine-overview/</guid>
       <source url="https://kigane.github.io/rss.xml">游戏引擎总览</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="典型的游戏团队结构"> 典型的游戏团队结构</h2>
 <ul>
 <li>engineers
@@ -543,6 +335,349 @@ Unity的设计初衷是简化开发和跨平台。
       <enclosure url="https://kigane.github.io/assets/img/game-engine-reusability-gamut.png" type="image/png"/>
     </item>
     <item>
+      <title>我的博客</title>
+      <link>https://kigane.github.io/blog/</link>
+      <guid>https://kigane.github.io/blog/</guid>
+      <source url="https://kigane.github.io/rss.xml">我的博客</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="名言警句"> 名言警句</h2>
+<blockquote>
+<p>不积跬步无以至千里</p>
+</blockquote>
+<blockquote>
+<p>Keep It Simple, Stupid.</p>
+</blockquote>
+<blockquote>
+<p>快速推进，逐步优化</p>
+</blockquote>
+<blockquote>
+<p>Make it work. Make it right. Make it fast.</p>
+</blockquote>
+<blockquote>
+<p>前途很远，也很暗。
+然而不要怕，不怕的人的面前才有路。</p>
+</blockquote>
+<blockquote>
+<p>I want to create a collection of games during my career, so that when I am on my deathbed I can look back and see that I created all these wonderful things that brought people joy.</p>
+</blockquote>
+<blockquote>
+<p>Less interests, more interest.</p>
+</blockquote>
+<blockquote>
+<p>想，都是问题。做，才是答案。</p>
+</blockquote>
+<blockquote>
+<p>形而上者谓之道，形而下者谓之器，能舍器而直接近道者，几稀！</p>
+</blockquote>
+<blockquote>
+<p>比较的关键不在于相似特征的多少，而在于特征是不是揭示了事物的本质</p>
+</blockquote>
+<blockquote>
+<p>Experience is what you get when you didn't get what you wanted.</p>
+</blockquote>
+<blockquote>
+<p>&quot;luck&quot; is where preparation meets opportunity.</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>python</title>
+      <link>https://kigane.github.io/blog/python/</link>
+      <guid>https://kigane.github.io/blog/python/</guid>
+      <source url="https://kigane.github.io/rss.xml">python</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="基础"> 基础</h2>
+<h3 id="import"> import</h3>
+<h4 id="module"> module</h4>
+<ul>
+<li>dir(): 无参数，查看全局命名空间的变量</li>
+<li>dir(module): 查看指定模块的变量</li>
+<li>一个.py文件可看作一个模块
+<ul>
+<li>import module (as alias) 引入module，可使用module命名空间及其内的变量</li>
+<li>from module import var 将var从module中导入全局命名空间</li>
+</ul>
+</li>
+</ul>
+<h4 id="package"> package</h4>
+<ul>
+<li>一个目录，包含目录和子模块。</li>
+<li>创建一个package需要在目录下创建一个<code>__init__.py</code></li>
+<li>需要在<code>__init__.py</code>中引入子模块，否则import package时空有命名空间，而无内容</li>
+</ul>
+<h4 id="模块查找顺序"> 模块查找顺序</h4>
+<ul>
+<li>sys.module</li>
+<li>python标准库</li>
+<li>sys.path</li>
+</ul>
+<h3 id="解包-自动"> 解包(自动)</h3>
+<ul>
+<li>等号右边的序列可以直接解包为单个元素，只要在左边分配同样数量的变量。</li>
+<li>数量必须相同，否则会报错</li>
+<li>可以部分解包，即最后一个变量前加<code>*</code>号，则最后一个变量会接受所有多出来的值，并形成一个数组。(序列元素数量必须多于分配的变量数)</li>
+</ul>
+<h3 id="压缩-zip"> 压缩(zip)</h3>
+<ul>
+<li><code>zip(range(3), reverse(range(5))) -&gt; [(0, 4), (1, 3), (2, 2)]</code></li>
+<li>创建字典时很有用: dict(zip(keys, values))</li>
+</ul>
+<h3 id="itertools-chain"> itertools.chain</h3>
+<ul>
+<li>itertools.chain(range(3), range(4), range(5))</li>
+<li>作用是将三个生成器(range())合并成一个新的，生成<code>[0,1,2,0,1,2,3,0,1,2,3,4]</code></li>
+</ul>
+<h3 id="模块"> 模块</h3>
+<h4 id="相对导入"> 相对导入</h4>
+<ul>
+<li><code>.</code>，当前目录, <code>..</code>上一级目录, <code>...</code>上上一级目录。</li>
+</ul>
+<h4 id="importlib-模块"> importlib 模块</h4>
+<ul>
+<li><code>import_module('module_name', package=__name__)</code> 返回值即模块</li>
+<li>package用于考虑相对导入</li>
+</ul>
+<h3 id="函数"> 函数</h3>
+<h4 id="参数"> 参数</h4>
+<ul>
+<li><code>def add(*args)</code>: 这里<code>*</code>作用是将所有剩下的未解析参数打包到一个元组中，赋给args。调用时可以用<code>*args</code>的到解包后的值。</li>
+<li><code>def init(**kwargs)</code>: 这里<code>**</code>作用是将所有剩下未解析的关键字参数打包成字典，赋给kwargs。</li>
+<li><code>def say(a, b, *, key=val...)</code>: 这里<code>*</code>是标识符，左边是位置参数，右边是关键字参数。</li>
+<li>参数类型的声明顺序
+<ul>
+<li>必须参数</li>
+<li>可选参数(提供默认值的参数)</li>
+<li><code>*args</code></li>
+<li><code>**kwargs</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="函数注解"> 函数注解</h4>
+<ul>
+<li>python中对参数类型(参数后的冒号部分)和返回值类型(函数括号后，行尾冒号前的<code>-&gt;xx</code>部分)的描述方法</li>
+<li><code>def prepend_rows(row:list, prefix:str) -&gt; list:</code></li>
+<li>这些部分属于注解而非表达式，所以内容是无限制的。</li>
+</ul>
+<h3 id="lambda"> lambda</h3>
+<ul>
+<li><code>f = lambda x: x*x</code></li>
+<li>语法: <code>lambda params:body</code>, <code>lambda: body</code></li>
+<li>body必须是返回一个值的单个表达式</li>
+</ul>
+<h3 id="类"> 类</h3>
+<h4 id="基础-2"> 基础</h4>
+<ul>
+<li>python类声明的主体是一个代码块，可以包含任何有效的python代码</li>
+<li>在类声明中声明的变量会成为类对象的一个属性(即，类会创建一个新的命名空间记录这些变量)</li>
+<li>super(Class, instance, ...) 使用instance的MRO，从Class位置开始向上找。</li>
+</ul>
+<h4 id="动态加载"> 动态加载</h4>
+<ul>
+<li>python所有的类都是type()的子类</li>
+<li>type()用于实例化类的三部分信息:
+<ul>
+<li>类名称</li>
+<li>基类</li>
+<li>命名空间字典，在执行类的主体时被填充</li>
+</ul>
+</li>
+<li>type()称为元类</li>
+</ul>
+<div><pre><code><span>class</span> <span>A</span><span>(</span><span>int</span><span>)</span><span>:</span>
+    spam <span>=</span> <span>'eggs'</span>
+
+<span># 等价于</span>
+<span># 第一个A是为了创建类， 第二个A是用于将类名绑定到命名空间，两者可以不同(实际用时也确实是不同的)</span>
+A <span>=</span> <span>type</span><span>(</span><span>'A'</span><span>,</span> <span>(</span><span>int</span><span>,</span><span>)</span><span>,</span> <span>{</span><span>'spam'</span><span>:</span> <span>'eggs'</span><span>}</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h4 id="自定义元类"> 自定义元类</h4>
+<div><pre><code><span># 通过继承type自定义元类</span>
+<span>class</span> <span>SimpleMeta</span><span>(</span><span>type</span><span>)</span><span>:</span>
+    <span>def</span> <span>__init__</span><span>(</span>cls<span>,</span> name<span>,</span> bases<span>,</span> attrs<span>)</span><span>:</span>
+        <span>print</span><span>(</span>name<span>)</span>
+        <span>super</span><span>(</span>SimpleMeta<span>,</span> cls<span>)</span><span>.</span>__init__<span>(</span>name<span>,</span> bases<span>,</span> attrs<span>)</span>
+
+<span># 使用元类，效果是：python会自动将类定义传递给元类进行处理</span>
+<span>class</span> <span>Example</span><span>(</span>metaclass<span>=</span>SimpleMeta<span>)</span><span>:</span>
+    <span>pass</span> <span># 效果和标准类型一样</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h4 id="成员变量"> 成员变量</h4>
+<ul>
+<li>getattr() 用名称检索成员变量 访问类中不存在的成员变量时会触发<code>__getattr__</code>(d['attr'])</li>
+<li>setattr() 用名称设置成员变量 设置类成员时触发<code>__setattr__</code>(d.attr = 'attr')</li>
+<li>delattr() 用名称删除成员变量 删除类成员时触发<code>__delattr__</code>(del d.attr)</li>
+<li><code>__str__</code> toString方法</li>
+<li><code>__repr__</code> 在解释器中单独引用对象时触发</li>
+</ul>
+<h3 id="打包到pip"> 打包到pip</h3>
+<ul>
+<li>新建文件夹</li>
+<li>将package放进去(包含__init__.py)</li>
+<li>在根目录新建setup.py</li>
+<li>在根目录执行
+<ul>
+<li>python setup.py bdist_wheel 打包成wheel</li>
+<li>python setup.py sdist 打包成tar</li>
+</ul>
+</li>
+<li>在打包好的文件目录下pip install 打包好的文件名</li>
+<li>pip uninstall setup.name 即可卸载</li>
+</ul>
+<div><pre><code><span>from</span> setuptools <span>import</span> setup
+<span>from</span> setuptools <span>import</span> find_packages
+
+setup<span>(</span>name<span>=</span><span>'MySheet'</span><span>,</span>
+      version<span>=</span><span>'0.1'</span><span>,</span>
+      author<span>=</span><span>'hwk'</span><span>,</span>
+      author_email<span>=</span><span>'abc@fg.com'</span><span>,</span>
+      url<span>=</span><span>'https://hello.com'</span><span>,</span>
+      packages<span>=</span>find_packages<span>(</span><span>)</span><span>,</span>
+      zip_safe<span>=</span><span>False</span><span>,</span>
+<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h2 id="plt"> plt</h2>
+<h3 id="markevery-指定会在图上标记的点的位置-间距"> markevery--指定会在图上标记的点的位置，间距</h3>
+<ul>
+<li>markevery=3 每三个数据点标记一个(标记，不标记，不标记，标记...)</li>
+<li>markevery=(30, 3) 第30个之后，每三个数据点标记一个</li>
+<li><code>markevery=[1,2,3,4]</code> 手动给出需要标记的点</li>
+<li>markevery=slice(30, 90, 3) 在给定的区间(30, 90)内，每三个数据点标记一个</li>
+<li>整型是以数据顺序为准，若是浮点型则以坐标轴长度为准。</li>
+</ul>
+<h3 id="极坐标"> 极坐标</h3>
+<ul>
+<li>subplot_kw={'projection': 'polar'} 映射到极坐标上</li>
+</ul>
+<h2 id="pytorch"> pytorch</h2>
+<h3 id="可重复性"> 可重复性</h3>
+<ul>
+<li>torch.backends.cudnn.benchmark = False 固定cuDNN在程序运行时使用的卷积算法</li>
+<li>torch.backends.cudnn.deterministic = True  程序运行时设定的算法也可能不同，将其确定下来</li>
+<li>torch.manual_seed(seed) 设置CPU和CUDA的RNG种子</li>
+<li>torch.cuda.manual_seed_all(seed) 设置所有GPU的RNG种子</li>
+<li>np.random.seed(seed) 设置NumPy的全局RNG种子</li>
+</ul>
+<h3 id="基础-3"> 基础</h3>
+<ul>
+<li>函数以_结尾，说明函数会原地修改调用者</li>
+<li>torch.matmul 矩阵乘法</li>
+<li>torch.no_grad() 禁止gradient操作</li>
+<li>tensor.detach() 将张量从求梯度时建立的计算图中去掉，需要固定参数时很有用</li>
+<li>tensor.cpu() 在CPU内存中返回对象的copy，如果已经在CPU了，则什么也不做</li>
+<li>tensor.item() 当Tensor只有一个元素时，返回相应的python原生对象</li>
+<li>torch.mean(tensor) 可以用dim=aixNum指定要在多维数组的那个维度求mean, 用keepdim=True可以让结果以指定的dim消失，但其他dim保留的形式显示。</li>
+<li>tensor.std()</li>
+<li>tensor.squeeze(dim) 去除指定的只有一个元素的维度</li>
+<li>tensor.unsqueeze(dim) 添加一个只有一个元素的维度</li>
+<li>dim=x，x为tensor.shape的第x+1个元素</li>
+<li>tensor.transpose(dim1, dim2) 转置两个指定维度</li>
+<li>torch.cat([x, y, z], dim=1) 将张量x,y,z在dim=1轴上合并</li>
+<li>模型的保存加载
+<ul>
+<li>torch.save(model.state_dict(), PATH)</li>
+<li>model = Model(*args, **kargs)</li>
+<li>model.load_state_dict(torch.load(PATH))</li>
+<li>model.eval()</li>
+</ul>
+</li>
+<li>dataloader
+<ul>
+<li>drop_last=True 如果batch_size不能被样本数整除，则丢弃最后一个不完整的batch。</li>
+<li>pin_memory=True the data loader will copy Tensors into CUDA pinned memory(CUDA的固定内存，可直接用物理地址访问，速度快) before returning them.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>广播机制
+<ul>
+<li>每个张量必须至少有1维</li>
+<li>维数遍历是从最后一维开始的，可广播的条件是，两个张量相应的维度
+<ul>
+<li>相等</li>
+<li>其中一个是1</li>
+<li>其中一个不存在</li>
+</ul>
+</li>
+<li>其中
+<ul>
+<li>相等，就是正常情况</li>
+<li>其中一个不存在时，就加一维，令其成为1</li>
+<li>其中一个为1，会将其复制扩张到另一个张量的大小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>torch.normal(mean, std, size, *, out=None) → Tensor 生成正态分布的随机数组成的tensor</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>安装记录</title>
+      <link>https://kigane.github.io/blog/install/</link>
+      <guid>https://kigane.github.io/blog/install/</guid>
+      <source url="https://kigane.github.io/rss.xml">安装记录</source>
+      <category>install</category>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="anaconda"> anaconda</h2>
+<h3 id="常用命令"> 常用命令</h3>
+<ul>
+<li>conda list: 查看安装了哪些包。</li>
+<li>conda env list: 查看当前存在哪些虚拟环境</li>
+<li>conda create -n your_env_name python=X.X: 创建python版本为X.X、名字为your_env_name的虚拟环境。your_env_name文件可以在Anaconda安装目录envs文件夹下找到。</li>
+<li>activate your_env_name: Windows下激活虚拟环境</li>
+<li>deactivate 退出</li>
+<li>Linux下，激活，退出都在开头加一个source</li>
+<li>conda remove -n your_env_name --all: 移除虚拟环境</li>
+<li>conda install package_name: 在当前环境中安装包</li>
+<li>conda install -n your_env_name package_name: 在指定环境中安装包</li>
+<li>update, remove语法和install相同</li>
+<li>conda search pname: 模糊搜索package</li>
+<li>conda search --full-name pname: 全名查找</li>
+<li>conda env export &gt; environment.yml: 导出环境配置</li>
+<li>conda env create -f environment.yml: 导入环境配置</li>
+</ul>
+<h2 id="pytorch"> pytorch</h2>
+<p>https://pytorch.org/get-started/locally/#windows-anaconda</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>katex 常用写法</title>
+      <link>https://kigane.github.io/blog/katex-cheatsheet/</link>
+      <guid>https://kigane.github.io/blog/katex-cheatsheet/</guid>
+      <source url="https://kigane.github.io/rss.xml">katex 常用写法</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="常用符号"> 常用符号</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">写法</th>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">写法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span>ϕ</span></span></span></span></td>
+<td style="text-align:center">\phi</td>
+<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.68333em;vertical-align:0em;"></span><span>Φ</span></span></span></span></td>
+<td style="text-align:center">\Phi</td>
+</tr>
+<tr>
+<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.43056em;vertical-align:0em;"></span><span style="margin-right:0.03588em;">ω</span></span></span></span></td>
+<td style="text-align:center">\omega</td>
+<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.68333em;vertical-align:0em;"></span><span>Ω</span></span></span></span></td>
+<td style="text-align:center">\Omega</td>
+</tr>
+</tbody>
+</table>
+<h2 id="环境"> 环境</h2>
+<p><img src="/assets/img/katex-environments.png" alt="环境" /></p>
+<p>多行公式在vuepress中无效，使用aligned环境替代。</p>
+]]></content:encoded>
+      <enclosure url="https://kigane.github.io/assets/img/katex-environments.png" type="image/png"/>
+    </item>
+    <item>
       <title>组件禁用</title>
       <link>https://kigane.github.io/guide/disable/</link>
       <guid>https://kigane.github.io/guide/disable/</guid>
@@ -550,6 +685,7 @@ Unity的设计初衷是简化开发和跨平台。
       <description>&amp;lt;p&amp;gt;你可以通过设置页面的 Frontmatter，在页面禁用一些功能。&amp;lt;/p&amp;gt;
 </description>
       <category>使用指南</category>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<p>你可以通过设置页面的 Frontmatter，在页面禁用一些功能。</p>
 
 <p>本页面应当禁用了:</p>
@@ -569,11 +705,199 @@ Unity的设计初衷是简化开发和跨平台。
 ]]></content:encoded>
     </item>
     <item>
+      <title>VuePress 默认主题设置</title>
+      <link>https://kigane.github.io/guide/configuration/</link>
+      <guid>https://kigane.github.io/guide/configuration/</guid>
+      <source url="https://kigane.github.io/rss.xml">VuePress 默认主题设置</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="frontmatter"> frontmatter</h2>
+<p>必须在每个 .md 文件开头，通常以 yaml 格式表示。</p>
+<div><pre><code><span>---</span>
+<span>title</span><span>:</span> hello vuepress
+<span>lang</span><span>:</span> zh<span>-</span>CN
+
+<span>sidebarDepth</span><span>:</span> <span>2</span> 
+<span>navbar</span><span>:</span> <span>false</span> 
+<span>sidebar</span><span>:</span> <span>false</span>
+<span>search</span><span>:</span> <span>false</span>
+<span>tags</span><span>:</span>
+  <span>-</span> configuration
+  <span>-</span> theme
+  <span>-</span> indexing
+<span>prev</span><span>:</span> ./some<span>-</span>other<span>-</span>page
+<span>next</span><span>:</span> <span>false</span>
+<span>pageClass</span><span>:</span> custom<span>-</span>page<span>-</span>class
+<span>layout</span><span>:</span> SpecialLayout
+<span>---</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><ul>
+<li>title 会自动作为 sidebar 的一级链接标题(优先级低于在 config.js 中配置)。</li>
+<li>sidebarDepth 见下文内嵌链接</li>
+<li>navbar 用于在本页面关闭导航栏</li>
+<li>sidebar 用于在本页面关闭侧边栏</li>
+<li>search 用于在本页面关闭搜索框</li>
+<li>tag 用于搜索(内置的搜索只搜索文章的 h2, h3 和 frontmatter 中设置的 tags)</li>
+<li>prev 文章底部，上一篇文章的链接</li>
+<li>next 文章底部，下一篇文章的链接</li>
+<li>pageClass 为这一页自定义一个 class，用于在 .vuepress/styles/index.styl 添加自定义 css</li>
+<li>layout 通常每个 .md 文件内容都是在容器 <code>&lt;div class=&quot;page&quot;&gt;</code> 中渲染的，包含侧边栏，上一篇，下一篇链接等。使用这个选项，可以设置使用特定的 vue 组件渲染该 .md 文件。(.vuepress/components/SpecialLayout.vue)</li>
+</ul>
+<h2 id="navbar"> navbar</h2>
+<p>外部链接自动获得两个属性 target=&quot;_blank&quot; &amp; rel=&quot;noopener noreferrer&quot;。你也可以自定义。</p>
+<ul>
+<li>text 是显示的标题</li>
+<li>ariaLabel 不知道有什么用</li>
+<li>link 当然就是链接啦</li>
+<li>items 用于套娃，最多两层(第一层有下拉菜单，第二层之间有分割线)。</li>
+</ul>
+<div><div><br><br><br><br><br><br><div>&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre><code>themeConfig<span>:</span> <span>{</span>
+    logo<span>:</span> <span>'/assets/img/ChernoLogo.png'</span><span>,</span> <span>// 左上角的图标</span>
+    <span>// 导航栏</span>
+    nav<span>:</span> <span>[</span>
+      <span>{</span> text<span>:</span> <span>'Home'</span><span>,</span> link<span>:</span> <span>'/'</span> <span>}</span><span>,</span>
+      <span>{</span> text<span>:</span> <span>'Guide'</span><span>,</span> link<span>:</span> <span>'/guide/'</span> <span>}</span><span>,</span>
+      <span>{</span> text<span>:</span> <span>'External'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>,</span> target<span>:</span><span>'_self'</span><span>,</span> rel<span>:</span><span>false</span> <span>}</span><span>,</span>
+      <span>{</span>
+        text<span>:</span> <span>'Languages'</span><span>,</span>
+        ariaLabel<span>:</span> <span>'Language Menu'</span><span>,</span>
+        items<span>:</span> <span>[</span> <span>// 还可以继续套娃</span>
+          <span>{</span>
+            text<span>:</span> <span>'Chinese'</span><span>,</span>
+            ariaLabel<span>:</span> <span>'Chinese Menu'</span><span>,</span> <span>// 没啥用啊，这属性</span>
+            items<span>:</span> <span>[</span>
+              <span>{</span> text<span>:</span> <span>'ah'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>}</span><span>,</span>
+              <span>{</span> text<span>:</span> <span>'nj'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>}</span><span>,</span>
+            <span>]</span>
+          <span>}</span><span>,</span>
+          <span>{</span>
+            text<span>:</span> <span>'English'</span><span>,</span>
+            ariaLabel<span>:</span> <span>'English Menu'</span><span>,</span> <span>// 没啥用啊，这属性</span>
+            items<span>:</span> <span>[</span>
+              <span>{</span> text<span>:</span> <span>'sf'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>}</span><span>,</span>
+              <span>{</span> text<span>:</span> <span>'ny'</span><span>,</span> link<span>:</span> <span>'https://google.com'</span> <span>}</span><span>,</span>
+            <span>]</span>
+          <span>}</span><span>,</span>
+        <span>]</span>
+      <span>}</span>
+    <span>]</span><span>,</span>
+
+</code></pre><div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br></div></div><h2 id="sidebar"> sidebar</h2>
+<div><pre><code><span>// .vuepress/config.js</span>
+module<span>.</span>exports <span>=</span> <span>{</span>
+  themeConfig<span>:</span> <span>{</span>
+    sidebar<span>:</span> <span>[</span>
+      <span>'/'</span><span>,</span>
+      <span>'/page-a'</span><span>,</span>
+      <span>[</span><span>'/page-b'</span><span>,</span> <span>'显示指定链接标题'</span><span>]</span>
+    <span>]</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><p>指定路径时，可以忽略.md后缀，以'path/'结尾的路径，对应的内容为 path/README.md。如果需要显示指定标题，则如例子中的第三行。</p>
+<h3 id="内嵌链接"> 内嵌链接</h3>
+<p>默认抓取 Markdown 文档的所有二级标题作为当前链接的子链接。对应的设置为 themeConfig.sidebarDepth = 1。</p>
+<p>sidebarDepth = 0 表示没有子链接。
+sidebarDepth = 2 会抓取h2,h3作为子链接。最大层次就是2。效果见本文。</p>
+<p>这个设置除了在配置中改，也可以在 .md 的 frontmatter 部分改。</p>
+<div><pre><code><span>---</span>
+<span>sidebarDepth</span><span>:</span> <span>0</span>
+<span>---</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="展开所有子链接"> 展开所有子链接</h3>
+<div><pre><code><span>// .vuepress/config.js</span>
+module<span>.</span>exports <span>=</span> <span>{</span>
+  themeConfig<span>:</span> <span>{</span>
+    displayAllHeaders<span>:</span> <span>true</span> <span>// Default: false</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h3 id="导航栏分组"> 导航栏分组</h3>
+<p>顾名思义</p>
+<div><pre><code>sidebar<span>:</span> <span>[</span>
+      <span>{</span>
+        title<span>:</span> <span>'Group1'</span><span>,</span> <span>// 必须要有分组名</span>
+        collapsable<span>:</span> <span>false</span><span>,</span> <span>// 默认是折叠，设为 true 表示直接展开</span>
+        children<span>:</span> <span>[</span><span>'/blog/'</span><span>,</span> <span>'/blog/test'</span><span>]</span> <span>// 有多个分组成员</span>
+      <span>}</span><span>,</span>
+      <span>{</span> <span>// 只有一个分组成员</span>
+        title<span>:</span> <span>'Group2'</span><span>,</span>
+        path<span>:</span> <span>'/guide/'</span><span>,</span>
+      <span>}</span><span>,</span>
+      <span>'/'</span><span>,</span>
+    <span>]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h3 id="多重侧边栏"> 多重侧边栏</h3>
+<p>不同的分区可以对应不同的侧边导航栏。<br>
+<strong>fallback 必须放在最后！</strong><br>
+auto 的意思是这一个 md 自动生成一个它独占的侧边栏。</p>
+<div><div><br><br><br><br><br><br><br><br><br><br><br><br><br><div>&nbsp;</div><br><br><br><br><br><br><br><br><br></div><pre><code>sidebar<span>:</span> <span>{</span>
+      <span>'/foo/'</span><span>:</span> <span>[</span>
+        <span>''</span><span>,</span>     <span>/* /foo/ */</span>
+        <span>'one'</span><span>,</span>  <span>/* /foo/one.html */</span>
+        <span>'two'</span>   <span>/* /foo/two.html */</span>
+      <span>]</span><span>,</span>
+
+      <span>'/bar/'</span><span>:</span> <span>[</span>
+        <span>''</span><span>,</span>      <span>/* /bar/ */</span>
+        <span>'three'</span><span>,</span> <span>/* /bar/three.html */</span>
+        <span>'four'</span>   <span>/* /bar/four.html */</span>
+      <span>]</span><span>,</span>
+
+      <span>'/baz/'</span><span>:</span> <span>'auto'</span><span>,</span> <span>/* automatically generate single-page sidebars */</span>
+
+      <span>// fallback</span>
+      <span>'/'</span><span>:</span> <span>[</span>
+        <span>''</span><span>,</span>        <span>/* / */</span>
+        <span>'contact'</span><span>,</span> <span>/* /contact.html */</span>
+        <span>'about'</span>    <span>/* /about.html */</span>
+      <span>]</span>
+    <span>}</span>
+</code></pre><div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="code-groups"> code groups</h2>
+<p>CodeGroupItem之间需要空一行</p>
+<div><pre><code><span><span><span>&lt;</span>CodeGroup</span><span>></span></span>
+<span><span><span>&lt;</span>CodeGroupItem</span> <span>title</span><span><span>=</span><span>"</span>YARN<span>"</span></span><span>></span></span>
+\`\`\`bash
+yarn create vuepress-site [optionalDirectoryName]
+\`\`\`
+<span><span><span>&lt;/</span>CodeGroupItem</span><span>></span></span>
+
+<span><span><span>&lt;</span>CodeGroupItem</span> <span>title</span><span><span>=</span><span>"</span>NPM<span>"</span></span><span>></span></span>
+\`\`\`bash
+npx create-vuepress-site [optionalDirectoryName]
+\`\`\`
+<span><span><span>&lt;/</span>CodeGroupItem</span><span>></span></span>
+<span><span><span>&lt;/</span>CodeGroup</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>效果如下</p>
+<CodeGroup>
+<CodeGroupItem title="YARN">
+<div><pre><code><span>yarn</span> create vuepress-site <span>[</span>optionalDirectoryName<span>]</span>
+</code></pre>
+<div><span>1</span><br></div></div></CodeGroupItem>
+<CodeGroupItem title="NPM">
+<div><pre><code>npx create-vuepress-site <span>[</span>optionalDirectoryName<span>]</span>
+</code></pre>
+<div><span>1</span><br></div></div></CodeGroupItem>
+</CodeGroup>]]></content:encoded>
+    </item>
+    <item>
+      <title>名词解释</title>
+      <link>https://kigane.github.io/blog/terminology/</link>
+      <guid>https://kigane.github.io/blog/terminology/</guid>
+      <source url="https://kigane.github.io/rss.xml">名词解释</source>
+      <category>thesis</category>
+      <pubDate>Sat, 09 Oct 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="dl"> DL</h2>
+<h2 id="dip"> DIP</h2>
+]]></content:encoded>
+    </item>
+    <item>
       <title>密码加密的文章</title>
       <link>https://kigane.github.io/guide/encrypt/</link>
       <guid>https://kigane.github.io/guide/encrypt/</guid>
       <source url="https://kigane.github.io/rss.xml">密码加密的文章</source>
       <category>使用指南</category>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="密码加密的文章"> 密码加密的文章</h1>
 <p>实际的文章内容。</p>
 <p>段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字。</p>
@@ -588,6 +912,7 @@ Unity的设计初衷是简化开发和跨平台。
       <description>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;vuepress-theme-hope&amp;lt;/code&amp;gt; 通过内置 &amp;lt;a href=&amp;quot;https://vuepress-theme-hope.github.io/md-enhance&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener noreferrer&amp;quot;&amp;gt;md-enhance&amp;lt;/a&amp;gt;，在 Markdown 中启用了更多的语法与新功能。&amp;lt;/p&amp;gt;
 </description>
       <category>使用指南</category>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<p><code>vuepress-theme-hope</code> 通过内置 <a href="https://vuepress-theme-hope.github.io/md-enhance" target="_blank" rel="noopener noreferrer">md-enhance</a>，在 Markdown 中启用了更多的语法与新功能。</p>
 
 <h2 id="一键启用"> 一键启用</h2>
@@ -1048,7 +1373,7 @@ $$
       <link>https://kigane.github.io/guide/page/</link>
       <guid>https://kigane.github.io/guide/page/</guid>
       <source url="https://kigane.github.io/rss.xml">页面配置</source>
-      <category>使用指南</category>
+      <category>guide</category>
       <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="页面信息"> 页面信息</h2>
 <p>你可以在 Markdown 的 Frontmatter 中设置页面信息。</p>
@@ -1091,29 +1416,14 @@ $$
 <li>页脚</li>
 </ul>
 <h2 id="slide"> slide</h2>
-<i>Not supported content</i><h2 id="mermaid"> mermaid</h2>
-<div><pre><code><span>flowchart</span> TB
-    c1<span>--></span>a2
-    <span>subgraph</span> one
-    a1<span>--></span>a2
-    <span>end</span>
-    <span>subgraph</span> two
-    b1<span>--></span>b2
-    <span>end</span>
-    <span>subgraph</span> three
-    c1<span>--></span>c2
-    <span>end</span>
-    one <span>--></span> two
-    three <span>--></span> two
-    two <span>--></span> c2
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
+<i>Not supported content</i>]]></content:encoded>
     </item>
     <item>
       <title>Hello Vuepress</title>
       <link>https://kigane.github.io/guide/</link>
       <guid>https://kigane.github.io/guide/</guid>
       <source url="https://kigane.github.io/rss.xml">Hello Vuepress</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="math"> math</h2>
 <p>安装 markdown-it-katex 插件</p>
 <div><pre><code><span>yarn</span> <span>add</span> markdown-it-katex -D
@@ -1250,6 +1560,7 @@ site = {{$site}}</p>
       <link>https://kigane.github.io/hazel/</link>
       <guid>https://kigane.github.io/hazel/</guid>
       <source url="https://kigane.github.io/rss.xml">Hazel</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="eventsystem"> EventSystem</h2>
 <ul>
 <li>EntryPoint.h -- Game Main Loop
@@ -1318,22 +1629,24 @@ site = {{$site}}</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>Project home</title>
-      <link>https://kigane.github.io/home/</link>
-      <guid>https://kigane.github.io/home/</guid>
-      <source url="https://kigane.github.io/rss.xml">Project home</source>
-      <content:encoded><![CDATA[<p>This is an example of a normal homepage. You can place your main content here.</p>
-<p>To use this layout, you need to set <code>home: true</code> in the page front matter.</p>
-<p>For related descriptions of configuration items, please see <a href="https://vuepress-theme-hope.github.io/guide/layout/home/" target="_blank" rel="noopener noreferrer">Project HomePage Layout Config</a>.</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Intro Page</title>
       <link>https://kigane.github.io/intro/</link>
       <guid>https://kigane.github.io/intro/</guid>
       <source url="https://kigane.github.io/rss.xml">Intro Page</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="intro-page"> Intro Page</h1>
 <p>Place your introducation and profile here.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Project home</title>
+      <link>https://kigane.github.io/home/</link>
+      <guid>https://kigane.github.io/home/</guid>
+      <source url="https://kigane.github.io/rss.xml">Project home</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<p>This is an example of a normal homepage. You can place your main content here.</p>
+<p>To use this layout, you need to set <code>home: true</code> in the page front matter.</p>
+<p>For related descriptions of configuration items, please see <a href="https://vuepress-theme-hope.github.io/guide/layout/home/" target="_blank" rel="noopener noreferrer">Project HomePage Layout Config</a>.</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -1341,6 +1654,7 @@ site = {{$site}}</p>
       <link>https://kigane.github.io/layout/</link>
       <guid>https://kigane.github.io/layout/</guid>
       <source url="https://kigane.github.io/rss.xml">Custom Layout</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<p>You can use slots with markdown and component support to custom page layout.</p>
 <div><p>Note</p>
 <p>This is just a demo, you should add styles according to your own needs.</p>
@@ -1365,6 +1679,7 @@ site = {{$site}}</p>
       <link>https://kigane.github.io/note/algorithm/</link>
       <guid>https://kigane.github.io/note/algorithm/</guid>
       <source url="https://kigane.github.io/rss.xml">算法</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="随机生成表达式"> 随机生成表达式</h2>
 <p><a href="https://softwareengineering.stackexchange.com/questions/195813/generating-random-math-expression/195850#195850" target="_blank" rel="noopener noreferrer">参考</a></p>
 <div><pre><code><span>4</span> <span>+</span> <span>2</span>                          
@@ -1425,6 +1740,7 @@ site = {{$site}}</p>
       <link>https://kigane.github.io/note/cpp/</link>
       <guid>https://kigane.github.io/note/cpp/</guid>
       <source url="https://kigane.github.io/rss.xml">C++ 小知识</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="lvalue-rvalue"> lvalue &amp; rvalue</h2>
 <p>简单来说</p>
 <ul>
@@ -1597,10 +1913,97 @@ Sekiro
 ]]></content:encoded>
     </item>
     <item>
+      <title>随机数</title>
+      <link>https://kigane.github.io/note/cpp/cpp-random/</link>
+      <guid>https://kigane.github.io/note/cpp/cpp-random/</guid>
+      <source url="https://kigane.github.io/rss.xml">随机数</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="线性同余法"> 线性同余法</h2>
+<div><pre><code><span>unsigned</span> <span>int</span> <span>PRNG</span><span>(</span><span>)</span> <span>// pseudo-random number generator</span>
+<span>{</span>
+    <span>static</span> <span>unsigned</span> <span>int</span> seed<span>{</span><span>5323</span><span>}</span><span>;</span>
+    seed <span>=</span> <span>8253729</span> <span>*</span> seed <span>+</span> <span>2396403</span><span>;</span>
+    <span>return</span> seed <span>%</span> <span>32768</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>原理大致如上。这样简单的随机数不够&quot;好&quot;。</p>
+<h2 id="c-标准库中的随机数生成"> C 标准库中的随机数生成</h2>
+<p>原理就是线性同余法，不同编译器实现略有不同，且大多有缺陷。仅供学习使用。</p>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;cstdlib></span> <span>// for std::rand() and std::srand()</span></span>
+<span><span>#</span><span>include</span> <span>&lt;ctime></span> <span>// for std::time()</span></span>
+
+<span>void</span> <span>PrintNumbersWithRand</span><span>(</span><span>)</span>
+<span>{</span>
+    std<span>::</span><span>srand</span><span>(</span><span><span>static_cast</span><span><span>&lt;</span><span>unsigned</span> <span>int</span><span>></span></span></span><span>(</span>std<span>::</span><span>time</span><span>(</span><span>nullptr</span><span>)</span><span>)</span><span>)</span><span>;</span>
+    <span>// 因为某些编译器中rand算法的缺陷，导致第一个随机数大概率相同，所以这里先调用一次去掉第一个</span>
+    std<span>::</span><span>rand</span><span>(</span><span>)</span><span>;</span>
+
+    <span>// 打印 100 个随机数</span>
+    <span>for</span> <span>(</span><span>int</span> count<span>{</span><span>1</span><span>}</span><span>;</span> count <span>&lt;=</span> <span>100</span><span>;</span> <span>++</span>count<span>)</span>
+    <span>{</span>
+        std<span>::</span>cout <span>&lt;&lt;</span> std<span>::</span><span>rand</span><span>(</span><span>)</span> <span>&lt;&lt;</span> <span>'\t'</span><span>;</span>
+
+        <span>if</span> <span>(</span>count <span>%</span> <span>5</span> <span>==</span> <span>0</span><span>)</span>
+            std<span>::</span>cout <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="一个好的伪随机数生成器-prng-的标准"> 一个好的伪随机数生成器(PRNG)的标准</h2>
+<ul>
+<li>应该以大致相同的概率生成每个数字(生成六个数字5,6,7,8,9的概率大致相等)，即数字分布均匀性。</li>
+<li>生成序列中的下一个数字应该是不可预测。(num = num + 1)</li>
+<li>生成的数字序列应该有良好的空间分布(生成0-9之间的随机数，不能只生成5,6,7,8,9，生成的数落在大，中，小范围内的概率也应大致相当)，即空间分布均匀性。</li>
+<li>所有的PRNG都有周期性。通常，周期越大越好。</li>
+</ul>
+<h2 id="更好的随机数生成器"> 更好的随机数生成器</h2>
+<p>使用梅森旋转演算法(Mersenne Twister)。在C++11中引入。</p>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
+<span><span>#</span><span>include</span> <span>&lt;random></span> <span>// for std::mt19937</span></span>
+<span><span>#</span><span>include</span> <span>&lt;ctime></span> <span>// for std::time</span></span>
+ 
+<span>int</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+	<span>// 初始化 mersenne twister，将时间作为 seed。</span>
+	std<span>::</span>mt19937 mersenne<span>{</span> <span><span>static_cast</span><span><span>&lt;</span>std<span>::</span>mt19937<span>::</span>result_type<span>></span></span></span><span>(</span>std<span>::</span><span>time</span><span>(</span><span>nullptr</span><span>)</span><span>)</span> <span>}</span><span>;</span>
+ 
+	<span>// 生成 1-6 之间随机整数的PRNG</span>
+	std<span>::</span>uniform_int_distribution die<span>{</span> <span>1</span><span>,</span> <span>6</span> <span>}</span><span>;</span> <span>// C++17</span>
+	<span>// std::uniform_int_distribution&lt;> die{ 1, 6 }; // C++11</span>
+ 
+	<span>for</span> <span>(</span><span>int</span> count<span>{</span> <span>1</span> <span>}</span><span>;</span> count <span>&lt;=</span> <span>48</span><span>;</span> <span>++</span>count<span>)</span>
+	<span>{</span>
+		std<span>::</span>cout <span>&lt;&lt;</span> <span>die</span><span>(</span>mersenne<span>)</span> <span>&lt;&lt;</span> <span>'\t'</span><span>;</span>
+
+		<span>if</span> <span>(</span>count <span>%</span> <span>6</span> <span>==</span> <span>0</span><span>)</span>
+			std<span>::</span>cout <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
+	<span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><h2 id="effolkronium-s-random-library"> Effolkronium’s random library.</h2>
+<p>一个随机数库(纯头文件)。提供了便于使用的API。</p>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
+<span><span>#</span><span>include</span> <span>"random.hpp"</span></span>
+ 
+<span>// get base random alias which is auto seeded and has static API and internal state</span>
+<span>using</span> Random <span>=</span> effolkronium<span>::</span>random_static<span>;</span>
+ 
+<span>int</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+	std<span>::</span>cout <span>&lt;&lt;</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1</span><span>,</span> <span>6</span><span>)</span> <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
+	std<span>::</span>cout <span>&lt;&lt;</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1</span><span>,</span> <span>10</span><span>)</span> <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
+    <span>// decltype(val) is long double</span>
+	<span>auto</span> val <span>=</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1.l</span><span>,</span> <span>-</span><span>1.l</span><span>)</span>
+	<span>return</span> <span>0</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>C语言</title>
       <link>https://kigane.github.io/note/cpp/c/</link>
       <guid>https://kigane.github.io/note/cpp/c/</guid>
       <source url="https://kigane.github.io/rss.xml">C语言</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="union和匿名结构"> Union和匿名结构</h2>
 <p>Union: 定义类似struct，但内存分配方式不一样。struct会为所有成员分配内存空间，union是所有成员共用一个内存空间，大小以最大的成员为准。
 匿名：通常嵌套于union或strcut中，可以用外层类型的变量名直接访问匿名的结构成员。union中的匿名比较有用，因为可以将一系列成员包裹起来以获取更大的内存空间。</p>
@@ -1977,95 +2380,11 @@ FILE <span>*</span><span>popen</span><span>(</span><span>const</span> <span>char
 ]]></content:encoded>
     </item>
     <item>
-      <title>随机数</title>
-      <link>https://kigane.github.io/note/cpp/cpp-random/</link>
-      <guid>https://kigane.github.io/note/cpp/cpp-random/</guid>
-      <source url="https://kigane.github.io/rss.xml">随机数</source>
-      <content:encoded><![CDATA[<h2 id="线性同余法"> 线性同余法</h2>
-<div><pre><code><span>unsigned</span> <span>int</span> <span>PRNG</span><span>(</span><span>)</span> <span>// pseudo-random number generator</span>
-<span>{</span>
-    <span>static</span> <span>unsigned</span> <span>int</span> seed<span>{</span><span>5323</span><span>}</span><span>;</span>
-    seed <span>=</span> <span>8253729</span> <span>*</span> seed <span>+</span> <span>2396403</span><span>;</span>
-    <span>return</span> seed <span>%</span> <span>32768</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>原理大致如上。这样简单的随机数不够&quot;好&quot;。</p>
-<h2 id="c-标准库中的随机数生成"> C 标准库中的随机数生成</h2>
-<p>原理就是线性同余法，不同编译器实现略有不同，且大多有缺陷。仅供学习使用。</p>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;cstdlib></span> <span>// for std::rand() and std::srand()</span></span>
-<span><span>#</span><span>include</span> <span>&lt;ctime></span> <span>// for std::time()</span></span>
-
-<span>void</span> <span>PrintNumbersWithRand</span><span>(</span><span>)</span>
-<span>{</span>
-    std<span>::</span><span>srand</span><span>(</span><span><span>static_cast</span><span><span>&lt;</span><span>unsigned</span> <span>int</span><span>></span></span></span><span>(</span>std<span>::</span><span>time</span><span>(</span><span>nullptr</span><span>)</span><span>)</span><span>)</span><span>;</span>
-    <span>// 因为某些编译器中rand算法的缺陷，导致第一个随机数大概率相同，所以这里先调用一次去掉第一个</span>
-    std<span>::</span><span>rand</span><span>(</span><span>)</span><span>;</span>
-
-    <span>// 打印 100 个随机数</span>
-    <span>for</span> <span>(</span><span>int</span> count<span>{</span><span>1</span><span>}</span><span>;</span> count <span>&lt;=</span> <span>100</span><span>;</span> <span>++</span>count<span>)</span>
-    <span>{</span>
-        std<span>::</span>cout <span>&lt;&lt;</span> std<span>::</span><span>rand</span><span>(</span><span>)</span> <span>&lt;&lt;</span> <span>'\t'</span><span>;</span>
-
-        <span>if</span> <span>(</span>count <span>%</span> <span>5</span> <span>==</span> <span>0</span><span>)</span>
-            std<span>::</span>cout <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="一个好的伪随机数生成器-prng-的标准"> 一个好的伪随机数生成器(PRNG)的标准</h2>
-<ul>
-<li>应该以大致相同的概率生成每个数字(生成六个数字5,6,7,8,9的概率大致相等)，即数字分布均匀性。</li>
-<li>生成序列中的下一个数字应该是不可预测。(num = num + 1)</li>
-<li>生成的数字序列应该有良好的空间分布(生成0-9之间的随机数，不能只生成5,6,7,8,9，生成的数落在大，中，小范围内的概率也应大致相当)，即空间分布均匀性。</li>
-<li>所有的PRNG都有周期性。通常，周期越大越好。</li>
-</ul>
-<h2 id="更好的随机数生成器"> 更好的随机数生成器</h2>
-<p>使用梅森旋转演算法(Mersenne Twister)。在C++11中引入。</p>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
-<span><span>#</span><span>include</span> <span>&lt;random></span> <span>// for std::mt19937</span></span>
-<span><span>#</span><span>include</span> <span>&lt;ctime></span> <span>// for std::time</span></span>
- 
-<span>int</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-	<span>// 初始化 mersenne twister，将时间作为 seed。</span>
-	std<span>::</span>mt19937 mersenne<span>{</span> <span><span>static_cast</span><span><span>&lt;</span>std<span>::</span>mt19937<span>::</span>result_type<span>></span></span></span><span>(</span>std<span>::</span><span>time</span><span>(</span><span>nullptr</span><span>)</span><span>)</span> <span>}</span><span>;</span>
- 
-	<span>// 生成 1-6 之间随机整数的PRNG</span>
-	std<span>::</span>uniform_int_distribution die<span>{</span> <span>1</span><span>,</span> <span>6</span> <span>}</span><span>;</span> <span>// C++17</span>
-	<span>// std::uniform_int_distribution&lt;> die{ 1, 6 }; // C++11</span>
- 
-	<span>for</span> <span>(</span><span>int</span> count<span>{</span> <span>1</span> <span>}</span><span>;</span> count <span>&lt;=</span> <span>48</span><span>;</span> <span>++</span>count<span>)</span>
-	<span>{</span>
-		std<span>::</span>cout <span>&lt;&lt;</span> <span>die</span><span>(</span>mersenne<span>)</span> <span>&lt;&lt;</span> <span>'\t'</span><span>;</span>
-
-		<span>if</span> <span>(</span>count <span>%</span> <span>6</span> <span>==</span> <span>0</span><span>)</span>
-			std<span>::</span>cout <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
-	<span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><h2 id="effolkronium-s-random-library"> Effolkronium’s random library.</h2>
-<p>一个随机数库(纯头文件)。提供了便于使用的API。</p>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
-<span><span>#</span><span>include</span> <span>"random.hpp"</span></span>
- 
-<span>// get base random alias which is auto seeded and has static API and internal state</span>
-<span>using</span> Random <span>=</span> effolkronium<span>::</span>random_static<span>;</span>
- 
-<span>int</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-	std<span>::</span>cout <span>&lt;&lt;</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1</span><span>,</span> <span>6</span><span>)</span> <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
-	std<span>::</span>cout <span>&lt;&lt;</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1</span><span>,</span> <span>10</span><span>)</span> <span>&lt;&lt;</span> <span>'\n'</span><span>;</span>
-    <span>// decltype(val) is long double</span>
-	<span>auto</span> val <span>=</span> <span>Random</span><span>::</span><span>get</span><span>(</span><span>1.l</span><span>,</span> <span>-</span><span>1.l</span><span>)</span>
-	<span>return</span> <span>0</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>C/C++ 文件 IO</title>
       <link>https://kigane.github.io/note/cpp/file-io/</link>
       <guid>https://kigane.github.io/note/cpp/file-io/</guid>
       <source url="https://kigane.github.io/rss.xml">C/C++ 文件 IO</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="c"> C</h2>
 <h3 id="读写"> 读写</h3>
 <p>C提供两种访问文件的途径：二进制模式和文本模式。二进制模式中打开的文件一个字节都不会变，而文本模式中打开的文件中的行末尾和文件末尾会被映射为C模式(行尾:\n, 文件末尾: EOF)。</p>
@@ -2183,6 +2502,7 @@ FILE <span>*</span><span>popen</span><span>(</span><span>const</span> <span>char
       <link>https://kigane.github.io/note/cpp/macro/</link>
       <guid>https://kigane.github.io/note/cpp/macro/</guid>
       <source url="https://kigane.github.io/rss.xml">宏</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="预定义的宏"> 预定义的宏</h2>
 <p>注意：不同的编译器宏的名称可能不同。</p>
 <ul>
@@ -2223,6 +2543,7 @@ FILE <span>*</span><span>popen</span><span>(</span><span>const</span> <span>char
       <link>https://kigane.github.io/note/cs/ECF/</link>
       <guid>https://kigane.github.io/note/cs/ECF/</guid>
       <source url="https://kigane.github.io/rss.xml">异常控制流</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="异常"> 异常</h2>
 <h3 id="异常和异常处理"> 异常和异常处理</h3>
 <ul>
@@ -2858,12 +3179,50 @@ sigjmp_buf buf<span>;</span>
       <link>https://kigane.github.io/note/cs/</link>
       <guid>https://kigane.github.io/note/cs/</guid>
       <source url="https://kigane.github.io/rss.xml">计算机概述</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>编译器相关</title>
+      <link>https://kigane.github.io/note/cs/compiler/</link>
+      <guid>https://kigane.github.io/note/cs/compiler/</guid>
+      <source url="https://kigane.github.io/rss.xml">编译器相关</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="gcc"> gcc</h2>
+<p>gcc在编译代码时可以做出优化，通过选项-On(n=0,1,2...)确定优化等级。优化后的代码在debug时，打印某些变量时会出现<code>&lt;optimized out&gt;</code>。解决方法就是关闭优化选项。或者，如果你只关心某个变量的话，可以将其用<code>volatile</code>关键字修饰。</p>
+<ul>
+<li>-E 预编译 .c-&gt;.i 对应cpp，即c预处理器，主要是在扩展include和宏。</li>
+<li>-S 编译为汇编代码 .i|.c-&gt;.s 对应cc1，即编译器，产生汇编代码。</li>
+<li>-c 汇编 .s-&gt;.o 对应as，即汇编器，产生可重定位目标文件，所有的指令都以二进制表示。</li>
+<li>-Idir 头文件搜索路径</li>
+<li>-Ldir 将dir指定为搜索库(-l指定的)的路径</li>
+<li>-llib 链接时，搜索liblib.a|liblib.so。如果有同名的静态库和动态库，则无-static时取动态库，有则取静态库。</li>
+<li>-O 开启优化选项。Og, O1, O2等开启了不同的优化选项，从性能考虑，O1,O2优化效果较好，但产生的代码变化会很大，很难理解源码和机器代码的关系，所以，学习时通常使用Og选项，有一定的优化，但源码的整体结构可以很好保存。</li>
+<li>-fno-stack-protector 关闭栈溢出检测</li>
+</ul>
+<hr>
+<ul>
+<li>-Wall 启用对某些用户可能会认为有问题(通常容易避免)的结构的警告。</li>
+<li>-Werror 让所有的warning变成error。</li>
+<li>-ggdb 产生给gdb用的调试信息。这意味着使用最有表达性的格式。(DWARF,stabs，如果两个都不支持则使用本地格式)</li>
+</ul>
+<h2 id="attribute"> attribute</h2>
+<ul>
+<li>__attribute__((unused)) 如果变量声明了，但没有被引用过，也不弹出警告</li>
+<li>__attribute__((used)) 用于static函数或变量，告诉编译器，即使没被引用过也要在obj文件中保留(链接器删除未使用的section时，不会删除有该声明的函数或变量)。</li>
+</ul>
+<h2 id="工具"> 工具</h2>
+<h3 id="反汇编器-objdump"> 反汇编器 objdump</h3>
+<ul>
+<li>objdump -d main.o</li>
+</ul>
+]]></content:encoded>
     </item>
     <item>
       <title>虚拟内存</title>
       <link>https://kigane.github.io/note/cs/VM/</link>
       <guid>https://kigane.github.io/note/cs/VM/</guid>
       <source url="https://kigane.github.io/rss.xml">虚拟内存</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<p>虚拟内存提供三个重要能力</p>
 <ul>
 <li>将主存看作磁盘的高速缓存，在主存中只保留活动区域，并根据需要在主存和磁盘间传送数据，高效地使用了主存</li>
@@ -3384,45 +3743,11 @@ execve 函数在当前进程中加载并运行包含在可执行目标文件 a.o
       <enclosure url="https://kigane.github.io/assets/csapp/VP-PP.png" type="image/png"/>
     </item>
     <item>
-      <title>编译器相关</title>
-      <link>https://kigane.github.io/note/cs/compiler/</link>
-      <guid>https://kigane.github.io/note/cs/compiler/</guid>
-      <source url="https://kigane.github.io/rss.xml">编译器相关</source>
-      <content:encoded><![CDATA[<h2 id="gcc"> gcc</h2>
-<p>gcc在编译代码时可以做出优化，通过选项-On(n=0,1,2...)确定优化等级。优化后的代码在debug时，打印某些变量时会出现<code>&lt;optimized out&gt;</code>。解决方法就是关闭优化选项。或者，如果你只关心某个变量的话，可以将其用<code>volatile</code>关键字修饰。</p>
-<ul>
-<li>-E 预编译 .c-&gt;.i 对应cpp，即c预处理器，主要是在扩展include和宏。</li>
-<li>-S 编译为汇编代码 .i|.c-&gt;.s 对应cc1，即编译器，产生汇编代码。</li>
-<li>-c 汇编 .s-&gt;.o 对应as，即汇编器，产生可重定位目标文件，所有的指令都以二进制表示。</li>
-<li>-Idir 头文件搜索路径</li>
-<li>-Ldir 将dir指定为搜索库(-l指定的)的路径</li>
-<li>-llib 链接时，搜索liblib.a|liblib.so。如果有同名的静态库和动态库，则无-static时取动态库，有则取静态库。</li>
-<li>-O 开启优化选项。Og, O1, O2等开启了不同的优化选项，从性能考虑，O1,O2优化效果较好，但产生的代码变化会很大，很难理解源码和机器代码的关系，所以，学习时通常使用Og选项，有一定的优化，但源码的整体结构可以很好保存。</li>
-<li>-fno-stack-protector 关闭栈溢出检测</li>
-</ul>
-<hr>
-<ul>
-<li>-Wall 启用对某些用户可能会认为有问题(通常容易避免)的结构的警告。</li>
-<li>-Werror 让所有的warning变成error。</li>
-<li>-ggdb 产生给gdb用的调试信息。这意味着使用最有表达性的格式。(DWARF,stabs，如果两个都不支持则使用本地格式)</li>
-</ul>
-<h2 id="attribute"> attribute</h2>
-<ul>
-<li>__attribute__((unused)) 如果变量声明了，但没有被引用过，也不弹出警告</li>
-<li>__attribute__((used)) 用于static函数或变量，告诉编译器，即使没被引用过也要在obj文件中保留(链接器删除未使用的section时，不会删除有该声明的函数或变量)。</li>
-</ul>
-<h2 id="工具"> 工具</h2>
-<h3 id="反汇编器-objdump"> 反汇编器 objdump</h3>
-<ul>
-<li>objdump -d main.o</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>gdb</title>
       <link>https://kigane.github.io/note/cs/gdb-cheatsheet/</link>
       <guid>https://kigane.github.io/note/cs/gdb-cheatsheet/</guid>
       <source url="https://kigane.github.io/rss.xml">gdb</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="gdb-cheatsheet"> gdb cheatsheet</h2>
 <p><a href="https://sourceware.org/gdb/onlinedocs/gdb/index.html#SEC_Contents" target="_blank" rel="noopener noreferrer">gdb 文档</a></p>
 <ul>
@@ -3679,6 +4004,7 @@ execve 函数在当前进程中加载并运行包含在可执行目标文件 a.o
       <link>https://kigane.github.io/note/cs/git/</link>
       <guid>https://kigane.github.io/note/cs/git/</guid>
       <source url="https://kigane.github.io/rss.xml">git</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="资源"> 资源</h2>
 <p><a href="https://learngitbranching.js.org/?locale=zh_CN" target="_blank" rel="noopener noreferrer">交互式Git入门网站 强烈推荐!!!</a><br>
 <a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener noreferrer">Pro Git 中文版</a><br>
@@ -3925,6 +4251,7 @@ objects <span>=</span> <span>map</span><span>&lt;</span>string<span>,</span> <sp
       <link>https://kigane.github.io/note/cs/ics-pa/</link>
       <guid>https://kigane.github.io/note/cs/ics-pa/</guid>
       <source url="https://kigane.github.io/rss.xml">ICS-PA心得</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="pa1"> PA1</h2>
 <h3 id="nemu准备"> NEMU准备</h3>
 <div><pre><code>nemu
@@ -4077,6 +4404,7 @@ addr = R[base_reg] + R[index_reg] * scale_factor + displacement<br>
       <link>https://kigane.github.io/note/cs/isa-i386/</link>
       <guid>https://kigane.github.io/note/cs/isa-i386/</guid>
       <source url="https://kigane.github.io/rss.xml">i386</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="基本编程模型"> 基本编程模型</h2>
 <h3 id="内存组织和分段-segmentation"> 内存组织和分段(Segmentation)</h3>
 <p>物理内存由8-bit的字节组成的序列构成。每个字节有一个唯一的地址，范围<span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:1.064108em;vertical-align:-0.25em;"></span><span>[</span><span>0</span><span>,</span><span style="margin-right:0.16666666666666666em;"></span><span><span>2</span><span><span><span><span style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>32</span></span></span></span></span></span></span></span></span><span style="margin-right:0.2222222222222222em;"></span><span>−</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:1em;vertical-align:-0.25em;"></span><span>1</span><span>]</span></span></span></span>，共4GB。</p>
@@ -4897,12 +5225,14 @@ x86通过ModR/M字节来指示内存操作数</p>
       <link>https://kigane.github.io/note/cs/isa-riscv/</link>
       <guid>https://kigane.github.io/note/cs/isa-riscv/</guid>
       <source url="https://kigane.github.io/rss.xml">riscv</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
     </item>
     <item>
       <title>Linux - Ubantu</title>
       <link>https://kigane.github.io/note/cs/linux/</link>
       <guid>https://kigane.github.io/note/cs/linux/</guid>
       <source url="https://kigane.github.io/rss.xml">Linux - Ubantu</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="安装"> 安装</h2>
 <p><a href="https://nju-projectn.github.io/ics-pa-gitbook/ics2020/0.1.html" target="_blank" rel="noopener noreferrer">NJU PA0</a><br>
 分区：此电脑-&gt;管理-&gt;磁盘管理，选择磁盘，右键-&gt;压缩卷，分配适当空间即可，不用新建简单卷。</p>
@@ -5387,6 +5717,7 @@ foo <span>=</span> <span>$</span><span>(</span><span>call</span> reverse,a,b<spa
       <link>https://kigane.github.io/note/cs/regex/</link>
       <guid>https://kigane.github.io/note/cs/regex/</guid>
       <source url="https://kigane.github.io/rss.xml">正则表达式</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="学习网站推荐"> 学习网站推荐</h2>
 <p><a href="https://regexone.com/lesson/introduction_abcs" target="_blank" rel="noopener noreferrer">regexone.com 一个交互式的入门网站</a>
 <a href="https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md" target="_blank" rel="noopener noreferrer">learn-regex</a></p>
@@ -5580,6 +5911,7 @@ foo <span>=</span> <span>$</span><span>(</span><span>call</span> reverse,a,b<spa
       <link>https://kigane.github.io/note/cs/shell-cheatsheet/</link>
       <guid>https://kigane.github.io/note/cs/shell-cheatsheet/</guid>
       <source url="https://kigane.github.io/rss.xml">shell</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="shell-是什么"> shell 是什么</h2>
 <p>核心功能：允许你执行程序，输入并获取某种半结构化的输出。</p>
 <h2 id="shell-基础"> shell 基础</h2>
@@ -6208,39 +6540,12 @@ function isort(A, n,  i, j, hold)
 ]]></content:encoded>
     </item>
     <item>
-      <title>导言</title>
-      <link>https://kigane.github.io/note/cv/</link>
-      <guid>https://kigane.github.io/note/cv/</guid>
-      <source url="https://kigane.github.io/rss.xml">导言</source>
-      <content:encoded><![CDATA[<h2 id="计算机视觉面临的挑战"> 计算机视觉面临的挑战</h2>
-<ul>
-<li>人眼接受的视觉数据极其多，且大部分是冗余的</li>
-<li>视皮层会压缩信息，大脑高级中枢只处理一部分抽象的数据，但仍比其他信息多至少两个数量级</li>
-<li>大脑有约100亿个细胞，每个细胞有大量突触，处理能力非常强</li>
-<li>人类可以通过积极的使用和训练对眼脑系统进行动态&quot;编程&quot;</li>
-</ul>
-<hr>
-<ul>
-<li>训练集不充分，无法代表实际情况</li>
-<li>要提供充分的训练集，存储是个问题，参数增加导致的组合爆炸也是问题</li>
-</ul>
-<hr>
-<ul>
-<li>图像处理
-<ul>
-<li>将图像转换为包含相同比特数据的更容易处理的形式</li>
-<li>分类,抽象</li>
-</ul>
-</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>vim</title>
       <link>https://kigane.github.io/note/cs/vim/</link>
       <guid>https://kigane.github.io/note/cs/vim/</guid>
       <source url="https://kigane.github.io/rss.xml">vim</source>
       <category>使用指南</category>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="vim基础"> Vim基础</h2>
 <h3 id="资料"> 资料</h3>
 <p><a href="https://missing-semester-cn.github.io/2020/editors/" target="_blank" rel="noopener noreferrer">学习Vim</a><br>
@@ -6958,10 +7263,168 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
       <enclosure url="https://kigane.github.io/assets/img/vim-keyboard.png" type="image/png"/>
     </item>
     <item>
+      <title>导言</title>
+      <link>https://kigane.github.io/note/cv/</link>
+      <guid>https://kigane.github.io/note/cv/</guid>
+      <source url="https://kigane.github.io/rss.xml">导言</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="计算机视觉面临的挑战"> 计算机视觉面临的挑战</h2>
+<ul>
+<li>人眼接受的视觉数据极其多，且大部分是冗余的</li>
+<li>视皮层会压缩信息，大脑高级中枢只处理一部分抽象的数据，但仍比其他信息多至少两个数量级</li>
+<li>大脑有约100亿个细胞，每个细胞有大量突触，处理能力非常强</li>
+<li>人类可以通过积极的使用和训练对眼脑系统进行动态&quot;编程&quot;</li>
+</ul>
+<hr>
+<ul>
+<li>训练集不充分，无法代表实际情况</li>
+<li>要提供充分的训练集，存储是个问题，参数增加导致的组合爆炸也是问题</li>
+</ul>
+<hr>
+<ul>
+<li>图像处理
+<ul>
+<li>将图像转换为包含相同比特数据的更容易处理的形式</li>
+<li>分类,抽象</li>
+</ul>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>数字图像处理</title>
+      <link>https://kigane.github.io/note/dip/</link>
+      <guid>https://kigane.github.io/note/dip/</guid>
+      <source url="https://kigane.github.io/rss.xml">数字图像处理</source>
+      <category>DIP</category>
+      <pubDate>Sun, 03 Oct 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="绪论"> 绪论</h2>
+<h3 id="数字图像"> 数字图像</h3>
+<ul>
+<li>一个图像定义了一个2D-函数，f(x, y)，其中x, y是空间坐标，函数值为灰度(grey level或intensity)。</li>
+<li>图像数字化(digitalization)
+<ul>
+<li>必须指定像素大小</li>
+<li>必须指定灰度范围，即灰阶。</li>
+<li>从连续到离散，一定会丢失部分信息</li>
+</ul>
+</li>
+<li>数据特点
+<ul>
+<li>维数。通常是2和3，有时会更多，如4D图像增加了时间维度。</li>
+<li>大。</li>
+<li>每个voxel对应物理空间中的一个点</li>
+</ul>
+</li>
+<li>图像描述
+<ul>
+<li>2D image: f(i, j)</li>
+<li>3D image: f(i, j, k)</li>
+<li>4D image: f(i, j, k, t)</li>
+<li>注意：f, i, j, k, t都是正整数。</li>
+</ul>
+</li>
+<li>数字图像三要素
+<ul>
+<li>pixel</li>
+<li>grey level</li>
+<li>coordinates</li>
+</ul>
+</li>
+</ul>
+<h3 id="数字图像处理"> 数字图像处理</h3>
+<ul>
+<li>采样(sampling):测量图像每个像素位置的灰度值</li>
+<li>量化(quantization):将测量值用整数表示</li>
+<li>对比度(contrast):图像内灰度变化的幅度</li>
+<li>解像度(resolution):</li>
+<li>采样密度(sampling density):像素间距</li>
+<li>放大率(magnification):图像与真实世界的尺度关系(比例尺)</li>
+</ul>
+<h3 id="图像分类"> 图像分类</h3>
+<ul>
+<li>二值图像(Binary image)</li>
+<li>灰度图像(Gray level image)</li>
+<li>彩色图像(Color image)</li>
+<li>伪彩图像(False color image)</li>
+</ul>
+<p>根据传感器分类，有红外，紫外，MRI，超声，微波，X-光片，PET(正电子成像，氧的新陈代谢)，照片...<br>
+其他分类方式略。</p>
+<h3 id="图像处理流程"> 图像处理流程</h3>
+<ul>
+<li>Low level:从图像到图像，也称image filtering
+<ul>
+<li>Enhancement
+<ul>
+<li>Sharpen</li>
+<li>Smooth</li>
+<li>...</li>
+</ul>
+</li>
+<li>Interpolate</li>
+<li>Reduce Noise</li>
+<li>Crop(裁剪)</li>
+</ul>
+</li>
+<li>Intermediate level:从图像到符号表示，也称image segmentation
+<ul>
+<li>Region/Contour Extraction(ROI, Region of Interest)</li>
+<li>Labeling</li>
+<li>Grouping</li>
+</ul>
+</li>
+<li>High level:从符号表示(symbolic representation)到功能性描述(functional description)，也称图像理解或模式识别。
+<ul>
+<li>Recognition</li>
+<li>Modeling</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本图像操作"> 基本图像操作</h2>
+<h3 id="灰度直方图"> 灰度直方图</h3>
+<p>图像的灰度直方图是基于灰阶的pixel分布函数。其x坐标代表灰阶，y代表对应灰阶的像素数目。主要缺点是丢失了像素的空间信息。</p>
+<ul>
+<li>图像的灰度直方图通常是双峰(bimodal)的。</li>
+<li>双峰之间的最小灰阶是最优的二值化threshold选择之一。</li>
+<li>二值化的threshold可以是固定的(fixed)或适应性的(adaptive)</li>
+</ul>
+<h3 id="二值化方法"> 二值化方法</h3>
+<h4 id="isodata-algorithm"> Isodata Algorithm</h4>
+<ul>
+<li>选择一个初始threshold值，T<sub>0</sub>(e.g. mean intensity)</li>
+<li>用T<sub>0</sub>将图像分成两个部分R<sub>1</sub>,R<sub>2</sub></li>
+<li>分别计算两个部分的mean intensity u<sub>1</sub>, u<sub>2</sub></li>
+<li>选择新的threshold, T<sub>1</sub>=(u<sub>1</sub>+u<sub>2</sub>)/2</li>
+<li>重复，直到threshold不再改变</li>
+</ul>
+<h4 id="otsu-algorithm"> OTSU Algorithm</h4>
+<ul>
+<li>t: total</li>
+<li><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.43056em;vertical-align:0em;"></span><span style="margin-right:0.03588em;">ω</span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:3.106005em;vertical-align:-1.277669em;"></span><span><span><span><span style="height:1.8283360000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span>i</span><span>=</span><span>0</span></span></span></span><span style="top:-3.050005em;"><span style="height:3.05em;"></span><span><span>∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span style="margin-right:0.13889em;">T</span></span></span></span></span><span>​</span></span><span><span style="height:1.277669em;"><span></span></span></span></span></span><span style="margin-right:0.16666666666666666em;"></span><span style="margin-right:0.13889em;">P</span><span>(</span><span>i</span><span>)</span><span>,</span><span style="margin-right:0.16666666666666666em;"></span><span style="margin-right:0.13889em;">P</span><span>(</span><span>i</span><span>)</span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:1em;vertical-align:-0.25em;"></span><span><span><span>n</span></span><span><span><span><span style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>i</span></span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span>/</span><span style="margin-right:0.10903em;">N</span></span></span></span></li>
+<li><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.625em;vertical-align:-0.19444em;"></span><span>μ</span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:3.106005em;vertical-align:-1.277669em;"></span><span><span><span><span style="height:1.8283360000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span>i</span><span>=</span><span>0</span></span></span></span><span style="top:-3.050005em;"><span style="height:3.05em;"></span><span><span>∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span style="margin-right:0.13889em;">T</span></span></span></span></span><span>​</span></span><span><span style="height:1.277669em;"><span></span></span></span></span></span><span style="margin-right:0.16666666666666666em;"></span><span>i</span><span style="margin-right:0.13889em;">P</span><span>(</span><span>i</span><span>)</span><span>/</span><span style="margin-right:0.03588em;">ω</span></span></span></span></li>
+<li><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:1.1111079999999998em;vertical-align:-0.247em;"></span><span><span><span style="margin-right:0.03588em;">σ</span></span><span><span><span><span style="height:0.8641079999999999em;"><span style="top:-2.4530000000000003em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>t</span></span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>2</span></span></span></span></span><span>​</span></span><span><span style="height:0.247em;"><span></span></span></span></span></span></span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:3.106005em;vertical-align:-1.277669em;"></span><span><span><span><span style="height:1.8283360000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span>i</span><span>=</span><span>0</span></span></span></span><span style="top:-3.050005em;"><span style="height:3.05em;"></span><span><span>∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span style="margin-right:0.13889em;">T</span></span></span></span></span><span>​</span></span><span><span style="height:1.277669em;"><span></span></span></span></span></span><span>(</span><span>i</span><span style="margin-right:0.2222222222222222em;"></span><span>−</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span>u</span><span><span>)</span><span><span><span><span style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>2</span></span></span></span></span></span></span></span></span><span style="margin-right:0.13889em;">P</span><span>(</span><span>i</span><span>)</span></span></span></span></li>
+<li><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:1.1111079999999998em;vertical-align:-0.247em;"></span><span><span><span style="margin-right:0.03785em;">δ</span></span><span><span><span><span style="height:0.8641079999999999em;"><span style="top:-2.4530000000000003em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>b</span></span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>2</span></span></span></span></span><span>​</span></span><span><span style="height:0.247em;"><span></span></span></span></span></span></span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:1em;vertical-align:-0.25em;"></span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>0</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span>(</span><span><span>μ</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>0</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.2222222222222222em;"></span><span>−</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span><span>μ</span><span><span><span><span style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>t</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span><span>)</span><span><span><span><span style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>2</span></span></span></span></span></span></span></span><span style="margin-right:0.2222222222222222em;"></span><span>+</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:1em;vertical-align:-0.25em;"></span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>1</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span>(</span><span><span>μ</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>1</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.2222222222222222em;"></span><span>−</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span><span>μ</span><span><span><span><span style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>t</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span><span>)</span><span><span><span><span style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>2</span></span></span></span></span></span></span></span></span></span></span>，其中<span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.625em;vertical-align:-0.19444em;"></span><span><span>μ</span><span><span><span><span style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>t</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>0</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span><span>μ</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>0</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.2222222222222222em;"></span><span>+</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:0.625em;vertical-align:-0.19444em;"></span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>1</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span><span>μ</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>1</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 代入可得 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:1.097216em;vertical-align:-0.2831079999999999em;"></span><span><span><span style="margin-right:0.03785em;">δ</span></span><span><span><span><span style="height:0.8141079999999999em;"><span style="top:-2.4168920000000003em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>b</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>2</span></span></span></span></span><span>​</span></span><span><span style="height:0.2831079999999999em;"><span></span></span></span></span></span></span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:1em;vertical-align:-0.25em;"></span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>0</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>1</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span>(</span><span><span>μ</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>1</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.2222222222222222em;"></span><span>−</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:1.064108em;vertical-align:-0.25em;"></span><span><span>μ</span><span><span><span><span style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>0</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span><span>)</span><span><span><span><span style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>2</span></span></span></span></span></span></span></span></span></span></span></li>
+<li><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.625em;vertical-align:-0.19444em;"></span><span style="margin-right:0.03588em;">η</span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:2.422864em;vertical-align:-0.931756em;"></span><span><span></span><span><span><span><span style="height:1.491108em;"><span style="top:-2.314em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.03785em;">δ</span><span><span><span><span style="height:0.7959079999999998em;"><span style="top:-2.454244em;margin-left:-0.03785em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>t</span></span></span><span style="top:-3.0448em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>2</span></span></span></span><span>​</span></span><span><span style="height:0.24575599999999992em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span style="height:3em;"></span><span style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.03785em;">δ</span><span><span><span><span style="height:0.8141079999999999em;"><span style="top:-2.4168920000000003em;margin-left:-0.03785em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>b</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>2</span></span></span></span><span>​</span></span><span><span style="height:0.2831079999999999em;"><span></span></span></span></span></span></span></span></span></span><span>​</span></span><span><span style="height:0.931756em;"><span></span></span></span></span></span><span></span></span></span></span></span></li>
+<li>如果有256个灰阶，则计算出256个<span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.625em;vertical-align:-0.19444em;"></span><span style="margin-right:0.03588em;">η</span></span></span></span>取最大值</li>
+</ul>
+<h4 id="entropy-method"> Entropy Method</h4>
+<ul>
+<li><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.83333em;vertical-align:-0.15em;"></span><span><span style="margin-right:0.08125em;">H</span><span><span><span><span style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>b</span></span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:3.05823em;vertical-align:-1.277669em;"></span><span>−</span><span style="margin-right:0.16666666666666666em;"></span><span><span><span><span style="height:1.7805610000000003em;"><span style="top:-1.872331em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span>i</span><span>=</span><span>0</span></span></span></span><span style="top:-3.050005em;"><span style="height:3.05em;"></span><span><span>∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span>t</span></span></span></span></span><span>​</span></span><span><span style="height:1.277669em;"><span></span></span></span></span></span><span style="margin-right:0.16666666666666666em;"></span><span><span>p</span><span><span><span><span style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>i</span></span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.16666666666666666em;"></span><span>lo<span style="margin-right:0.01389em;">g</span></span><span>(</span><span><span>p</span><span><span><span><span style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>i</span></span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span>)</span><span style="margin-right:1em;"></span><span><span style="margin-right:0.08125em;">H</span><span><span><span><span style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span style="margin-right:0.02691em;">w</span></span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:3.1371130000000003em;vertical-align:-1.336em;"></span><span>−</span><span style="margin-right:0.16666666666666666em;"></span><span><span><span><span style="height:1.801113em;"><span style="top:-1.8723309999999997em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span>i</span><span>=</span><span>t</span><span>+</span><span>1</span></span></span></span><span style="top:-3.0500049999999996em;"><span style="height:3.05em;"></span><span><span>∑</span></span></span><span style="top:-4.300005em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span>255</span></span></span></span></span><span>​</span></span><span><span style="height:1.336em;"><span></span></span></span></span></span><span style="margin-right:0.16666666666666666em;"></span><span><span>p</span><span><span><span><span style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>i</span></span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.16666666666666666em;"></span><span>lo<span style="margin-right:0.01389em;">g</span></span><span>(</span><span><span>p</span><span><span><span><span style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>i</span></span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span>)</span></span></span></span></li>
+<li>同样计算256个值，选择合适的灰阶t使得<span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.68333em;vertical-align:0em;"></span><span style="margin-right:0.08125em;">H</span><span style="margin-right:0.2777777777777778em;"></span><span>=</span><span style="margin-right:0.2777777777777778em;"></span></span><span><span style="height:0.83333em;vertical-align:-0.15em;"></span><span><span style="margin-right:0.08125em;">H</span><span><span><span><span style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>b</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span><span style="margin-right:0.2222222222222222em;"></span><span>+</span><span style="margin-right:0.2222222222222222em;"></span></span><span><span style="height:0.83333em;vertical-align:-0.15em;"></span><span><span style="margin-right:0.08125em;">H</span><span><span><span><span style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span style="margin-right:0.02691em;">w</span></span></span></span><span>​</span></span><span><span style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (b:black，通常是背景色， w:white，通常是前景色)最大化</li>
+</ul>
+<h4 id="adaptive-threshold-local-threshold"> Adaptive Threshold/Local Threshold</h4>
+<ul>
+<li>将图像分成一个个小区域，每个区域计算各自的threshold</li>
+<li>适合背景不均匀的情况</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>JS 小知识</title>
       <link>https://kigane.github.io/note/js/</link>
       <guid>https://kigane.github.io/note/js/</guid>
       <source url="https://kigane.github.io/rss.xml">JS 小知识</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="箭头函数"> 箭头函数</h2>
 <p>类似 lambda 表达式。</p>
 <div><pre><code><span>(</span><span>params</span><span>)</span><span>=></span><span>{</span>
@@ -7312,6 +7775,7 @@ console<span>.</span><span>log</span><span>(</span>products<span>.</span>types<s
       <link>https://kigane.github.io/note/js/css-advance/</link>
       <guid>https://kigane.github.io/note/js/css-advance/</guid>
       <source url="https://kigane.github.io/rss.xml">CSS 高级话题</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="背景-阴影和混合模式"> 背景，阴影和混合模式</h2>
 <p>backgrounp属性是以下8个属性的简写</p>
 <ul>
@@ -7879,6 +8343,7 @@ border-radius: 1em;
       <link>https://kigane.github.io/note/js/css-basic/</link>
       <guid>https://kigane.github.io/note/js/css-basic/</guid>
       <source url="https://kigane.github.io/rss.xml">CSS 基础</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="基础"> 基础</h2>
 <h3 id="术语"> 术语</h3>
 <ul>
@@ -8250,6 +8715,7 @@ PS：只有上下外边距会产生折叠，左右外边距不会折叠。折叠
       <link>https://kigane.github.io/note/js/css-layout/</link>
       <guid>https://kigane.github.io/note/js/css-layout/</guid>
       <source url="https://kigane.github.io/rss.xml">CSS布局</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="浮动布局"> 浮动布局</h2>
 <p>要实现将图片移动到网页一侧，并且让文字围绕图片的效果，浮动是唯一的方法。这也是设计浮动的初衷。</p>
 <h3 id="双容器模式"> 双容器模式</h3>
@@ -8644,6 +9110,7 @@ PS:乘法符号的Unicode字符更对称，也更好看。HTML字符&amp;times�
       <link>https://kigane.github.io/note/js/css-modular/</link>
       <guid>https://kigane.github.io/note/js/css-modular/</guid>
       <source url="https://kigane.github.io/rss.xml">CSS 模块化</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="模块化css"> 模块化CSS</h2>
 <p>是指把页面分割成不同的组成部分，这些组成部分可以在多种上下文中重复使用，并且互相之间没有依赖关系。最终目的是，当我们修改其中一部分CSS时，不会对其他部分产生意料之外的影响。</p>
 <h3 id="基础样式"> 基础样式</h3>
@@ -9173,6 +9640,7 @@ KSS会把js数组里列出的所有脚本文件都添加到页面上。我们可
       <link>https://kigane.github.io/note/js/css-sass/</link>
       <guid>https://kigane.github.io/note/js/css-sass/</guid>
       <source url="https://kigane.github.io/rss.xml">CSS 预处理器</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="sass"> Sass</h2>
 <p>预处理器的工作原理是把我们写的源文件转译成输出文件，即常规CSS样式表。</p>
 <h3 id="安装"> 安装</h3>
@@ -9423,6 +9891,7 @@ KSS会把js数组里列出的所有脚本文件都添加到页面上。我们可
       <link>https://kigane.github.io/note/js/css-tricks/</link>
       <guid>https://kigane.github.io/note/js/css-tricks/</guid>
       <source url="https://kigane.github.io/rss.xml">css 小技巧</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="背景与边框"> 背景与边框</h2>
 <h3 id="透明边框"> 透明边框</h3>
 <p>元素的背景默认会占据border+padding+content区域。即background-clip: border-box。<br>
@@ -9606,6 +10075,7 @@ fr类似flex中的增长因子。</p>
       <link>https://kigane.github.io/note/js/js-base/</link>
       <guid>https://kigane.github.io/note/js/js-base/</guid>
       <source url="https://kigane.github.io/rss.xml">JS 基础</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="变量"> 变量</h2>
 <p>按照ECMA-262的定义，JavaScript的变量只是在特定时间用于保存特定值的一个名字而已。</p>
 <h3 id="变量基础"> 变量基础</h3>
@@ -9813,6 +10283,7 @@ object2<span>.</span><span>getName</span><span>(</span><span>)</span><span>(</sp
       <link>https://kigane.github.io/note/js/js-bom-dom/</link>
       <guid>https://kigane.github.io/note/js/js-bom-dom/</guid>
       <source url="https://kigane.github.io/rss.xml">BOM&amp;DOM&amp;Event</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="bom"> BOM</h2>
 <ul>
 <li>window
@@ -10133,6 +10604,7 @@ EventUtil<span>.</span><span>addHandler</span><span>(</span>list<span>,</span> <
       <link>https://kigane.github.io/note/js/js-object/</link>
       <guid>https://kigane.github.io/note/js/js-object/</guid>
       <source url="https://kigane.github.io/rss.xml">JS 对象</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<p>ECMA-262把对象定义为：“无序属性的集合，其属性可以包含基本值，对象或函数。”<br>
 简单地说，对象就是一个散列表，包含一系列 key-value 对，其中值可以是数据或函数。</p>
 <h2 id="理解对象"> 理解对象</h2>
@@ -10513,6 +10985,7 @@ console<span>.</span><span>log</span><span>(</span><span>Derived</span><span>.</
       <link>https://kigane.github.io/note/js/resources/</link>
       <guid>https://kigane.github.io/note/js/resources/</guid>
       <source url="https://kigane.github.io/rss.xml">资源与工具</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="谷歌字体"> 谷歌字体</h2>
 <p><a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">谷歌字体网站</a><br>
 选中字体后，点击select this style。在右边弹窗中复制<code>&lt;lilnk&gt;</code>部分到html中，复制<code>@import</code>部分到css中。要使用字体时，复制下方的CSS rules即可指定字体。</p>
@@ -10532,6 +11005,7 @@ json-server --watch db.json --port 5000</p>
       <link>https://kigane.github.io/note/js/vue/</link>
       <guid>https://kigane.github.io/note/js/vue/</guid>
       <source url="https://kigane.github.io/rss.xml">Vue.js</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="基础"> 基础</h2>
 <h2 id="深入"> 深入</h2>
 <h3 id="data"> data</h3>
@@ -10642,253 +11116,14 @@ app<span>.</span><span>component</span><span>(</span><span>'todo-list-statistics
       <link>https://kigane.github.io/note/opengl/</link>
       <guid>https://kigane.github.io/note/opengl/</guid>
       <source url="https://kigane.github.io/rss.xml">OpenGL基础</source>
-    </item>
-    <item>
-      <title>帧缓冲(FrameBuffer)</title>
-      <link>https://kigane.github.io/note/opengl/gl-framebuffer/</link>
-      <guid>https://kigane.github.io/note/opengl/gl-framebuffer/</guid>
-      <source url="https://kigane.github.io/rss.xml">帧缓冲(FrameBuffer)</source>
-      <content:encoded><![CDATA[<p>默认的帧缓冲是在你创建窗口的时候生成和配置的，包括颜色缓冲，深度缓冲，模板缓冲等。OpenGL支持自定义帧缓冲。将场景渲染到不同的帧缓冲能够让我们在场景中加入类似镜子的东西，或者做出很酷的后期处理效果。</p>
-<h2 id="创建帧缓冲"> 创建帧缓冲</h2>
-<div><pre><code><span>unsigned</span> <span>int</span> fbo<span>;</span>
-<span>glGenFramebuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>fbo<span>)</span><span>;</span>
-<span>glBindFramebuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> fbo<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>在绑定到GL_FRAMEBUFFER目标之后，所有的读取和写入帧缓冲的操作将会影响当前绑定的帧缓冲。现在的帧缓冲还不能使用，因为它还不完整，一个完整的帧缓冲需要满足以下的条件：</p>
-<ul>
-<li>附加至少一个缓冲（颜色、深度或模板缓冲）。</li>
-<li>至少有一个颜色附件(Attachment)。</li>
-<li>所有的附件都必须是完整的（保留了内存）。</li>
-<li>每个缓冲都应该有相同的样本数。</li>
-</ul>
-<p>我们需要为帧缓冲创建一些附件，并将附件附加到帧缓冲上。在完成所有的条件之后，我们可以以GL_FRAMEBUFFER为参数调用glCheckFramebufferStatus，检查帧缓冲是否完整。</p>
-<div><pre><code><span>if</span><span>(</span><span>glCheckFramebufferStatus</span><span>(</span>GL_FRAMEBUFFER<span>)</span> <span>==</span> GL_FRAMEBUFFER_COMPLETE<span>)</span>
-  <span>// 确实完整了</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><p>之后所有的渲染操作将会渲染到当前绑定帧缓冲的附件中。由于当前帧缓冲不是默认帧缓冲，渲染指令将不会对窗口的视觉输出有任何影响。因此，渲染到一个不同的帧缓冲被叫做离屏渲染(Off-screen Rendering)。要保证所有的渲染操作在主窗口中有视觉效果，我们需要再次激活默认帧缓冲，即将它绑定到0</p>
-<div><pre><code><span>glBindFramebuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> <span>0</span><span>)</span><span>;</span>
-<span>glDeleteFramebuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>fbo<span>)</span><span>;</span> <span>// 不要的时候记得删了</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="纹理附件"> 纹理附件</h2>
-<p>当把一个纹理附加到帧缓冲的时候，所有的渲染指令将会写入到这个纹理中。使用纹理的优点是，所有渲染操作的结果将会被储存在一个纹理图像中，之后可以在着色器中很方便地使用它。</p>
-<div><pre><code><span>unsigned</span> <span>int</span> texture<span>;</span>
-<span>glGenTextures</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>texture<span>)</span><span>;</span>
-<span>glBindTexture</span><span>(</span>GL_TEXTURE_2D<span>,</span> texture<span>)</span><span>;</span>
-
-<span>glTexImage2D</span><span>(</span>GL_TEXTURE_2D<span>,</span> <span>0</span><span>,</span> GL_RGB<span>,</span> <span>800</span><span>,</span> <span>600</span><span>,</span> <span>0</span><span>,</span> GL_RGB<span>,</span> GL_UNSIGNED_BYTE<span>,</span> <span>NULL</span><span>)</span><span>;</span>
-
-<span>glTexParameteri</span><span>(</span>GL_TEXTURE_2D<span>,</span> GL_TEXTURE_MIN_FILTER<span>,</span> GL_LINEAR<span>)</span><span>;</span>
-<span>glTexParameteri</span><span>(</span>GL_TEXTURE_2D<span>,</span> GL_TEXTURE_MAG_FILTER<span>,</span> GL_LINEAR<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>和普通的纹理区别在于：glTexImage2D的宽高设置为视口的大小，且最后一个参数data设置为NULL。表示仅仅分配了内存而没有填充它。填充会在渲染场景到帧缓冲之后进行。</p>
-<div><p>提示</p>
-<p>如果你想将你的屏幕渲染到一个更小或更大的纹理上，需要在渲染场景到帧缓冲之前使用纹理的新维度作为参数再次调用glViewport，否则只有一小部分的纹理或屏幕会被渲染到这个纹理上。</p>
-</div>
-<div><pre><code><span>glFramebufferTexture2D</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_COLOR_ATTACHMENT0<span>,</span> GL_TEXTURE_2D<span>,</span> texture<span>,</span> <span>0</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br></div></div><p>glFramebufferTexture2D</p>
-<ul>
-<li>target：帧缓冲的目标</li>
-<li>attachment：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的0意味着我们可以附加多个颜色附件。</li>
-<li>textarget：你希望附加的纹理类型</li>
-<li>texture：要附加的纹理本身</li>
-<li>level：多级渐远纹理的级别。我们将它保留为0。</li>
-</ul>
-<p>对于深度缓冲：附件类型设置为GL_DEPTH_ATTACHMENT。纹理的内部格式变为GL_DEPTH_COMPONENT。</p>
-<p>对于模板缓冲：附件类型设置为GL_STENCIL_ATTACHMENT，并将纹理的内部格式设定为GL_STENCIL_INDEX。</p>
-<p>也可以将深度缓冲和模板缓冲附加为一个单独的纹理。纹理的每32位数值将包含24位的深度信息和8位的模板信息。附件类型使用GL_DEPTH_STENCIL_ATTACHMENT，纹理的内部格式使用GL_UNSIGNED_INT_24_8。例如</p>
-<div><pre><code><span>glTexImage2D</span><span>(</span>
-  GL_TEXTURE_2D<span>,</span> <span>0</span><span>,</span> GL_DEPTH24_STENCIL8<span>,</span> <span>800</span><span>,</span> <span>600</span><span>,</span> <span>0</span><span>,</span> 
-  GL_DEPTH_STENCIL<span>,</span> GL_UNSIGNED_INT_24_8<span>,</span> <span>NULL</span>
-<span>)</span><span>;</span>
-
-<span>glFramebufferTexture2D</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_DEPTH_STENCIL_ATTACHMENT<span>,</span> GL_TEXTURE_2D<span>,</span> texture<span>,</span> <span>0</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="渲染缓冲对象-renderbuffer-object-附件"> 渲染缓冲对象(Renderbuffer Object)附件</h2>
-<p>和纹理图像一样，渲染缓冲对象是一个真正的缓冲，即一系列的字节、整数、像素等。渲染缓冲对象直接将所有的渲染数据储存到它的缓冲中，不会做任何针对纹理格式的转换，所以更快(因为使用原生格式，所以交换缓冲这样的操作很快)。然而，渲染缓冲对象通常都是只写的，所以你不能读取它们（比如使用纹理访问）。当然还是能够使用glReadPixels来读取它，这会从当前绑定的帧缓冲中返回特定区域的像素，而非附件本身。</p>
-<p>由于渲染缓冲对象通常都是只写的，所以经常用于深度和模板附件，因为大部分时间我们都不需要从深度和模板缓冲中读取值，只关心深度和模板测试能否通过。当<strong>不需要从缓冲中采样的时候</strong>，通常都会选择渲染缓冲对象。</p>
-<div><pre><code><span>unsigned</span> <span>int</span> rbo<span>;</span>
-<span>glGenRenderbuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>rbo<span>)</span><span>;</span>
-<span>glBindRenderbuffer</span><span>(</span>GL_RENDERBUFFER<span>,</span> rbo<span>)</span><span>;</span>
-<span>// 创建一个深度和模板渲染缓冲对象</span>
-<span>glRenderbufferStorage</span><span>(</span>GL_RENDERBUFFER<span>,</span> GL_DEPTH24_STENCIL8<span>,</span> <span>800</span><span>,</span> <span>600</span><span>)</span><span>;</span>
-<span>// 附加</span>
-<span>glFramebufferRenderbuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_DEPTH_STENCIL_ATTACHMENT<span>,</span> GL_RENDERBUFFER<span>,</span> rbo<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="渲染到纹理"> 渲染到纹理</h2>
-<p>要想绘制场景到一个纹理上，我们需要采取以下的步骤：</p>
-<ol>
-<li>将新的帧缓冲绑定为激活的帧缓冲，和往常一样渲染场景</li>
-<li>绑定默认的帧缓冲</li>
-<li>绘制一个横跨整个屏幕的四边形，将帧缓冲的颜色缓冲作为它的纹理。</li>
-</ol>
-<h2 id="后期处理"> 后期处理</h2>
-<p>既然整个场景都被渲染到了一个纹理上，我们可以简单地通过修改纹理数据创建出一些非常有意思的效果。</p>
-<h3 id="反相"> 反相</h3>
-<p>我们现在能够访问渲染输出的每个颜色，所以在片段着色器中返回这些颜色的反相(Inversion)并不是很难。我们将会从屏幕纹理中取颜色值，然后用1.0减去它，对它进行反相：</p>
-<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-    FragColor <span>=</span> <span>vec4</span><span>(</span><span>vec3</span><span>(</span><span>1.0</span> <span>-</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>)</span><span>,</span> <span>1.0</span><span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h3 id="灰度"> 灰度</h3>
-<p>移除场景中除了黑白灰以外所有的颜色，让整个图像灰度化(Grayscale)。很简单的实现方式是，取所有的颜色分量，将它们平均化：</p>
-<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-    FragColor <span>=</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>;</span>
-    <span>float</span> average <span>=</span> <span>(</span>FragColor<span>.</span>r <span>+</span> FragColor<span>.</span>g <span>+</span> FragColor<span>.</span>b<span>)</span> <span>/</span> <span>3.0</span><span>;</span>
-    FragColor <span>=</span> <span>vec4</span><span>(</span>average<span>,</span> average<span>,</span> average<span>,</span> <span>1.0</span><span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>但人眼会对绿色更加敏感一些，而对蓝色不那么敏感，所以为了获取物理上更精确的效果，我们需要使用加权的通道：</p>
-<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-    FragColor <span>=</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>;</span>
-    <span>float</span> average <span>=</span> <span>0.2126</span> <span>*</span> FragColor<span>.</span>r <span>+</span> <span>0.7152</span> <span>*</span> FragColor<span>.</span>g <span>+</span> <span>0.0722</span> <span>*</span> FragColor<span>.</span>b<span>;</span>
-    FragColor <span>=</span> <span>vec4</span><span>(</span>average<span>,</span> average<span>,</span> average<span>,</span> <span>1.0</span><span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h3 id="核效果"> 核效果</h3>
-<p>在一个纹理图像上做后期处理的另外一个好处是，我们可以从纹理的其它地方采样颜色值。比如说我们可以在当前纹理坐标的周围取一小块区域，对当前纹理值周围的多个纹理值进行采样。</p>
-<p>核(Kernel)（或卷积矩阵(Convolution Matrix)）是一个类矩阵的数值数组，它的中心为当前的像素，它会用它的核值乘以周围的像素值，并将结果相加变成一个值。所以，基本上我们是在对当前像素周围的纹理坐标添加一个小的偏移量，并根据核将结果合并。</p>
-<div><p>提示</p>
-<p>大部分核将所有的权重加起来之后都应该会等于1，如果它们加起来不等于1，这就意味着最终的纹理颜色将会比原纹理值更亮或者更暗了。</p>
-</div>
-<p>例如：</p>
-<div><pre><code><span>const</span> <span>float</span> offset <span>=</span> <span>1.0</span> <span>/</span> <span>300.0</span><span>;</span>  
-
-<span>void</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-    <span>vec2</span> offsets<span>[</span><span>9</span><span>]</span> <span>=</span> <span>vec2</span><span>[</span><span>]</span><span>(</span>
-        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span>  offset<span>)</span><span>,</span> <span>// 左上</span>
-        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>    offset<span>)</span><span>,</span> <span>// 正上</span>
-        <span>vec2</span><span>(</span> offset<span>,</span>  offset<span>)</span><span>,</span> <span>// 右上</span>
-        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span>  <span>0.0f</span><span>)</span><span>,</span>   <span>// 左</span>
-        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>    <span>0.0f</span><span>)</span><span>,</span>   <span>// 中</span>
-        <span>vec2</span><span>(</span> offset<span>,</span>  <span>0.0f</span><span>)</span><span>,</span>   <span>// 右</span>
-        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span> <span>-</span>offset<span>)</span><span>,</span> <span>// 左下</span>
-        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>   <span>-</span>offset<span>)</span><span>,</span> <span>// 正下</span>
-        <span>vec2</span><span>(</span> offset<span>,</span> <span>-</span>offset<span>)</span>  <span>// 右下</span>
-    <span>)</span><span>;</span>
-
-    <span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
-        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span>
-        <span>-</span><span>1</span><span>,</span>  <span>9</span><span>,</span> <span>-</span><span>1</span><span>,</span>
-        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span>
-    <span>)</span><span>;</span>
-
-    <span>vec3</span> sampleTex<span>[</span><span>9</span><span>]</span><span>;</span>
-    <span>for</span><span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>9</span><span>;</span> i<span>++</span><span>)</span>
-    <span>{</span>
-        sampleTex<span>[</span>i<span>]</span> <span>=</span> <span>vec3</span><span>(</span><span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>.</span>st <span>+</span> offsets<span>[</span>i<span>]</span><span>)</span><span>)</span><span>;</span>
-    <span>}</span>
-    <span>vec3</span> col <span>=</span> <span>vec3</span><span>(</span><span>0.0</span><span>)</span><span>;</span>
-    <span>for</span><span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>9</span><span>;</span> i<span>++</span><span>)</span>
-        col <span>+=</span> sampleTex<span>[</span>i<span>]</span> <span>*</span> kernel<span>[</span>i<span>]</span><span>;</span>
-
-    FragColor <span>=</span> <span>vec4</span><span>(</span>col<span>,</span> <span>1.0</span><span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br></div></div><h3 id="常见的核"> 常见的核</h3>
-<div><pre><code><span>// 锐化</span>
-<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
-        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span>
-        <span>-</span><span>1</span><span>,</span>  <span>9</span><span>,</span> <span>-</span><span>1</span><span>,</span>
-        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span>
-    <span>)</span><span>;</span>
-
-<span>// 模糊</span>
-<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
-    <span>1.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>1.0</span> <span>/</span> <span>16</span><span>,</span>
-    <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>4.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span>
-    <span>1.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>1.0</span> <span>/</span> <span>16</span>  
-<span>)</span><span>;</span>
-
-<span>// 边缘检测(Edge-detection)</span>
-<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
-        <span>1</span><span>,</span>  <span>1</span><span>,</span>  <span>1</span><span>,</span>
-        <span>1</span><span>,</span> <span>-</span><span>8</span><span>,</span>  <span>1</span><span>,</span>
-        <span>1</span><span>,</span>  <span>1</span><span>,</span>  <span>1</span>
-    <span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><div><p>提示</p>
-<p>注意，核在对屏幕纹理的边缘进行采样的时候，由于还会对中心像素周围的8个像素进行采样，其实会取到纹理之外的像素。由于环绕方式默认是GL_REPEAT，所以在没有设置的情况下取到的是屏幕另一边的像素，而另一边的像素本不应该对中心像素产生影响，这就可能会在屏幕边缘产生很奇怪的条纹。为了消除这一问题，我们可以将屏幕纹理的环绕方式都设置为GL_CLAMP_TO_EDGE。这样子在取到纹理外的像素时，就能够重复边缘的像素来更精确地估计最终的值了。</p>
-</div>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenCV</title>
-      <link>https://kigane.github.io/note/opengl/opencv/</link>
-      <guid>https://kigane.github.io/note/opengl/opencv/</guid>
-      <source url="https://kigane.github.io/rss.xml">OpenCV</source>
-      <content:encoded><![CDATA[<h2 id="简介"> 简介</h2>
-<p>OpenCV是一个图像处理库。图像矩阵类Mat主要有两个部分,header部分记录图像矩阵的描述性信息，如大小，元素储存方式等等，另外一部分是一个指针，指向矩阵存储的内存。有自动内存管理，且使用了引用计数系统，Mat的赋值，复制构造函数只会复制header部分，指针部分指向同一块内存，最后一个指向该内存的指针负责回收内存。其指定存储方式的格式为:<code>CV_[The number of bits per item][Signed or Unsigned][Type Prefix]C[The channel number]</code>。Mat的输出格式可以用<code>format(mat, Formatter::FMT_PYTHON)</code>指定(<code>cout&lt;&lt;format(mat,...)</code>)。<br>
-PS：OpenCV按BGR顺序存储RGB颜色。</p>
-<h2 id="遍历图像矩阵"> 遍历图像矩阵</h2>
-<ul>
-<li>cv::Mat::isContinuous() 检查内存是否在同一行</li>
-<li>检查图像是否加载成功可以看I.data是否为NULL，为NULL则加载失败。</li>
-<li>遍历矩阵元素的方式
-<ul>
-<li>mat.depth()查看item的类型，mat.channels()查看元素的通道数。</li>
-<li>mat.rows查看元素行数,mat.cols查看元素列数，mat.cols*mat.channels()是item总数。</li>
-<li><code>mat.ptr&lt;typename&gt;(i)</code> 取得指向矩阵第i行行首的指针。</li>
-<li><code>MatIterator_&lt;typename&gt; it</code> 不同类型的迭代器，推荐使用，在内存换行时有点优化。
-<ul>
-<li><code>mat.begin&lt;typename&gt;()</code> 取得位于矩阵开头的迭代器。常用的RGB3通道对应typename为Vec3b</li>
-<li><code>mat.end&lt;typename&gt;()</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>cv::Mat::at(row,col) 取得第row行，第col列的元素的地址，并返回引用。</li>
-<li>cv::LUT(src,lut,dest) <code>dest[i]=lut[src[i]+d]</code>。如果src是无符号类型，则d=0，有符号类型则d=128。最快。</li>
-</ul>
-<h2 id="图像操作"> 图像操作</h2>
-<ul>
-<li>Mat img = imread(filename); 默认为3通道</li>
-<li>Mat img = imread(filename, IMREAD_GRAYSCALE); 单通道</li>
-<li>imwrite(filename, img); 保存到文件</li>
-<li>imshow(&quot;image&quot;, img); 显示图像</li>
-<li>cvtColor(img, grey, COLOR_BGR2GRAY);  改变颜色空间。</li>
-<li>src.convertTo(dst, CV_32F); 改变图像类型</li>
-<li>Rect r(10, 10, 100, 100); Mat smallImg = img(r); 将Rect指定的区域储存为另一个图像</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>软件渲染器</title>
-      <link>https://kigane.github.io/note/opengl/software-renderer/</link>
-      <guid>https://kigane.github.io/note/opengl/software-renderer/</guid>
-      <source url="https://kigane.github.io/rss.xml">软件渲染器</source>
-      <content:encoded><![CDATA[<h2 id="整理"> 整理</h2>
-<ul>
-<li>给定物体和相机位置</li>
-<li>摆好位置</li>
-<li>投影变换</li>
-<li>视口变换</li>
-<li>光栅化
-<ul>
-<li>采样</li>
-<li>抗锯齿</li>
-<li>z-buffer</li>
-</ul>
-</li>
-<li>着色 重心插值</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Blog Home</title>
-      <link>https://kigane.github.io/</link>
-      <guid>https://kigane.github.io/</guid>
-      <source url="https://kigane.github.io/rss.xml">Blog Home</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
     </item>
     <item>
       <title>eigen库</title>
       <link>https://kigane.github.io/note/opengl/eigen/</link>
       <guid>https://kigane.github.io/note/opengl/eigen/</guid>
       <source url="https://kigane.github.io/rss.xml">eigen库</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="基础"> 基础</h2>
 <p>eigen库是纯模板库。</p>
 <h3 id="matrix"> Matrix</h3>
@@ -11091,6 +11326,251 @@ Block containing n elements, starting at position i *</li>
 <span>}</span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br><span>56</span><br><span>57</span><br><span>58</span><br><span>59</span><br><span>60</span><br><span>61</span><br><span>62</span><br><span>63</span><br><span>64</span><br><span>65</span><br><span>66</span><br><span>67</span><br><span>68</span><br><span>69</span><br><span>70</span><br><span>71</span><br><span>72</span><br><span>73</span><br><span>74</span><br><span>75</span><br><span>76</span><br><span>77</span><br><span>78</span><br><span>79</span><br><span>80</span><br><span>81</span><br><span>82</span><br><span>83</span><br><span>84</span><br><span>85</span><br><span>86</span><br><span>87</span><br><span>88</span><br><span>89</span><br><span>90</span><br><span>91</span><br><span>92</span><br><span>93</span><br><span>94</span><br><span>95</span><br><span>96</span><br><span>97</span><br><span>98</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>帧缓冲(FrameBuffer)</title>
+      <link>https://kigane.github.io/note/opengl/gl-framebuffer/</link>
+      <guid>https://kigane.github.io/note/opengl/gl-framebuffer/</guid>
+      <source url="https://kigane.github.io/rss.xml">帧缓冲(FrameBuffer)</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<p>默认的帧缓冲是在你创建窗口的时候生成和配置的，包括颜色缓冲，深度缓冲，模板缓冲等。OpenGL支持自定义帧缓冲。将场景渲染到不同的帧缓冲能够让我们在场景中加入类似镜子的东西，或者做出很酷的后期处理效果。</p>
+<h2 id="创建帧缓冲"> 创建帧缓冲</h2>
+<div><pre><code><span>unsigned</span> <span>int</span> fbo<span>;</span>
+<span>glGenFramebuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>fbo<span>)</span><span>;</span>
+<span>glBindFramebuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> fbo<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>在绑定到GL_FRAMEBUFFER目标之后，所有的读取和写入帧缓冲的操作将会影响当前绑定的帧缓冲。现在的帧缓冲还不能使用，因为它还不完整，一个完整的帧缓冲需要满足以下的条件：</p>
+<ul>
+<li>附加至少一个缓冲（颜色、深度或模板缓冲）。</li>
+<li>至少有一个颜色附件(Attachment)。</li>
+<li>所有的附件都必须是完整的（保留了内存）。</li>
+<li>每个缓冲都应该有相同的样本数。</li>
+</ul>
+<p>我们需要为帧缓冲创建一些附件，并将附件附加到帧缓冲上。在完成所有的条件之后，我们可以以GL_FRAMEBUFFER为参数调用glCheckFramebufferStatus，检查帧缓冲是否完整。</p>
+<div><pre><code><span>if</span><span>(</span><span>glCheckFramebufferStatus</span><span>(</span>GL_FRAMEBUFFER<span>)</span> <span>==</span> GL_FRAMEBUFFER_COMPLETE<span>)</span>
+  <span>// 确实完整了</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p>之后所有的渲染操作将会渲染到当前绑定帧缓冲的附件中。由于当前帧缓冲不是默认帧缓冲，渲染指令将不会对窗口的视觉输出有任何影响。因此，渲染到一个不同的帧缓冲被叫做离屏渲染(Off-screen Rendering)。要保证所有的渲染操作在主窗口中有视觉效果，我们需要再次激活默认帧缓冲，即将它绑定到0</p>
+<div><pre><code><span>glBindFramebuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> <span>0</span><span>)</span><span>;</span>
+<span>glDeleteFramebuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>fbo<span>)</span><span>;</span> <span>// 不要的时候记得删了</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="纹理附件"> 纹理附件</h2>
+<p>当把一个纹理附加到帧缓冲的时候，所有的渲染指令将会写入到这个纹理中。使用纹理的优点是，所有渲染操作的结果将会被储存在一个纹理图像中，之后可以在着色器中很方便地使用它。</p>
+<div><pre><code><span>unsigned</span> <span>int</span> texture<span>;</span>
+<span>glGenTextures</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>texture<span>)</span><span>;</span>
+<span>glBindTexture</span><span>(</span>GL_TEXTURE_2D<span>,</span> texture<span>)</span><span>;</span>
+
+<span>glTexImage2D</span><span>(</span>GL_TEXTURE_2D<span>,</span> <span>0</span><span>,</span> GL_RGB<span>,</span> <span>800</span><span>,</span> <span>600</span><span>,</span> <span>0</span><span>,</span> GL_RGB<span>,</span> GL_UNSIGNED_BYTE<span>,</span> <span>NULL</span><span>)</span><span>;</span>
+
+<span>glTexParameteri</span><span>(</span>GL_TEXTURE_2D<span>,</span> GL_TEXTURE_MIN_FILTER<span>,</span> GL_LINEAR<span>)</span><span>;</span>
+<span>glTexParameteri</span><span>(</span>GL_TEXTURE_2D<span>,</span> GL_TEXTURE_MAG_FILTER<span>,</span> GL_LINEAR<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>和普通的纹理区别在于：glTexImage2D的宽高设置为视口的大小，且最后一个参数data设置为NULL。表示仅仅分配了内存而没有填充它。填充会在渲染场景到帧缓冲之后进行。</p>
+<div><p>提示</p>
+<p>如果你想将你的屏幕渲染到一个更小或更大的纹理上，需要在渲染场景到帧缓冲之前使用纹理的新维度作为参数再次调用glViewport，否则只有一小部分的纹理或屏幕会被渲染到这个纹理上。</p>
+</div>
+<div><pre><code><span>glFramebufferTexture2D</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_COLOR_ATTACHMENT0<span>,</span> GL_TEXTURE_2D<span>,</span> texture<span>,</span> <span>0</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br></div></div><p>glFramebufferTexture2D</p>
+<ul>
+<li>target：帧缓冲的目标</li>
+<li>attachment：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的0意味着我们可以附加多个颜色附件。</li>
+<li>textarget：你希望附加的纹理类型</li>
+<li>texture：要附加的纹理本身</li>
+<li>level：多级渐远纹理的级别。我们将它保留为0。</li>
+</ul>
+<p>对于深度缓冲：附件类型设置为GL_DEPTH_ATTACHMENT。纹理的内部格式变为GL_DEPTH_COMPONENT。</p>
+<p>对于模板缓冲：附件类型设置为GL_STENCIL_ATTACHMENT，并将纹理的内部格式设定为GL_STENCIL_INDEX。</p>
+<p>也可以将深度缓冲和模板缓冲附加为一个单独的纹理。纹理的每32位数值将包含24位的深度信息和8位的模板信息。附件类型使用GL_DEPTH_STENCIL_ATTACHMENT，纹理的内部格式使用GL_UNSIGNED_INT_24_8。例如</p>
+<div><pre><code><span>glTexImage2D</span><span>(</span>
+  GL_TEXTURE_2D<span>,</span> <span>0</span><span>,</span> GL_DEPTH24_STENCIL8<span>,</span> <span>800</span><span>,</span> <span>600</span><span>,</span> <span>0</span><span>,</span> 
+  GL_DEPTH_STENCIL<span>,</span> GL_UNSIGNED_INT_24_8<span>,</span> <span>NULL</span>
+<span>)</span><span>;</span>
+
+<span>glFramebufferTexture2D</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_DEPTH_STENCIL_ATTACHMENT<span>,</span> GL_TEXTURE_2D<span>,</span> texture<span>,</span> <span>0</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="渲染缓冲对象-renderbuffer-object-附件"> 渲染缓冲对象(Renderbuffer Object)附件</h2>
+<p>和纹理图像一样，渲染缓冲对象是一个真正的缓冲，即一系列的字节、整数、像素等。渲染缓冲对象直接将所有的渲染数据储存到它的缓冲中，不会做任何针对纹理格式的转换，所以更快(因为使用原生格式，所以交换缓冲这样的操作很快)。然而，渲染缓冲对象通常都是只写的，所以你不能读取它们（比如使用纹理访问）。当然还是能够使用glReadPixels来读取它，这会从当前绑定的帧缓冲中返回特定区域的像素，而非附件本身。</p>
+<p>由于渲染缓冲对象通常都是只写的，所以经常用于深度和模板附件，因为大部分时间我们都不需要从深度和模板缓冲中读取值，只关心深度和模板测试能否通过。当<strong>不需要从缓冲中采样的时候</strong>，通常都会选择渲染缓冲对象。</p>
+<div><pre><code><span>unsigned</span> <span>int</span> rbo<span>;</span>
+<span>glGenRenderbuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>rbo<span>)</span><span>;</span>
+<span>glBindRenderbuffer</span><span>(</span>GL_RENDERBUFFER<span>,</span> rbo<span>)</span><span>;</span>
+<span>// 创建一个深度和模板渲染缓冲对象</span>
+<span>glRenderbufferStorage</span><span>(</span>GL_RENDERBUFFER<span>,</span> GL_DEPTH24_STENCIL8<span>,</span> <span>800</span><span>,</span> <span>600</span><span>)</span><span>;</span>
+<span>// 附加</span>
+<span>glFramebufferRenderbuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_DEPTH_STENCIL_ATTACHMENT<span>,</span> GL_RENDERBUFFER<span>,</span> rbo<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="渲染到纹理"> 渲染到纹理</h2>
+<p>要想绘制场景到一个纹理上，我们需要采取以下的步骤：</p>
+<ol>
+<li>将新的帧缓冲绑定为激活的帧缓冲，和往常一样渲染场景</li>
+<li>绑定默认的帧缓冲</li>
+<li>绘制一个横跨整个屏幕的四边形，将帧缓冲的颜色缓冲作为它的纹理。</li>
+</ol>
+<h2 id="后期处理"> 后期处理</h2>
+<p>既然整个场景都被渲染到了一个纹理上，我们可以简单地通过修改纹理数据创建出一些非常有意思的效果。</p>
+<h3 id="反相"> 反相</h3>
+<p>我们现在能够访问渲染输出的每个颜色，所以在片段着色器中返回这些颜色的反相(Inversion)并不是很难。我们将会从屏幕纹理中取颜色值，然后用1.0减去它，对它进行反相：</p>
+<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+    FragColor <span>=</span> <span>vec4</span><span>(</span><span>vec3</span><span>(</span><span>1.0</span> <span>-</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>)</span><span>,</span> <span>1.0</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h3 id="灰度"> 灰度</h3>
+<p>移除场景中除了黑白灰以外所有的颜色，让整个图像灰度化(Grayscale)。很简单的实现方式是，取所有的颜色分量，将它们平均化：</p>
+<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+    FragColor <span>=</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>;</span>
+    <span>float</span> average <span>=</span> <span>(</span>FragColor<span>.</span>r <span>+</span> FragColor<span>.</span>g <span>+</span> FragColor<span>.</span>b<span>)</span> <span>/</span> <span>3.0</span><span>;</span>
+    FragColor <span>=</span> <span>vec4</span><span>(</span>average<span>,</span> average<span>,</span> average<span>,</span> <span>1.0</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>但人眼会对绿色更加敏感一些，而对蓝色不那么敏感，所以为了获取物理上更精确的效果，我们需要使用加权的通道：</p>
+<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+    FragColor <span>=</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>;</span>
+    <span>float</span> average <span>=</span> <span>0.2126</span> <span>*</span> FragColor<span>.</span>r <span>+</span> <span>0.7152</span> <span>*</span> FragColor<span>.</span>g <span>+</span> <span>0.0722</span> <span>*</span> FragColor<span>.</span>b<span>;</span>
+    FragColor <span>=</span> <span>vec4</span><span>(</span>average<span>,</span> average<span>,</span> average<span>,</span> <span>1.0</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h3 id="核效果"> 核效果</h3>
+<p>在一个纹理图像上做后期处理的另外一个好处是，我们可以从纹理的其它地方采样颜色值。比如说我们可以在当前纹理坐标的周围取一小块区域，对当前纹理值周围的多个纹理值进行采样。</p>
+<p>核(Kernel)（或卷积矩阵(Convolution Matrix)）是一个类矩阵的数值数组，它的中心为当前的像素，它会用它的核值乘以周围的像素值，并将结果相加变成一个值。所以，基本上我们是在对当前像素周围的纹理坐标添加一个小的偏移量，并根据核将结果合并。</p>
+<div><p>提示</p>
+<p>大部分核将所有的权重加起来之后都应该会等于1，如果它们加起来不等于1，这就意味着最终的纹理颜色将会比原纹理值更亮或者更暗了。</p>
+</div>
+<p>例如：</p>
+<div><pre><code><span>const</span> <span>float</span> offset <span>=</span> <span>1.0</span> <span>/</span> <span>300.0</span><span>;</span>  
+
+<span>void</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+    <span>vec2</span> offsets<span>[</span><span>9</span><span>]</span> <span>=</span> <span>vec2</span><span>[</span><span>]</span><span>(</span>
+        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span>  offset<span>)</span><span>,</span> <span>// 左上</span>
+        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>    offset<span>)</span><span>,</span> <span>// 正上</span>
+        <span>vec2</span><span>(</span> offset<span>,</span>  offset<span>)</span><span>,</span> <span>// 右上</span>
+        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span>  <span>0.0f</span><span>)</span><span>,</span>   <span>// 左</span>
+        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>    <span>0.0f</span><span>)</span><span>,</span>   <span>// 中</span>
+        <span>vec2</span><span>(</span> offset<span>,</span>  <span>0.0f</span><span>)</span><span>,</span>   <span>// 右</span>
+        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span> <span>-</span>offset<span>)</span><span>,</span> <span>// 左下</span>
+        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>   <span>-</span>offset<span>)</span><span>,</span> <span>// 正下</span>
+        <span>vec2</span><span>(</span> offset<span>,</span> <span>-</span>offset<span>)</span>  <span>// 右下</span>
+    <span>)</span><span>;</span>
+
+    <span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
+        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span>
+        <span>-</span><span>1</span><span>,</span>  <span>9</span><span>,</span> <span>-</span><span>1</span><span>,</span>
+        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span>
+    <span>)</span><span>;</span>
+
+    <span>vec3</span> sampleTex<span>[</span><span>9</span><span>]</span><span>;</span>
+    <span>for</span><span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>9</span><span>;</span> i<span>++</span><span>)</span>
+    <span>{</span>
+        sampleTex<span>[</span>i<span>]</span> <span>=</span> <span>vec3</span><span>(</span><span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>.</span>st <span>+</span> offsets<span>[</span>i<span>]</span><span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>vec3</span> col <span>=</span> <span>vec3</span><span>(</span><span>0.0</span><span>)</span><span>;</span>
+    <span>for</span><span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>9</span><span>;</span> i<span>++</span><span>)</span>
+        col <span>+=</span> sampleTex<span>[</span>i<span>]</span> <span>*</span> kernel<span>[</span>i<span>]</span><span>;</span>
+
+    FragColor <span>=</span> <span>vec4</span><span>(</span>col<span>,</span> <span>1.0</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br></div></div><h3 id="常见的核"> 常见的核</h3>
+<div><pre><code><span>// 锐化</span>
+<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
+        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span>
+        <span>-</span><span>1</span><span>,</span>  <span>9</span><span>,</span> <span>-</span><span>1</span><span>,</span>
+        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span>
+    <span>)</span><span>;</span>
+
+<span>// 模糊</span>
+<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
+    <span>1.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>1.0</span> <span>/</span> <span>16</span><span>,</span>
+    <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>4.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span>
+    <span>1.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>1.0</span> <span>/</span> <span>16</span>  
+<span>)</span><span>;</span>
+
+<span>// 边缘检测(Edge-detection)</span>
+<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
+        <span>1</span><span>,</span>  <span>1</span><span>,</span>  <span>1</span><span>,</span>
+        <span>1</span><span>,</span> <span>-</span><span>8</span><span>,</span>  <span>1</span><span>,</span>
+        <span>1</span><span>,</span>  <span>1</span><span>,</span>  <span>1</span>
+    <span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><div><p>提示</p>
+<p>注意，核在对屏幕纹理的边缘进行采样的时候，由于还会对中心像素周围的8个像素进行采样，其实会取到纹理之外的像素。由于环绕方式默认是GL_REPEAT，所以在没有设置的情况下取到的是屏幕另一边的像素，而另一边的像素本不应该对中心像素产生影响，这就可能会在屏幕边缘产生很奇怪的条纹。为了消除这一问题，我们可以将屏幕纹理的环绕方式都设置为GL_CLAMP_TO_EDGE。这样子在取到纹理外的像素时，就能够重复边缘的像素来更精确地估计最终的值了。</p>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenCV</title>
+      <link>https://kigane.github.io/note/opengl/opencv/</link>
+      <guid>https://kigane.github.io/note/opengl/opencv/</guid>
+      <source url="https://kigane.github.io/rss.xml">OpenCV</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="简介"> 简介</h2>
+<p>OpenCV是一个图像处理库。图像矩阵类Mat主要有两个部分,header部分记录图像矩阵的描述性信息，如大小，元素储存方式等等，另外一部分是一个指针，指向矩阵存储的内存。有自动内存管理，且使用了引用计数系统，Mat的赋值，复制构造函数只会复制header部分，指针部分指向同一块内存，最后一个指向该内存的指针负责回收内存。其指定存储方式的格式为:<code>CV_[The number of bits per item][Signed or Unsigned][Type Prefix]C[The channel number]</code>。Mat的输出格式可以用<code>format(mat, Formatter::FMT_PYTHON)</code>指定(<code>cout&lt;&lt;format(mat,...)</code>)。<br>
+PS：OpenCV按BGR顺序存储RGB颜色。</p>
+<h2 id="遍历图像矩阵"> 遍历图像矩阵</h2>
+<ul>
+<li>cv::Mat::isContinuous() 检查内存是否在同一行</li>
+<li>检查图像是否加载成功可以看I.data是否为NULL，为NULL则加载失败。</li>
+<li>遍历矩阵元素的方式
+<ul>
+<li>mat.depth()查看item的类型，mat.channels()查看元素的通道数。</li>
+<li>mat.rows查看元素行数,mat.cols查看元素列数，mat.cols*mat.channels()是item总数。</li>
+<li><code>mat.ptr&lt;typename&gt;(i)</code> 取得指向矩阵第i行行首的指针。</li>
+<li><code>MatIterator_&lt;typename&gt; it</code> 不同类型的迭代器，推荐使用，在内存换行时有点优化。
+<ul>
+<li><code>mat.begin&lt;typename&gt;()</code> 取得位于矩阵开头的迭代器。常用的RGB3通道对应typename为Vec3b</li>
+<li><code>mat.end&lt;typename&gt;()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cv::Mat::at(row,col) 取得第row行，第col列的元素的地址，并返回引用。</li>
+<li>cv::LUT(src,lut,dest) <code>dest[i]=lut[src[i]+d]</code>。如果src是无符号类型，则d=0，有符号类型则d=128。最快。</li>
+</ul>
+<h2 id="图像操作"> 图像操作</h2>
+<ul>
+<li>Mat img = imread(filename); 默认为3通道</li>
+<li>Mat img = imread(filename, IMREAD_GRAYSCALE); 单通道</li>
+<li>imwrite(filename, img); 保存到文件</li>
+<li>imshow(&quot;image&quot;, img); 显示图像</li>
+<li>cvtColor(img, grey, COLOR_BGR2GRAY);  改变颜色空间。</li>
+<li>src.convertTo(dst, CV_32F); 改变图像类型</li>
+<li>Rect r(10, 10, 100, 100); Mat smallImg = img(r); 将Rect指定的区域储存为另一个图像</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>软件渲染器</title>
+      <link>https://kigane.github.io/note/opengl/software-renderer/</link>
+      <guid>https://kigane.github.io/note/opengl/software-renderer/</guid>
+      <source url="https://kigane.github.io/rss.xml">软件渲染器</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="整理"> 整理</h2>
+<ul>
+<li>给定物体和相机位置</li>
+<li>摆好位置</li>
+<li>投影变换</li>
+<li>视口变换</li>
+<li>光栅化
+<ul>
+<li>采样</li>
+<li>抗锯齿</li>
+<li>z-buffer</li>
+</ul>
+</li>
+<li>着色 重心插值</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Blog Home</title>
+      <link>https://kigane.github.io/</link>
+      <guid>https://kigane.github.io/</guid>
+      <source url="https://kigane.github.io/rss.xml">Blog Home</source>
+      <pubDate>Sun, 03 Oct 2021 02:18:05 GMT</pubDate>
     </item>
   </channel>
 </rss>
