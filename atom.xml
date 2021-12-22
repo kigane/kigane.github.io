@@ -6,7 +6,7 @@
   <author>
     <name>Leonhardt</name>
   </author>
-  <updated>2021-12-22T15:34:44.735Z</updated>
+  <updated>2021-12-22T15:45:01.383Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://kigane.github.io/atom.xml"/>
   <link rel="alternate" href="https://kigane.github.io/"/>
@@ -75,6 +75,84 @@
       <name>Leonhardt</name>
     </contributor>
     <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">numpy用法</title>
+    <id>https://kigane.github.io/blog/numpy/</id>
+    <link href="https://kigane.github.io/blog/numpy/"/>
+    <updated>2021-12-18T06:00:06.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="索引"> 索引</h2>
+<h3 id="采样"> 采样</h3>
+<p>x是一维数组，<code>x[i]</code>，为x的第i个元素，np支持数组索引，<code>x[[i, j, k]]</code>，得到<code>[x[i], x[j], x[k]]</code>。如果<code>x[]</code>中传入的数组大于一维，得到的结果类似于将数组flatten后作为索引，得到的结果再reshape成索引数组的形状。</p>
+<div><pre><code>x <span>=</span> np<span>.</span>arange<span>(</span><span>12</span><span>)</span>
+y <span>=</span> np<span>.</span>array<span>(</span><span>[</span><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>]</span><span>,</span> <span>[</span><span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>7</span><span>]</span><span>]</span><span>)</span>
+x<span>[</span>y<span>]</span> <span># y必须是np数组才行</span>
+<span># array([[1, 2, 3, 4],</span>
+<span>#        [2, 3, 4, 7]])</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="np-clip"> np.clip</h2>
+<div><pre><code><span># numpy.clip(a, a_min, a_max, out=None, **kwargs)</span>
+a <span>=</span> np<span>.</span>arange<span>(</span><span>5</span><span>)</span>
+np<span>.</span>clip<span>(</span>a<span>,</span> <span>1</span><span>,</span> <span>3</span><span>)</span> <span># [1,1,2,3,3]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="np-random-shuffle"> np.random.shuffle</h2>
+<p>原地打乱数组元素的顺序</p>
+<div><pre><code>x <span>=</span> np<span>.</span>arange<span>(</span><span>10</span><span>)</span>
+np<span>.</span>random<span>.</span>shuffle<span>(</span>x<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="np-cumsum"> np.cumsum</h2>
+<p>计算列表元素的累积和</p>
+<div><pre><code>a <span>=</span> np<span>.</span>array<span>(</span><span>[</span><span>[</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>]</span><span>,</span> <span>[</span><span>4</span><span>,</span><span>5</span><span>,</span><span>6</span><span>]</span><span>]</span><span>)</span>
+<span># 未指定axis则会先flatten，再计算cumsum</span>
+np<span>.</span>cumsum<span>(</span>a<span>)</span> <span># 1, 3, 6, 10, 15, 21</span>
+<span># 沿指定轴计算 </span>
+np<span>.</span>cumsum<span>(</span>a<span>,</span>axis<span>=</span><span>0</span><span>)</span> <span># [[1, 2, 3], [5, 7, 9]]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="np-diff"> np.diff</h2>
+<p>计算列表相邻元素之间的差值</p>
+<div><pre><code><span># numpy.diff(a, n=1, axis=-1, prepend=&lt;no value>, append=&lt;no value>)</span>
+x <span>=</span> np<span>.</span>array<span>(</span><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>4</span><span>,</span> <span>7</span><span>,</span> <span>0</span><span>]</span><span>)</span>
+np<span>.</span>diff<span>(</span>x<span>)</span> <span># [1, 2, 3, -7]</span>
+<span># n表示递归地做n次diff</span>
+np<span>.</span>diff<span>(</span>x<span>,</span> n<span>=</span><span>2</span><span>)</span> <span># [1, 1, -10]</span>
+<span># prepend=1表示在a的最后一维的所有列表前添加一个1，再计算cumsum。append同理</span>
+np<span>.</span>diff<span>(</span>x<span>,</span> prepend<span>=</span><span>1</span><span>)</span> <span># [0, 1, 2, 3, -7]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="np-ma-masked-where"> np.ma.masked_where</h2>
+<p>得到列表中满足条件的元素被设为True的掩码</p>
+<div><pre><code><span># ma.masked_where(condition, a, copy=True)</span>
+a <span>=</span> np<span>.</span>arange<span>(</span><span>4</span><span>)</span>
+c <span>=</span> ma<span>.</span>masked_where<span>(</span>a <span>&lt;=</span> <span>2</span><span>,</span> a<span>)</span>
+<span># c: masked_array(data=[--, --, --, 3],</span>
+<span>#              mask=[ True,  True,  True, False],</span>
+<span>#        fill_value=999999)</span>
+c<span>[</span><span>0</span><span>]</span><span>=</span><span>99</span>
+<span># masked_array(data=[99, --, --, 3],</span>
+<span>#              mask=[False,  True,  True, False],</span>
+<span>#        fill_value=999999)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><ul>
+<li>masked_equal(a, value, copy=True)</li>
+<li>masked_less_equal(a, value, copy=True)</li>
+<li>masked_inside(a, v1, v2, copy=True)</li>
+<li>ma.masked_invalid(a, copy=True)</li>
+<li>...</li>
+</ul>
+<p>填充被masked的位置，使用np.ma.filled</p>
+<div><pre><code>x <span>=</span> np<span>.</span>ma<span>.</span>array<span>(</span><span>[</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>,</span><span>4</span><span>,</span><span>5</span><span>]</span><span>,</span> mask<span>=</span><span>[</span><span>0</span><span>,</span><span>0</span><span>,</span><span>1</span><span>,</span><span>0</span><span>,</span><span>1</span><span>]</span><span>,</span> fill_value<span>=</span><span>-</span><span>999</span><span>)</span>
+x<span>.</span>filled<span>(</span><span>)</span>
+<span># array([   1,    2, -999,    4, -999])</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div>]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <category term="Python"/>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-12-05T00:00:00.000Z</published>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
@@ -380,81 +458,46 @@ Unity的设计初衷是简化开发和跨平台。
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">numpy用法</title>
-    <id>https://kigane.github.io/blog/numpy/</id>
-    <link href="https://kigane.github.io/blog/numpy/"/>
-    <updated>2021-12-18T06:00:06.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="索引"> 索引</h2>
-<h3 id="采样"> 采样</h3>
-<p>x是一维数组，<code>x[i]</code>，为x的第i个元素，np支持数组索引，<code>x[[i, j, k]]</code>，得到<code>[x[i], x[j], x[k]]</code>。如果<code>x[]</code>中传入的数组大于一维，得到的结果类似于将数组flatten后作为索引，得到的结果再reshape成索引数组的形状。</p>
-<div><pre><code>x <span>=</span> np<span>.</span>arange<span>(</span><span>12</span><span>)</span>
-y <span>=</span> np<span>.</span>array<span>(</span><span>[</span><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>]</span><span>,</span> <span>[</span><span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>7</span><span>]</span><span>]</span><span>)</span>
-x<span>[</span>y<span>]</span> <span># y必须是np数组才行</span>
-<span># array([[1, 2, 3, 4],</span>
-<span>#        [2, 3, 4, 7]])</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="np-clip"> np.clip</h2>
-<div><pre><code><span># numpy.clip(a, a_min, a_max, out=None, **kwargs)</span>
-a <span>=</span> np<span>.</span>arange<span>(</span><span>5</span><span>)</span>
-np<span>.</span>clip<span>(</span>a<span>,</span> <span>1</span><span>,</span> <span>3</span><span>)</span> <span># [1,1,2,3,3]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="np-random-shuffle"> np.random.shuffle</h2>
-<p>原地打乱数组元素的顺序</p>
-<div><pre><code>x <span>=</span> np<span>.</span>arange<span>(</span><span>10</span><span>)</span>
-np<span>.</span>random<span>.</span>shuffle<span>(</span>x<span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="np-cumsum"> np.cumsum</h2>
-<p>计算列表元素的累积和</p>
-<div><pre><code>a <span>=</span> np<span>.</span>array<span>(</span><span>[</span><span>[</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>]</span><span>,</span> <span>[</span><span>4</span><span>,</span><span>5</span><span>,</span><span>6</span><span>]</span><span>]</span><span>)</span>
-<span># 未指定axis则会先flatten，再计算cumsum</span>
-np<span>.</span>cumsum<span>(</span>a<span>)</span> <span># 1, 3, 6, 10, 15, 21</span>
-<span># 沿指定轴计算 </span>
-np<span>.</span>cumsum<span>(</span>a<span>,</span>axis<span>=</span><span>0</span><span>)</span> <span># [[1, 2, 3], [5, 7, 9]]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="np-diff"> np.diff</h2>
-<p>计算列表相邻元素之间的差值</p>
-<div><pre><code><span># numpy.diff(a, n=1, axis=-1, prepend=&lt;no value>, append=&lt;no value>)</span>
-x <span>=</span> np<span>.</span>array<span>(</span><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>4</span><span>,</span> <span>7</span><span>,</span> <span>0</span><span>]</span><span>)</span>
-np<span>.</span>diff<span>(</span>x<span>)</span> <span># [1, 2, 3, -7]</span>
-<span># n表示递归地做n次diff</span>
-np<span>.</span>diff<span>(</span>x<span>,</span> n<span>=</span><span>2</span><span>)</span> <span># [1, 1, -10]</span>
-<span># prepend=1表示在a的最后一维的所有列表前添加一个1，再计算cumsum。append同理</span>
-np<span>.</span>diff<span>(</span>x<span>,</span> prepend<span>=</span><span>1</span><span>)</span> <span># [0, 1, 2, 3, -7]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="np-ma-masked-where"> np.ma.masked_where</h2>
-<p>得到列表中满足条件的元素被设为True的掩码</p>
-<div><pre><code><span># ma.masked_where(condition, a, copy=True)</span>
-a <span>=</span> np<span>.</span>arange<span>(</span><span>4</span><span>)</span>
-c <span>=</span> ma<span>.</span>masked_where<span>(</span>a <span>&lt;=</span> <span>2</span><span>,</span> a<span>)</span>
-<span># c: masked_array(data=[--, --, --, 3],</span>
-<span>#              mask=[ True,  True,  True, False],</span>
-<span>#        fill_value=999999)</span>
-c<span>[</span><span>0</span><span>]</span><span>=</span><span>99</span>
-<span># masked_array(data=[99, --, --, 3],</span>
-<span>#              mask=[False,  True,  True, False],</span>
-<span>#        fill_value=999999)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><ul>
-<li>masked_equal(a, value, copy=True)</li>
-<li>masked_less_equal(a, value, copy=True)</li>
-<li>masked_inside(a, v1, v2, copy=True)</li>
-<li>ma.masked_invalid(a, copy=True)</li>
-<li>...</li>
-</ul>
-<p>填充被masked的位置，使用np.ma.filled</p>
-<div><pre><code>x <span>=</span> np<span>.</span>ma<span>.</span>array<span>(</span><span>[</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>,</span><span>4</span><span>,</span><span>5</span><span>]</span><span>,</span> mask<span>=</span><span>[</span><span>0</span><span>,</span><span>0</span><span>,</span><span>1</span><span>,</span><span>0</span><span>,</span><span>1</span><span>]</span><span>,</span> fill_value<span>=</span><span>-</span><span>999</span><span>)</span>
-x<span>.</span>filled<span>(</span><span>)</span>
-<span># array([   1,    2, -999,    4, -999])</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div>]]></content>
+    <title type="html">katex 常用写法</title>
+    <id>https://kigane.github.io/blog/katex-cheatsheet/</id>
+    <link href="https://kigane.github.io/blog/katex-cheatsheet/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="常用符号"> 常用符号</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">写法</th>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">写法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8889em;vertical-align:-0.1944em;"></span><span>ϕ</span></span></span></span></td>
+<td style="text-align:center">\phi</td>
+<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6833em;"></span><span>Φ</span></span></span></span></td>
+<td style="text-align:center">\Phi</td>
+</tr>
+<tr>
+<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span style="margin-right:0.03588em;">ω</span></span></span></span></td>
+<td style="text-align:center">\omega</td>
+<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6833em;"></span><span>Ω</span></span></span></span></td>
+<td style="text-align:center">\Omega</td>
+</tr>
+</tbody>
+</table>
+<h2 id="环境"> 环境</h2>
+<p><img src="/assets/img/katex-environments.png" alt="环境" /></p>
+<p>多行公式在vuepress中无效，使用aligned环境替代。</p>
+]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
-    <category term="Python"/>
     <contributor>
       <name>Leonhardt</name>
     </contributor>
-    <published>2021-12-05T00:00:00.000Z</published>
+    <published>2021-10-03T02:18:05.000Z</published>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
@@ -632,305 +675,6 @@ dialog <span>=</span> QPrintDialog<span>(</span>self<span>.</span>printer<span>,
       <name>Leonhardt</name>
     </contributor>
     <published>2021-12-15T00:00:00.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">PyQt5记录</title>
-    <id>https://kigane.github.io/blog/pyqt5/</id>
-    <link href="https://kigane.github.io/blog/pyqt5/"/>
-    <updated>2021-12-18T06:00:06.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="qtdesigner"> QtDesigner</h2>
-<ul>
-<li>设计界面，产生一个xxx.ui文件</li>
-<li><code>pyuic5 -x -o yyy.py xxx.ui</code>
-<ul>
-<li>-o后面为输出文件名</li>
-<li>-x表示在py文件中生成测试代码</li>
-</ul>
-</li>
-</ul>
-<h2 id="正确使用ui文件"> 正确使用ui文件</h2>
-<ul>
-<li>使用类继承，而非直接在生成的py文件上修改。</li>
-<li>或直接用uic模块得到需要的类</li>
-</ul>
-<CodeGroup>
-<CodeGroupItem title="编译后导入">
-<div><pre><code><span># 引入生成的类</span>
-<span>from</span> ui<span>.</span>login <span>import</span> Ui_Form
-<span>from</span> PyQt5 <span>import</span> QtWidgets <span>as</span> qtw
-
-<span># 通过继承取得类属性</span>
-<span>class</span> <span>LoginWindow</span><span>(</span>qtw<span>.</span>QWidget<span>,</span> Ui_Form<span>)</span><span>:</span>
-    <span>def</span> <span>__init__</span><span>(</span>self<span>)</span><span>:</span>
-        <span>super</span><span>(</span>LoginWindow<span>,</span> self<span>)</span><span>.</span>__init__<span>(</span><span>)</span>
-        <span># 调用类中定义的方法，准备好 ui</span>
-        self<span>.</span>setupUi<span>(</span>self<span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div></CodeGroupItem>
-<CodeGroupItem title="使用uic模块">
-<div><pre><code><span>from</span> PyQt5 <span>import</span> uic
-Ui_Form<span>,</span> BaseClass <span>=</span> uic<span>.</span>loadUiType<span>(</span><span>'login.ui'</span><span>)</span>
-
-<span># 通过继承取得类属性</span>
-<span>class</span> <span>LoginWindow</span><span>(</span>BaseClass<span>,</span> Ui_Form<span>)</span><span>:</span>
-    <span>def</span> <span>__init__</span><span>(</span>self<span>)</span><span>:</span>
-        <span>super</span><span>(</span>LoginWindow<span>,</span> self<span>)</span><span>.</span>__init__<span>(</span><span>)</span>
-        <span># 调用类中定义的方法，准备好 ui</span>
-        self<span>.</span>setupUi<span>(</span>self<span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div></CodeGroupItem>
-</CodeGroup>
-<p>注意到，生成的py文件中，UI类是object的子类，而非QWiget的子类。这是出于在大型项目中，经常会修改界面的考虑，通过提供setupUi方法实现界面外观，易于修改(Mixin)。但缺点是继承后，不能直观地看到有哪些属性，属性的类型也被隐藏了，编程会变得不方便。</p>
-<h2 id="基本的qt程序"> 基本的Qt程序</h2>
-<div><pre><code><span>import</span> sys
-<span>from</span> PyQt5 <span>import</span> QtWidgets <span>as</span> qtw
-<span>from</span> PyQt5 <span>import</span> QtCore <span>as</span> qtc
-<span>from</span> PyQt5 <span>import</span> QtGui <span>as</span> qtg
-
-<span>class</span> <span>MainWindow</span><span>(</span>qtw<span>.</span>QWidget<span>)</span><span>:</span>
-
-    <span>def</span> <span>__init__</span><span>(</span>self<span>,</span> <span>*</span>args<span>,</span> <span>**</span>kwargs<span>)</span><span>:</span>
-        <span>super</span><span>(</span><span>)</span><span>.</span>__init__<span>(</span><span>*</span>args<span>,</span> <span>**</span>kwargs<span>)</span>
-        <span># Your code will go here</span>
-
-        <span># Your code ends here</span>
-        self<span>.</span>show<span>(</span><span>)</span>
-
-
-<span>if</span> __name__ <span>==</span> <span>'__main__'</span><span>:</span>
-    <span># 接受命令行参数</span>
-    app <span>=</span> qtw<span>.</span>QApplication<span>(</span>sys<span>.</span>argv<span>)</span> 
-    w <span>=</span> MainWindow<span>(</span><span>)</span>
-    <span># 给程序一个退出状态</span>
-    sys<span>.</span>exit<span>(</span>app<span>.</span>exec_<span>(</span><span>)</span><span>)</span> 
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><h2 id="基本布局"> 基本布局</h2>
-<ul>
-<li>qtw.QHBoxLayout()
-<ul>
-<li>layout.addWidget(widget)</li>
-<li>所有组件横着放</li>
-</ul>
-</li>
-<li>qtw.VHBoxLayout()
-<ul>
-<li>layout.addWidget(widget)</li>
-<li>所有组件竖着放</li>
-</ul>
-</li>
-<li>qtw.GridLayout()
-<ul>
-<li>layout.addWidget(widget, row, col)</li>
-<li>把组件放入相应网格中</li>
-</ul>
-</li>
-<li>qtw.FormLayout()
-<ul>
-<li>layout.addRow('widget_label', widget)</li>
-<li>会产生适合不同平台的表格</li>
-<li>要构造表格组件时，推荐用该布局</li>
-</ul>
-</li>
-<li>布局可以嵌套，即上面的widget也可以是layout。</li>
-<li>也可以用一个QWidget作为布局组件
-<ul>
-<li>w.setLayout(qtw.QHBoxLayout())</li>
-<li>w.layout().addWidget(widget)</li>
-</ul>
-</li>
-</ul>
-<h2 id="signal-slot"> Signal &amp; Slot</h2>
-<h3 id="基本用法"> 基本用法</h3>
-<p>signal是Qt组件的属性，可以和slot连接，当signal触发时，执行slot。slot可以是任何python callable。</p>
-<p>Qt组件有一些定义好的signal和slot。具体看文档。定义好的信号，可以在组件的构造函数中用关键词参数指定，效果和手动连接相同，写法更简单。</p>
-<h3 id="signal可以携带数据"> signal可以携带数据</h3>
-<ul>
-<li>例如textChanged signal连接的slot的第一个参数是当前文本。</li>
-<li>如果信号携带了数据，可用装饰器<code>@qtc.pyqtSlot(str)</code>声明，这会提升一点速度，用于多线程时更安全，此外可以让你确定参数类型，如果在装饰器中声明的参数类型和信号实际携带的类型不符，则会报错。</li>
-</ul>
-<h3 id="自定义signal"> 自定义signal</h3>
-<div><pre><code>my_signal <span>=</span> qtc<span>.</span>pyqtSignal<span>(</span><span>str</span><span>)</span> <span># 携带一个字符串参数的信号</span>
-my_signal<span>.</span>emit<span>(</span><span>'some content'</span><span>)</span> <span># 在某个地方触发信号，并传入数据</span>
-my_signal<span>.</span>connect<span>(</span>some_callable<span>)</span> <span># 连接信号与槽</span>
-
-<span>def</span> <span>some_callable</span><span>(</span><span>str</span><span>)</span><span>:</span>
-    <span>pass</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>自定义信号+携带数据=不同窗口之间传递数据</p>
-<h2 id="qwidget"> QWidget</h2>
-<h3 id="signals"> signals</h3>
-<ul>
-<li>customContextMenuRequested(QPoint)</li>
-<li>windowIconChanged(QIcon)</li>
-<li>windowTitleChanged(QString)</li>
-</ul>
-<h3 id="slots"> slots</h3>
-<ul>
-<li>close()</li>
-<li>hide() == setVisible(false)</li>
-<li>lower() 将Widget放到父Widget堆栈的底部</li>
-<li>raise() 将Widget放到父Widget堆栈的顶部</li>
-<li>repaint() 可能会导致无限递归。除了做动画，其他情况update()更好。</li>
-<li>setDisabled(bool) 禁止输入</li>
-<li>setEnabled(bool)</li>
-<li>setFocus() 获得焦点</li>
-<li>setHidden(bool) =  setVisible(!bool).</li>
-<li>setStyleSheet(QString)</li>
-<li>setVisible(bool)</li>
-<li>setWindowModified(bool) 设置窗口有没有未保存的变化</li>
-<li>setWindowTitle(QString)</li>
-<li>show()</li>
-<li>showFullScreen()</li>
-<li>showMaximized()</li>
-<li>showMinimized()</li>
-<li>showNormal()</li>
-<li>update()</li>
-<li>adjustSize() 调整到初始设定的大小</li>
-</ul>
-<h2 id="qmainwindow"> QMainWindow</h2>
-<ul>
-<li>Central Widget
-<ul>
-<li>选择一个组件</li>
-</ul>
-</li>
-<li>MenuBar
-<ul>
-<li>QMenuBar(): menu = self.menuBar()</li>
-<li>QMenu('name'): file_menu = menu.addMenu('File')</li>
-<li>QAction('name', callable, shortcut): save_act = file_menu.addAction('Save', self.save)
-<ul>
-<li>第二个参数triggered=xx,设置和triggered信号绑定的槽</li>
-<li>第三个参数shortcut=xx,设置快捷键，预定义在qtg.QKeySequence中，或直接用字符串'Ctrl+t'</li>
-<li>enabled=bool 初始是否可用</li>
-<li>checkable=bool 是否可打√</li>
-<li>act.setEnabled()</li>
-<li>act.isChecked()</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>StatusBar
-<ul>
-<li>self.statusBar().showMessage(msg, last_time)</li>
-<li>last_time单位ms</li>
-</ul>
-</li>
-<li>ToolBar
-<ul>
-<li>edit_toolbar = self.addToolBar('Edit') 增加一个工具栏</li>
-<li>edit_toolbar.addAction(qtg.QIcon(qtg.QPixmap('action.svg')), 'action_name', callable)</li>
-<li>edit_toolbar.addAction('copy', self.textedit.copy)</li>
-<li>有图标的时候不显示文字，只有未设置图标或图标缺失时显示文字</li>
-</ul>
-</li>
-<li>Dockable widget
-<ul>
-<li>search_dock = qtw.QDockWidget('Search')</li>
-<li>self.addDockWidget(qtc.Qt.RightDockWidgetArea,search_dock) 添加到主窗口并设置停靠位置</li>
-<li>search_dock.setFeatures(
-qtw.QDockWidget.DockWidgetClosable |
-qtw.QDockWidget.DockWidgetMovable |
-qtw.QDockWidget.DockWidgetFloatable
-) 设置特性</li>
-<li>search_dock.setWidget(widget) 在停靠窗口中添加自定义组件</li>
-</ul>
-</li>
-</ul>
-<h2 id="图片和图标"> 图片和图标</h2>
-<h3 id="qpixmap"> QPixmap</h3>
-<p>用于在屏幕上展示图像</p>
-<ul>
-<li>size()-&gt; QSize, width(), height(), rect()-&gt;QRect(x,y,w,h):左上+宽高</li>
-<li>hasAlphaChannel()</li>
-<li>depth()-&gt;bits per pixel,bpp</li>
-<li>toImage() -&gt; QImage</li>
-<li>fromImage()</li>
-<li>copy(), scaled(size, aspect_ratio_mode), scaledToWidth(), scaledToHeight()</li>
-<li>transformed(QTransform, mode)
-<ul>
-<li>Qtransfrom(m11, m12, m21, m22, dx=0, dy=0)</li>
-<li>mode有两个，默认的0是快速变换，1是使用了双线性插值的变换</li>
-</ul>
-</li>
-<li>scroll(dx,dy,(x,y,w,h)) 复制图像的部分并移动dx,dy。原图仍在，并会被遮挡。</li>
-</ul>
-<h3 id="qbitmap"> QBitmap</h3>
-<p>单bit特化的QPixmap</p>
-<h3 id="qimage"> QImage</h3>
-<p>对I/O有和像素级处理有优化。</p>
-<ul>
-<li>读写
-<ul>
-<li>构造函数</li>
-<li>load()</li>
-<li>loadFromData()</li>
-<li>static fromData()</li>
-<li>save()</li>
-</ul>
-</li>
-<li>几何信息
-<ul>
-<li>size(), width(), height(), dotsPerMeterX(), dotsPerMeterY(), rect()</li>
-<li>valid() 判断给定坐标是否在图像rect范围内</li>
-<li>offset(), setOffset() 通过相对于其他图像定位时，设置图像相对于其他图像偏移的像素数。</li>
-</ul>
-</li>
-<li>颜色
-<ul>
-<li>pixel(pos) 返回某像素点的QRgb值</li>
-<li>pixelIndex(pos) + color() = pixel(pos)</li>
-<li>colorCount(), colorTable() 图像用到的颜色列表</li>
-<li>isGrayscale()</li>
-</ul>
-</li>
-<li>文本
-<ul>
-<li>text(key)</li>
-<li>setText(key, text)</li>
-<li>textKeys() 获取图像的text key</li>
-</ul>
-</li>
-<li>低级信息
-<ul>
-<li>depth() 每像素占用比特数</li>
-<li>bitPlaneCount() 每像素实际使用的比特数</li>
-<li>format()</li>
-<li>bytesPerLine()</li>
-<li>sizeInBytes()</li>
-</ul>
-</li>
-</ul>
-<p>用numpy的2d数组构造QImage</p>
-<ul>
-<li>numpy数组必须是np.uint8类型</li>
-<li>QImage构造时需要指定为相应类型如QImage.Format_RGB888</li>
-</ul>
-<div><pre><code>img <span>=</span> np<span>.</span>zeros<span>(</span><span>(</span><span>500</span><span>,</span> <span>500</span><span>,</span> <span>3</span><span>)</span><span>,</span> dtype<span>=</span>np<span>.</span>uint8<span>)</span>
-img<span>[</span><span>.</span><span>.</span><span>.</span><span>,</span> <span>0</span><span>]</span> <span>=</span> <span>233</span>
-w<span>,</span> h <span>=</span> img<span>.</span>shape<span>[</span><span>:</span><span>2</span><span>]</span>
-image <span>=</span> QImage<span>(</span>img<span>.</span>data<span>,</span> w<span>,</span> h<span>,</span> QImage<span>.</span>Format_RGB888<span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h3 id="qpicture"> QPicture</h3>
-<p>一种绘制设备，可记录和重放QPainter命令</p>
-<h3 id="qicon-qpixmap"> QIcon(QPixmap)</h3>
-<p>图标</p>
-<h2 id="文件位置处理"> 文件位置处理</h2>
-<div><pre><code><span>import</span> os
-BASE_DIR <span>=</span> os<span>.</span>path<span>.</span>dirname<span>(</span>__file__<span>)</span>
-img_path <span>=</span> os<span>.</span>path<span>.</span>join<span>(</span>BASE_DIR<span>,</span> path<span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="qss"> QSS</h2>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <category term="Python"/>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-12-14T00:00:00.000Z</published>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
@@ -1201,49 +945,6 @@ View有一个setItemDelegate()方法，用于替换默认的Delegate。自定义
       <name>Leonhardt</name>
     </contributor>
     <published>2021-12-15T00:00:00.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">katex 常用写法</title>
-    <id>https://kigane.github.io/blog/katex-cheatsheet/</id>
-    <link href="https://kigane.github.io/blog/katex-cheatsheet/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="常用符号"> 常用符号</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">写法</th>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">写法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8889em;vertical-align:-0.1944em;"></span><span>ϕ</span></span></span></span></td>
-<td style="text-align:center">\phi</td>
-<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6833em;"></span><span>Φ</span></span></span></span></td>
-<td style="text-align:center">\Phi</td>
-</tr>
-<tr>
-<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span style="margin-right:0.03588em;">ω</span></span></span></span></td>
-<td style="text-align:center">\omega</td>
-<td style="text-align:center"><span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6833em;"></span><span>Ω</span></span></span></span></td>
-<td style="text-align:center">\Omega</td>
-</tr>
-</tbody>
-</table>
-<h2 id="环境"> 环境</h2>
-<p><img src="/assets/img/katex-environments.png" alt="环境" /></p>
-<p>多行公式在vuepress中无效，使用aligned环境替代。</p>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
@@ -1565,37 +1266,302 @@ mu <span>+</span> sigma <span>*</span> np<span>.</span>random<span>.</span>randn
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">组件禁用</title>
-    <id>https://kigane.github.io/guide/disable/</id>
-    <link href="https://kigane.github.io/guide/disable/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <summary type="html"><![CDATA[<p>你可以通过设置页面的 Frontmatter，在页面禁用一些功能。</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>你可以通过设置页面的 Frontmatter，在页面禁用一些功能。</p>
-
-<p>本页面应当禁用了:</p>
+    <title type="html">PyQt5记录</title>
+    <id>https://kigane.github.io/blog/pyqt5/</id>
+    <link href="https://kigane.github.io/blog/pyqt5/"/>
+    <updated>2021-12-18T06:00:06.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="qtdesigner"> QtDesigner</h2>
 <ul>
-<li>导航栏</li>
-<li>侧边栏</li>
-<li>路径导航</li>
-<li>页面信息</li>
-<li>贡献者</li>
-<li>编辑此页链接</li>
-<li>更新时间</li>
-<li>上一篇/下一篇 链接</li>
-<li>评论</li>
-<li>页脚</li>
-<li>返回顶部按钮</li>
+<li>设计界面，产生一个xxx.ui文件</li>
+<li><code>pyuic5 -x -o yyy.py xxx.ui</code>
+<ul>
+<li>-o后面为输出文件名</li>
+<li>-x表示在py文件中生成测试代码</li>
 </ul>
+</li>
+</ul>
+<h2 id="正确使用ui文件"> 正确使用ui文件</h2>
+<ul>
+<li>使用类继承，而非直接在生成的py文件上修改。</li>
+<li>或直接用uic模块得到需要的类</li>
+</ul>
+<CodeGroup>
+<CodeGroupItem title="编译后导入">
+<div><pre><code><span># 引入生成的类</span>
+<span>from</span> ui<span>.</span>login <span>import</span> Ui_Form
+<span>from</span> PyQt5 <span>import</span> QtWidgets <span>as</span> qtw
+
+<span># 通过继承取得类属性</span>
+<span>class</span> <span>LoginWindow</span><span>(</span>qtw<span>.</span>QWidget<span>,</span> Ui_Form<span>)</span><span>:</span>
+    <span>def</span> <span>__init__</span><span>(</span>self<span>)</span><span>:</span>
+        <span>super</span><span>(</span>LoginWindow<span>,</span> self<span>)</span><span>.</span>__init__<span>(</span><span>)</span>
+        <span># 调用类中定义的方法，准备好 ui</span>
+        self<span>.</span>setupUi<span>(</span>self<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div></CodeGroupItem>
+<CodeGroupItem title="使用uic模块">
+<div><pre><code><span>from</span> PyQt5 <span>import</span> uic
+Ui_Form<span>,</span> BaseClass <span>=</span> uic<span>.</span>loadUiType<span>(</span><span>'login.ui'</span><span>)</span>
+
+<span># 通过继承取得类属性</span>
+<span>class</span> <span>LoginWindow</span><span>(</span>BaseClass<span>,</span> Ui_Form<span>)</span><span>:</span>
+    <span>def</span> <span>__init__</span><span>(</span>self<span>)</span><span>:</span>
+        <span>super</span><span>(</span>LoginWindow<span>,</span> self<span>)</span><span>.</span>__init__<span>(</span><span>)</span>
+        <span># 调用类中定义的方法，准备好 ui</span>
+        self<span>.</span>setupUi<span>(</span>self<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div></CodeGroupItem>
+</CodeGroup>
+<p>注意到，生成的py文件中，UI类是object的子类，而非QWiget的子类。这是出于在大型项目中，经常会修改界面的考虑，通过提供setupUi方法实现界面外观，易于修改(Mixin)。但缺点是继承后，不能直观地看到有哪些属性，属性的类型也被隐藏了，编程会变得不方便。</p>
+<h2 id="基本的qt程序"> 基本的Qt程序</h2>
+<div><pre><code><span>import</span> sys
+<span>from</span> PyQt5 <span>import</span> QtWidgets <span>as</span> qtw
+<span>from</span> PyQt5 <span>import</span> QtCore <span>as</span> qtc
+<span>from</span> PyQt5 <span>import</span> QtGui <span>as</span> qtg
+
+<span>class</span> <span>MainWindow</span><span>(</span>qtw<span>.</span>QWidget<span>)</span><span>:</span>
+
+    <span>def</span> <span>__init__</span><span>(</span>self<span>,</span> <span>*</span>args<span>,</span> <span>**</span>kwargs<span>)</span><span>:</span>
+        <span>super</span><span>(</span><span>)</span><span>.</span>__init__<span>(</span><span>*</span>args<span>,</span> <span>**</span>kwargs<span>)</span>
+        <span># Your code will go here</span>
+
+        <span># Your code ends here</span>
+        self<span>.</span>show<span>(</span><span>)</span>
+
+
+<span>if</span> __name__ <span>==</span> <span>'__main__'</span><span>:</span>
+    <span># 接受命令行参数</span>
+    app <span>=</span> qtw<span>.</span>QApplication<span>(</span>sys<span>.</span>argv<span>)</span> 
+    w <span>=</span> MainWindow<span>(</span><span>)</span>
+    <span># 给程序一个退出状态</span>
+    sys<span>.</span>exit<span>(</span>app<span>.</span>exec_<span>(</span><span>)</span><span>)</span> 
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><h2 id="基本布局"> 基本布局</h2>
+<ul>
+<li>qtw.QHBoxLayout()
+<ul>
+<li>layout.addWidget(widget)</li>
+<li>所有组件横着放</li>
+</ul>
+</li>
+<li>qtw.VHBoxLayout()
+<ul>
+<li>layout.addWidget(widget)</li>
+<li>所有组件竖着放</li>
+</ul>
+</li>
+<li>qtw.GridLayout()
+<ul>
+<li>layout.addWidget(widget, row, col)</li>
+<li>把组件放入相应网格中</li>
+</ul>
+</li>
+<li>qtw.FormLayout()
+<ul>
+<li>layout.addRow('widget_label', widget)</li>
+<li>会产生适合不同平台的表格</li>
+<li>要构造表格组件时，推荐用该布局</li>
+</ul>
+</li>
+<li>布局可以嵌套，即上面的widget也可以是layout。</li>
+<li>也可以用一个QWidget作为布局组件
+<ul>
+<li>w.setLayout(qtw.QHBoxLayout())</li>
+<li>w.layout().addWidget(widget)</li>
+</ul>
+</li>
+</ul>
+<h2 id="signal-slot"> Signal &amp; Slot</h2>
+<h3 id="基本用法"> 基本用法</h3>
+<p>signal是Qt组件的属性，可以和slot连接，当signal触发时，执行slot。slot可以是任何python callable。</p>
+<p>Qt组件有一些定义好的signal和slot。具体看文档。定义好的信号，可以在组件的构造函数中用关键词参数指定，效果和手动连接相同，写法更简单。</p>
+<h3 id="signal可以携带数据"> signal可以携带数据</h3>
+<ul>
+<li>例如textChanged signal连接的slot的第一个参数是当前文本。</li>
+<li>如果信号携带了数据，可用装饰器<code>@qtc.pyqtSlot(str)</code>声明，这会提升一点速度，用于多线程时更安全，此外可以让你确定参数类型，如果在装饰器中声明的参数类型和信号实际携带的类型不符，则会报错。</li>
+</ul>
+<h3 id="自定义signal"> 自定义signal</h3>
+<div><pre><code>my_signal <span>=</span> qtc<span>.</span>pyqtSignal<span>(</span><span>str</span><span>)</span> <span># 携带一个字符串参数的信号</span>
+my_signal<span>.</span>emit<span>(</span><span>'some content'</span><span>)</span> <span># 在某个地方触发信号，并传入数据</span>
+my_signal<span>.</span>connect<span>(</span>some_callable<span>)</span> <span># 连接信号与槽</span>
+
+<span>def</span> <span>some_callable</span><span>(</span><span>str</span><span>)</span><span>:</span>
+    <span>pass</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>自定义信号+携带数据=不同窗口之间传递数据</p>
+<h2 id="qwidget"> QWidget</h2>
+<h3 id="signals"> signals</h3>
+<ul>
+<li>customContextMenuRequested(QPoint)</li>
+<li>windowIconChanged(QIcon)</li>
+<li>windowTitleChanged(QString)</li>
+</ul>
+<h3 id="slots"> slots</h3>
+<ul>
+<li>close()</li>
+<li>hide() == setVisible(false)</li>
+<li>lower() 将Widget放到父Widget堆栈的底部</li>
+<li>raise() 将Widget放到父Widget堆栈的顶部</li>
+<li>repaint() 可能会导致无限递归。除了做动画，其他情况update()更好。</li>
+<li>setDisabled(bool) 禁止输入</li>
+<li>setEnabled(bool)</li>
+<li>setFocus() 获得焦点</li>
+<li>setHidden(bool) =  setVisible(!bool).</li>
+<li>setStyleSheet(QString)</li>
+<li>setVisible(bool)</li>
+<li>setWindowModified(bool) 设置窗口有没有未保存的变化</li>
+<li>setWindowTitle(QString)</li>
+<li>show()</li>
+<li>showFullScreen()</li>
+<li>showMaximized()</li>
+<li>showMinimized()</li>
+<li>showNormal()</li>
+<li>update()</li>
+<li>adjustSize() 调整到初始设定的大小</li>
+</ul>
+<h2 id="qmainwindow"> QMainWindow</h2>
+<ul>
+<li>Central Widget
+<ul>
+<li>选择一个组件</li>
+</ul>
+</li>
+<li>MenuBar
+<ul>
+<li>QMenuBar(): menu = self.menuBar()</li>
+<li>QMenu('name'): file_menu = menu.addMenu('File')</li>
+<li>QAction('name', callable, shortcut): save_act = file_menu.addAction('Save', self.save)
+<ul>
+<li>第二个参数triggered=xx,设置和triggered信号绑定的槽</li>
+<li>第三个参数shortcut=xx,设置快捷键，预定义在qtg.QKeySequence中，或直接用字符串'Ctrl+t'</li>
+<li>enabled=bool 初始是否可用</li>
+<li>checkable=bool 是否可打√</li>
+<li>act.setEnabled()</li>
+<li>act.isChecked()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>StatusBar
+<ul>
+<li>self.statusBar().showMessage(msg, last_time)</li>
+<li>last_time单位ms</li>
+</ul>
+</li>
+<li>ToolBar
+<ul>
+<li>edit_toolbar = self.addToolBar('Edit') 增加一个工具栏</li>
+<li>edit_toolbar.addAction(qtg.QIcon(qtg.QPixmap('action.svg')), 'action_name', callable)</li>
+<li>edit_toolbar.addAction('copy', self.textedit.copy)</li>
+<li>有图标的时候不显示文字，只有未设置图标或图标缺失时显示文字</li>
+</ul>
+</li>
+<li>Dockable widget
+<ul>
+<li>search_dock = qtw.QDockWidget('Search')</li>
+<li>self.addDockWidget(qtc.Qt.RightDockWidgetArea,search_dock) 添加到主窗口并设置停靠位置</li>
+<li>search_dock.setFeatures(
+qtw.QDockWidget.DockWidgetClosable |
+qtw.QDockWidget.DockWidgetMovable |
+qtw.QDockWidget.DockWidgetFloatable
+) 设置特性</li>
+<li>search_dock.setWidget(widget) 在停靠窗口中添加自定义组件</li>
+</ul>
+</li>
+</ul>
+<h2 id="图片和图标"> 图片和图标</h2>
+<h3 id="qpixmap"> QPixmap</h3>
+<p>用于在屏幕上展示图像</p>
+<ul>
+<li>size()-&gt; QSize, width(), height(), rect()-&gt;QRect(x,y,w,h):左上+宽高</li>
+<li>hasAlphaChannel()</li>
+<li>depth()-&gt;bits per pixel,bpp</li>
+<li>toImage() -&gt; QImage</li>
+<li>fromImage()</li>
+<li>copy(), scaled(size, aspect_ratio_mode), scaledToWidth(), scaledToHeight()</li>
+<li>transformed(QTransform, mode)
+<ul>
+<li>Qtransfrom(m11, m12, m21, m22, dx=0, dy=0)</li>
+<li>mode有两个，默认的0是快速变换，1是使用了双线性插值的变换</li>
+</ul>
+</li>
+<li>scroll(dx,dy,(x,y,w,h)) 复制图像的部分并移动dx,dy。原图仍在，并会被遮挡。</li>
+</ul>
+<h3 id="qbitmap"> QBitmap</h3>
+<p>单bit特化的QPixmap</p>
+<h3 id="qimage"> QImage</h3>
+<p>对I/O有和像素级处理有优化。</p>
+<ul>
+<li>读写
+<ul>
+<li>构造函数</li>
+<li>load()</li>
+<li>loadFromData()</li>
+<li>static fromData()</li>
+<li>save()</li>
+</ul>
+</li>
+<li>几何信息
+<ul>
+<li>size(), width(), height(), dotsPerMeterX(), dotsPerMeterY(), rect()</li>
+<li>valid() 判断给定坐标是否在图像rect范围内</li>
+<li>offset(), setOffset() 通过相对于其他图像定位时，设置图像相对于其他图像偏移的像素数。</li>
+</ul>
+</li>
+<li>颜色
+<ul>
+<li>pixel(pos) 返回某像素点的QRgb值</li>
+<li>pixelIndex(pos) + color() = pixel(pos)</li>
+<li>colorCount(), colorTable() 图像用到的颜色列表</li>
+<li>isGrayscale()</li>
+</ul>
+</li>
+<li>文本
+<ul>
+<li>text(key)</li>
+<li>setText(key, text)</li>
+<li>textKeys() 获取图像的text key</li>
+</ul>
+</li>
+<li>低级信息
+<ul>
+<li>depth() 每像素占用比特数</li>
+<li>bitPlaneCount() 每像素实际使用的比特数</li>
+<li>format()</li>
+<li>bytesPerLine()</li>
+<li>sizeInBytes()</li>
+</ul>
+</li>
+</ul>
+<p>用numpy的2d数组构造QImage</p>
+<ul>
+<li>numpy数组必须是np.uint8类型</li>
+<li>QImage构造时需要指定为相应类型如QImage.Format_RGB888</li>
+</ul>
+<div><pre><code>img <span>=</span> np<span>.</span>zeros<span>(</span><span>(</span><span>500</span><span>,</span> <span>500</span><span>,</span> <span>3</span><span>)</span><span>,</span> dtype<span>=</span>np<span>.</span>uint8<span>)</span>
+img<span>[</span><span>.</span><span>.</span><span>.</span><span>,</span> <span>0</span><span>]</span> <span>=</span> <span>233</span>
+w<span>,</span> h <span>=</span> img<span>.</span>shape<span>[</span><span>:</span><span>2</span><span>]</span>
+image <span>=</span> QImage<span>(</span>img<span>.</span>data<span>,</span> w<span>,</span> h<span>,</span> QImage<span>.</span>Format_RGB888<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h3 id="qpicture"> QPicture</h3>
+<p>一种绘制设备，可记录和重放QPainter命令</p>
+<h3 id="qicon-qpixmap"> QIcon(QPixmap)</h3>
+<p>图标</p>
+<h2 id="文件位置处理"> 文件位置处理</h2>
+<div><pre><code><span>import</span> os
+BASE_DIR <span>=</span> os<span>.</span>path<span>.</span>dirname<span>(</span>__file__<span>)</span>
+img_path <span>=</span> os<span>.</span>path<span>.</span>join<span>(</span>BASE_DIR<span>,</span> path<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="qss"> QSS</h2>
 ]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
-    <category term="使用指南"/>
+    <category term="Python"/>
     <contributor>
       <name>Leonhardt</name>
     </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
+    <published>2021-12-14T00:00:00.000Z</published>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
@@ -1800,6 +1766,63 @@ npx create-vuepress-site [optionalDirectoryName]
     </contributor>
     <published>2021-10-03T02:18:05.000Z</published>
     <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">页面配置</title>
+    <id>https://kigane.github.io/guide/page/</id>
+    <link href="https://kigane.github.io/guide/page/"/>
+    <updated>2021-12-13T15:53:11.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="页面信息"> 页面信息</h2>
+<p>你可以在 Markdown 的 Frontmatter 中设置页面信息。</p>
+<ul>
+<li>
+<p>作者设置为 Ms.Hope。</p>
+</li>
+<li>
+<p>写作时间应为 2020 年 1 月 1 日</p>
+</li>
+<li>
+<p>分类为 “使用指南”</p>
+</li>
+<li>
+<p>标签为 “页面配置” 和 “使用指南”</p>
+</li>
+</ul>
+<h2 id="页面内容"> 页面内容</h2>
+<p>你可以自由在这里书写你的 Markdown。</p>
+<div><p>Tips</p>
+<ul>
+<li>
+<p>Markdown 文件夹的图片请使用相对链接 <code>./</code> 进行引用。</p>
+</li>
+<li>
+<p><code>.vuepress/public</code> 文件夹的图片，请使用绝对链接 <code>/</code> 进行引用</p>
+</li>
+</ul>
+</div>
+<p>主题包含了一个自定义徽章章可以使用:</p>
+<blockquote>
+<p>文字结尾应该有深蓝色的 徽章文字 徽章。 <i>Not supported content</i></p>
+</blockquote>
+<h2 id="页面结构"> 页面结构</h2>
+<p>此页面应当包含：</p>
+<ul>
+<li>返回顶部按钮</li>
+<li>路径导航</li>
+<li>评论</li>
+<li>页脚</li>
+</ul>
+<h2 id="slide"> slide</h2>
+<i>Not supported content</i>]]></content>
+    <author>
+      <name>Ms.Hope</name>
+    </author>
+    <category term="guide"/>
+    <contributor>
+      <name>Ms.Hope</name>
+    </contributor>
+    <published>2020-01-01T00:00:00.000Z</published>
+    <rights>Copyright by Ms.Hope</rights>
   </entry>
   <entry>
     <title type="html">Markdown 增强</title>
@@ -2271,61 +2294,38 @@ $$
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">页面配置</title>
-    <id>https://kigane.github.io/guide/page/</id>
-    <link href="https://kigane.github.io/guide/page/"/>
-    <updated>2021-12-13T15:53:11.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="页面信息"> 页面信息</h2>
-<p>你可以在 Markdown 的 Frontmatter 中设置页面信息。</p>
+    <title type="html">组件禁用</title>
+    <id>https://kigane.github.io/guide/disable/</id>
+    <link href="https://kigane.github.io/guide/disable/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <summary type="html"><![CDATA[<p>你可以通过设置页面的 Frontmatter，在页面禁用一些功能。</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>你可以通过设置页面的 Frontmatter，在页面禁用一些功能。</p>
+
+<p>本页面应当禁用了:</p>
 <ul>
-<li>
-<p>作者设置为 Ms.Hope。</p>
-</li>
-<li>
-<p>写作时间应为 2020 年 1 月 1 日</p>
-</li>
-<li>
-<p>分类为 “使用指南”</p>
-</li>
-<li>
-<p>标签为 “页面配置” 和 “使用指南”</p>
-</li>
-</ul>
-<h2 id="页面内容"> 页面内容</h2>
-<p>你可以自由在这里书写你的 Markdown。</p>
-<div><p>Tips</p>
-<ul>
-<li>
-<p>Markdown 文件夹的图片请使用相对链接 <code>./</code> 进行引用。</p>
-</li>
-<li>
-<p><code>.vuepress/public</code> 文件夹的图片，请使用绝对链接 <code>/</code> 进行引用</p>
-</li>
-</ul>
-</div>
-<p>主题包含了一个自定义徽章章可以使用:</p>
-<blockquote>
-<p>文字结尾应该有深蓝色的 徽章文字 徽章。 <i>Not supported content</i></p>
-</blockquote>
-<h2 id="页面结构"> 页面结构</h2>
-<p>此页面应当包含：</p>
-<ul>
-<li>返回顶部按钮</li>
+<li>导航栏</li>
+<li>侧边栏</li>
 <li>路径导航</li>
+<li>页面信息</li>
+<li>贡献者</li>
+<li>编辑此页链接</li>
+<li>更新时间</li>
+<li>上一篇/下一篇 链接</li>
 <li>评论</li>
 <li>页脚</li>
+<li>返回顶部按钮</li>
 </ul>
-<h2 id="slide"> slide</h2>
-<i>Not supported content</i>]]></content>
+]]></content>
     <author>
-      <name>Ms.Hope</name>
+      <name>Leonhardt</name>
     </author>
-    <category term="guide"/>
+    <category term="使用指南"/>
     <contributor>
-      <name>Ms.Hope</name>
+      <name>Leonhardt</name>
     </contributor>
-    <published>2020-01-01T00:00:00.000Z</published>
-    <rights>Copyright by Ms.Hope</rights>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
     <title type="html">Hello Vuepress</title>
@@ -3399,54 +3399,6 @@ FILE <span>*</span><span>popen</span><span>(</span><span>const</span> <span>char
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">宏</title>
-    <id>https://kigane.github.io/note/cpp/macro/</id>
-    <link href="https://kigane.github.io/note/cpp/macro/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="预定义的宏"> 预定义的宏</h2>
-<p>注意：不同的编译器宏的名称可能不同。</p>
-<ul>
-<li><code>__func__</code> 所在函数名</li>
-<li><code>__FILE__</code> 所在文件名</li>
-<li><code>__LINE__</code> 所在行数</li>
-<li><code>__DATE__</code> 当前源文件的编译时间</li>
-<li>``</li>
-</ul>
-<p><a href="https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-160" target="_blank" rel="noopener noreferrer">MSVC</a></p>
-<h2 id="操作符"> #操作符</h2>
-<ul>
-<li>#x 用来把参数转换成字符串</li>
-<li>a##b 将两个单独的符号合并成一个，且该符号必须是有效的。</li>
-<li><code>## __VA_ARGS__</code> 这里##的作用在于，当可变参数的个数为0时，这里的##起到把前面多余的&quot;,&quot;去掉的作用,否则会编译出错</li>
-</ul>
-<div><pre><code><span><span>#</span><span>define</span> <span>__T</span><span><span>(</span>x<span>)</span>  L </span><span>##</span> <span>x </span><span>// 如果x是字符串 "abc" 则__T(x) 相当于 L"abc"</span></span>
-
-<span><span>#</span><span>define</span> <span>paster</span><span><span>(</span> n <span>)</span> <span>printf_s</span><span>(</span> </span><span>"token"</span> <span><span><span>#</span><span>n</span> </span></span><span>" = %d"</span><span><span>,</span> token</span><span>##</span><span>n <span>)</span></span></span>
-<span>int</span> token9 <span>=</span> <span>9</span><span>;</span>
-<span>int</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-   <span>paster</span><span>(</span><span>9</span><span>)</span><span>;</span> <span>// 输出 token9 = 9</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h2 id="多行宏"> 多行宏</h2>
-<p>对于复杂的多行宏。推荐的写法为</p>
-<div><pre><code><span><span>#</span><span>define</span> <span>some_marco</span><span><span>(</span><span>)</span></span><span>\</span>
-  <span><span>do</span> <span>{</span></span><span>\</span>
-    <span>contents</span><span>\</span>
-  <span><span>}</span> <span>while</span> <span>(</span><span>0</span><span>)</span></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><a href="https://stackoverflow.com/questions/1067226/c-multi-line-macro-do-while0-vs-scope-block" target="_blank" rel="noopener noreferrer">解释</a></p>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
     <title type="html">异常控制流</title>
     <id>https://kigane.github.io/note/cs/ECF/</id>
     <link href="https://kigane.github.io/note/cs/ECF/"/>
@@ -4089,10 +4041,101 @@ sigjmp_buf buf<span>;</span>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
+    <title type="html">宏</title>
+    <id>https://kigane.github.io/note/cpp/macro/</id>
+    <link href="https://kigane.github.io/note/cpp/macro/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="预定义的宏"> 预定义的宏</h2>
+<p>注意：不同的编译器宏的名称可能不同。</p>
+<ul>
+<li><code>__func__</code> 所在函数名</li>
+<li><code>__FILE__</code> 所在文件名</li>
+<li><code>__LINE__</code> 所在行数</li>
+<li><code>__DATE__</code> 当前源文件的编译时间</li>
+<li>``</li>
+</ul>
+<p><a href="https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-160" target="_blank" rel="noopener noreferrer">MSVC</a></p>
+<h2 id="操作符"> #操作符</h2>
+<ul>
+<li>#x 用来把参数转换成字符串</li>
+<li>a##b 将两个单独的符号合并成一个，且该符号必须是有效的。</li>
+<li><code>## __VA_ARGS__</code> 这里##的作用在于，当可变参数的个数为0时，这里的##起到把前面多余的&quot;,&quot;去掉的作用,否则会编译出错</li>
+</ul>
+<div><pre><code><span><span>#</span><span>define</span> <span>__T</span><span><span>(</span>x<span>)</span>  L </span><span>##</span> <span>x </span><span>// 如果x是字符串 "abc" 则__T(x) 相当于 L"abc"</span></span>
+
+<span><span>#</span><span>define</span> <span>paster</span><span><span>(</span> n <span>)</span> <span>printf_s</span><span>(</span> </span><span>"token"</span> <span><span><span>#</span><span>n</span> </span></span><span>" = %d"</span><span><span>,</span> token</span><span>##</span><span>n <span>)</span></span></span>
+<span>int</span> token9 <span>=</span> <span>9</span><span>;</span>
+<span>int</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+   <span>paster</span><span>(</span><span>9</span><span>)</span><span>;</span> <span>// 输出 token9 = 9</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h2 id="多行宏"> 多行宏</h2>
+<p>对于复杂的多行宏。推荐的写法为</p>
+<div><pre><code><span><span>#</span><span>define</span> <span>some_marco</span><span><span>(</span><span>)</span></span><span>\</span>
+  <span><span>do</span> <span>{</span></span><span>\</span>
+    <span>contents</span><span>\</span>
+  <span><span>}</span> <span>while</span> <span>(</span><span>0</span><span>)</span></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><a href="https://stackoverflow.com/questions/1067226/c-multi-line-macro-do-while0-vs-scope-block" target="_blank" rel="noopener noreferrer">解释</a></p>
+]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
     <title type="html">计算机概述</title>
     <id>https://kigane.github.io/note/cs/</id>
     <link href="https://kigane.github.io/note/cs/"/>
     <updated>2021-10-03T02:18:05.000Z</updated>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">编译器相关</title>
+    <id>https://kigane.github.io/note/cs/compiler/</id>
+    <link href="https://kigane.github.io/note/cs/compiler/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="gcc"> gcc</h2>
+<p>gcc在编译代码时可以做出优化，通过选项-On(n=0,1,2...)确定优化等级。优化后的代码在debug时，打印某些变量时会出现<code>&lt;optimized out&gt;</code>。解决方法就是关闭优化选项。或者，如果你只关心某个变量的话，可以将其用<code>volatile</code>关键字修饰。</p>
+<ul>
+<li>-E 预编译 .c-&gt;.i 对应cpp，即c预处理器，主要是在扩展include和宏。</li>
+<li>-S 编译为汇编代码 .i|.c-&gt;.s 对应cc1，即编译器，产生汇编代码。</li>
+<li>-c 汇编 .s-&gt;.o 对应as，即汇编器，产生可重定位目标文件，所有的指令都以二进制表示。</li>
+<li>-Idir 头文件搜索路径</li>
+<li>-Ldir 将dir指定为搜索库(-l指定的)的路径</li>
+<li>-llib 链接时，搜索liblib.a|liblib.so。如果有同名的静态库和动态库，则无-static时取动态库，有则取静态库。</li>
+<li>-O 开启优化选项。Og, O1, O2等开启了不同的优化选项，从性能考虑，O1,O2优化效果较好，但产生的代码变化会很大，很难理解源码和机器代码的关系，所以，学习时通常使用Og选项，有一定的优化，但源码的整体结构可以很好保存。</li>
+<li>-fno-stack-protector 关闭栈溢出检测</li>
+</ul>
+<hr>
+<ul>
+<li>-Wall 启用对某些用户可能会认为有问题(通常容易避免)的结构的警告。</li>
+<li>-Werror 让所有的warning变成error。</li>
+<li>-ggdb 产生给gdb用的调试信息。这意味着使用最有表达性的格式。(DWARF,stabs，如果两个都不支持则使用本地格式)</li>
+</ul>
+<h2 id="attribute"> attribute</h2>
+<ul>
+<li>__attribute__((unused)) 如果变量声明了，但没有被引用过，也不弹出警告</li>
+<li>__attribute__((used)) 用于static函数或变量，告诉编译器，即使没被引用过也要在obj文件中保留(链接器删除未使用的section时，不会删除有该声明的函数或变量)。</li>
+</ul>
+<h2 id="工具"> 工具</h2>
+<h3 id="反汇编器-objdump"> 反汇编器 objdump</h3>
+<ul>
+<li>objdump -d main.o</li>
+</ul>
+]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -4622,49 +4665,6 @@ execve 函数在当前进程中加载并运行包含在可执行目标文件 a.o
 <li>C 不会用任何类型信息来标记内存位置。因此，对 isPtr 没有一种明显的方式来判断它的输入参数 p 是不是一个指针。这导致了C程序的Mark&amp;Sweep收集器必须是保守的。</li>
 <li>即使 p 是一个指针，isPtr 也没有明显的方式来判断 p 是否指向一个已分配块的有效载荷中的某个位置。解决方法是将已分配块集合维护成一棵平衡二叉树，这棵树保持着这样一个属性：左子树中的所有块都放在较小的地址处，而右子树中的所有块都放在较大的地址处。每个已分配块的头部里有两个附加字段（left 和 right）。每个字段指向某个已分配块的头部。isPtr(ptr p) 函数用树来执行对已分配块的二分查找。在每一步中，它依赖于块头部中的大小字段来判断 p 是否落在这个块的范围之内。
 <img src="/assets/csapp/GCBST.png" alt="垃圾收集平衡二叉树" /></li>
-</ul>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">编译器相关</title>
-    <id>https://kigane.github.io/note/cs/compiler/</id>
-    <link href="https://kigane.github.io/note/cs/compiler/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="gcc"> gcc</h2>
-<p>gcc在编译代码时可以做出优化，通过选项-On(n=0,1,2...)确定优化等级。优化后的代码在debug时，打印某些变量时会出现<code>&lt;optimized out&gt;</code>。解决方法就是关闭优化选项。或者，如果你只关心某个变量的话，可以将其用<code>volatile</code>关键字修饰。</p>
-<ul>
-<li>-E 预编译 .c-&gt;.i 对应cpp，即c预处理器，主要是在扩展include和宏。</li>
-<li>-S 编译为汇编代码 .i|.c-&gt;.s 对应cc1，即编译器，产生汇编代码。</li>
-<li>-c 汇编 .s-&gt;.o 对应as，即汇编器，产生可重定位目标文件，所有的指令都以二进制表示。</li>
-<li>-Idir 头文件搜索路径</li>
-<li>-Ldir 将dir指定为搜索库(-l指定的)的路径</li>
-<li>-llib 链接时，搜索liblib.a|liblib.so。如果有同名的静态库和动态库，则无-static时取动态库，有则取静态库。</li>
-<li>-O 开启优化选项。Og, O1, O2等开启了不同的优化选项，从性能考虑，O1,O2优化效果较好，但产生的代码变化会很大，很难理解源码和机器代码的关系，所以，学习时通常使用Og选项，有一定的优化，但源码的整体结构可以很好保存。</li>
-<li>-fno-stack-protector 关闭栈溢出检测</li>
-</ul>
-<hr>
-<ul>
-<li>-Wall 启用对某些用户可能会认为有问题(通常容易避免)的结构的警告。</li>
-<li>-Werror 让所有的warning变成error。</li>
-<li>-ggdb 产生给gdb用的调试信息。这意味着使用最有表达性的格式。(DWARF,stabs，如果两个都不支持则使用本地格式)</li>
-</ul>
-<h2 id="attribute"> attribute</h2>
-<ul>
-<li>__attribute__((unused)) 如果变量声明了，但没有被引用过，也不弹出警告</li>
-<li>__attribute__((used)) 用于static函数或变量，告诉编译器，即使没被引用过也要在obj文件中保留(链接器删除未使用的section时，不会删除有该声明的函数或变量)。</li>
-</ul>
-<h2 id="工具"> 工具</h2>
-<h3 id="反汇编器-objdump"> 反汇编器 objdump</h3>
-<ul>
-<li>objdump -d main.o</li>
 </ul>
 ]]></content>
     <author>
@@ -5345,20 +5345,6 @@ objects <span>=</span> <span>map</span><span>&lt;</span>string<span>,</span> <sp
 </ol>
 <p>之后commit,push这个notmain分支到远程库，实际就会更新远程库的main分支。</p>
 ]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">riscv</title>
-    <id>https://kigane.github.io/note/cs/isa-riscv/</id>
-    <link href="https://kigane.github.io/note/cs/isa-riscv/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -6186,6 +6172,20 @@ x86通过ModR/M字节来指示内存操作数</p>
 </table>
 <p>AT&amp;T and Intel syntax use the opposite order for source and destination operands. Intel add eax, 4 is addl $4, %eax. The source, dest convention is maintained for compatibility with previous Unix assemblers. Note that instructions with more than one source operand, such as the enter instruction, do not have reversed order.</p>
 ]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">riscv</title>
+    <id>https://kigane.github.io/note/cs/isa-riscv/</id>
+    <link href="https://kigane.github.io/note/cs/isa-riscv/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -8591,364 +8591,6 @@ Object Detection is finding where and what multiple objects are in an image.</p>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">JS 小知识</title>
-    <id>https://kigane.github.io/note/js/</id>
-    <link href="https://kigane.github.io/note/js/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="箭头函数"> 箭头函数</h2>
-<p>类似 lambda 表达式。</p>
-<div><pre><code><span>(</span><span>params</span><span>)</span><span>=></span><span>{</span>
-    <span>// body...</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>需要注意的是，箭头函数没有 this, 如果在箭头函数内使用了 this，会导致 this 作为变量一直向上级词法作用域查找，直至找到为止。这经常会导致错误。</p>
-<h2 id="提升-hoisting"> 提升(Hoisting)</h2>
-<p>JavaScript引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升（hoisting）。函数声明也一样。类似 C++ 中 static 的工作方式。</p>
-<h2 id="in"> in</h2>
-<ul>
-<li>在单独使用时，in操作符会在通过对象能够访问给定属性时返回true，无论该属性存在于实例中还是原型中</li>
-<li>在使用for-in循环时，返回的是所有能够通过对象访问的、可枚举的（enumerated）属性，其中既包括存在于实例中的属性，也包括存在于原型中的属性。屏蔽了原型中不可枚举属性（即将<code>[[Enumerable]]</code>标记为false的属性）的实例属性也会在for-in循环中返回，因为根据规定，所有开发人员定义的属性都是可枚举的。</li>
-</ul>
-<h2 id="exports-module-exports"> exports&amp;module.exports</h2>
-<p>模块是自包含的功能单元，可以在项目中共享和重复使用。
-由于JavaScript最初没有模块的概念，随着时间的推移出现了各种竞争格式。Node.js中使用的是CommonJS格式。其他格式(<a href="https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/" target="_blank" rel="noopener noreferrer">可以参考这里</a>)。</p>
-<p>Node.js 内置了许多模块，例如</p>
-<div><pre><code><span>const</span> fs <span>=</span> <span>require</span><span>(</span><span>'fs'</span><span>)</span><span>;</span>
-<span>const</span> folderPath <span>=</span> <span>'./'</span><span>;</span>
-
-fs<span>.</span><span>readdir</span><span>(</span>folderPath<span>,</span> <span>(</span><span>err<span>,</span> files</span><span>)</span> <span>=></span> <span>{</span>
-    files<span>.</span><span>forEach</span><span>(</span><span>file</span> <span>=></span> <span>{</span>
-        console<span>.</span><span>log</span><span>(</span>file<span>)</span><span>;</span>
-    <span>}</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>更多<a href="https://www.w3schools.com/nodejs/ref_modules.asp" target="_blank" rel="noopener noreferrer">可以参考这里</a></p>
-<h3 id="创建和导出模块"> 创建和导出模块</h3>
-<div><pre><code><span>// in ./user.js</span>
-<span>const</span> <span>getName</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>return</span> <span>'Zrt'</span><span>;</span>
-<span>}</span><span>;</span>
-
-exports<span>.</span>getName <span>=</span> getName<span>;</span>
-
-<span>// in ./index.js</span>
-<span>const</span> user <span>=</span> <span>require</span><span>(</span><span>'./user'</span><span>)</span><span>;</span> <span>// .js 很显然，可以省略</span>
-console<span>.</span><span>log</span><span>(</span><span><span>`</span><span>User: </span><span><span>${</span>user<span>.</span><span>getName</span><span>(</span><span>)</span><span>}</span></span><span>`</span></span><span>)</span><span>;</span> <span>// User: Zrt</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><h3 id="导出多个方法和值"> 导出多个方法和值</h3>
-<div><pre><code><span>// in ./user.js</span>
-<span>const</span> <span>getName</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>return</span> <span>'Zrt'</span><span>;</span>
-<span>}</span><span>;</span>
-
-<span>const</span> <span>getLocation</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>return</span> <span>'dzxx'</span><span>;</span>
-<span>}</span><span>;</span>
-
-<span>const</span> dateOfBirth <span>=</span> <span>'9.9.1999'</span><span>;</span>
-
-exports<span>.</span>getName <span>=</span> getName<span>;</span>
-exports<span>.</span>getLocation <span>=</span> getLocation<span>;</span>
-exports<span>.</span>dob <span>=</span> dateOfBirth<span>;</span>
-
-<span>// in ./index.js</span>
-<span>const</span> user <span>=</span> <span>require</span><span>(</span><span>'./user'</span><span>)</span><span>;</span> <span>// .js 很显然，可以省略</span>
-console<span>.</span><span>log</span><span>(</span>
-  <span><span>`</span><span><span>${</span>user<span>.</span><span>getName</span><span>(</span><span>)</span><span>}</span></span><span> lives in </span><span><span>${</span>user<span>.</span><span>getLocation</span><span>(</span><span>)</span><span>}</span></span><span> and was born on </span><span><span>${</span>user<span>.</span>dob<span>}</span></span><span>.</span><span>`</span></span>
-<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><h3 id="语法变体"> 语法变体</h3>
-<div><pre><code><span>// ./user.js</span>
-exports<span>.</span><span>getName</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>return</span> <span>'Jim'</span><span>;</span>
-<span>}</span><span>;</span>
-
-exports<span>.</span><span>getLocation</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>return</span> <span>'Munich'</span><span>;</span>
-<span>}</span><span>;</span>
-
-exports<span>.</span>dob <span>=</span> <span>'12.01.1982'</span><span>;</span>
-
-<span>// ./index.js</span>
-<span>// ES6 语法 Destructuring Assignment</span>
-<span>const</span> <span>{</span> getName<span>,</span> dob <span>}</span> <span>=</span> <span>require</span><span>(</span><span>'./user'</span><span>)</span><span>;</span> 
-console<span>.</span><span>log</span><span>(</span>
-  <span><span>`</span><span><span>${</span><span>getName</span><span>(</span><span>)</span><span>}</span></span><span> was born on </span><span><span>${</span>dob<span>}</span></span><span>.</span><span>`</span></span>
-<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><h3 id="导出默认值"> 导出默认值</h3>
-<p>如果一个模块只想导出一个东西，module.exports更常用。</p>
-<div><pre><code><span>// ./user.js</span>
-<span>class</span> <span>User</span> <span>{</span>
-  <span>constructor</span><span>(</span><span>name<span>,</span> age<span>,</span> email</span><span>)</span> <span>{</span>
-    <span>this</span><span>.</span>name <span>=</span> name<span>;</span>
-    <span>this</span><span>.</span>age <span>=</span> age<span>;</span>
-    <span>this</span><span>.</span>email <span>=</span> email<span>;</span>
-  <span>}</span>
-
-  <span>getUserStats</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> <span><span>`</span><span>
-      Name: </span><span><span>${</span><span>this</span><span>.</span>name<span>}</span></span><span>
-      Age: </span><span><span>${</span><span>this</span><span>.</span>age<span>}</span></span><span>
-      Email: </span><span><span>${</span><span>this</span><span>.</span>email<span>}</span></span><span>
-    </span><span>`</span></span><span>;</span>
-  <span>}</span>
-<span>}</span>
-
-module<span>.</span>exports <span>=</span> User<span>;</span>
-
-<span>// ./index.js</span>
-<span>const</span> User <span>=</span> <span>require</span><span>(</span><span>'./user'</span><span>)</span><span>;</span>
-<span>const</span> jim <span>=</span> <span>new</span> <span>User</span><span>(</span><span>'Jim'</span><span>,</span> <span>37</span><span>,</span> <span>'jim@example.com'</span><span>)</span><span>;</span>
-
-console<span>.</span><span>log</span><span>(</span>jim<span>.</span><span>getUserStats</span><span>(</span><span>)</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><h3 id="console-log-module"> console.log(module)</h3>
-<p>console.log(module);结果可以看到，exports属性。</p>
-<div><pre><code>Module <span>{</span>
-  id<span>:</span> <span>'.'</span><span>,</span>
-  path<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide'</span><span>,</span>
-  exports<span>:</span> <span>{</span><span>}</span><span>,</span>
-  parent<span>:</span> <span>null</span><span>,</span>
-  filename<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide\\index.js'</span><span>,</span>
-  loaded<span>:</span> <span>false</span><span>,</span>
-  children<span>:</span> <span>[</span>
-    Module <span>{</span>
-      id<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide\\test.js'</span><span>,</span>
-      path<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide'</span><span>,</span>
-      exports<span>:</span> <span>[</span>Object<span>]</span><span>,</span>
-      parent<span>:</span> <span>[</span>Circular<span>]</span><span>,</span>
-      filename<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide\\test.js'</span><span>,</span>
-      loaded<span>:</span> <span>true</span><span>,</span>
-      children<span>:</span> <span>[</span><span>]</span><span>,</span>
-      paths<span>:</span> <span>[</span>Array<span>]</span>
-    <span>}</span>
-  <span>]</span><span>,</span>
-  paths<span>:</span> <span>[</span>
-    <span>'f:\\workspace\\MyBlogs\\docs\\guide\\node_modules'</span><span>,</span>
-    <span>'f:\\workspace\\MyBlogs\\docs\\node_modules'</span><span>,</span>
-    <span>'f:\\workspace\\MyBlogs\\node_modules'</span><span>,</span>
-    <span>'f:\\workspace\\node_modules'</span><span>,</span>
-    <span>'f:\\node_modules'</span>
-  <span>]</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div><h2 id="三个点"> 三个点(<code>...</code>)</h2>
-<p>js中的<code>...</code>有两种意思。<br>
-在函数参数列表中--剩余参数</p>
-<div><pre><code><span>function</span> <span>myFunc</span><span>(</span><span>x<span>,</span> y<span>,</span> <span>...</span>args</span><span>)</span>
-<span>{</span>
-  console<span>.</span><span>log</span><span>(</span>x<span>)</span><span>;</span>
-  console<span>.</span><span>log</span><span>(</span>y<span>)</span><span>;</span>
-  console<span>.</span><span>log</span><span>(</span>args<span>)</span><span>;</span>
-<span>}</span>
-
-<span>myFunc</span><span>(</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>,</span> <span>7</span><span>)</span><span>;</span> <span>// output: 1, 2, [3, 4, 5, 6]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>spread operator -- 展开操作符<br>
-展开可迭代对象的元素</p>
-<div><pre><code><span>const</span> featured <span>=</span> <span>[</span><span>'Deep Dish'</span><span>,</span> <span>'Pepperoni'</span><span>,</span> <span>'Hawaiian'</span><span>]</span><span>;</span>
-<span>const</span> specialty <span>=</span> <span>[</span><span>'Meatzza'</span><span>,</span> <span>'Spicy Mama'</span><span>,</span> <span>'Margherita'</span><span>]</span><span>;</span>
-
-<span>const</span> pizzas <span>=</span> <span>[</span><span>...</span>featured<span>,</span> <span>'veg pizza'</span><span>,</span> <span>...</span>specialty<span>]</span><span>;</span>
-
-console<span>.</span><span>log</span><span>(</span>pizzas<span>)</span><span>;</span> <span>// 'Deep Dish', 'Pepperoni', 'Hawaiian', 'veg pizza', 'Meatzza', 'Spicy Mama', 'Margherita'</span>
-
-<span>var</span> obj1 <span>=</span> <span>{</span> foo<span>:</span> <span>'bar'</span><span>,</span> x<span>:</span> <span>42</span> <span>}</span><span>;</span>
-<span>var</span> obj2 <span>=</span> <span>{</span> foo<span>:</span> <span>'baz'</span><span>,</span> y<span>:</span> <span>13</span> <span>}</span><span>;</span>
-
-<span>var</span> clonedObj <span>=</span> <span>{</span> <span>...</span>obj1 <span>}</span><span>;</span>
-<span>// Object { foo: "bar", x: 42 }</span>
-
-<span>var</span> mergedObj <span>=</span> <span>{</span> <span>...</span>obj1<span>,</span> <span>...</span>obj2 <span>}</span><span>;</span>
-<span>// Object { foo: "baz", x: 42, y: 13 }</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><h2 id="caller-callee"> caller &amp; callee</h2>
-<ul>
-<li>JS中函数是对象，函数名是指针，函数参数用arguments数组保存。</li>
-<li>arguments.callee是一个指向拥有该arguments对象的函数的指针。通常用于解耦函数和函数名。</li>
-<li>functionName.caller中保存着调用当前函数的函数的引用，如果是在全局作用域中调用，则为null。</li>
-</ul>
-<h2 id="apply-call-bind-this"> apply &amp; call &amp; bind &amp; this</h2>
-<ul>
-<li>this引用的是函数执行时的环境对象(全局对象window，或某个函数对象)。使用var声明的变量会被添加到最近的环境中。不加var声明的变量会被添加到全局环境中。</li>
-<li>apply和call可以用于传递参数，可以固定部分参数。但真正强大的地方是能通<strong>第一个参数</strong>修改this对象绑定，扩充函数的作用域，这种扩充作用域的方式，不需要对象和方法有任何耦合关系。</li>
-<li>bind会创建一个函数实例，其this值会被绑定到传给bind的参数。</li>
-</ul>
-<div><pre><code><span>// 传参数</span>
-<span>function</span> <span>sum</span><span>(</span><span>num1<span>,</span> num2</span><span>)</span> <span>{</span>
-    <span>return</span> num1 <span>+</span> num2<span>;</span>
-<span>}</span>
-
-<span>function</span> <span>callSum1</span><span>(</span><span>num1<span>,</span> num2</span><span>)</span> <span>{</span>
-    <span>return</span> <span>sum</span><span>.</span><span>apply</span><span>(</span><span>this</span><span>,</span> arguments<span>)</span>
-<span>}</span>
-
-<span>function</span> <span>callSum2</span><span>(</span><span>num1</span><span>)</span> <span>{</span>
-    <span>return</span> <span>sum</span><span>.</span><span>apply</span><span>(</span><span>this</span><span>,</span> <span>[</span>num1<span>,</span> <span>5</span><span>]</span><span>)</span>
-<span>}</span>
-
-<span>function</span> <span>callSum3</span><span>(</span><span>num1<span>,</span> num2</span><span>)</span> <span>{</span>
-    <span>return</span> <span>sum</span><span>.</span><span>call</span><span>(</span><span>this</span><span>,</span> num1<span>,</span> num2<span>)</span>
-<span>}</span>
-
-<span>var</span> bindSum <span>=</span> <span>sum</span><span>.</span><span>bind</span><span>(</span><span>this</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><p>修改绑定</p>
-<div><pre><code><span>var</span> o <span>=</span> <span>{</span> color<span>:</span> <span>'blue'</span> <span>}</span>
-<span>var</span> color <span>=</span> <span>'red'</span>
-
-<span>function</span> <span>sayColor</span><span>(</span><span>)</span><span>{</span>
-  <span>alert</span><span>(</span><span>this</span><span>.</span>color<span>)</span> <span>// red</span>
-<span>}</span>
-
-<span>var</span> objColor <span>=</span> <span>sayColor</span><span>.</span><span>bind</span><span>(</span>o<span>)</span>
-<span>objColor</span><span>(</span><span>)</span> <span>// blue</span>
-
-<span>sayColor</span><span>.</span><span>apply</span><span>(</span>o<span>)</span> <span>// blue</span>
-<span>sayColor</span><span>.</span><span>call</span><span>(</span>o<span>)</span> <span>// blue</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h2 id="正则"> 正则</h2>
-<p>语法如下</p>
-<div><pre><code><span>var</span> text <span>=</span> <span>"mom and dad and baby"</span>
-<span>var</span> pattern <span>=</span> <span><span>/</span><span>mom( and dad( and baby)?)?</span><span>/</span><span>gi</span></span>  <span>// /pattern/flags。产生一个RegEx对象。</span>
-<span>var</span> matches <span>=</span> pattern<span>.</span><span>exec</span><span>(</span>text<span>)</span> <span>// pattern.exec(text) === text.match(pattern)</span>
-console<span>.</span><span>log</span><span>(</span>matches<span>.</span>index<span>)</span> <span>// 匹配项位置：0</span>
-console<span>.</span><span>log</span><span>(</span>matches<span>.</span>input<span>)</span> <span>// 输入字符串：mom and dad and baby</span>
-console<span>.</span><span>log</span><span>(</span>matches<span>[</span><span>0</span><span>]</span><span>)</span> <span>// 模式匹配到的子串</span>
-console<span>.</span><span>log</span><span>(</span>matches<span>[</span><span>1</span><span>]</span><span>)</span> <span>// 捕获组1 (捕获组，即正则中括号内的部分，如果没匹配上，则为undefined)</span>
-console<span>.</span><span>log</span><span>(</span>matches<span>[</span><span>2</span><span>]</span><span>)</span> <span>// 捕获组2 </span>
-<span>// 如果没有捕获组，则matches只有第一项</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h2 id="json"> JSON</h2>
-<ul>
-<li>JSON.stringify(obj, filter, indentOption):把JavaScript对象序列化为JSON字符串。只有数据，不包括方法。
-<ul>
-<li>filter可以是数组，包含要序列化的属性，不再其内的属性序列化时被忽略。</li>
-<li>filter也可以是函数<code>function(key, value) {}</code>，将在每个键值对上调用。通常会用一个switch语句来分别决定如何处理不同的属性。函数的返回值为序列化时使用的value值。</li>
-<li>indentOption指定json文件的缩进格式(数字表示以几个空格为缩进)。</li>
-</ul>
-</li>
-<li>JSON.parse(jsonText, filter):把JSON字符串解析为原生JavaScript值。</li>
-</ul>
-<p>假设把一个对象传入JSON.stringify()，序列化该对象的顺序如下</p>
-<ol>
-<li>如果对象存在toJSON()方法而且能通过它取得有效的值，则调用该方法。否则，返回对象本身。</li>
-<li>如果提供了第二个参数，应用这个函数过滤器。传入函数过滤器的值第(1)步返回的值。</li>
-<li>对第(2)步返回的每个值进行相应的序列化。</li>
-<li>如果提供了第三个参数，执行相应的格式化。</li>
-</ol>
-<h2 id="proxy对象"> Proxy对象</h2>
-<p>可以创建另一个对象的代理。拦截并重新定义对象的基础操作，如读写。使用方法和对象一样。
-两个参数</p>
-<ul>
-<li>target: 目标对象</li>
-<li>handler: 一个对象，定义哪些操作会被拦截，如何重定义被拦截的操作。</li>
-</ul>
-<p>PS:Reflect对象可用于指定对象原来的操作。</p>
-<h3 id="基础示例1"> 基础示例1</h3>
-<div><pre><code><span>const</span> target <span>=</span> <span>{</span>
-  message1<span>:</span> <span>"hello"</span><span>,</span>
-  message2<span>:</span> <span>"everyone"</span>
-<span>}</span><span>;</span>
-
-<span>const</span> handler <span>=</span> <span>{</span>
-  <span>get</span><span>:</span> <span>function</span><span>(</span><span>target<span>,</span> prop<span>,</span> receiver</span><span>)</span> <span>{</span>
-    <span>// prop：正要get的属性， receiver：代理对象或继承自代理的对象</span>
-    <span>return</span> <span>"world"</span><span>;</span>
-  <span>}</span>
-<span>}</span><span>;</span> <span>// 这样设置handler之后，无论获取什么属性，都只会返回"world"</span>
-
-<span>const</span> proxy <span>=</span> <span>new</span> <span>Proxy</span><span>(</span>target<span>,</span> handler<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="基础示例2"> 基础示例2</h3>
-<div><pre><code><span>const</span> target <span>=</span> <span>{</span>
-  message1<span>:</span> <span>"hello"</span><span>,</span>
-  message2<span>:</span> <span>"everyone"</span>
-<span>}</span><span>;</span>
-
-<span>const</span> handler <span>=</span> <span>{</span>
-  <span>get</span><span>:</span> <span>function</span> <span>(</span><span>target<span>,</span> prop<span>,</span> receiver</span><span>)</span> <span>{</span>
-    <span>if</span> <span>(</span>prop <span>===</span> <span>"message2"</span><span>)</span> <span>{</span> <span>// 只特殊处理message2属性</span>
-      <span>return</span> <span>"world"</span><span>;</span>
-    <span>}</span>
-    <span>return</span> Reflect<span>.</span><span>get</span><span>(</span><span>...</span>arguments<span>)</span><span>;</span> <span>// 其他属性按原对象来</span>
-  <span>}</span><span>,</span>
-<span>}</span><span>;</span>
-
-<span>const</span> proxy <span>=</span> <span>new</span> <span>Proxy</span><span>(</span>target<span>,</span> handler<span>)</span><span>;</span>
-
-console<span>.</span><span>log</span><span>(</span>proxy<span>.</span>message1<span>)</span><span>;</span> <span>// hello</span>
-console<span>.</span><span>log</span><span>(</span>proxy<span>.</span>message2<span>)</span><span>;</span> <span>// world</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h3 id="数组示例"> 数组示例</h3>
-<div><pre><code><span>let</span> products <span>=</span> <span>new</span> <span>Proxy</span><span>(</span><span>[</span>
-  <span>{</span> name<span>:</span> <span>'Firefox'</span><span>,</span> type<span>:</span> <span>'browser'</span> <span>}</span><span>,</span>
-  <span>{</span> name<span>:</span> <span>'SeaMonkey'</span><span>,</span> type<span>:</span> <span>'browser'</span> <span>}</span><span>,</span>
-  <span>{</span> name<span>:</span> <span>'Thunderbird'</span><span>,</span> type<span>:</span> <span>'mailer'</span> <span>}</span>
-<span>]</span><span>,</span>
-<span>{</span>
-  <span>get</span><span>:</span> <span>function</span><span>(</span><span>obj<span>,</span> prop</span><span>)</span> <span>{</span>
-    <span>// The default behavior to return the value; prop is usually an integer</span>
-    <span>if</span> <span>(</span>prop <span>in</span> obj<span>)</span> <span>{</span>
-      <span>return</span> obj<span>[</span>prop<span>]</span><span>;</span> <span>// products[0]</span>
-    <span>}</span>
-
-    <span>// Get the number of products; an alias of products.length</span>
-    <span>if</span> <span>(</span>prop <span>===</span> <span>'number'</span><span>)</span> <span>{</span>
-      <span>return</span> obj<span>.</span>length<span>;</span> <span>// products.number</span>
-    <span>}</span>
-
-    <span>let</span> result<span>,</span> types <span>=</span> <span>{</span><span>}</span><span>;</span>
-
-    <span>for</span> <span>(</span><span>let</span> product <span>of</span> obj<span>)</span> <span>{</span> <span>// products[name]</span>
-      <span>if</span> <span>(</span>product<span>.</span>name <span>===</span> prop<span>)</span> <span>{</span>
-        result <span>=</span> product<span>;</span>
-      <span>}</span>
-      <span>if</span> <span>(</span>types<span>[</span>product<span>.</span>type<span>]</span><span>)</span> <span>{</span> <span>// 根据type分类</span>
-        types<span>[</span>product<span>.</span>type<span>]</span><span>.</span><span>push</span><span>(</span>product<span>)</span><span>;</span>
-      <span>}</span> <span>else</span> <span>{</span>
-        types<span>[</span>product<span>.</span>type<span>]</span> <span>=</span> <span>[</span>product<span>]</span><span>;</span>
-      <span>}</span>
-    <span>}</span>
-
-    <span>// Get a product by name</span>
-    <span>if</span> <span>(</span>result<span>)</span> <span>{</span>
-      <span>return</span> result<span>;</span>
-    <span>}</span>
-
-    <span>// Get products by type</span>
-    <span>if</span> <span>(</span>prop <span>in</span> types<span>)</span> <span>{</span>
-      <span>return</span> types<span>[</span>prop<span>]</span><span>;</span>
-    <span>}</span>
-
-    <span>// Get product types</span>
-    <span>if</span> <span>(</span>prop <span>===</span> <span>'types'</span><span>)</span> <span>{</span>
-      <span>return</span> Object<span>.</span><span>keys</span><span>(</span>types<span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>return</span> <span>undefined</span><span>;</span>
-  <span>}</span>
-<span>}</span><span>)</span><span>;</span>
-
-console<span>.</span><span>log</span><span>(</span>products<span>[</span><span>0</span><span>]</span><span>)</span><span>;</span>          <span>// { name: 'Firefox', type: 'browser' }</span>
-console<span>.</span><span>log</span><span>(</span>products<span>.</span>number<span>)</span><span>;</span>      <span>// 3</span>
-console<span>.</span><span>log</span><span>(</span>products<span>[</span><span>'Firefox'</span><span>]</span><span>)</span><span>;</span>  <span>// { name: 'Firefox', type: 'browser' }</span>
-console<span>.</span><span>log</span><span>(</span>products<span>[</span><span>'Chrome'</span><span>]</span><span>)</span><span>;</span>   <span>// undefined</span>
-console<span>.</span><span>log</span><span>(</span>products<span>.</span>browser<span>)</span><span>;</span>     <span>// [{ name: 'Firefox', type: 'browser' }, { name: 'SeaMonkey', type: 'browser' }]</span>
-console<span>.</span><span>log</span><span>(</span>products<span>.</span>types<span>)</span><span>;</span>       <span>// ['browser', 'mailer']</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br></div></div>]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
     <title type="html">CSS 高级话题</title>
     <id>https://kigane.github.io/note/js/css-advance/</id>
     <link href="https://kigane.github.io/note/js/css-advance/"/>
@@ -9513,6 +9155,364 @@ border-radius: 1em;
 动画可以向用户表明按钮被点击了或者消息被接收了。如果你曾经提交过表单，回想一下是否经常记不清自己点没点过注册按钮，就知道这有多重要了。</p>
 <p><a href="https://animista.net/play/basic" target="_blank" rel="noopener noreferrer">CSS Animista</a></p>
 ]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">JS 小知识</title>
+    <id>https://kigane.github.io/note/js/</id>
+    <link href="https://kigane.github.io/note/js/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="箭头函数"> 箭头函数</h2>
+<p>类似 lambda 表达式。</p>
+<div><pre><code><span>(</span><span>params</span><span>)</span><span>=></span><span>{</span>
+    <span>// body...</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>需要注意的是，箭头函数没有 this, 如果在箭头函数内使用了 this，会导致 this 作为变量一直向上级词法作用域查找，直至找到为止。这经常会导致错误。</p>
+<h2 id="提升-hoisting"> 提升(Hoisting)</h2>
+<p>JavaScript引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升（hoisting）。函数声明也一样。类似 C++ 中 static 的工作方式。</p>
+<h2 id="in"> in</h2>
+<ul>
+<li>在单独使用时，in操作符会在通过对象能够访问给定属性时返回true，无论该属性存在于实例中还是原型中</li>
+<li>在使用for-in循环时，返回的是所有能够通过对象访问的、可枚举的（enumerated）属性，其中既包括存在于实例中的属性，也包括存在于原型中的属性。屏蔽了原型中不可枚举属性（即将<code>[[Enumerable]]</code>标记为false的属性）的实例属性也会在for-in循环中返回，因为根据规定，所有开发人员定义的属性都是可枚举的。</li>
+</ul>
+<h2 id="exports-module-exports"> exports&amp;module.exports</h2>
+<p>模块是自包含的功能单元，可以在项目中共享和重复使用。
+由于JavaScript最初没有模块的概念，随着时间的推移出现了各种竞争格式。Node.js中使用的是CommonJS格式。其他格式(<a href="https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/" target="_blank" rel="noopener noreferrer">可以参考这里</a>)。</p>
+<p>Node.js 内置了许多模块，例如</p>
+<div><pre><code><span>const</span> fs <span>=</span> <span>require</span><span>(</span><span>'fs'</span><span>)</span><span>;</span>
+<span>const</span> folderPath <span>=</span> <span>'./'</span><span>;</span>
+
+fs<span>.</span><span>readdir</span><span>(</span>folderPath<span>,</span> <span>(</span><span>err<span>,</span> files</span><span>)</span> <span>=></span> <span>{</span>
+    files<span>.</span><span>forEach</span><span>(</span><span>file</span> <span>=></span> <span>{</span>
+        console<span>.</span><span>log</span><span>(</span>file<span>)</span><span>;</span>
+    <span>}</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>更多<a href="https://www.w3schools.com/nodejs/ref_modules.asp" target="_blank" rel="noopener noreferrer">可以参考这里</a></p>
+<h3 id="创建和导出模块"> 创建和导出模块</h3>
+<div><pre><code><span>// in ./user.js</span>
+<span>const</span> <span>getName</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>return</span> <span>'Zrt'</span><span>;</span>
+<span>}</span><span>;</span>
+
+exports<span>.</span>getName <span>=</span> getName<span>;</span>
+
+<span>// in ./index.js</span>
+<span>const</span> user <span>=</span> <span>require</span><span>(</span><span>'./user'</span><span>)</span><span>;</span> <span>// .js 很显然，可以省略</span>
+console<span>.</span><span>log</span><span>(</span><span><span>`</span><span>User: </span><span><span>${</span>user<span>.</span><span>getName</span><span>(</span><span>)</span><span>}</span></span><span>`</span></span><span>)</span><span>;</span> <span>// User: Zrt</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><h3 id="导出多个方法和值"> 导出多个方法和值</h3>
+<div><pre><code><span>// in ./user.js</span>
+<span>const</span> <span>getName</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>return</span> <span>'Zrt'</span><span>;</span>
+<span>}</span><span>;</span>
+
+<span>const</span> <span>getLocation</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>return</span> <span>'dzxx'</span><span>;</span>
+<span>}</span><span>;</span>
+
+<span>const</span> dateOfBirth <span>=</span> <span>'9.9.1999'</span><span>;</span>
+
+exports<span>.</span>getName <span>=</span> getName<span>;</span>
+exports<span>.</span>getLocation <span>=</span> getLocation<span>;</span>
+exports<span>.</span>dob <span>=</span> dateOfBirth<span>;</span>
+
+<span>// in ./index.js</span>
+<span>const</span> user <span>=</span> <span>require</span><span>(</span><span>'./user'</span><span>)</span><span>;</span> <span>// .js 很显然，可以省略</span>
+console<span>.</span><span>log</span><span>(</span>
+  <span><span>`</span><span><span>${</span>user<span>.</span><span>getName</span><span>(</span><span>)</span><span>}</span></span><span> lives in </span><span><span>${</span>user<span>.</span><span>getLocation</span><span>(</span><span>)</span><span>}</span></span><span> and was born on </span><span><span>${</span>user<span>.</span>dob<span>}</span></span><span>.</span><span>`</span></span>
+<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><h3 id="语法变体"> 语法变体</h3>
+<div><pre><code><span>// ./user.js</span>
+exports<span>.</span><span>getName</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>return</span> <span>'Jim'</span><span>;</span>
+<span>}</span><span>;</span>
+
+exports<span>.</span><span>getLocation</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>return</span> <span>'Munich'</span><span>;</span>
+<span>}</span><span>;</span>
+
+exports<span>.</span>dob <span>=</span> <span>'12.01.1982'</span><span>;</span>
+
+<span>// ./index.js</span>
+<span>// ES6 语法 Destructuring Assignment</span>
+<span>const</span> <span>{</span> getName<span>,</span> dob <span>}</span> <span>=</span> <span>require</span><span>(</span><span>'./user'</span><span>)</span><span>;</span> 
+console<span>.</span><span>log</span><span>(</span>
+  <span><span>`</span><span><span>${</span><span>getName</span><span>(</span><span>)</span><span>}</span></span><span> was born on </span><span><span>${</span>dob<span>}</span></span><span>.</span><span>`</span></span>
+<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><h3 id="导出默认值"> 导出默认值</h3>
+<p>如果一个模块只想导出一个东西，module.exports更常用。</p>
+<div><pre><code><span>// ./user.js</span>
+<span>class</span> <span>User</span> <span>{</span>
+  <span>constructor</span><span>(</span><span>name<span>,</span> age<span>,</span> email</span><span>)</span> <span>{</span>
+    <span>this</span><span>.</span>name <span>=</span> name<span>;</span>
+    <span>this</span><span>.</span>age <span>=</span> age<span>;</span>
+    <span>this</span><span>.</span>email <span>=</span> email<span>;</span>
+  <span>}</span>
+
+  <span>getUserStats</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> <span><span>`</span><span>
+      Name: </span><span><span>${</span><span>this</span><span>.</span>name<span>}</span></span><span>
+      Age: </span><span><span>${</span><span>this</span><span>.</span>age<span>}</span></span><span>
+      Email: </span><span><span>${</span><span>this</span><span>.</span>email<span>}</span></span><span>
+    </span><span>`</span></span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+module<span>.</span>exports <span>=</span> User<span>;</span>
+
+<span>// ./index.js</span>
+<span>const</span> User <span>=</span> <span>require</span><span>(</span><span>'./user'</span><span>)</span><span>;</span>
+<span>const</span> jim <span>=</span> <span>new</span> <span>User</span><span>(</span><span>'Jim'</span><span>,</span> <span>37</span><span>,</span> <span>'jim@example.com'</span><span>)</span><span>;</span>
+
+console<span>.</span><span>log</span><span>(</span>jim<span>.</span><span>getUserStats</span><span>(</span><span>)</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><h3 id="console-log-module"> console.log(module)</h3>
+<p>console.log(module);结果可以看到，exports属性。</p>
+<div><pre><code>Module <span>{</span>
+  id<span>:</span> <span>'.'</span><span>,</span>
+  path<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide'</span><span>,</span>
+  exports<span>:</span> <span>{</span><span>}</span><span>,</span>
+  parent<span>:</span> <span>null</span><span>,</span>
+  filename<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide\\index.js'</span><span>,</span>
+  loaded<span>:</span> <span>false</span><span>,</span>
+  children<span>:</span> <span>[</span>
+    Module <span>{</span>
+      id<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide\\test.js'</span><span>,</span>
+      path<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide'</span><span>,</span>
+      exports<span>:</span> <span>[</span>Object<span>]</span><span>,</span>
+      parent<span>:</span> <span>[</span>Circular<span>]</span><span>,</span>
+      filename<span>:</span> <span>'f:\\workspace\\MyBlogs\\docs\\guide\\test.js'</span><span>,</span>
+      loaded<span>:</span> <span>true</span><span>,</span>
+      children<span>:</span> <span>[</span><span>]</span><span>,</span>
+      paths<span>:</span> <span>[</span>Array<span>]</span>
+    <span>}</span>
+  <span>]</span><span>,</span>
+  paths<span>:</span> <span>[</span>
+    <span>'f:\\workspace\\MyBlogs\\docs\\guide\\node_modules'</span><span>,</span>
+    <span>'f:\\workspace\\MyBlogs\\docs\\node_modules'</span><span>,</span>
+    <span>'f:\\workspace\\MyBlogs\\node_modules'</span><span>,</span>
+    <span>'f:\\workspace\\node_modules'</span><span>,</span>
+    <span>'f:\\node_modules'</span>
+  <span>]</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div><h2 id="三个点"> 三个点(<code>...</code>)</h2>
+<p>js中的<code>...</code>有两种意思。<br>
+在函数参数列表中--剩余参数</p>
+<div><pre><code><span>function</span> <span>myFunc</span><span>(</span><span>x<span>,</span> y<span>,</span> <span>...</span>args</span><span>)</span>
+<span>{</span>
+  console<span>.</span><span>log</span><span>(</span>x<span>)</span><span>;</span>
+  console<span>.</span><span>log</span><span>(</span>y<span>)</span><span>;</span>
+  console<span>.</span><span>log</span><span>(</span>args<span>)</span><span>;</span>
+<span>}</span>
+
+<span>myFunc</span><span>(</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>,</span> <span>7</span><span>)</span><span>;</span> <span>// output: 1, 2, [3, 4, 5, 6]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>spread operator -- 展开操作符<br>
+展开可迭代对象的元素</p>
+<div><pre><code><span>const</span> featured <span>=</span> <span>[</span><span>'Deep Dish'</span><span>,</span> <span>'Pepperoni'</span><span>,</span> <span>'Hawaiian'</span><span>]</span><span>;</span>
+<span>const</span> specialty <span>=</span> <span>[</span><span>'Meatzza'</span><span>,</span> <span>'Spicy Mama'</span><span>,</span> <span>'Margherita'</span><span>]</span><span>;</span>
+
+<span>const</span> pizzas <span>=</span> <span>[</span><span>...</span>featured<span>,</span> <span>'veg pizza'</span><span>,</span> <span>...</span>specialty<span>]</span><span>;</span>
+
+console<span>.</span><span>log</span><span>(</span>pizzas<span>)</span><span>;</span> <span>// 'Deep Dish', 'Pepperoni', 'Hawaiian', 'veg pizza', 'Meatzza', 'Spicy Mama', 'Margherita'</span>
+
+<span>var</span> obj1 <span>=</span> <span>{</span> foo<span>:</span> <span>'bar'</span><span>,</span> x<span>:</span> <span>42</span> <span>}</span><span>;</span>
+<span>var</span> obj2 <span>=</span> <span>{</span> foo<span>:</span> <span>'baz'</span><span>,</span> y<span>:</span> <span>13</span> <span>}</span><span>;</span>
+
+<span>var</span> clonedObj <span>=</span> <span>{</span> <span>...</span>obj1 <span>}</span><span>;</span>
+<span>// Object { foo: "bar", x: 42 }</span>
+
+<span>var</span> mergedObj <span>=</span> <span>{</span> <span>...</span>obj1<span>,</span> <span>...</span>obj2 <span>}</span><span>;</span>
+<span>// Object { foo: "baz", x: 42, y: 13 }</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><h2 id="caller-callee"> caller &amp; callee</h2>
+<ul>
+<li>JS中函数是对象，函数名是指针，函数参数用arguments数组保存。</li>
+<li>arguments.callee是一个指向拥有该arguments对象的函数的指针。通常用于解耦函数和函数名。</li>
+<li>functionName.caller中保存着调用当前函数的函数的引用，如果是在全局作用域中调用，则为null。</li>
+</ul>
+<h2 id="apply-call-bind-this"> apply &amp; call &amp; bind &amp; this</h2>
+<ul>
+<li>this引用的是函数执行时的环境对象(全局对象window，或某个函数对象)。使用var声明的变量会被添加到最近的环境中。不加var声明的变量会被添加到全局环境中。</li>
+<li>apply和call可以用于传递参数，可以固定部分参数。但真正强大的地方是能通<strong>第一个参数</strong>修改this对象绑定，扩充函数的作用域，这种扩充作用域的方式，不需要对象和方法有任何耦合关系。</li>
+<li>bind会创建一个函数实例，其this值会被绑定到传给bind的参数。</li>
+</ul>
+<div><pre><code><span>// 传参数</span>
+<span>function</span> <span>sum</span><span>(</span><span>num1<span>,</span> num2</span><span>)</span> <span>{</span>
+    <span>return</span> num1 <span>+</span> num2<span>;</span>
+<span>}</span>
+
+<span>function</span> <span>callSum1</span><span>(</span><span>num1<span>,</span> num2</span><span>)</span> <span>{</span>
+    <span>return</span> <span>sum</span><span>.</span><span>apply</span><span>(</span><span>this</span><span>,</span> arguments<span>)</span>
+<span>}</span>
+
+<span>function</span> <span>callSum2</span><span>(</span><span>num1</span><span>)</span> <span>{</span>
+    <span>return</span> <span>sum</span><span>.</span><span>apply</span><span>(</span><span>this</span><span>,</span> <span>[</span>num1<span>,</span> <span>5</span><span>]</span><span>)</span>
+<span>}</span>
+
+<span>function</span> <span>callSum3</span><span>(</span><span>num1<span>,</span> num2</span><span>)</span> <span>{</span>
+    <span>return</span> <span>sum</span><span>.</span><span>call</span><span>(</span><span>this</span><span>,</span> num1<span>,</span> num2<span>)</span>
+<span>}</span>
+
+<span>var</span> bindSum <span>=</span> <span>sum</span><span>.</span><span>bind</span><span>(</span><span>this</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><p>修改绑定</p>
+<div><pre><code><span>var</span> o <span>=</span> <span>{</span> color<span>:</span> <span>'blue'</span> <span>}</span>
+<span>var</span> color <span>=</span> <span>'red'</span>
+
+<span>function</span> <span>sayColor</span><span>(</span><span>)</span><span>{</span>
+  <span>alert</span><span>(</span><span>this</span><span>.</span>color<span>)</span> <span>// red</span>
+<span>}</span>
+
+<span>var</span> objColor <span>=</span> <span>sayColor</span><span>.</span><span>bind</span><span>(</span>o<span>)</span>
+<span>objColor</span><span>(</span><span>)</span> <span>// blue</span>
+
+<span>sayColor</span><span>.</span><span>apply</span><span>(</span>o<span>)</span> <span>// blue</span>
+<span>sayColor</span><span>.</span><span>call</span><span>(</span>o<span>)</span> <span>// blue</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h2 id="正则"> 正则</h2>
+<p>语法如下</p>
+<div><pre><code><span>var</span> text <span>=</span> <span>"mom and dad and baby"</span>
+<span>var</span> pattern <span>=</span> <span><span>/</span><span>mom( and dad( and baby)?)?</span><span>/</span><span>gi</span></span>  <span>// /pattern/flags。产生一个RegEx对象。</span>
+<span>var</span> matches <span>=</span> pattern<span>.</span><span>exec</span><span>(</span>text<span>)</span> <span>// pattern.exec(text) === text.match(pattern)</span>
+console<span>.</span><span>log</span><span>(</span>matches<span>.</span>index<span>)</span> <span>// 匹配项位置：0</span>
+console<span>.</span><span>log</span><span>(</span>matches<span>.</span>input<span>)</span> <span>// 输入字符串：mom and dad and baby</span>
+console<span>.</span><span>log</span><span>(</span>matches<span>[</span><span>0</span><span>]</span><span>)</span> <span>// 模式匹配到的子串</span>
+console<span>.</span><span>log</span><span>(</span>matches<span>[</span><span>1</span><span>]</span><span>)</span> <span>// 捕获组1 (捕获组，即正则中括号内的部分，如果没匹配上，则为undefined)</span>
+console<span>.</span><span>log</span><span>(</span>matches<span>[</span><span>2</span><span>]</span><span>)</span> <span>// 捕获组2 </span>
+<span>// 如果没有捕获组，则matches只有第一项</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h2 id="json"> JSON</h2>
+<ul>
+<li>JSON.stringify(obj, filter, indentOption):把JavaScript对象序列化为JSON字符串。只有数据，不包括方法。
+<ul>
+<li>filter可以是数组，包含要序列化的属性，不再其内的属性序列化时被忽略。</li>
+<li>filter也可以是函数<code>function(key, value) {}</code>，将在每个键值对上调用。通常会用一个switch语句来分别决定如何处理不同的属性。函数的返回值为序列化时使用的value值。</li>
+<li>indentOption指定json文件的缩进格式(数字表示以几个空格为缩进)。</li>
+</ul>
+</li>
+<li>JSON.parse(jsonText, filter):把JSON字符串解析为原生JavaScript值。</li>
+</ul>
+<p>假设把一个对象传入JSON.stringify()，序列化该对象的顺序如下</p>
+<ol>
+<li>如果对象存在toJSON()方法而且能通过它取得有效的值，则调用该方法。否则，返回对象本身。</li>
+<li>如果提供了第二个参数，应用这个函数过滤器。传入函数过滤器的值第(1)步返回的值。</li>
+<li>对第(2)步返回的每个值进行相应的序列化。</li>
+<li>如果提供了第三个参数，执行相应的格式化。</li>
+</ol>
+<h2 id="proxy对象"> Proxy对象</h2>
+<p>可以创建另一个对象的代理。拦截并重新定义对象的基础操作，如读写。使用方法和对象一样。
+两个参数</p>
+<ul>
+<li>target: 目标对象</li>
+<li>handler: 一个对象，定义哪些操作会被拦截，如何重定义被拦截的操作。</li>
+</ul>
+<p>PS:Reflect对象可用于指定对象原来的操作。</p>
+<h3 id="基础示例1"> 基础示例1</h3>
+<div><pre><code><span>const</span> target <span>=</span> <span>{</span>
+  message1<span>:</span> <span>"hello"</span><span>,</span>
+  message2<span>:</span> <span>"everyone"</span>
+<span>}</span><span>;</span>
+
+<span>const</span> handler <span>=</span> <span>{</span>
+  <span>get</span><span>:</span> <span>function</span><span>(</span><span>target<span>,</span> prop<span>,</span> receiver</span><span>)</span> <span>{</span>
+    <span>// prop：正要get的属性， receiver：代理对象或继承自代理的对象</span>
+    <span>return</span> <span>"world"</span><span>;</span>
+  <span>}</span>
+<span>}</span><span>;</span> <span>// 这样设置handler之后，无论获取什么属性，都只会返回"world"</span>
+
+<span>const</span> proxy <span>=</span> <span>new</span> <span>Proxy</span><span>(</span>target<span>,</span> handler<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="基础示例2"> 基础示例2</h3>
+<div><pre><code><span>const</span> target <span>=</span> <span>{</span>
+  message1<span>:</span> <span>"hello"</span><span>,</span>
+  message2<span>:</span> <span>"everyone"</span>
+<span>}</span><span>;</span>
+
+<span>const</span> handler <span>=</span> <span>{</span>
+  <span>get</span><span>:</span> <span>function</span> <span>(</span><span>target<span>,</span> prop<span>,</span> receiver</span><span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>prop <span>===</span> <span>"message2"</span><span>)</span> <span>{</span> <span>// 只特殊处理message2属性</span>
+      <span>return</span> <span>"world"</span><span>;</span>
+    <span>}</span>
+    <span>return</span> Reflect<span>.</span><span>get</span><span>(</span><span>...</span>arguments<span>)</span><span>;</span> <span>// 其他属性按原对象来</span>
+  <span>}</span><span>,</span>
+<span>}</span><span>;</span>
+
+<span>const</span> proxy <span>=</span> <span>new</span> <span>Proxy</span><span>(</span>target<span>,</span> handler<span>)</span><span>;</span>
+
+console<span>.</span><span>log</span><span>(</span>proxy<span>.</span>message1<span>)</span><span>;</span> <span>// hello</span>
+console<span>.</span><span>log</span><span>(</span>proxy<span>.</span>message2<span>)</span><span>;</span> <span>// world</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h3 id="数组示例"> 数组示例</h3>
+<div><pre><code><span>let</span> products <span>=</span> <span>new</span> <span>Proxy</span><span>(</span><span>[</span>
+  <span>{</span> name<span>:</span> <span>'Firefox'</span><span>,</span> type<span>:</span> <span>'browser'</span> <span>}</span><span>,</span>
+  <span>{</span> name<span>:</span> <span>'SeaMonkey'</span><span>,</span> type<span>:</span> <span>'browser'</span> <span>}</span><span>,</span>
+  <span>{</span> name<span>:</span> <span>'Thunderbird'</span><span>,</span> type<span>:</span> <span>'mailer'</span> <span>}</span>
+<span>]</span><span>,</span>
+<span>{</span>
+  <span>get</span><span>:</span> <span>function</span><span>(</span><span>obj<span>,</span> prop</span><span>)</span> <span>{</span>
+    <span>// The default behavior to return the value; prop is usually an integer</span>
+    <span>if</span> <span>(</span>prop <span>in</span> obj<span>)</span> <span>{</span>
+      <span>return</span> obj<span>[</span>prop<span>]</span><span>;</span> <span>// products[0]</span>
+    <span>}</span>
+
+    <span>// Get the number of products; an alias of products.length</span>
+    <span>if</span> <span>(</span>prop <span>===</span> <span>'number'</span><span>)</span> <span>{</span>
+      <span>return</span> obj<span>.</span>length<span>;</span> <span>// products.number</span>
+    <span>}</span>
+
+    <span>let</span> result<span>,</span> types <span>=</span> <span>{</span><span>}</span><span>;</span>
+
+    <span>for</span> <span>(</span><span>let</span> product <span>of</span> obj<span>)</span> <span>{</span> <span>// products[name]</span>
+      <span>if</span> <span>(</span>product<span>.</span>name <span>===</span> prop<span>)</span> <span>{</span>
+        result <span>=</span> product<span>;</span>
+      <span>}</span>
+      <span>if</span> <span>(</span>types<span>[</span>product<span>.</span>type<span>]</span><span>)</span> <span>{</span> <span>// 根据type分类</span>
+        types<span>[</span>product<span>.</span>type<span>]</span><span>.</span><span>push</span><span>(</span>product<span>)</span><span>;</span>
+      <span>}</span> <span>else</span> <span>{</span>
+        types<span>[</span>product<span>.</span>type<span>]</span> <span>=</span> <span>[</span>product<span>]</span><span>;</span>
+      <span>}</span>
+    <span>}</span>
+
+    <span>// Get a product by name</span>
+    <span>if</span> <span>(</span>result<span>)</span> <span>{</span>
+      <span>return</span> result<span>;</span>
+    <span>}</span>
+
+    <span>// Get products by type</span>
+    <span>if</span> <span>(</span>prop <span>in</span> types<span>)</span> <span>{</span>
+      <span>return</span> types<span>[</span>prop<span>]</span><span>;</span>
+    <span>}</span>
+
+    <span>// Get product types</span>
+    <span>if</span> <span>(</span>prop <span>===</span> <span>'types'</span><span>)</span> <span>{</span>
+      <span>return</span> Object<span>.</span><span>keys</span><span>(</span>types<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>return</span> <span>undefined</span><span>;</span>
+  <span>}</span>
+<span>}</span><span>)</span><span>;</span>
+
+console<span>.</span><span>log</span><span>(</span>products<span>[</span><span>0</span><span>]</span><span>)</span><span>;</span>          <span>// { name: 'Firefox', type: 'browser' }</span>
+console<span>.</span><span>log</span><span>(</span>products<span>.</span>number<span>)</span><span>;</span>      <span>// 3</span>
+console<span>.</span><span>log</span><span>(</span>products<span>[</span><span>'Firefox'</span><span>]</span><span>)</span><span>;</span>  <span>// { name: 'Firefox', type: 'browser' }</span>
+console<span>.</span><span>log</span><span>(</span>products<span>[</span><span>'Chrome'</span><span>]</span><span>)</span><span>;</span>   <span>// undefined</span>
+console<span>.</span><span>log</span><span>(</span>products<span>.</span>browser<span>)</span><span>;</span>     <span>// [{ name: 'Firefox', type: 'browser' }, { name: 'SeaMonkey', type: 'browser' }]</span>
+console<span>.</span><span>log</span><span>(</span>products<span>.</span>types<span>)</span><span>;</span>       <span>// ['browser', 'mailer']</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br></div></div>]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -10302,6 +10302,264 @@ PS:乘法符号的Unicode字符更对称，也更好看。HTML字符&amp;times�
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
+    <title type="html">CSS 预处理器</title>
+    <id>https://kigane.github.io/note/js/css-sass/</id>
+    <link href="https://kigane.github.io/note/js/css-sass/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="sass"> Sass</h2>
+<p>预处理器的工作原理是把我们写的源文件转译成输出文件，即常规CSS样式表。</p>
+<h3 id="安装"> 安装</h3>
+<ol>
+<li>新建项目目录并进入</li>
+<li>npm init -y 初始化一个新的npm项目，创建package.json文件。</li>
+<li>npm install --save-dev node-sass 安装node-sass包，并把它作为开发依赖写入package.json。在Windows系统中，需要先安装node-gyp包。(-g全局安装)</li>
+</ol>
+<div><p>选择语法</p>
+<p>Sass支持两种语法：Sass和SCSS。它们的语言特性一样，但Sass语法去掉了所有的大括号和分号，严格使用缩进来表示代码结构，写法类似python。SCSS语法使用大括号和分号，更像常规CSS。</p>
+<p>SCSS文件使用．scss扩展名，Sass文件使用．sass扩展名。</p>
+</div>
+<h3 id="运行"> 运行</h3>
+<ol>
+<li>在项目目录新建两个子文件夹，分别叫作sass和build。源文件放在sass文件夹，Sass会使用这些文件来生成CSS文件，并放到build文件夹。</li>
+<li>编辑package.json文件，在脚本中添加一条命令<code>&quot;sass&quot;: &quot;sass sass/index.scss build/styles.css&quot;</code>。这样就定义了一条sass命令，运行的时候会把sass/index.scss编译成build/styles.css这个新文件。</li>
+<li>写代码，npm run sass，得到styles.css</li>
+</ol>
+<h3 id="核心特性"> 核心特性</h3>
+<p>源scss</p>
+<div><pre><code><span><span>$brand-blue</span></span><span>:</span> #0086b3<span>;</span>
+
+<span>a:link </span><span>{</span>
+    <span>color</span><span>:</span> <span>$brand-blue</span><span>;</span>
+<span>}</span>
+
+<span>.page-heading </span><span>{</span>
+    <span>font-size</span><span>:</span> 1.6rem<span>;</span>
+    <span>color</span><span>:</span> <span>$brand-blue</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><p>处理后生成的css</p>
+<div><pre><code><span>a:link</span> <span>{</span>
+  <span>color</span><span>:</span> #0086b3<span>;</span>
+<span>}</span>
+
+<span>.page-heading</span> <span>{</span>
+  <span>font-size</span><span>:</span> 1.6rem<span>;</span>
+  <span>color</span><span>:</span> #0086b3<span>;</span>
+<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><div><p>源映射</p>
+<p>源映射:一个特殊文件(.map)，计算机可以用它来追踪生成后的代码（在我们这里是CSS）中每一行对应的源代码中的那一行（Sass）。这个映射文件可以用在一些调试器中，包括浏览器的开发者工具。</p>
+</div>
+<h4 id="行内计算"> 行内计算</h4>
+<p>Sass支持使用+、-、*、/和%进行行内计算。这样我们就可以从一个初始值获得多个值。这个特性在两个值相关但不同的时候特别有用。</p>
+<h4 id="嵌套选择器"> 嵌套选择器</h4>
+<p>Sass允许在代码块内嵌套选择器。你可以使用嵌套把有关联的代码分到一组。Sass会把外层声明块的选择器与嵌套选择器合并。默认情况下，外层的选择器会自动添加到编译代码的每个选择器前面，拼接的位置还会插入一个空格。要修改默认操作，可以使用&amp;符号代表外层选择器想要插入的位置。</p>
+<div><pre><code><span>.site-nav </span><span>{</span>
+    <span>display</span><span>:</span> flex<span>;</span>
+
+    <span>> li </span><span>{</span>
+        <span>margin-top</span><span>:</span> 0<span>;</span>
+
+        <span><span>&amp;</span>.is-active </span><span>{</span>
+            <span>display</span><span>:</span> block<span>;</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+
+<span>/* 也可以在声明块内嵌套媒体查询 */</span>
+<span>html </span><span>{</span>
+    <span>font-size</span><span>:</span> 1rem<span>;</span>
+
+    <span><span>@media</span> <span>(</span><span>min-width</span><span>:</span> 45em<span>)</span></span> <span>{</span>
+        <span>font-size</span><span>:</span> 1.25rem<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><p>编译后</p>
+<div><pre><code><span>.site-nav</span> <span>{</span>
+  <span>display</span><span>:</span> flex<span>;</span>
+<span>}</span>
+<span>.site-nav > li</span> <span>{</span>
+  <span>margin-top</span><span>:</span> 0<span>;</span>
+<span>}</span>
+<span>.site-nav > li.is-active</span> <span>{</span>
+  <span>display</span><span>:</span> block<span>;</span>
+<span>}</span>
+
+<span>html</span> <span>{</span>
+  <span>font-size</span><span>:</span> 1rem<span>;</span>
+<span>}</span>
+<span><span>@media</span> <span>(</span><span>min-width</span><span>:</span> 45em<span>)</span></span> <span>{</span>
+  <span>html</span> <span>{</span>
+    <span>font-size</span><span>:</span> 1.25rem<span>;</span>
+  <span>}</span>
+<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h4 id="局部文件-import"> 局部文件--@import</h4>
+<p>局部文件可以允许你把样式分割成多个独立的文件，Sass会把这些文件拼接在一起生成一个文件。使用局部文件可以按照自己的想法随意组织文件，但最终只提供给浏览器一个文件，这样可以减少网络请求的数量。</p>
+<p>将样式文件拆分为一系列局部文件，在index.scss中使用<code>@import &quot;path&quot;</code>引入，运行Sass的时候，局部文件会被编译，然后插入到@import规则指定的地方。相当于C的#include。</p>
+<h4 id="混入-mixin"> 混入(mixin)</h4>
+<p>混入是一小段CSS代码块，可以在样式表任意地方复用。使用@mixin规则来定义，使用@include规则来调用。例如</p>
+<div><pre><code><span>@mixin</span> <span>clrfix </span><span>{</span>
+    <span><span>&amp;</span>::before </span><span>{</span>
+        <span>display</span><span>:</span> table<span>;</span>
+        <span>content</span><span>:</span> <span>" "</span><span>;</span>
+    <span>}</span>
+
+    <span><span>&amp;</span>::after </span><span>{</span>
+        <span>clear</span><span>:</span> both<span>;</span>
+    <span>}</span>
+<span>}</span>
+
+<span>.media </span><span>{</span>
+    <span>@include</span> clrfix<span>;</span>
+    <span>background-color</span><span>:</span> #eee<span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><p>编译后</p>
+<div><pre><code><span>.media</span> <span>{</span>
+  <span>background-color</span><span>:</span> #eee<span>;</span>
+<span>}</span>
+<span>.media::before</span> <span>{</span>
+  <span>display</span><span>:</span> table<span>;</span>
+  <span>content</span><span>:</span> <span>" "</span><span>;</span>
+<span>}</span>
+<span>.media::after</span> <span>{</span>
+  <span>clear</span><span>:</span> both<span>;</span>
+<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><hr>
+<p>还可以定义带参数的混入，就像平时编程中使用的函数一样。</p>
+<div><pre><code><span>@mixin</span> <span>alert-color</span><span>(</span><span>$color</span><span>,</span> <span>$bg-color</span><span>)</span> <span>{</span>
+    <span>color</span><span>:</span> <span>$color</span><span>;</span>
+    <span>background-color</span><span>:</span> <span>$bg-color</span><span>;</span>
+<span>}</span>
+
+<span>.media-info </span><span>{</span>
+    <span>@include</span> <span>alert-color</span><span>(</span>blue<span>,</span> lightblue<span>)</span><span>;</span>
+<span>}</span>
+<span>.media-info </span><span>{</span>
+    <span>@include</span> <span>alert-color</span><span>(</span>red<span>,</span> pink<span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>编译后</p>
+<div><pre><code><span>.media-info</span> <span>{</span>
+  <span>color</span><span>:</span> blue<span>;</span>
+  <span>background-color</span><span>:</span> lightblue<span>;</span>
+<span>}</span>
+
+<span>.media-info</span> <span>{</span>
+  <span>color</span><span>:</span> red<span>;</span>
+  <span>background-color</span><span>:</span> pink<span>;</span>
+<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h4 id="扩展-extend"> 扩展(extend)</h4>
+<p>sass还支持@extend规则。和mixin类似，但编译方式有所不同。对于扩展，sass不会多次复制相同的声明，而是把选择器组合在一起，这样它们就会包含同样的规则。</p>
+<div><pre><code><span>.message </span><span>{</span>
+    <span>padding</span><span>:</span> .3em .5em<span>;</span>
+    <span>border-radius</span><span>:</span> .5em<span>;</span>
+<span>}</span>
+
+<span>.message-info </span><span>{</span>
+    <span>@extend</span> .message<span>;</span>
+    <span>color</span><span>:</span> blue<span>;</span>
+    <span>background-color</span><span>:</span> lightblue<span>;</span>
+<span>}</span>
+
+<span>.message-danger </span><span>{</span>
+    <span>@extend</span> .message<span>;</span>
+    <span>color</span><span>:</span> red<span>;</span>
+    <span>background-color</span><span>:</span> pink<span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><p>编译后</p>
+<div><pre><code><span>.message, .message-danger, .message-info</span> <span>{</span>
+  <span>padding</span><span>:</span> 0.3em 0.5em<span>;</span>
+  <span>border-radius</span><span>:</span> 0.5em<span>;</span>
+<span>}</span>
+
+<span>.message-info</span> <span>{</span>
+  <span>color</span><span>:</span> blue<span>;</span>
+  <span>background-color</span><span>:</span> lightblue<span>;</span>
+<span>}</span>
+
+<span>.message-danger</span> <span>{</span>
+  <span>color</span><span>:</span> red<span>;</span>
+  <span>background-color</span><span>:</span> pink<span>;</span>
+<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><p>Sass复制了．message-info和．message-danger选择器，并上移到第一个规则集。这样做的好处是标记只需要引用一个类，无须两个都引入，从<code>&lt;divclass=&quot;message message-info&quot;&gt;</code>变成了<code>&lt;div class=&quot;message-info&quot;&gt;</code>。</p>
+<div><p>提示</p>
+<p>@extend的输出长度通常会比mixin短一些。这是显而易见的，也很容易想到@extend更好一些，因为它最终输出的样式表更小（因此网络传输速度更快）。但也要知道mixin产生的大量重复代码，使用gzip可以压缩得比较小。只要你的服务器使用gzip压缩处理过所有的网络传输（当然，也应该这么做），增加的这些重复代码通常会比预期小得多。</p>
+</div>
+<h4 id="颜色处理"> 颜色处理</h4>
+<p>Sass还有个不错的特性，它有一堆处理颜色的函数。<a href="http://jackiebalzer.com/color" target="_blank" rel="noopener noreferrer">参考：AVisual Guide to Sass &amp; Compass Color Functions</a></p>
+<h4 id="循环"> 循环</h4>
+<p>使用<code>@for $var from start through/to end {}</code></p>
+<ul>
+<li>through 包括 end</li>
+<li>to 不包括 end</li>
+</ul>
+<div><pre><code><span><span>$base-color</span></span><span>:</span> #036<span>;</span>
+
+<span>@for</span> <span>$i</span> <span>from</span> 1 <span>through</span> <span>3 </span><span>{</span>
+  <span>ul</span><span>:</span><span>nth-child</span><span>(</span>3n <span>+</span> <span>#{$i}</span><span>)</span> <span>{</span>
+    <span>background-color</span><span>:</span> <span>lighten</span><span>(</span><span>$base-color</span><span>,</span> <span>$i</span> <span>*</span> 5%<span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+<span>@for</span> <span>$i</span> <span>from</span> <span>1 to 3 </span><span>{</span>
+  <span>ol</span><span>:</span><span>nth-child</span><span>(</span>3n <span>+</span> <span>#{$i}</span><span>)</span> <span>{</span>
+    <span>background-color</span><span>:</span> <span>lighten</span><span>(</span><span>$base-color</span><span>,</span> <span>$i</span> <span>*</span> 5%<span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>编译后</p>
+<div><pre><code><span>ul:nth-child(3n+1)</span> <span>{</span>
+  <span>background-color</span><span>:</span> #004080<span>;</span>
+<span>}</span>
+
+<span>ul:nth-child(3n+2)</span> <span>{</span>
+  <span>background-color</span><span>:</span> #004d99<span>;</span>
+<span>}</span>
+
+<span>ul:nth-child(3n+3)</span> <span>{</span>
+  <span>background-color</span><span>:</span> #0059b3<span>;</span>
+<span>}</span>
+
+<span>ol:nth-child(3n+1)</span> <span>{</span>
+  <span>background-color</span><span>:</span> #004080<span>;</span>
+<span>}</span>
+
+<span>ol:nth-child(3n+2)</span> <span>{</span>
+  <span>background-color</span><span>:</span> #004d99<span>;</span>
+<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></div></div><div><p>提示</p>
+<p>sass中的<code>#{expr}</code>称为Interpolation，用于将sass中的expr值计算出来，嵌入CSS块中。通常用于属性，选择器，@规则，还有例子中的nth-child参数部分等等。而在属性值用<code>#{expr}</code>，等于没用。</p>
+</div>
+<div><pre><code><span>@mixin</span> <span>corner-icon</span><span>(</span><span>$name</span><span>,</span> <span>$top-or-bottom</span><span>,</span> <span>$left-or-right</span><span>)</span> <span>{</span>
+  <span>.icon-<span>#{$name}</span> </span><span>{</span>
+    <span>background-image</span><span>:</span> <span>url</span><span>(</span><span>"/icons/#{$name}.svg"</span><span>)</span><span>;</span>
+    <span>position</span><span>:</span> absolute<span>;</span>
+    <span><span>#{$top-or-bottom}</span></span><span>:</span> 0<span>;</span>
+    <span><span>#{$left-or-right}</span></span><span>:</span> 0<span>;</span>
+  <span>}</span>
+<span>}</span>
+
+<span>@include</span> <span>corner-icon</span><span>(</span><span>"mail"</span><span>,</span> top<span>,</span> left<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div>]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
     <title type="html">CSS 模块化</title>
     <id>https://kigane.github.io/note/js/css-modular/</id>
     <link href="https://kigane.github.io/note/js/css-modular/"/>
@@ -10829,264 +11087,6 @@ KSS会把js数组里列出的所有脚本文件都添加到页面上。我们可
 <span>}</span><span>(</span><span>)</span><span>)</span><span>;</span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div>]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">CSS 预处理器</title>
-    <id>https://kigane.github.io/note/js/css-sass/</id>
-    <link href="https://kigane.github.io/note/js/css-sass/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="sass"> Sass</h2>
-<p>预处理器的工作原理是把我们写的源文件转译成输出文件，即常规CSS样式表。</p>
-<h3 id="安装"> 安装</h3>
-<ol>
-<li>新建项目目录并进入</li>
-<li>npm init -y 初始化一个新的npm项目，创建package.json文件。</li>
-<li>npm install --save-dev node-sass 安装node-sass包，并把它作为开发依赖写入package.json。在Windows系统中，需要先安装node-gyp包。(-g全局安装)</li>
-</ol>
-<div><p>选择语法</p>
-<p>Sass支持两种语法：Sass和SCSS。它们的语言特性一样，但Sass语法去掉了所有的大括号和分号，严格使用缩进来表示代码结构，写法类似python。SCSS语法使用大括号和分号，更像常规CSS。</p>
-<p>SCSS文件使用．scss扩展名，Sass文件使用．sass扩展名。</p>
-</div>
-<h3 id="运行"> 运行</h3>
-<ol>
-<li>在项目目录新建两个子文件夹，分别叫作sass和build。源文件放在sass文件夹，Sass会使用这些文件来生成CSS文件，并放到build文件夹。</li>
-<li>编辑package.json文件，在脚本中添加一条命令<code>&quot;sass&quot;: &quot;sass sass/index.scss build/styles.css&quot;</code>。这样就定义了一条sass命令，运行的时候会把sass/index.scss编译成build/styles.css这个新文件。</li>
-<li>写代码，npm run sass，得到styles.css</li>
-</ol>
-<h3 id="核心特性"> 核心特性</h3>
-<p>源scss</p>
-<div><pre><code><span><span>$brand-blue</span></span><span>:</span> #0086b3<span>;</span>
-
-<span>a:link </span><span>{</span>
-    <span>color</span><span>:</span> <span>$brand-blue</span><span>;</span>
-<span>}</span>
-
-<span>.page-heading </span><span>{</span>
-    <span>font-size</span><span>:</span> 1.6rem<span>;</span>
-    <span>color</span><span>:</span> <span>$brand-blue</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><p>处理后生成的css</p>
-<div><pre><code><span>a:link</span> <span>{</span>
-  <span>color</span><span>:</span> #0086b3<span>;</span>
-<span>}</span>
-
-<span>.page-heading</span> <span>{</span>
-  <span>font-size</span><span>:</span> 1.6rem<span>;</span>
-  <span>color</span><span>:</span> #0086b3<span>;</span>
-<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><div><p>源映射</p>
-<p>源映射:一个特殊文件(.map)，计算机可以用它来追踪生成后的代码（在我们这里是CSS）中每一行对应的源代码中的那一行（Sass）。这个映射文件可以用在一些调试器中，包括浏览器的开发者工具。</p>
-</div>
-<h4 id="行内计算"> 行内计算</h4>
-<p>Sass支持使用+、-、*、/和%进行行内计算。这样我们就可以从一个初始值获得多个值。这个特性在两个值相关但不同的时候特别有用。</p>
-<h4 id="嵌套选择器"> 嵌套选择器</h4>
-<p>Sass允许在代码块内嵌套选择器。你可以使用嵌套把有关联的代码分到一组。Sass会把外层声明块的选择器与嵌套选择器合并。默认情况下，外层的选择器会自动添加到编译代码的每个选择器前面，拼接的位置还会插入一个空格。要修改默认操作，可以使用&amp;符号代表外层选择器想要插入的位置。</p>
-<div><pre><code><span>.site-nav </span><span>{</span>
-    <span>display</span><span>:</span> flex<span>;</span>
-
-    <span>> li </span><span>{</span>
-        <span>margin-top</span><span>:</span> 0<span>;</span>
-
-        <span><span>&amp;</span>.is-active </span><span>{</span>
-            <span>display</span><span>:</span> block<span>;</span>
-        <span>}</span>
-    <span>}</span>
-<span>}</span>
-
-<span>/* 也可以在声明块内嵌套媒体查询 */</span>
-<span>html </span><span>{</span>
-    <span>font-size</span><span>:</span> 1rem<span>;</span>
-
-    <span><span>@media</span> <span>(</span><span>min-width</span><span>:</span> 45em<span>)</span></span> <span>{</span>
-        <span>font-size</span><span>:</span> 1.25rem<span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><p>编译后</p>
-<div><pre><code><span>.site-nav</span> <span>{</span>
-  <span>display</span><span>:</span> flex<span>;</span>
-<span>}</span>
-<span>.site-nav > li</span> <span>{</span>
-  <span>margin-top</span><span>:</span> 0<span>;</span>
-<span>}</span>
-<span>.site-nav > li.is-active</span> <span>{</span>
-  <span>display</span><span>:</span> block<span>;</span>
-<span>}</span>
-
-<span>html</span> <span>{</span>
-  <span>font-size</span><span>:</span> 1rem<span>;</span>
-<span>}</span>
-<span><span>@media</span> <span>(</span><span>min-width</span><span>:</span> 45em<span>)</span></span> <span>{</span>
-  <span>html</span> <span>{</span>
-    <span>font-size</span><span>:</span> 1.25rem<span>;</span>
-  <span>}</span>
-<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h4 id="局部文件-import"> 局部文件--@import</h4>
-<p>局部文件可以允许你把样式分割成多个独立的文件，Sass会把这些文件拼接在一起生成一个文件。使用局部文件可以按照自己的想法随意组织文件，但最终只提供给浏览器一个文件，这样可以减少网络请求的数量。</p>
-<p>将样式文件拆分为一系列局部文件，在index.scss中使用<code>@import &quot;path&quot;</code>引入，运行Sass的时候，局部文件会被编译，然后插入到@import规则指定的地方。相当于C的#include。</p>
-<h4 id="混入-mixin"> 混入(mixin)</h4>
-<p>混入是一小段CSS代码块，可以在样式表任意地方复用。使用@mixin规则来定义，使用@include规则来调用。例如</p>
-<div><pre><code><span>@mixin</span> <span>clrfix </span><span>{</span>
-    <span><span>&amp;</span>::before </span><span>{</span>
-        <span>display</span><span>:</span> table<span>;</span>
-        <span>content</span><span>:</span> <span>" "</span><span>;</span>
-    <span>}</span>
-
-    <span><span>&amp;</span>::after </span><span>{</span>
-        <span>clear</span><span>:</span> both<span>;</span>
-    <span>}</span>
-<span>}</span>
-
-<span>.media </span><span>{</span>
-    <span>@include</span> clrfix<span>;</span>
-    <span>background-color</span><span>:</span> #eee<span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><p>编译后</p>
-<div><pre><code><span>.media</span> <span>{</span>
-  <span>background-color</span><span>:</span> #eee<span>;</span>
-<span>}</span>
-<span>.media::before</span> <span>{</span>
-  <span>display</span><span>:</span> table<span>;</span>
-  <span>content</span><span>:</span> <span>" "</span><span>;</span>
-<span>}</span>
-<span>.media::after</span> <span>{</span>
-  <span>clear</span><span>:</span> both<span>;</span>
-<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><hr>
-<p>还可以定义带参数的混入，就像平时编程中使用的函数一样。</p>
-<div><pre><code><span>@mixin</span> <span>alert-color</span><span>(</span><span>$color</span><span>,</span> <span>$bg-color</span><span>)</span> <span>{</span>
-    <span>color</span><span>:</span> <span>$color</span><span>;</span>
-    <span>background-color</span><span>:</span> <span>$bg-color</span><span>;</span>
-<span>}</span>
-
-<span>.media-info </span><span>{</span>
-    <span>@include</span> <span>alert-color</span><span>(</span>blue<span>,</span> lightblue<span>)</span><span>;</span>
-<span>}</span>
-<span>.media-info </span><span>{</span>
-    <span>@include</span> <span>alert-color</span><span>(</span>red<span>,</span> pink<span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>编译后</p>
-<div><pre><code><span>.media-info</span> <span>{</span>
-  <span>color</span><span>:</span> blue<span>;</span>
-  <span>background-color</span><span>:</span> lightblue<span>;</span>
-<span>}</span>
-
-<span>.media-info</span> <span>{</span>
-  <span>color</span><span>:</span> red<span>;</span>
-  <span>background-color</span><span>:</span> pink<span>;</span>
-<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h4 id="扩展-extend"> 扩展(extend)</h4>
-<p>sass还支持@extend规则。和mixin类似，但编译方式有所不同。对于扩展，sass不会多次复制相同的声明，而是把选择器组合在一起，这样它们就会包含同样的规则。</p>
-<div><pre><code><span>.message </span><span>{</span>
-    <span>padding</span><span>:</span> .3em .5em<span>;</span>
-    <span>border-radius</span><span>:</span> .5em<span>;</span>
-<span>}</span>
-
-<span>.message-info </span><span>{</span>
-    <span>@extend</span> .message<span>;</span>
-    <span>color</span><span>:</span> blue<span>;</span>
-    <span>background-color</span><span>:</span> lightblue<span>;</span>
-<span>}</span>
-
-<span>.message-danger </span><span>{</span>
-    <span>@extend</span> .message<span>;</span>
-    <span>color</span><span>:</span> red<span>;</span>
-    <span>background-color</span><span>:</span> pink<span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><p>编译后</p>
-<div><pre><code><span>.message, .message-danger, .message-info</span> <span>{</span>
-  <span>padding</span><span>:</span> 0.3em 0.5em<span>;</span>
-  <span>border-radius</span><span>:</span> 0.5em<span>;</span>
-<span>}</span>
-
-<span>.message-info</span> <span>{</span>
-  <span>color</span><span>:</span> blue<span>;</span>
-  <span>background-color</span><span>:</span> lightblue<span>;</span>
-<span>}</span>
-
-<span>.message-danger</span> <span>{</span>
-  <span>color</span><span>:</span> red<span>;</span>
-  <span>background-color</span><span>:</span> pink<span>;</span>
-<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><p>Sass复制了．message-info和．message-danger选择器，并上移到第一个规则集。这样做的好处是标记只需要引用一个类，无须两个都引入，从<code>&lt;divclass=&quot;message message-info&quot;&gt;</code>变成了<code>&lt;div class=&quot;message-info&quot;&gt;</code>。</p>
-<div><p>提示</p>
-<p>@extend的输出长度通常会比mixin短一些。这是显而易见的，也很容易想到@extend更好一些，因为它最终输出的样式表更小（因此网络传输速度更快）。但也要知道mixin产生的大量重复代码，使用gzip可以压缩得比较小。只要你的服务器使用gzip压缩处理过所有的网络传输（当然，也应该这么做），增加的这些重复代码通常会比预期小得多。</p>
-</div>
-<h4 id="颜色处理"> 颜色处理</h4>
-<p>Sass还有个不错的特性，它有一堆处理颜色的函数。<a href="http://jackiebalzer.com/color" target="_blank" rel="noopener noreferrer">参考：AVisual Guide to Sass &amp; Compass Color Functions</a></p>
-<h4 id="循环"> 循环</h4>
-<p>使用<code>@for $var from start through/to end {}</code></p>
-<ul>
-<li>through 包括 end</li>
-<li>to 不包括 end</li>
-</ul>
-<div><pre><code><span><span>$base-color</span></span><span>:</span> #036<span>;</span>
-
-<span>@for</span> <span>$i</span> <span>from</span> 1 <span>through</span> <span>3 </span><span>{</span>
-  <span>ul</span><span>:</span><span>nth-child</span><span>(</span>3n <span>+</span> <span>#{$i}</span><span>)</span> <span>{</span>
-    <span>background-color</span><span>:</span> <span>lighten</span><span>(</span><span>$base-color</span><span>,</span> <span>$i</span> <span>*</span> 5%<span>)</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-
-<span>@for</span> <span>$i</span> <span>from</span> <span>1 to 3 </span><span>{</span>
-  <span>ol</span><span>:</span><span>nth-child</span><span>(</span>3n <span>+</span> <span>#{$i}</span><span>)</span> <span>{</span>
-    <span>background-color</span><span>:</span> <span>lighten</span><span>(</span><span>$base-color</span><span>,</span> <span>$i</span> <span>*</span> 5%<span>)</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>编译后</p>
-<div><pre><code><span>ul:nth-child(3n+1)</span> <span>{</span>
-  <span>background-color</span><span>:</span> #004080<span>;</span>
-<span>}</span>
-
-<span>ul:nth-child(3n+2)</span> <span>{</span>
-  <span>background-color</span><span>:</span> #004d99<span>;</span>
-<span>}</span>
-
-<span>ul:nth-child(3n+3)</span> <span>{</span>
-  <span>background-color</span><span>:</span> #0059b3<span>;</span>
-<span>}</span>
-
-<span>ol:nth-child(3n+1)</span> <span>{</span>
-  <span>background-color</span><span>:</span> #004080<span>;</span>
-<span>}</span>
-
-<span>ol:nth-child(3n+2)</span> <span>{</span>
-  <span>background-color</span><span>:</span> #004d99<span>;</span>
-<span>}</span><span>/*# sourceMappingURL=index.css.map */</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></div></div><div><p>提示</p>
-<p>sass中的<code>#{expr}</code>称为Interpolation，用于将sass中的expr值计算出来，嵌入CSS块中。通常用于属性，选择器，@规则，还有例子中的nth-child参数部分等等。而在属性值用<code>#{expr}</code>，等于没用。</p>
-</div>
-<div><pre><code><span>@mixin</span> <span>corner-icon</span><span>(</span><span>$name</span><span>,</span> <span>$top-or-bottom</span><span>,</span> <span>$left-or-right</span><span>)</span> <span>{</span>
-  <span>.icon-<span>#{$name}</span> </span><span>{</span>
-    <span>background-image</span><span>:</span> <span>url</span><span>(</span><span>"/icons/#{$name}.svg"</span><span>)</span><span>;</span>
-    <span>position</span><span>:</span> absolute<span>;</span>
-    <span><span>#{$top-or-bottom}</span></span><span>:</span> 0<span>;</span>
-    <span><span>#{$left-or-right}</span></span><span>:</span> 0<span>;</span>
-  <span>}</span>
-<span>}</span>
-
-<span>@include</span> <span>corner-icon</span><span>(</span><span>"mail"</span><span>,</span> top<span>,</span> left<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div>]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -12245,357 +12245,10 @@ console<span>.</span><span>log</span><span>(</span><span>Derived</span><span>.</
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">Vue.js</title>
-    <id>https://kigane.github.io/note/js/vue/</id>
-    <link href="https://kigane.github.io/note/js/vue/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="基础"> 基础</h2>
-<h2 id="深入"> 深入</h2>
-<h3 id="data"> data</h3>
-<p>vue组件中data中定义的数组，对象，实际类型是Proxy，都使用了代理。</p>
-<h3 id="全局变量"> 全局变量</h3>
-<div><pre><code><span>const</span> app <span>=</span> <span>createApp</span><span>(</span>App<span>)</span>
-app<span>.</span>config<span>.</span>globalProperties<span>.</span>$foo <span>=</span> <span>'bar'</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><p>或使用provide/inject<br>
-父组件中用provide选项提供数据，子组件中用inject选项使用该数据。</p>
-<div><pre><code><span>/*
-Root
-└─ TodoList
-   ├─ TodoItem
-   └─ TodoListFooter
-      ├─ ClearTodosButton
-      └─ TodoListStatistics
-*/</span>
-
-<span>const</span> app <span>=</span> Vue<span>.</span><span>createApp</span><span>(</span><span>{</span><span>}</span><span>)</span>
-
-app<span>.</span><span>component</span><span>(</span><span>'todo-list'</span><span>,</span> <span>{</span>
-  <span>data</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> <span>{</span>
-      todos<span>:</span> <span>[</span><span>'Feed a cat'</span><span>,</span> <span>'Buy tickets'</span><span>]</span>
-    <span>}</span>
-  <span>}</span><span>,</span>
-  <span>provide</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> <span>{</span>
-        user<span>:</span> <span>'John Doe'</span>
-    <span>}</span>
-  <span>}</span><span>,</span>
-  template<span>:</span> <span><span>`</span><span>
-    &lt;div>
-      {{ todos.length }}
-      &lt;!-- rest of the template -->
-    &lt;/div>
-  </span><span>`</span></span>
-<span>}</span><span>)</span>
-
-app<span>.</span><span>component</span><span>(</span><span>'todo-list-statistics'</span><span>,</span> <span>{</span>
-  inject<span>:</span> <span>[</span><span>'user'</span><span>]</span><span>,</span>
-  <span>created</span><span>(</span><span>)</span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span><span><span>`</span><span>Injected property: </span><span><span>${</span><span>this</span><span>.</span>user<span>}</span></span><span>`</span></span><span>)</span> <span>// > Injected property: John Doe</span>
-  <span>}</span>
-<span>}</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br></div></div><h3 id="router-link"> router-link</h3>
-<ul>
-<li>当router-link的目标路径可以和当前路径匹配(例如，当前/foo/bar，可以匹配/,/foo,/foo/bar三个目标路径)时，该router-link标签会自动添加类.router-link-active</li>
-<li>当router-link的目标路径可以和当前路径完全匹配(一模一样)时，该router-link标签会自动添加类.router-link-exact-active</li>
-<li>可以在router-link标签上加exact属性，这样只有在完全匹配时才会添加类.router-link-active。通常会用于to='/'的router-link</li>
-<li><code>&lt;router-link to=&quot;/foo/bar&quot;&gt;&lt;/router-link&gt;</code> 普通的router-link写法</li>
-<li><code>&lt;router-link :to=&quot;{name = 'Foo', params = {id : 'bar'}}&quot;&gt;&lt;/router-link&gt;</code> 转到已命名的路由的router-link写法</li>
-<li>另一种动态链接写法</li>
-</ul>
-<div><pre><code><span><span><span>&lt;</span>router-link</span> <span>:to</span><span><span>=</span><span>"</span>`/foo/${id}`<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>router-link</span><span>></span></span> 
-</code></pre>
-<div><span>1</span><br></div></div><h3 id="nested-router-view"> nested router-view</h3>
-<p>Home组件中有一个router-view，这个router-view对应的组件中还有一个router-view。则内层router-view可以声明如下。</p>
-<div><pre><code><span>{</span>
-    path<span>:</span> <span>'/home'</span><span>,</span>
-    name<span>:</span> <span>'Home'</span><span>,</span>
-    <span>component</span><span>:</span> <span>(</span><span>)</span> <span>=></span> <span>import</span><span>(</span><span>'@/views/Home.vue'</span><span>)</span><span>,</span>
-    children<span>:</span> <span>[</span>
-      <span>{</span>
-        path<span>:</span> <span>':id'</span><span>,</span> <span>// 匹配/home/:id</span>
-        name<span>:</span> <span>'Main'</span><span>,</span>
-        <span>component</span><span>:</span> <span>(</span><span>)</span> <span>=></span> <span>import</span><span>(</span><span>'@/views/Main.vue'</span><span>)</span><span>,</span>
-        props<span>:</span> <span>true</span> <span>// 让Home组件中的router-link中的路径参数可以传入Main组件，用Main的props接收。</span>
-      <span>}</span><span>,</span>
-    <span>]</span><span>,</span>
-  <span>}</span><span>,</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="named-router-view"> named router-view</h3>
-<p>普通的<code>&lt;router-view /&gt;</code>默认使用routes中的component指定的组件。如果一个页面要有多个router-view，每个router-view对应不同的组件，则需要为router-view指定name。</p>
-<div><pre><code><span>&lt;</span>router<span>-</span>view <span>/</span><span>></span>
-<span>&lt;</span>router<span>-</span>view name<span>=</span><span>'a'</span> <span>/</span><span>></span>
-<span>&lt;</span>router<span>-</span>view name<span>=</span><span>'b'</span> <span>/</span><span>></span>
-
-<span>// 在routes中，要为每个router-view指定好组件。</span>
-<span>{</span>
-  path<span>:</span> <span>'xxx'</span><span>,</span>
-  name<span>:</span> <span>'yyy'</span><span>,</span>
-  component<span>:</span> <span>{</span>
-    <span>default</span><span>:</span> ComponentDefault<span>,</span>
-    a<span>:</span> ComponentA<span>,</span>
-    b<span>:</span> ComponentB<span>,</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h3 id="route路径参数-动态链接"> route路径参数(动态链接)</h3>
-<div><pre><code><span>const</span> router <span>=</span> <span>new</span> <span>VueRouter</span><span>(</span><span>{</span>
-  routes<span>:</span> <span>[</span>
-    <span>// dynamic segments start with a colon</span>
-    <span>{</span> path<span>:</span> <span>'/user/:id'</span><span>,</span> component<span>:</span> User<span>,</span> props<span>:</span> <span>true</span> <span>}</span>
-  <span>]</span>
-<span>}</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>path中的:id称为dynamic segment。如果path匹配到了，则可以通过$route.params.id访问匹配到的id值。<br>
-如果路由对象的props设为true，则可由component的props属性接收路径参数。</p>
-<h3 id="如何获取事件的event对象"> 如何获取事件的event对象</h3>
-<p><code>@event=&quot;onEvent($event)</code>，<code>$event</code>为原生DOM的事件对象。</p>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
     <title type="html">OpenGL基础</title>
     <id>https://kigane.github.io/note/opengl/</id>
     <link href="https://kigane.github.io/note/opengl/"/>
     <updated>2021-10-03T02:18:05.000Z</updated>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">帧缓冲(FrameBuffer)</title>
-    <id>https://kigane.github.io/note/opengl/gl-framebuffer/</id>
-    <link href="https://kigane.github.io/note/opengl/gl-framebuffer/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<p>默认的帧缓冲是在你创建窗口的时候生成和配置的，包括颜色缓冲，深度缓冲，模板缓冲等。OpenGL支持自定义帧缓冲。将场景渲染到不同的帧缓冲能够让我们在场景中加入类似镜子的东西，或者做出很酷的后期处理效果。</p>
-<h2 id="创建帧缓冲"> 创建帧缓冲</h2>
-<div><pre><code><span>unsigned</span> <span>int</span> fbo<span>;</span>
-<span>glGenFramebuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>fbo<span>)</span><span>;</span>
-<span>glBindFramebuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> fbo<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>在绑定到GL_FRAMEBUFFER目标之后，所有的读取和写入帧缓冲的操作将会影响当前绑定的帧缓冲。现在的帧缓冲还不能使用，因为它还不完整，一个完整的帧缓冲需要满足以下的条件：</p>
-<ul>
-<li>附加至少一个缓冲（颜色、深度或模板缓冲）。</li>
-<li>至少有一个颜色附件(Attachment)。</li>
-<li>所有的附件都必须是完整的（保留了内存）。</li>
-<li>每个缓冲都应该有相同的样本数。</li>
-</ul>
-<p>我们需要为帧缓冲创建一些附件，并将附件附加到帧缓冲上。在完成所有的条件之后，我们可以以GL_FRAMEBUFFER为参数调用glCheckFramebufferStatus，检查帧缓冲是否完整。</p>
-<div><pre><code><span>if</span><span>(</span><span>glCheckFramebufferStatus</span><span>(</span>GL_FRAMEBUFFER<span>)</span> <span>==</span> GL_FRAMEBUFFER_COMPLETE<span>)</span>
-  <span>// 确实完整了</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><p>之后所有的渲染操作将会渲染到当前绑定帧缓冲的附件中。由于当前帧缓冲不是默认帧缓冲，渲染指令将不会对窗口的视觉输出有任何影响。因此，渲染到一个不同的帧缓冲被叫做离屏渲染(Off-screen Rendering)。要保证所有的渲染操作在主窗口中有视觉效果，我们需要再次激活默认帧缓冲，即将它绑定到0</p>
-<div><pre><code><span>glBindFramebuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> <span>0</span><span>)</span><span>;</span>
-<span>glDeleteFramebuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>fbo<span>)</span><span>;</span> <span>// 不要的时候记得删了</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="纹理附件"> 纹理附件</h2>
-<p>当把一个纹理附加到帧缓冲的时候，所有的渲染指令将会写入到这个纹理中。使用纹理的优点是，所有渲染操作的结果将会被储存在一个纹理图像中，之后可以在着色器中很方便地使用它。</p>
-<div><pre><code><span>unsigned</span> <span>int</span> texture<span>;</span>
-<span>glGenTextures</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>texture<span>)</span><span>;</span>
-<span>glBindTexture</span><span>(</span>GL_TEXTURE_2D<span>,</span> texture<span>)</span><span>;</span>
-
-<span>glTexImage2D</span><span>(</span>GL_TEXTURE_2D<span>,</span> <span>0</span><span>,</span> GL_RGB<span>,</span> <span>800</span><span>,</span> <span>600</span><span>,</span> <span>0</span><span>,</span> GL_RGB<span>,</span> GL_UNSIGNED_BYTE<span>,</span> <span>NULL</span><span>)</span><span>;</span>
-
-<span>glTexParameteri</span><span>(</span>GL_TEXTURE_2D<span>,</span> GL_TEXTURE_MIN_FILTER<span>,</span> GL_LINEAR<span>)</span><span>;</span>
-<span>glTexParameteri</span><span>(</span>GL_TEXTURE_2D<span>,</span> GL_TEXTURE_MAG_FILTER<span>,</span> GL_LINEAR<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>和普通的纹理区别在于：glTexImage2D的宽高设置为视口的大小，且最后一个参数data设置为NULL。表示仅仅分配了内存而没有填充它。填充会在渲染场景到帧缓冲之后进行。</p>
-<div><p>提示</p>
-<p>如果你想将你的屏幕渲染到一个更小或更大的纹理上，需要在渲染场景到帧缓冲之前使用纹理的新维度作为参数再次调用glViewport，否则只有一小部分的纹理或屏幕会被渲染到这个纹理上。</p>
-</div>
-<div><pre><code><span>glFramebufferTexture2D</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_COLOR_ATTACHMENT0<span>,</span> GL_TEXTURE_2D<span>,</span> texture<span>,</span> <span>0</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br></div></div><p>glFramebufferTexture2D</p>
-<ul>
-<li>target：帧缓冲的目标</li>
-<li>attachment：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的0意味着我们可以附加多个颜色附件。</li>
-<li>textarget：你希望附加的纹理类型</li>
-<li>texture：要附加的纹理本身</li>
-<li>level：多级渐远纹理的级别。我们将它保留为0。</li>
-</ul>
-<p>对于深度缓冲：附件类型设置为GL_DEPTH_ATTACHMENT。纹理的内部格式变为GL_DEPTH_COMPONENT。</p>
-<p>对于模板缓冲：附件类型设置为GL_STENCIL_ATTACHMENT，并将纹理的内部格式设定为GL_STENCIL_INDEX。</p>
-<p>也可以将深度缓冲和模板缓冲附加为一个单独的纹理。纹理的每32位数值将包含24位的深度信息和8位的模板信息。附件类型使用GL_DEPTH_STENCIL_ATTACHMENT，纹理的内部格式使用GL_UNSIGNED_INT_24_8。例如</p>
-<div><pre><code><span>glTexImage2D</span><span>(</span>
-  GL_TEXTURE_2D<span>,</span> <span>0</span><span>,</span> GL_DEPTH24_STENCIL8<span>,</span> <span>800</span><span>,</span> <span>600</span><span>,</span> <span>0</span><span>,</span> 
-  GL_DEPTH_STENCIL<span>,</span> GL_UNSIGNED_INT_24_8<span>,</span> <span>NULL</span>
-<span>)</span><span>;</span>
-
-<span>glFramebufferTexture2D</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_DEPTH_STENCIL_ATTACHMENT<span>,</span> GL_TEXTURE_2D<span>,</span> texture<span>,</span> <span>0</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="渲染缓冲对象-renderbuffer-object-附件"> 渲染缓冲对象(Renderbuffer Object)附件</h2>
-<p>和纹理图像一样，渲染缓冲对象是一个真正的缓冲，即一系列的字节、整数、像素等。渲染缓冲对象直接将所有的渲染数据储存到它的缓冲中，不会做任何针对纹理格式的转换，所以更快(因为使用原生格式，所以交换缓冲这样的操作很快)。然而，渲染缓冲对象通常都是只写的，所以你不能读取它们（比如使用纹理访问）。当然还是能够使用glReadPixels来读取它，这会从当前绑定的帧缓冲中返回特定区域的像素，而非附件本身。</p>
-<p>由于渲染缓冲对象通常都是只写的，所以经常用于深度和模板附件，因为大部分时间我们都不需要从深度和模板缓冲中读取值，只关心深度和模板测试能否通过。当<strong>不需要从缓冲中采样的时候</strong>，通常都会选择渲染缓冲对象。</p>
-<div><pre><code><span>unsigned</span> <span>int</span> rbo<span>;</span>
-<span>glGenRenderbuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>rbo<span>)</span><span>;</span>
-<span>glBindRenderbuffer</span><span>(</span>GL_RENDERBUFFER<span>,</span> rbo<span>)</span><span>;</span>
-<span>// 创建一个深度和模板渲染缓冲对象</span>
-<span>glRenderbufferStorage</span><span>(</span>GL_RENDERBUFFER<span>,</span> GL_DEPTH24_STENCIL8<span>,</span> <span>800</span><span>,</span> <span>600</span><span>)</span><span>;</span>
-<span>// 附加</span>
-<span>glFramebufferRenderbuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_DEPTH_STENCIL_ATTACHMENT<span>,</span> GL_RENDERBUFFER<span>,</span> rbo<span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="渲染到纹理"> 渲染到纹理</h2>
-<p>要想绘制场景到一个纹理上，我们需要采取以下的步骤：</p>
-<ol>
-<li>将新的帧缓冲绑定为激活的帧缓冲，和往常一样渲染场景</li>
-<li>绑定默认的帧缓冲</li>
-<li>绘制一个横跨整个屏幕的四边形，将帧缓冲的颜色缓冲作为它的纹理。</li>
-</ol>
-<h2 id="后期处理"> 后期处理</h2>
-<p>既然整个场景都被渲染到了一个纹理上，我们可以简单地通过修改纹理数据创建出一些非常有意思的效果。</p>
-<h3 id="反相"> 反相</h3>
-<p>我们现在能够访问渲染输出的每个颜色，所以在片段着色器中返回这些颜色的反相(Inversion)并不是很难。我们将会从屏幕纹理中取颜色值，然后用1.0减去它，对它进行反相：</p>
-<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-    FragColor <span>=</span> <span>vec4</span><span>(</span><span>vec3</span><span>(</span><span>1.0</span> <span>-</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>)</span><span>,</span> <span>1.0</span><span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h3 id="灰度"> 灰度</h3>
-<p>移除场景中除了黑白灰以外所有的颜色，让整个图像灰度化(Grayscale)。很简单的实现方式是，取所有的颜色分量，将它们平均化：</p>
-<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-    FragColor <span>=</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>;</span>
-    <span>float</span> average <span>=</span> <span>(</span>FragColor<span>.</span>r <span>+</span> FragColor<span>.</span>g <span>+</span> FragColor<span>.</span>b<span>)</span> <span>/</span> <span>3.0</span><span>;</span>
-    FragColor <span>=</span> <span>vec4</span><span>(</span>average<span>,</span> average<span>,</span> average<span>,</span> <span>1.0</span><span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>但人眼会对绿色更加敏感一些，而对蓝色不那么敏感，所以为了获取物理上更精确的效果，我们需要使用加权的通道：</p>
-<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-    FragColor <span>=</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>;</span>
-    <span>float</span> average <span>=</span> <span>0.2126</span> <span>*</span> FragColor<span>.</span>r <span>+</span> <span>0.7152</span> <span>*</span> FragColor<span>.</span>g <span>+</span> <span>0.0722</span> <span>*</span> FragColor<span>.</span>b<span>;</span>
-    FragColor <span>=</span> <span>vec4</span><span>(</span>average<span>,</span> average<span>,</span> average<span>,</span> <span>1.0</span><span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h3 id="核效果"> 核效果</h3>
-<p>在一个纹理图像上做后期处理的另外一个好处是，我们可以从纹理的其它地方采样颜色值。比如说我们可以在当前纹理坐标的周围取一小块区域，对当前纹理值周围的多个纹理值进行采样。</p>
-<p>核(Kernel)（或卷积矩阵(Convolution Matrix)）是一个类矩阵的数值数组，它的中心为当前的像素，它会用它的核值乘以周围的像素值，并将结果相加变成一个值。所以，基本上我们是在对当前像素周围的纹理坐标添加一个小的偏移量，并根据核将结果合并。</p>
-<div><p>提示</p>
-<p>大部分核将所有的权重加起来之后都应该会等于1，如果它们加起来不等于1，这就意味着最终的纹理颜色将会比原纹理值更亮或者更暗了。</p>
-</div>
-<p>例如：</p>
-<div><pre><code><span>const</span> <span>float</span> offset <span>=</span> <span>1.0</span> <span>/</span> <span>300.0</span><span>;</span>  
-
-<span>void</span> <span>main</span><span>(</span><span>)</span>
-<span>{</span>
-    <span>vec2</span> offsets<span>[</span><span>9</span><span>]</span> <span>=</span> <span>vec2</span><span>[</span><span>]</span><span>(</span>
-        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span>  offset<span>)</span><span>,</span> <span>// 左上</span>
-        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>    offset<span>)</span><span>,</span> <span>// 正上</span>
-        <span>vec2</span><span>(</span> offset<span>,</span>  offset<span>)</span><span>,</span> <span>// 右上</span>
-        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span>  <span>0.0f</span><span>)</span><span>,</span>   <span>// 左</span>
-        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>    <span>0.0f</span><span>)</span><span>,</span>   <span>// 中</span>
-        <span>vec2</span><span>(</span> offset<span>,</span>  <span>0.0f</span><span>)</span><span>,</span>   <span>// 右</span>
-        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span> <span>-</span>offset<span>)</span><span>,</span> <span>// 左下</span>
-        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>   <span>-</span>offset<span>)</span><span>,</span> <span>// 正下</span>
-        <span>vec2</span><span>(</span> offset<span>,</span> <span>-</span>offset<span>)</span>  <span>// 右下</span>
-    <span>)</span><span>;</span>
-
-    <span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
-        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span>
-        <span>-</span><span>1</span><span>,</span>  <span>9</span><span>,</span> <span>-</span><span>1</span><span>,</span>
-        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span>
-    <span>)</span><span>;</span>
-
-    <span>vec3</span> sampleTex<span>[</span><span>9</span><span>]</span><span>;</span>
-    <span>for</span><span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>9</span><span>;</span> i<span>++</span><span>)</span>
-    <span>{</span>
-        sampleTex<span>[</span>i<span>]</span> <span>=</span> <span>vec3</span><span>(</span><span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>.</span>st <span>+</span> offsets<span>[</span>i<span>]</span><span>)</span><span>)</span><span>;</span>
-    <span>}</span>
-    <span>vec3</span> col <span>=</span> <span>vec3</span><span>(</span><span>0.0</span><span>)</span><span>;</span>
-    <span>for</span><span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>9</span><span>;</span> i<span>++</span><span>)</span>
-        col <span>+=</span> sampleTex<span>[</span>i<span>]</span> <span>*</span> kernel<span>[</span>i<span>]</span><span>;</span>
-
-    FragColor <span>=</span> <span>vec4</span><span>(</span>col<span>,</span> <span>1.0</span><span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br></div></div><h3 id="常见的核"> 常见的核</h3>
-<div><pre><code><span>// 锐化</span>
-<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
-        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span>
-        <span>-</span><span>1</span><span>,</span>  <span>9</span><span>,</span> <span>-</span><span>1</span><span>,</span>
-        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span>
-    <span>)</span><span>;</span>
-
-<span>// 模糊</span>
-<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
-    <span>1.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>1.0</span> <span>/</span> <span>16</span><span>,</span>
-    <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>4.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span>
-    <span>1.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>1.0</span> <span>/</span> <span>16</span>  
-<span>)</span><span>;</span>
-
-<span>// 边缘检测(Edge-detection)</span>
-<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
-        <span>1</span><span>,</span>  <span>1</span><span>,</span>  <span>1</span><span>,</span>
-        <span>1</span><span>,</span> <span>-</span><span>8</span><span>,</span>  <span>1</span><span>,</span>
-        <span>1</span><span>,</span>  <span>1</span><span>,</span>  <span>1</span>
-    <span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><div><p>提示</p>
-<p>注意，核在对屏幕纹理的边缘进行采样的时候，由于还会对中心像素周围的8个像素进行采样，其实会取到纹理之外的像素。由于环绕方式默认是GL_REPEAT，所以在没有设置的情况下取到的是屏幕另一边的像素，而另一边的像素本不应该对中心像素产生影响，这就可能会在屏幕边缘产生很奇怪的条纹。为了消除这一问题，我们可以将屏幕纹理的环绕方式都设置为GL_CLAMP_TO_EDGE。这样子在取到纹理外的像素时，就能够重复边缘的像素来更精确地估计最终的值了。</p>
-</div>
-]]></content>
-    <author>
-      <name>Leonhardt</name>
-    </author>
-    <contributor>
-      <name>Leonhardt</name>
-    </contributor>
-    <published>2021-10-03T02:18:05.000Z</published>
-    <rights>Copyright by Leonhardt</rights>
-  </entry>
-  <entry>
-    <title type="html">OpenCV</title>
-    <id>https://kigane.github.io/note/opengl/opencv/</id>
-    <link href="https://kigane.github.io/note/opengl/opencv/"/>
-    <updated>2021-10-03T02:18:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="简介"> 简介</h2>
-<p>OpenCV是一个图像处理库。图像矩阵类Mat主要有两个部分,header部分记录图像矩阵的描述性信息，如大小，元素储存方式等等，另外一部分是一个指针，指向矩阵存储的内存。有自动内存管理，且使用了引用计数系统，Mat的赋值，复制构造函数只会复制header部分，指针部分指向同一块内存，最后一个指向该内存的指针负责回收内存。其指定存储方式的格式为:<code>CV_[The number of bits per item][Signed or Unsigned][Type Prefix]C[The channel number]</code>。Mat的输出格式可以用<code>format(mat, Formatter::FMT_PYTHON)</code>指定(<code>cout&lt;&lt;format(mat,...)</code>)。<br>
-PS：OpenCV按BGR顺序存储RGB颜色。</p>
-<h2 id="遍历图像矩阵"> 遍历图像矩阵</h2>
-<ul>
-<li>cv::Mat::isContinuous() 检查内存是否在同一行</li>
-<li>检查图像是否加载成功可以看I.data是否为NULL，为NULL则加载失败。</li>
-<li>遍历矩阵元素的方式
-<ul>
-<li>mat.depth()查看item的类型，mat.channels()查看元素的通道数。</li>
-<li>mat.rows查看元素行数,mat.cols查看元素列数，mat.cols*mat.channels()是item总数。</li>
-<li><code>mat.ptr&lt;typename&gt;(i)</code> 取得指向矩阵第i行行首的指针。</li>
-<li><code>MatIterator_&lt;typename&gt; it</code> 不同类型的迭代器，推荐使用，在内存换行时有点优化。
-<ul>
-<li><code>mat.begin&lt;typename&gt;()</code> 取得位于矩阵开头的迭代器。常用的RGB3通道对应typename为Vec3b</li>
-<li><code>mat.end&lt;typename&gt;()</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>cv::Mat::at(row,col) 取得第row行，第col列的元素的地址，并返回引用。</li>
-<li>cv::LUT(src,lut,dest) <code>dest[i]=lut[src[i]+d]</code>。如果src是无符号类型，则d=0，有符号类型则d=128。最快。</li>
-</ul>
-<h2 id="图像操作"> 图像操作</h2>
-<ul>
-<li>Mat img = imread(filename); 默认为3通道</li>
-<li>Mat img = imread(filename, IMREAD_GRAYSCALE); 单通道</li>
-<li>imwrite(filename, img); 保存到文件</li>
-<li>imshow(&quot;image&quot;, img); 显示图像</li>
-<li>cvtColor(img, grey, COLOR_BGR2GRAY);  改变颜色空间。</li>
-<li>src.convertTo(dst, CV_32F); 改变图像类型</li>
-<li>Rect r(10, 10, 100, 100); Mat smallImg = img(r); 将Rect指定的区域储存为另一个图像</li>
-</ul>
-]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -12822,10 +12475,343 @@ Block containing n elements, starting at position i *</li>
     <rights>Copyright by Leonhardt</rights>
   </entry>
   <entry>
-    <title type="html">Blog Home</title>
-    <id>https://kigane.github.io/</id>
-    <link href="https://kigane.github.io/"/>
-    <updated>2021-12-13T15:53:11.000Z</updated>
+    <title type="html">OpenCV</title>
+    <id>https://kigane.github.io/note/opengl/opencv/</id>
+    <link href="https://kigane.github.io/note/opengl/opencv/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="简介"> 简介</h2>
+<p>OpenCV是一个图像处理库。图像矩阵类Mat主要有两个部分,header部分记录图像矩阵的描述性信息，如大小，元素储存方式等等，另外一部分是一个指针，指向矩阵存储的内存。有自动内存管理，且使用了引用计数系统，Mat的赋值，复制构造函数只会复制header部分，指针部分指向同一块内存，最后一个指向该内存的指针负责回收内存。其指定存储方式的格式为:<code>CV_[The number of bits per item][Signed or Unsigned][Type Prefix]C[The channel number]</code>。Mat的输出格式可以用<code>format(mat, Formatter::FMT_PYTHON)</code>指定(<code>cout&lt;&lt;format(mat,...)</code>)。<br>
+PS：OpenCV按BGR顺序存储RGB颜色。</p>
+<h2 id="遍历图像矩阵"> 遍历图像矩阵</h2>
+<ul>
+<li>cv::Mat::isContinuous() 检查内存是否在同一行</li>
+<li>检查图像是否加载成功可以看I.data是否为NULL，为NULL则加载失败。</li>
+<li>遍历矩阵元素的方式
+<ul>
+<li>mat.depth()查看item的类型，mat.channels()查看元素的通道数。</li>
+<li>mat.rows查看元素行数,mat.cols查看元素列数，mat.cols*mat.channels()是item总数。</li>
+<li><code>mat.ptr&lt;typename&gt;(i)</code> 取得指向矩阵第i行行首的指针。</li>
+<li><code>MatIterator_&lt;typename&gt; it</code> 不同类型的迭代器，推荐使用，在内存换行时有点优化。
+<ul>
+<li><code>mat.begin&lt;typename&gt;()</code> 取得位于矩阵开头的迭代器。常用的RGB3通道对应typename为Vec3b</li>
+<li><code>mat.end&lt;typename&gt;()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cv::Mat::at(row,col) 取得第row行，第col列的元素的地址，并返回引用。</li>
+<li>cv::LUT(src,lut,dest) <code>dest[i]=lut[src[i]+d]</code>。如果src是无符号类型，则d=0，有符号类型则d=128。最快。</li>
+</ul>
+<h2 id="图像操作"> 图像操作</h2>
+<ul>
+<li>Mat img = imread(filename); 默认为3通道</li>
+<li>Mat img = imread(filename, IMREAD_GRAYSCALE); 单通道</li>
+<li>imwrite(filename, img); 保存到文件</li>
+<li>imshow(&quot;image&quot;, img); 显示图像</li>
+<li>cvtColor(img, grey, COLOR_BGR2GRAY);  改变颜色空间。</li>
+<li>src.convertTo(dst, CV_32F); 改变图像类型</li>
+<li>Rect r(10, 10, 100, 100); Mat smallImg = img(r); 将Rect指定的区域储存为另一个图像</li>
+</ul>
+]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">Vue.js</title>
+    <id>https://kigane.github.io/note/js/vue/</id>
+    <link href="https://kigane.github.io/note/js/vue/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="基础"> 基础</h2>
+<h2 id="深入"> 深入</h2>
+<h3 id="data"> data</h3>
+<p>vue组件中data中定义的数组，对象，实际类型是Proxy，都使用了代理。</p>
+<h3 id="全局变量"> 全局变量</h3>
+<div><pre><code><span>const</span> app <span>=</span> <span>createApp</span><span>(</span>App<span>)</span>
+app<span>.</span>config<span>.</span>globalProperties<span>.</span>$foo <span>=</span> <span>'bar'</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p>或使用provide/inject<br>
+父组件中用provide选项提供数据，子组件中用inject选项使用该数据。</p>
+<div><pre><code><span>/*
+Root
+└─ TodoList
+   ├─ TodoItem
+   └─ TodoListFooter
+      ├─ ClearTodosButton
+      └─ TodoListStatistics
+*/</span>
+
+<span>const</span> app <span>=</span> Vue<span>.</span><span>createApp</span><span>(</span><span>{</span><span>}</span><span>)</span>
+
+app<span>.</span><span>component</span><span>(</span><span>'todo-list'</span><span>,</span> <span>{</span>
+  <span>data</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> <span>{</span>
+      todos<span>:</span> <span>[</span><span>'Feed a cat'</span><span>,</span> <span>'Buy tickets'</span><span>]</span>
+    <span>}</span>
+  <span>}</span><span>,</span>
+  <span>provide</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> <span>{</span>
+        user<span>:</span> <span>'John Doe'</span>
+    <span>}</span>
+  <span>}</span><span>,</span>
+  template<span>:</span> <span><span>`</span><span>
+    &lt;div>
+      {{ todos.length }}
+      &lt;!-- rest of the template -->
+    &lt;/div>
+  </span><span>`</span></span>
+<span>}</span><span>)</span>
+
+app<span>.</span><span>component</span><span>(</span><span>'todo-list-statistics'</span><span>,</span> <span>{</span>
+  inject<span>:</span> <span>[</span><span>'user'</span><span>]</span><span>,</span>
+  <span>created</span><span>(</span><span>)</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span><span><span>`</span><span>Injected property: </span><span><span>${</span><span>this</span><span>.</span>user<span>}</span></span><span>`</span></span><span>)</span> <span>// > Injected property: John Doe</span>
+  <span>}</span>
+<span>}</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br></div></div><h3 id="router-link"> router-link</h3>
+<ul>
+<li>当router-link的目标路径可以和当前路径匹配(例如，当前/foo/bar，可以匹配/,/foo,/foo/bar三个目标路径)时，该router-link标签会自动添加类.router-link-active</li>
+<li>当router-link的目标路径可以和当前路径完全匹配(一模一样)时，该router-link标签会自动添加类.router-link-exact-active</li>
+<li>可以在router-link标签上加exact属性，这样只有在完全匹配时才会添加类.router-link-active。通常会用于to='/'的router-link</li>
+<li><code>&lt;router-link to=&quot;/foo/bar&quot;&gt;&lt;/router-link&gt;</code> 普通的router-link写法</li>
+<li><code>&lt;router-link :to=&quot;{name = 'Foo', params = {id : 'bar'}}&quot;&gt;&lt;/router-link&gt;</code> 转到已命名的路由的router-link写法</li>
+<li>另一种动态链接写法</li>
+</ul>
+<div><pre><code><span><span><span>&lt;</span>router-link</span> <span>:to</span><span><span>=</span><span>"</span>`/foo/${id}`<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>router-link</span><span>></span></span> 
+</code></pre>
+<div><span>1</span><br></div></div><h3 id="nested-router-view"> nested router-view</h3>
+<p>Home组件中有一个router-view，这个router-view对应的组件中还有一个router-view。则内层router-view可以声明如下。</p>
+<div><pre><code><span>{</span>
+    path<span>:</span> <span>'/home'</span><span>,</span>
+    name<span>:</span> <span>'Home'</span><span>,</span>
+    <span>component</span><span>:</span> <span>(</span><span>)</span> <span>=></span> <span>import</span><span>(</span><span>'@/views/Home.vue'</span><span>)</span><span>,</span>
+    children<span>:</span> <span>[</span>
+      <span>{</span>
+        path<span>:</span> <span>':id'</span><span>,</span> <span>// 匹配/home/:id</span>
+        name<span>:</span> <span>'Main'</span><span>,</span>
+        <span>component</span><span>:</span> <span>(</span><span>)</span> <span>=></span> <span>import</span><span>(</span><span>'@/views/Main.vue'</span><span>)</span><span>,</span>
+        props<span>:</span> <span>true</span> <span>// 让Home组件中的router-link中的路径参数可以传入Main组件，用Main的props接收。</span>
+      <span>}</span><span>,</span>
+    <span>]</span><span>,</span>
+  <span>}</span><span>,</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="named-router-view"> named router-view</h3>
+<p>普通的<code>&lt;router-view /&gt;</code>默认使用routes中的component指定的组件。如果一个页面要有多个router-view，每个router-view对应不同的组件，则需要为router-view指定name。</p>
+<div><pre><code><span>&lt;</span>router<span>-</span>view <span>/</span><span>></span>
+<span>&lt;</span>router<span>-</span>view name<span>=</span><span>'a'</span> <span>/</span><span>></span>
+<span>&lt;</span>router<span>-</span>view name<span>=</span><span>'b'</span> <span>/</span><span>></span>
+
+<span>// 在routes中，要为每个router-view指定好组件。</span>
+<span>{</span>
+  path<span>:</span> <span>'xxx'</span><span>,</span>
+  name<span>:</span> <span>'yyy'</span><span>,</span>
+  component<span>:</span> <span>{</span>
+    <span>default</span><span>:</span> ComponentDefault<span>,</span>
+    a<span>:</span> ComponentA<span>,</span>
+    b<span>:</span> ComponentB<span>,</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h3 id="route路径参数-动态链接"> route路径参数(动态链接)</h3>
+<div><pre><code><span>const</span> router <span>=</span> <span>new</span> <span>VueRouter</span><span>(</span><span>{</span>
+  routes<span>:</span> <span>[</span>
+    <span>// dynamic segments start with a colon</span>
+    <span>{</span> path<span>:</span> <span>'/user/:id'</span><span>,</span> component<span>:</span> User<span>,</span> props<span>:</span> <span>true</span> <span>}</span>
+  <span>]</span>
+<span>}</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>path中的:id称为dynamic segment。如果path匹配到了，则可以通过$route.params.id访问匹配到的id值。<br>
+如果路由对象的props设为true，则可由component的props属性接收路径参数。</p>
+<h3 id="如何获取事件的event对象"> 如何获取事件的event对象</h3>
+<p><code>@event=&quot;onEvent($event)</code>，<code>$event</code>为原生DOM的事件对象。</p>
+]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">帧缓冲(FrameBuffer)</title>
+    <id>https://kigane.github.io/note/opengl/gl-framebuffer/</id>
+    <link href="https://kigane.github.io/note/opengl/gl-framebuffer/"/>
+    <updated>2021-10-03T02:18:05.000Z</updated>
+    <content type="html"><![CDATA[<p>默认的帧缓冲是在你创建窗口的时候生成和配置的，包括颜色缓冲，深度缓冲，模板缓冲等。OpenGL支持自定义帧缓冲。将场景渲染到不同的帧缓冲能够让我们在场景中加入类似镜子的东西，或者做出很酷的后期处理效果。</p>
+<h2 id="创建帧缓冲"> 创建帧缓冲</h2>
+<div><pre><code><span>unsigned</span> <span>int</span> fbo<span>;</span>
+<span>glGenFramebuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>fbo<span>)</span><span>;</span>
+<span>glBindFramebuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> fbo<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>在绑定到GL_FRAMEBUFFER目标之后，所有的读取和写入帧缓冲的操作将会影响当前绑定的帧缓冲。现在的帧缓冲还不能使用，因为它还不完整，一个完整的帧缓冲需要满足以下的条件：</p>
+<ul>
+<li>附加至少一个缓冲（颜色、深度或模板缓冲）。</li>
+<li>至少有一个颜色附件(Attachment)。</li>
+<li>所有的附件都必须是完整的（保留了内存）。</li>
+<li>每个缓冲都应该有相同的样本数。</li>
+</ul>
+<p>我们需要为帧缓冲创建一些附件，并将附件附加到帧缓冲上。在完成所有的条件之后，我们可以以GL_FRAMEBUFFER为参数调用glCheckFramebufferStatus，检查帧缓冲是否完整。</p>
+<div><pre><code><span>if</span><span>(</span><span>glCheckFramebufferStatus</span><span>(</span>GL_FRAMEBUFFER<span>)</span> <span>==</span> GL_FRAMEBUFFER_COMPLETE<span>)</span>
+  <span>// 确实完整了</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p>之后所有的渲染操作将会渲染到当前绑定帧缓冲的附件中。由于当前帧缓冲不是默认帧缓冲，渲染指令将不会对窗口的视觉输出有任何影响。因此，渲染到一个不同的帧缓冲被叫做离屏渲染(Off-screen Rendering)。要保证所有的渲染操作在主窗口中有视觉效果，我们需要再次激活默认帧缓冲，即将它绑定到0</p>
+<div><pre><code><span>glBindFramebuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> <span>0</span><span>)</span><span>;</span>
+<span>glDeleteFramebuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>fbo<span>)</span><span>;</span> <span>// 不要的时候记得删了</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="纹理附件"> 纹理附件</h2>
+<p>当把一个纹理附加到帧缓冲的时候，所有的渲染指令将会写入到这个纹理中。使用纹理的优点是，所有渲染操作的结果将会被储存在一个纹理图像中，之后可以在着色器中很方便地使用它。</p>
+<div><pre><code><span>unsigned</span> <span>int</span> texture<span>;</span>
+<span>glGenTextures</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>texture<span>)</span><span>;</span>
+<span>glBindTexture</span><span>(</span>GL_TEXTURE_2D<span>,</span> texture<span>)</span><span>;</span>
+
+<span>glTexImage2D</span><span>(</span>GL_TEXTURE_2D<span>,</span> <span>0</span><span>,</span> GL_RGB<span>,</span> <span>800</span><span>,</span> <span>600</span><span>,</span> <span>0</span><span>,</span> GL_RGB<span>,</span> GL_UNSIGNED_BYTE<span>,</span> <span>NULL</span><span>)</span><span>;</span>
+
+<span>glTexParameteri</span><span>(</span>GL_TEXTURE_2D<span>,</span> GL_TEXTURE_MIN_FILTER<span>,</span> GL_LINEAR<span>)</span><span>;</span>
+<span>glTexParameteri</span><span>(</span>GL_TEXTURE_2D<span>,</span> GL_TEXTURE_MAG_FILTER<span>,</span> GL_LINEAR<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>和普通的纹理区别在于：glTexImage2D的宽高设置为视口的大小，且最后一个参数data设置为NULL。表示仅仅分配了内存而没有填充它。填充会在渲染场景到帧缓冲之后进行。</p>
+<div><p>提示</p>
+<p>如果你想将你的屏幕渲染到一个更小或更大的纹理上，需要在渲染场景到帧缓冲之前使用纹理的新维度作为参数再次调用glViewport，否则只有一小部分的纹理或屏幕会被渲染到这个纹理上。</p>
+</div>
+<div><pre><code><span>glFramebufferTexture2D</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_COLOR_ATTACHMENT0<span>,</span> GL_TEXTURE_2D<span>,</span> texture<span>,</span> <span>0</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br></div></div><p>glFramebufferTexture2D</p>
+<ul>
+<li>target：帧缓冲的目标</li>
+<li>attachment：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的0意味着我们可以附加多个颜色附件。</li>
+<li>textarget：你希望附加的纹理类型</li>
+<li>texture：要附加的纹理本身</li>
+<li>level：多级渐远纹理的级别。我们将它保留为0。</li>
+</ul>
+<p>对于深度缓冲：附件类型设置为GL_DEPTH_ATTACHMENT。纹理的内部格式变为GL_DEPTH_COMPONENT。</p>
+<p>对于模板缓冲：附件类型设置为GL_STENCIL_ATTACHMENT，并将纹理的内部格式设定为GL_STENCIL_INDEX。</p>
+<p>也可以将深度缓冲和模板缓冲附加为一个单独的纹理。纹理的每32位数值将包含24位的深度信息和8位的模板信息。附件类型使用GL_DEPTH_STENCIL_ATTACHMENT，纹理的内部格式使用GL_UNSIGNED_INT_24_8。例如</p>
+<div><pre><code><span>glTexImage2D</span><span>(</span>
+  GL_TEXTURE_2D<span>,</span> <span>0</span><span>,</span> GL_DEPTH24_STENCIL8<span>,</span> <span>800</span><span>,</span> <span>600</span><span>,</span> <span>0</span><span>,</span> 
+  GL_DEPTH_STENCIL<span>,</span> GL_UNSIGNED_INT_24_8<span>,</span> <span>NULL</span>
+<span>)</span><span>;</span>
+
+<span>glFramebufferTexture2D</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_DEPTH_STENCIL_ATTACHMENT<span>,</span> GL_TEXTURE_2D<span>,</span> texture<span>,</span> <span>0</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="渲染缓冲对象-renderbuffer-object-附件"> 渲染缓冲对象(Renderbuffer Object)附件</h2>
+<p>和纹理图像一样，渲染缓冲对象是一个真正的缓冲，即一系列的字节、整数、像素等。渲染缓冲对象直接将所有的渲染数据储存到它的缓冲中，不会做任何针对纹理格式的转换，所以更快(因为使用原生格式，所以交换缓冲这样的操作很快)。然而，渲染缓冲对象通常都是只写的，所以你不能读取它们（比如使用纹理访问）。当然还是能够使用glReadPixels来读取它，这会从当前绑定的帧缓冲中返回特定区域的像素，而非附件本身。</p>
+<p>由于渲染缓冲对象通常都是只写的，所以经常用于深度和模板附件，因为大部分时间我们都不需要从深度和模板缓冲中读取值，只关心深度和模板测试能否通过。当<strong>不需要从缓冲中采样的时候</strong>，通常都会选择渲染缓冲对象。</p>
+<div><pre><code><span>unsigned</span> <span>int</span> rbo<span>;</span>
+<span>glGenRenderbuffers</span><span>(</span><span>1</span><span>,</span> <span>&amp;</span>rbo<span>)</span><span>;</span>
+<span>glBindRenderbuffer</span><span>(</span>GL_RENDERBUFFER<span>,</span> rbo<span>)</span><span>;</span>
+<span>// 创建一个深度和模板渲染缓冲对象</span>
+<span>glRenderbufferStorage</span><span>(</span>GL_RENDERBUFFER<span>,</span> GL_DEPTH24_STENCIL8<span>,</span> <span>800</span><span>,</span> <span>600</span><span>)</span><span>;</span>
+<span>// 附加</span>
+<span>glFramebufferRenderbuffer</span><span>(</span>GL_FRAMEBUFFER<span>,</span> GL_DEPTH_STENCIL_ATTACHMENT<span>,</span> GL_RENDERBUFFER<span>,</span> rbo<span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="渲染到纹理"> 渲染到纹理</h2>
+<p>要想绘制场景到一个纹理上，我们需要采取以下的步骤：</p>
+<ol>
+<li>将新的帧缓冲绑定为激活的帧缓冲，和往常一样渲染场景</li>
+<li>绑定默认的帧缓冲</li>
+<li>绘制一个横跨整个屏幕的四边形，将帧缓冲的颜色缓冲作为它的纹理。</li>
+</ol>
+<h2 id="后期处理"> 后期处理</h2>
+<p>既然整个场景都被渲染到了一个纹理上，我们可以简单地通过修改纹理数据创建出一些非常有意思的效果。</p>
+<h3 id="反相"> 反相</h3>
+<p>我们现在能够访问渲染输出的每个颜色，所以在片段着色器中返回这些颜色的反相(Inversion)并不是很难。我们将会从屏幕纹理中取颜色值，然后用1.0减去它，对它进行反相：</p>
+<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+    FragColor <span>=</span> <span>vec4</span><span>(</span><span>vec3</span><span>(</span><span>1.0</span> <span>-</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>)</span><span>,</span> <span>1.0</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h3 id="灰度"> 灰度</h3>
+<p>移除场景中除了黑白灰以外所有的颜色，让整个图像灰度化(Grayscale)。很简单的实现方式是，取所有的颜色分量，将它们平均化：</p>
+<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+    FragColor <span>=</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>;</span>
+    <span>float</span> average <span>=</span> <span>(</span>FragColor<span>.</span>r <span>+</span> FragColor<span>.</span>g <span>+</span> FragColor<span>.</span>b<span>)</span> <span>/</span> <span>3.0</span><span>;</span>
+    FragColor <span>=</span> <span>vec4</span><span>(</span>average<span>,</span> average<span>,</span> average<span>,</span> <span>1.0</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>但人眼会对绿色更加敏感一些，而对蓝色不那么敏感，所以为了获取物理上更精确的效果，我们需要使用加权的通道：</p>
+<div><pre><code><span>void</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+    FragColor <span>=</span> <span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>)</span><span>;</span>
+    <span>float</span> average <span>=</span> <span>0.2126</span> <span>*</span> FragColor<span>.</span>r <span>+</span> <span>0.7152</span> <span>*</span> FragColor<span>.</span>g <span>+</span> <span>0.0722</span> <span>*</span> FragColor<span>.</span>b<span>;</span>
+    FragColor <span>=</span> <span>vec4</span><span>(</span>average<span>,</span> average<span>,</span> average<span>,</span> <span>1.0</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h3 id="核效果"> 核效果</h3>
+<p>在一个纹理图像上做后期处理的另外一个好处是，我们可以从纹理的其它地方采样颜色值。比如说我们可以在当前纹理坐标的周围取一小块区域，对当前纹理值周围的多个纹理值进行采样。</p>
+<p>核(Kernel)（或卷积矩阵(Convolution Matrix)）是一个类矩阵的数值数组，它的中心为当前的像素，它会用它的核值乘以周围的像素值，并将结果相加变成一个值。所以，基本上我们是在对当前像素周围的纹理坐标添加一个小的偏移量，并根据核将结果合并。</p>
+<div><p>提示</p>
+<p>大部分核将所有的权重加起来之后都应该会等于1，如果它们加起来不等于1，这就意味着最终的纹理颜色将会比原纹理值更亮或者更暗了。</p>
+</div>
+<p>例如：</p>
+<div><pre><code><span>const</span> <span>float</span> offset <span>=</span> <span>1.0</span> <span>/</span> <span>300.0</span><span>;</span>  
+
+<span>void</span> <span>main</span><span>(</span><span>)</span>
+<span>{</span>
+    <span>vec2</span> offsets<span>[</span><span>9</span><span>]</span> <span>=</span> <span>vec2</span><span>[</span><span>]</span><span>(</span>
+        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span>  offset<span>)</span><span>,</span> <span>// 左上</span>
+        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>    offset<span>)</span><span>,</span> <span>// 正上</span>
+        <span>vec2</span><span>(</span> offset<span>,</span>  offset<span>)</span><span>,</span> <span>// 右上</span>
+        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span>  <span>0.0f</span><span>)</span><span>,</span>   <span>// 左</span>
+        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>    <span>0.0f</span><span>)</span><span>,</span>   <span>// 中</span>
+        <span>vec2</span><span>(</span> offset<span>,</span>  <span>0.0f</span><span>)</span><span>,</span>   <span>// 右</span>
+        <span>vec2</span><span>(</span><span>-</span>offset<span>,</span> <span>-</span>offset<span>)</span><span>,</span> <span>// 左下</span>
+        <span>vec2</span><span>(</span> <span>0.0f</span><span>,</span>   <span>-</span>offset<span>)</span><span>,</span> <span>// 正下</span>
+        <span>vec2</span><span>(</span> offset<span>,</span> <span>-</span>offset<span>)</span>  <span>// 右下</span>
+    <span>)</span><span>;</span>
+
+    <span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
+        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span>
+        <span>-</span><span>1</span><span>,</span>  <span>9</span><span>,</span> <span>-</span><span>1</span><span>,</span>
+        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span>
+    <span>)</span><span>;</span>
+
+    <span>vec3</span> sampleTex<span>[</span><span>9</span><span>]</span><span>;</span>
+    <span>for</span><span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>9</span><span>;</span> i<span>++</span><span>)</span>
+    <span>{</span>
+        sampleTex<span>[</span>i<span>]</span> <span>=</span> <span>vec3</span><span>(</span><span>texture</span><span>(</span>screenTexture<span>,</span> TexCoords<span>.</span>st <span>+</span> offsets<span>[</span>i<span>]</span><span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>vec3</span> col <span>=</span> <span>vec3</span><span>(</span><span>0.0</span><span>)</span><span>;</span>
+    <span>for</span><span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>9</span><span>;</span> i<span>++</span><span>)</span>
+        col <span>+=</span> sampleTex<span>[</span>i<span>]</span> <span>*</span> kernel<span>[</span>i<span>]</span><span>;</span>
+
+    FragColor <span>=</span> <span>vec4</span><span>(</span>col<span>,</span> <span>1.0</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br></div></div><h3 id="常见的核"> 常见的核</h3>
+<div><pre><code><span>// 锐化</span>
+<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
+        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span>
+        <span>-</span><span>1</span><span>,</span>  <span>9</span><span>,</span> <span>-</span><span>1</span><span>,</span>
+        <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>,</span> <span>-</span><span>1</span>
+    <span>)</span><span>;</span>
+
+<span>// 模糊</span>
+<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
+    <span>1.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>1.0</span> <span>/</span> <span>16</span><span>,</span>
+    <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>4.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span>
+    <span>1.0</span> <span>/</span> <span>16</span><span>,</span> <span>2.0</span> <span>/</span> <span>16</span><span>,</span> <span>1.0</span> <span>/</span> <span>16</span>  
+<span>)</span><span>;</span>
+
+<span>// 边缘检测(Edge-detection)</span>
+<span>float</span> kernel<span>[</span><span>9</span><span>]</span> <span>=</span> <span>float</span><span>[</span><span>]</span><span>(</span>
+        <span>1</span><span>,</span>  <span>1</span><span>,</span>  <span>1</span><span>,</span>
+        <span>1</span><span>,</span> <span>-</span><span>8</span><span>,</span>  <span>1</span><span>,</span>
+        <span>1</span><span>,</span>  <span>1</span><span>,</span>  <span>1</span>
+    <span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><div><p>提示</p>
+<p>注意，核在对屏幕纹理的边缘进行采样的时候，由于还会对中心像素周围的8个像素进行采样，其实会取到纹理之外的像素。由于环绕方式默认是GL_REPEAT，所以在没有设置的情况下取到的是屏幕另一边的像素，而另一边的像素本不应该对中心像素产生影响，这就可能会在屏幕边缘产生很奇怪的条纹。为了消除这一问题，我们可以将屏幕纹理的环绕方式都设置为GL_CLAMP_TO_EDGE。这样子在取到纹理外的像素时，就能够重复边缘的像素来更精确地估计最终的值了。</p>
+</div>
+]]></content>
     <author>
       <name>Leonhardt</name>
     </author>
@@ -12856,6 +12842,20 @@ Block containing n elements, starting at position i *</li>
 <li>着色 重心插值</li>
 </ul>
 ]]></content>
+    <author>
+      <name>Leonhardt</name>
+    </author>
+    <contributor>
+      <name>Leonhardt</name>
+    </contributor>
+    <published>2021-10-03T02:18:05.000Z</published>
+    <rights>Copyright by Leonhardt</rights>
+  </entry>
+  <entry>
+    <title type="html">Blog Home</title>
+    <id>https://kigane.github.io/</id>
+    <link href="https://kigane.github.io/"/>
+    <updated>2021-12-13T15:53:11.000Z</updated>
     <author>
       <name>Leonhardt</name>
     </author>
